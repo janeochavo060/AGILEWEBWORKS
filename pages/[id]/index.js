@@ -1,6 +1,6 @@
 
 import dynamic from 'next/dynamic'
-const S1 = dynamic(() => import('@/components/slices/s1'))
+const S1 = dynamic(() => import('@/components/slices/S1'))
 
 import { paths, props } from '@/lib/props/page'
 export const getStaticPaths = paths

@@ -8,20 +8,20 @@ const ArticleTitleDateDescription = ({
 }) => {
   return (
     <>
-      <div className='flex flex-col justify-center items-center w-full h-[200px]'>
+      <div className='flex flex-col justify-center items-center w-full h-[200px] lg:mx-0 px-6'>
         <div className='flex xxl:max-w-[1345px] xl:max-w-[800px] w-full '>
           <div className='flex flex-col items-start '>
-            <div className='text-[30px] my-2 font-bold'>
+            <div className='lg:text-[30px] text-[20px] my-2 font-bold'>
               {articleTitle}
             </div>
-            <div className=''>
+            <div className='lg:text-base text-sm'>
               <span className='text-slate-800 font-bold uppercase'>
                 {moment(date).format('MMMM Do, YYYY')}
               </span>
               <span className='text-xl mx-2'>
                 —
               </span>
-              <span className=' text-slate-800'>
+              <span className='text-slate-800'>
                 {description}
               </span>
             </div>

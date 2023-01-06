@@ -4,10 +4,10 @@ import Footer from "@/components/partials/Footer";
 const DefaultLayout = (props) => {
   return (
     <>
-      <div>
+      <div className="">
         <Menu />
       </div>
-      <div className="h-screen">
+      <div className="h-screen lg:my-0 my-8">
         {props.children}
       </div>
       <div>

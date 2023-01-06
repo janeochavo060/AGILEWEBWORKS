@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
+import Image from 'next/image'
 const Menu = (props) => {
   const router = useRouter()
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -11,11 +12,11 @@ const Menu = (props) => {
   ]);
   return (
     <>
-    <div
+      <div
         className={`sticky top-0 md:py-4 py-0 z-50 w-full transition duration-600 ease-in-out`}
       >
         <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden ">
-          <div className="flex md:justify-start justify-between items-center">
+          <div className="flex lg:justify-start justify-between items-center">
             <div
               className="flex text-[20px] py-6 xl:px-0 px-4 cursor-pointer font-extrabold tracking-wide"
               onClick={() => router.push(`/`)}
@@ -55,20 +56,24 @@ const Menu = (props) => {
               </div>
             </div>
             <div
-              className="xl:hidden flex mx-6 bg-black"
+              className="xl:hidden flex mx-6"
               onClick={() => setShowSideMenu(!showSideMenu)}
             >
               {showSideMenu ? (
-                <img
-                  src="/svg/icon_close.svg"
-                  className=" w-[21px]"
-                  alt="image"
+                <Image
+                  src="/svg/close.svg"
+                  alt="Vercel Logo"
+                  className='mx-1'
+                  width={20}
+                  height={24}
                 />
               ) : (
-                <img
-                  src="/svg/icon_sidemenu.svg"
-                  className=" w-[21px]"
-                  alt="image"
+                <Image
+                  src="/svg/burger.svg"
+                  alt="Vercel Logo"
+                  className='mx-1'
+                  width={20}
+                  height={24}
                 />
               )}
             </div>

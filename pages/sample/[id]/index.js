@@ -3,6 +3,7 @@ const S1 = dynamic(() => import('@/components/slices/S1'))
 import { paths, props } from '@/lib/props/page'
 export const getStaticPaths = paths
 export const getStaticProps = props
+
 export default function Home({ page }) {
   return (
     <>

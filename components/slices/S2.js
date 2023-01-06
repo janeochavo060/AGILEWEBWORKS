@@ -1,6 +1,6 @@
 // Description
 
-export default function S1 ({slice}) {
+export default function S2 ({slice}) {
   return (
     <div>
       {slice.key}

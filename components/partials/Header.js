@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <>
       <Head>
-        <title>Cool Writings</title>
-        <meta name="description" content="Cool Writings" />
+        <title>Halcyon Agile</title>
+        <meta name="description" content="Halcyon Agile" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

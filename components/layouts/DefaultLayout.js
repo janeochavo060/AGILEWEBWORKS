@@ -7,7 +7,7 @@ const DefaultLayout = (props) => {
       <div className="">
         <Menu />
       </div>
-      <div className="h-screen lg:my-0 my-8">
+      <div className="h-full lg:my-0 my-8">
         {props.children}
       </div>
       <div>

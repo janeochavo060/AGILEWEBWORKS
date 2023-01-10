@@ -17,7 +17,7 @@ const Footer = (props) => {
                 width={15}
                 height={15}
               />
-              {`2020 Cool Writings - Powered by Statamic`}
+              {`Copyright 2023 Halcyon Agile`}
             </div>
             <div className="flex-row md:mx-0 mx-6 py-6 ">
               <div className="flex flex-no-wrap border-transparent items-center whitespace-nowrap overflow-x-auto">

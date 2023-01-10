@@ -32,7 +32,7 @@ export default function S4 ({slice}) {
               </div>
             </div>
           </div>
-          <div className='flex items-center w-[600px] h-[500px]'>
+          <div className='flex items-center w-[750px] h-[500px]'>
             <Image
               src={'/mockups/mimosa.jpg'}
               alt="image"

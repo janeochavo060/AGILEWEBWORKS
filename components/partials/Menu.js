@@ -24,9 +24,9 @@ const Menu = (props) => {
             >
               <Image
                 src="/images/logo.png"
-                alt="Vercel Logo"
+                alt="Halcyon Logo"
                 className='mx-1'
-                width={150}
+                width={200}
                 height={24}
               />
             </div>

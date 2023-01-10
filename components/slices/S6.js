@@ -18,8 +18,8 @@ export default function S5 ({slice}) {
 
   return (
     <div className='my-8'>
-      <div className='flex flex-col justify-center items-center w-full h-[800px] lg:mx-0  '>
-        <div className='flex lg:text-[40px] text-[40px] font-bold text-gray-700 max-w-[1000px] text-center'>
+      <div className='flex flex-col justify-center items-center w-full h-[900px] lg:mx-0  '>
+        <div className='flex lg:text-[40px] text-[40px] font-bold text-gray-700 max-w-[1000px] text-center '>
           {`Applying the Agile Methodology (Scrum) together with a creative thinking approach`}
         </div>
         <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full my-8'>
@@ -68,7 +68,7 @@ export default function S5 ({slice}) {
               />
             </div>
             <div className='flex justify-end items-end'>
-              <div className='relative h-[320px] w-[600px] m-4'>
+              <div className='relative h-[370px] w-[600px] m-4'>
                 <Image
                   src={'/images/stock/stock2.jpg'}
                   alt="image"

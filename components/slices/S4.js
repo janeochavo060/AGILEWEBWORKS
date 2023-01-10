@@ -17,7 +17,7 @@ export default function S4 ({slice}) {
   return (
     <div className='my-8 ml-8'>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-[700px] lg:mx-0 bg-sky-500 '>
-        <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full relative'>
+        <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full '>
           <div className='flex flex-col justify-center max-w-[400px] items-start'>
             <div className='lg:text-[30px] text-[35px] font-bold text-white'>
               {`Golf Course Management System`}
@@ -32,7 +32,7 @@ export default function S4 ({slice}) {
               </div>
             </div>
           </div>
-          <div className='flex items-center w-[600px] h-[500px]  top-0 right-0'>
+          <div className='flex items-center w-[600px] h-[500px]'>
             <Image
               src={'/mockups/mimosa.jpg'}
               alt="image"

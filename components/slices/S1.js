@@ -22,12 +22,12 @@ const S1 = ({
               >
                 <span>Learn More</span>
                 <Image
-                src="/svg/arrow-right.svg"
-                alt="Arrow right"
-                className='mx-1 text-white'
-                width={24}
-                height={24}
-              />
+                  src="/svg/arrow-right-white.svg"
+                  alt="Arrow right"
+                  className='mx-1'
+                  width={24}
+                  height={24}
+                />
               </button>
             </div>
           </div>

@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import BigTitleWithSmallTitle from '@/components/slices/BigTitleWithSmallTitle'
-import ArticleTitleDateDescription from '@/components/slices/ArticleTitleDateDescription';
-const Home = (props) => {
+import DefaultLayout from '@/components/layouts/DefaultLayout';
+import S1 from '@/components/slices/S1'
+import S2 from '@/components/slices/S2'
+import S3 from '@/components/slices/S3'
+import S4 from '@/components/slices/S4'
+import S5 from '@/components/slices/S5'
+import S6 from '@/components/slices/S6'
+import S7 from '@/components/slices/S7'
+import SliceBackground from '@/components/partials/SliceBackground';
+import ContactForm  from '@/components/ContactForm';
+const Website = ({}) => {
+  
   return (
     <>
       <div className='flex flex-col'>
-        <BigTitleWithSmallTitle
-          bigTitle={`I see a bad-ass mother who don't take no crap off nobody.`}
-          smallTitle={`I see pride. I see power.`}
-        />
-        <ArticleTitleDateDescription
-          articleTitle={`'Dance Like No One is Watching' is Bad Advice`}
-          date={'1996-11-18'}
-          description={`The Macarena is an International hit & dance craze. The song is inspired by flamenco dancer Diana Herrera's Beauty, but do you know where the dance came from?`}
-        />
-        <ArticleTitleDateDescription
-          articleTitle={`Nectar of the gods`}
-          date={'1996-08-16'}
-          description={`The time has come. We had seen the commercials. This was out first foray into the underground competitive world of Surge.`}
-        />
+        <S1/>
+        <S2/>
+        <S3/>
+        <S4/>
+        <S5/>
+        <S6/>
+        <S7/>
+        <SliceBackground>
+          <ContactForm/>
+        </SliceBackground>
       </div>
     </>
   )
 }
 
-export default Home
+export default Website

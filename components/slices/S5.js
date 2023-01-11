@@ -2,7 +2,7 @@ import React, { useState, useEffect, } from 'react';
 import Image from 'next/image';
 export default function S5 ({slice}) {
   return (
-    <div className='my-8 mr-8'>
+    <div className='flex my-8 mr-8'>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-[700px] lg:mx-0 bg-sky-700 '>
         <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full relative'>
           <div className='flex items-center w-[600px] h-[500px]  top-0 right-0'>
@@ -30,6 +30,7 @@ export default function S5 ({slice}) {
           </div>
         </div>
       </div>
+      <div className="sm:block hidden triangle-dark-blue"/>
     </div>
     
   )

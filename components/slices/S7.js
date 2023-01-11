@@ -25,10 +25,10 @@ export default function S5 ({slice}) {
         <div className='flex lg:text-[40px] text-[40px] font-bold text-gray-700 max-w-[1000px] text-center'>
           {`Why choose us`}
         </div>
-        <div className='flex text-lg text-gray-700 max-w-[1000px] text-center'>
-          {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam leo, lacinia porta tincidunt et, tempus et mi. Nullam congue viverra augue, quis tristique felis luctus ut. Nulla gravida purus lorem, sit amet interdum sem ornare id. Nunc posuere, libero sed porttitor cursus, dui nisi accumsan nibh, ut mollis erat erat a metus.`}
+        <div className='flex text-lg text-gray-700 max-w-[1000px] text-center my-4'>
+          {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam leo, lacinia porta tincidunt et, tempus et mi. `}
         </div>
-        <div className='flex justify-center flex-wrap items-center xxl:min-w-[1345px] xl:min-w-[1260px] xxl:max-w-[1345px] xl:max-w-[1260px] max-w-full my-8'>
+        <div className='flex justify-center flex-wrap items-center xxl:min-w-[1345px] xl:min-w-[1260px] xxl:max-w-[1345px] xl:max-w-[1260px] max-w-full my-8 border-b'>
 
             {images &&
               images.map((image, i) => (

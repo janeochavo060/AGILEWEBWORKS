@@ -8,7 +8,7 @@ import S5 from '@/components/slices/S5'
 import S6 from '@/components/slices/S6'
 import S7 from '@/components/slices/S7'
 import SliceBackground from '@/components/partials/SliceBackground';
-import ContactForm  from '@/components/ContactForm';
+import ContactForm  from '@/components/partials/ContactForm';
 const Website = ({}) => {
   
   return (

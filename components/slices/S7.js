@@ -33,7 +33,6 @@ export default function S5 ({slice}) {
             {images &&
               images.map((image, i) => (
                 <div
-                  className=' '
                   key={i}
                 >
                   <div className={``}>

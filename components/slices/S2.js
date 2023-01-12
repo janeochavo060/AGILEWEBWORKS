@@ -55,6 +55,7 @@ export default function S2 ({slice}) {
                 >
                   <div className={``}>
                     <Image
+                      blurDataURL={image?.src}
                       src={image?.src}
                       alt="image"
                       className='my-2 rounded-lg shadow-md'

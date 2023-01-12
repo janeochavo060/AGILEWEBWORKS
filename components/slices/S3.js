@@ -15,9 +15,9 @@ export default function S3 ({slice}) {
   const [active, setActive] = useState('Software Development')
 
   return (
-    <div className='my-8 mr-8'>
-      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-[700px] lg:mx-0 bg-red-700 '>
-        <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full relative'>
+    <div className='flex my-8 mr-8'>
+      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-[700px] lg:mx-0 bg-red-700'>
+        <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full '>
           <div className='flex items-center w-[600px] h-[500px]  top-0 right-0'>
             <Image
               src={'/mockups/wingzone_mobilea.jpg'}
@@ -50,6 +50,7 @@ export default function S3 ({slice}) {
           </div>
         </div>
       </div>
+      <div className="sm:block hidden triangle-red"  />
     </div>
     
   )

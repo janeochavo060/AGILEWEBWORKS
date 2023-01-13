@@ -4,7 +4,7 @@ const ContactForm = ({}) => {
   const [form, setForm] = useState({});
   return (
     <>
-      <div className="flex items-center justify-center  xl:mx-0 lg:mx-8 mx-8 bg-white p-12 shadow-xl">
+      <div className="flex items-center justify-center  xl:mx-0 lg:m-8 m-8 bg-white md:p-12 p-6 shadow-xl">
         <div className="flex flex-col items-center xxl:max-w-[600px] xl:max-w-[600px]">
           <div className="md:text-[60px] md:leading-[60px] text-2xl font-bold my-4">
             {`Let's Talk!`}
@@ -83,7 +83,7 @@ const ContactForm = ({}) => {
               </div>
               <div className='flex justify-center mt-12'>
                 <button
-                  className='flex text-2xl px-24 py-4 transition ease-in-out delay-150 bg-sky-400 hover:bg-blue-500 hover:to-blue-500 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer'
+                  className='flex md:text-2xl  text-sm md:px-24 px-12 py-4 transition ease-in-out delay-150 bg-sky-400 hover:bg-blue-500 hover:to-blue-500 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer'
                   onClick={() => {}}
                 >
                   <span>Submit</span>

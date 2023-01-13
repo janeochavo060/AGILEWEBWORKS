@@ -5,7 +5,7 @@ const S1 = ({
   smallTitle
 }) => {
   return (
-    <div className='flex flex-col justify-center items-center w-full lg:h-[500px] h-[350px] lg:mx-0 px-6'>
+    <div className='flex flex-col justify-center items-center w-full lg:h-[500px] h-full lg:mx-0 px-6'>
       <div className='flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full'>
         <div className='flex xxl:max-w-[600px] xl:max-w-[600px] w-full items-center'>
           <div className='flex flex-col items-start '>

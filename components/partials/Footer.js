@@ -100,7 +100,7 @@ const Footer = (props) => {
                     height={24}
                   />
                 </div> */}
-                <div className='flex flex-col items-end'>
+                <div className='flex flex-col md:items-end items-center'>
                   <div className='cursor-pointer'>
                     Privacy | Terms & Conditions
                   </div>

@@ -15,9 +15,9 @@ export default function S2 ({slice}) {
   const [active, setActive] = useState('Software Development')
 
   return (
-    <div className='mx-8'>
-      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-[700px] lg:mx-0 bg-gradient-to-r from-sky-600 via-blue-600 to-teal-700 background-animate '>
-        <div className='flex justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full relative'>
+    <div className='m-8'>
+      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 bg-gradient-to-r from-sky-600 via-blue-600 to-teal-700 background-animate lg:p-0 p-4'>
+        <div className='flex md:flex-row flex-col justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full relative'>
           <div className='flex flex-col justify-center items-start'>
             <div className='lg:text-[30px] text-[35px] font-bold text-white'>
               {`Donec quan felis, ultrices pellentesque eu sem.`}
@@ -53,7 +53,7 @@ export default function S2 ({slice}) {
                   className=' '
                   key={i}
                 >
-                  <div className={``}>
+                  <div className={`relative md:w-[350px] w-[300px] md:h-[200px] h-[200px]`}>
                     <Image
                       blurDataURL={image?.src}
                       src={image?.src}

@@ -46,7 +46,7 @@ export default function S2 ({slice}) {
               }
             </div>
           </div>
-          <div className='flex flex-col items-center w-[600px] h-[500px]  top-0 right-0'>
+          <div className='flex flex-col justify-between items-center w-[600px] h-[500px]  top-0 right-0'>
             {images &&
               images.map((image, i) => (
                 <div
@@ -58,9 +58,9 @@ export default function S2 ({slice}) {
                       blurDataURL={image?.src}
                       src={image?.src}
                       alt="image"
-                      className='my-2 rounded-lg shadow-md'
+                      className='rounded-lg shadow-md'
                       width={350}
-                      height={200}
+                      height={230}
                     />
                   </div>
                 </div>

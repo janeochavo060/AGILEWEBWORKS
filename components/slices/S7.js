@@ -20,15 +20,16 @@ export default function S5 ({slice}) {
   const [active, setActive] = useState('Plan')
 
   return (
+    // TITLE; DESCRIPTION WIDE; MANY LOGOS
     <div className='my-8'>
       <div className='flex flex-col justify-center items-center w-full lg:mx-0  '>
-        <div className='flex lg:text-[40px] text-[30px] font-bold text-gray-700 max-w-[1000px] text-center'>
+        <div className='flex lg:text-[40px] text-[30px] font-bold text-gray-700 text-center'>
           {`Why choose us`}
         </div>
-        <div className='flex md:text-[20px] text-md text-gray-700 md:max-w-[1000px] text-center my-4 md:mx-0 mx-4'>
+        <div className='flex md:text-[20px] text-md text-gray-700 text-center my-4 md:mx-0 mx-4'>
           {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam leo, lacinia porta tincidunt et, tempus et mi. `}
         </div>
-        <div className='flex justify-center flex-wrap items-center xxl:min-w-[1345px] xl:min-w-[1260px] xxl:max-w-[1345px] xl:max-w-[1260px] max-w-full my-8 border-b'>
+        <div className='flex justify-center flex-wrap items-center  max-w-full my-8 '>
 
             {images &&
               images.map((image, i) => (
@@ -40,7 +41,7 @@ export default function S5 ({slice}) {
                       src={image?.src}
                       alt="image"
                       className='my-2 px-8'
-                      width={180}
+                      width={250}
                       height={200}
                     />
                     {/* {image?.src} */}

@@ -15,6 +15,7 @@ export default function S3 ({slice}) {
   const [active, setActive] = useState('Software Development')
 
   return (
+    // LEFT IMAGES MOBILE; TITLE; DESCRIPTION
     <div className='flex my-8 mr-8'>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 bg-red-700'>
         <div className='flex md:flex-row flex-col-reverse justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full '>

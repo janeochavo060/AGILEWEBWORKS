@@ -9,7 +9,7 @@ export default function S9 ({
     document.documentElement.style.setProperty('--triangle-color', backgroundColor)
   }, [])
   return (
-    // VIDEO LEFT; TITLE; DESCRIPTION
+    // VIDEO RIGHT; TITLE; DESCRIPTION
     <div className='flex my-8 ml-8'>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 trapezoid-left' style={{"backgroundColor": backgroundColor}}>
         <div className='flex md:flex-row flex-col justify-between items-center xxl:max-w-[1920px] xl:max-w-[1920px] w-full relative'>

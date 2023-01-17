@@ -15,6 +15,7 @@ export default function S4 ({slice}) {
   const [active, setActive] = useState('Software Development')
 
   return (
+    // TITLE; DESCRIPTION; IMAGE SHOWCASE WEB AND MOBILE
     <div className='flex my-8 ml-8'>
       <div className="md:block hidden triangle-light-blue"/>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 bg-sky-500 '>

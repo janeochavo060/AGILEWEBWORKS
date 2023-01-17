@@ -15,6 +15,7 @@ export default function S2 ({slice}) {
   const [active, setActive] = useState('Software Development')
 
   return (
+    // BIG TITLE LEFT; MENU; IMAGES WEB
     <div className='m-8'>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 bg-gradient-to-r from-sky-600 via-blue-600 to-teal-700 background-animate lg:p-0 p-4'>
         <div className='flex md:flex-row flex-col justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full relative'>

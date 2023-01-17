@@ -17,6 +17,7 @@ export default function S5 ({slice}) {
   const [active, setActive] = useState('Plan')
 
   return (
+    // BIG TITLE; LEFT MENU; 3 IMAGES DIFFERENT SIZES
     <div className='my-8'>
       <div className='flex flex-col justify-center items-center w-full md:h-[900px] h-full lg:mx-0  '>
         <div className='flex lg:text-[40px] text-[30px] font-bold text-gray-700 max-w-[1000px] text-center '>
@@ -52,7 +53,7 @@ export default function S5 ({slice}) {
           </div>
           <div className='flex flex-col md:items-end items-center'>
             <div className='flex items-end '>
-              <div className='relative md:w-[450px] w-[190px] md:h-[250px] h-[150px] m-2'>
+              <div className='relative md:w-[500px] w-[190px] md:h-[300px] h-[300px] m-2'>
                 <Image
                   src={'/images/stock/stock3.jpg'}
                   alt="image"
@@ -80,8 +81,6 @@ export default function S5 ({slice}) {
               </div>
             </div>
           </div>
-          
-          
         </div>
       </div>
     </div>

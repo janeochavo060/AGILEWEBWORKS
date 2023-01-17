@@ -8,7 +8,7 @@ export default function S9 ({
   return (
     // VIDEO LEFT; TITLE; DESCRIPTION
     <div className='flex'>
-      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 bg-gradient-to-r from-sky-600 via-blue-600 to-teal-700 background-animate'>
+      <div className='flex flex-col justify-center items-center w-full lg:h-[500px] h-full lg:mx-0 bg-gradient-to-r from-sky-600 via-blue-600 to-teal-700 background-animate'>
         <div className='flex md:flex-row flex-col justify-between w-[1345px] items-center relative'>
           <div className='flex md:w-[300px] text-[60px] font-bold text-white'>
             The Microservices Option

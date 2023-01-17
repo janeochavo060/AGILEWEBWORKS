@@ -20,7 +20,7 @@ export default function S5 ({
   return (
     // BIG TITLE; LEFT MENU; WEB MOCKUP; MOBILE MOCKUP;
     <div className='flex flex-col justify-start items-center w-full h-[750px] lg:mx-0' style={{'backgroundColor':`${ backgroundColor || '#FFFFFF'}`}}>
-      <div className='flex md:flex-row flex-col justify-between items-center xxl:min-w-[1500px] xl:min-w-[1260px] max-w-full border-t border-gray-400 '>
+      <div className='flex md:flex-row flex-col justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full border-t border-gray-400 '>
         <div className='flex flex-col justify-center items-start '>
           <p className='text-[18px] leading-[24px]'>OUR CAPABILITIES</p>
           {capabilities &&

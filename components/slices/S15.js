@@ -4,22 +4,22 @@ export default function S12 ({ }) {
   return (
     <div>
       <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0  lg:p-0 p-4'>
-        <div className='flex md:flex-row flex-col justify-between items-start  md:w-[1260px] relative'>
+        <div className='flex md:flex-row flex-col justify-center items-start md:w-[1345px] w-full relative'>
           <div>
             <Image
               src="/images/stock/stock2.jpg"
               alt="image"
               className='rounded-[30px]'
-              width={600}
+              width={650}
               height={450}
             />
           </div>
-          <div className='w-[550px]'>
+          <div className=' ml-12'>
             <div className='flex flex-col justify-start items-start '>
               <div className='lg:text-[40px] text-[35px] font-bold'>
                 {`Website & Software Development`}
               </div>
-              <div className='flex items-center md:w-[800px] w-full'>
+              <div className='flex items-center md:w-[700px] w-full'>
                 <p className='text-blue-400 text-3xl mr-2'>✓</p>
                 <div
                   className={`text-start text-xl my-4 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline`}
@@ -27,7 +27,7 @@ export default function S12 ({ }) {
                   Design and manage your project from start to finish.
                 </div>
               </div>
-              <div className='flex items-center md:w-[800px] w-full'>
+              <div className='flex items-center md:w-[700px] w-full'>
                 <p className='text-blue-400 text-3xl mr-2'>✓</p>
                 <div
                   className={`text-start text-xl my-4 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline`}
@@ -38,7 +38,7 @@ export default function S12 ({ }) {
               <div className='lg:text-[40px] text-[35px] font-bold'>
                 {`Outsourcing`}
               </div>
-              <div className='flex items-center md:w-[800px] w-full'>
+              <div className='flex items-center md:w-[700px] w-full'>
                 <p className='text-blue-400 text-3xl mr-2'>✓</p>
                 <div
                   className={`text-start text-xl my-4 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline`}
@@ -46,7 +46,7 @@ export default function S12 ({ }) {
                   Create an in-house team working solely on your project. The team can be fully accountable to you
                 </div>
               </div>
-              <div className='flex items-center md:w-[800px] w-full'>
+              <div className='flex items-center md:w-[700px] w-full'>
                 <p className='text-blue-400 text-3xl mr-2'>✓</p>
                 <div
                   className={`text-start text-xl my-4 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline`}

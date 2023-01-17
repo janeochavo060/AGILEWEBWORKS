@@ -6,22 +6,11 @@ import { paths, props } from '@/lib/props/page'
 export const getStaticPaths = paths
 export const getStaticProps = props
 
-export default function Page({ page }) {
+export default function Page({ page, slices }) {
   // console.log(page, 'Page')
+  // console.log(slices, 'Slices')
 
-  const slices = page?.sliceContents?.map(e => {
-    return {
-        key: e?.slice?.component,
-        order: e?.order,
-        data: e?.data
-    }
-  })
-
-  const sortSlice = (list) => {
-    return list.sort((a, b)=> a.order - b.order)
-  }
-
-  const sliceComponents = sortSlice(slices).map((e) => {
+  const sliceComponents = slices.map((e) => {
     return dynamic(() => import('@/components/slices/' + e.key))
   })
 

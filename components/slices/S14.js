@@ -19,8 +19,8 @@ export default function S5 ({
 
   return (
     // BIG TITLE; LEFT MENU; WEB MOCKUP; MOBILE MOCKUP;
-    <div className='flex flex-col justify-center items-center w-full h-[900px] lg:mx-0' style={{'backgroundColor':`${backgroundColor || '#FFFFFF'}`}}>
-      <div className='flex md:flex-row flex-col justify-between items-center xxl:min-w-[1500px] xl:min-w-[1260px] max-w-full my-8 border-t border-gray-400 md:py-16'>
+    <div className='flex flex-col justify-start items-center w-full h-[750px] lg:mx-0' style={{'backgroundColor':`${ backgroundColor || '#FFFFFF'}`}}>
+      <div className='flex md:flex-row flex-col justify-between items-center xxl:min-w-[1500px] xl:min-w-[1260px] max-w-full border-t border-gray-400 '>
         <div className='flex flex-col justify-center items-start '>
           <p className='text-[18px] leading-[24px]'>OUR CAPABILITIES</p>
           {capabilities &&
@@ -44,8 +44,8 @@ export default function S5 ({
               ))
             }
         </div>
-        <div className='flex flex-col justify-between items-center h-[600px]'>
-          <div className='flex lg:text-[40px] text-[30px] font-bold text-gray-700 max-w-[700px] text-center '>
+        <div className='flex flex-col justify-between items-center '>
+          <div className='flex lg:text-[40px] text-[30px] font-bold text-gray-700 max-w-[700px] text-center my-12'>
             {`Ultra light-wight development platform for ultra-fast back-end systems using JavaScript.`}
           </div>
           <div className='relative md:w-[700px] w-[190px] md:h-[400px] h-[300px] m-2'>
@@ -57,7 +57,7 @@ export default function S5 ({
             />
           </div>
         </div>
-        <div className='flex flex-col mr-12'>
+        <div className='flex flex-col mr-12 mt-12'>
           <div className='relative md:w-[150px] w-[190px] md:h-[300px] h-[300px]'>
             <Image
               src={'/mockups/angels-app-1.png'}

@@ -7,7 +7,7 @@ const S1 = ({
 }) => {
   return (
     // BIG TITLE; SMALL DESCRIPTION; BUTTON
-    <div className='flex flex-col justify-center items-center w-full lg:h-[450px] h-full lg:mx-0 px-6' style={{'backgroundColor':`${backgroundColor || '#FFFFFF'}`}}>
+    <div className='flex flex-col justify-center items-center w-full lg:h-[400px] h-full lg:mx-0 px-6' style={{'backgroundColor':`${backgroundColor || '#FFFFFF'}`}}>
       <div className='flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full'>
         <div className='flex xxl:max-w-[800px] xl:max-w-[800px] w-full items-center'>
           <div className='flex flex-col items-start '>

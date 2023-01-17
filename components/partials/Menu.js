@@ -13,13 +13,11 @@ const Menu = (props) => {
   ]);
   return (
     <>
-      <div
-        className={`sticky top-0 md:py-4 py-0 z-50 w-full transition duration-600 ease-in-out text-gray-800`}
-      >
+      <div>
         <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden ">
           <div className="flex justify-between items-center">
             <div
-              className="flex text-[20px] py-6 xl:px-0 px-4 cursor-pointer font-extrabold tracking-wide"
+              className="flex text-[20px] xl:px-0 px-4 cursor-pointer font-extrabold tracking-wide"
               onClick={() => router.push(`/`)}
             >
               <Image
@@ -30,7 +28,7 @@ const Menu = (props) => {
                 height={24}
               />
             </div>
-            <div className="xl:flex hidden flex-row md:mx-0 mx-4 py-4 ">
+            <div className="xl:flex hidden flex-row md:mx-0 mx-4 ">
               <div className="flex flex-no-wrap border-transparent items-center whitespace-nowrap overflow-x-auto">
                 {!upperHeaderMenu.length && (
                   <div className="border-b-4 border-transparent ">
@@ -61,7 +59,7 @@ const Menu = (props) => {
                     </Link>
                   ))
                 }
-                <div className='m-8'>
+                <div className='m-6'>
                   <button
                     className='px-4 py-2 transition ease-in-out delay-150 bg-sky-400 hover:bg-blue-500 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer'
                     onClick={() => {}}

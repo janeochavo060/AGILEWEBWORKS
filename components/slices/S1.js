@@ -6,14 +6,14 @@ const S1 = ({
 }) => {
   return (
     // BIG TITLE; SMALL DESCRIPTION; BUTTON
-    <div className='flex flex-col justify-center items-center w-full lg:h-[500px] h-full lg:mx-0 px-6'>
+    <div className='flex flex-col justify-center items-center w-full lg:h-[400px] h-full lg:mx-0 px-6'>
       <div className='flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full'>
-        <div className='flex xxl:max-w-[600px] xl:max-w-[600px] w-full items-center'>
+        <div className='flex xxl:max-w-[800px] xl:max-w-[800px] w-full items-center'>
           <div className='flex flex-col items-start '>
-            <div className='lg:text-[60px] text-[35px] font-bold text-slate-800'>
-              {bigTitle || `Donec quan felis, ultrices pellentesque eu sem.`}
+            <div className='lg:text-[74px] leading-[80px] text-[35px] font-bold text-slate-800 py-4'>
+              {bigTitle || `No project is too small or large.`}
             </div>
-            <div className='text-lg text-teal-800 my-2'>
+            <div className='text-[18px] leading-[24px] text-teal-800 my-2'>
               {smallTitle || `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quam leo, lacinia porta tincidunt et, tempus et mi. Nullam congue viverra augue, quis tristique felis luctus ut.`}
             </div>
             <div className='my-4'>

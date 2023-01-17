@@ -66,10 +66,10 @@
 	height: 100%;
 }
 
-.player-wrapper {
+/* .player-wrapper {
 	width: auto;
 	height: auto;
-}
+} */
 
 .sliceGradient {
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, rgb(16, 122, 179) 40%, rgb(16, 122, 179) 40%)

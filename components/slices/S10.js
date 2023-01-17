@@ -3,20 +3,20 @@ import Image from 'next/image';
 import ReactPlayer from 'react-player';
 export default function S9 ({
   backgroundColor,
+  link,
 }) {
   useEffect(() => {
     document.documentElement.style.setProperty('--triangle-color', backgroundColor)
   }, [])
   return (
     // VIDEO LEFT; TITLE; DESCRIPTION
-    <div className='flex my-8 mr-8'>
-      <div className="md:block hidden triangle-right"/>
-      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0' style={{"backgroundColor": backgroundColor}}>
+    <div className='flex my-8 ml-8'>
+      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 trapezoid-left' style={{"backgroundColor": backgroundColor}}>
         <div className='flex md:flex-row flex-col justify-between items-center xxl:max-w-[1920px] xl:max-w-[1920px] w-full relative'>
-          <div className='flex w-[850px] justify-start'>
+          <div className='flex w-[1000px] justify-center'>
             <div className='flex flex-col justify-center items-start p-4'>
               <div className='lg:text-[30px] text-[35px] font-bold text-white'>
-                {`In service for 10 years`}
+                {`Golf Course Management System`}
               </div>
               <div className='flex flex-col md:w-[600px] w-ful'>
                 <div
@@ -30,12 +30,22 @@ export default function S9 ({
             </div>
           </div>
           <div className='flex relative items-start md:w-[900px] md:h-[500px] w-[320px] h-[200px]'>
-            <ReactPlayer
-              className="player"
-              url="https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21"
-              width="100%"
-              height="100%"
-            />
+          {
+              link ? 
+                <>
+                    <ReactPlayer
+                      className="player"
+                      url={link}
+                      width="100%"
+                      height="100%"
+                    />
+                </>
+              : <>
+                  <div>
+                    Missing Video File.
+                  </div>
+                </>
+            }
           </div>
           
           

@@ -53,6 +53,16 @@
 	border-right: 65px solid #2a295c;
 	border-top: 65px solid transparent;
 }
+
+.trapezoid-right{
+	clip-path: polygon(0 1%, 100% 0, 94% 100%, 0% 100%);
+}
+
+.trapezoid-left{
+	clip-path: polygon(0 1%, 100% 0, 100% 100%, 6% 100%);
+
+}
+
 .video-wrapper {
 	position: relative;
 	padding-top: 56.25%;

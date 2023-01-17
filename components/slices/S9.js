@@ -3,28 +3,30 @@ import Image from 'next/image';
 import ReactPlayer from 'react-player';
 export default function S9 ({
   backgroundColor,
-  triangleOrientation,
+  link
 }) {
-  useEffect(() => {
-    if(triangleOrientation === 'reverse') {
-      document.documentElement.style.setProperty('--triangle-color-left', backgroundColor)
-    } else {
-      document.documentElement.style.setProperty('--triangle-color-left', backgroundColor)
-    }
-    
-  }, [])
   return (
     // VIDEO LEFT; TITLE; DESCRIPTION
     <div className='flex my-8 mr-8'>
-      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0' style={{"backgroundColor": backgroundColor}}>
+      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 trapezoid-right' style={{"backgroundColor": backgroundColor}}>
         <div className='flex md:flex-row flex-col justify-between items-center xxl:max-w-[1920px] xl:max-w-[1920px] w-full relative'>
           <div className='flex relative items-start md:w-[900px] md:h-[500px] w-[320px] h-[200px]'>
-            <ReactPlayer
-              className="player"
-              url="https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21"
-              width="100%"
-              height="100%"
-            />
+            {
+              link ? 
+                <>
+                    <ReactPlayer
+                      className="player"
+                      url={link}
+                      width="100%"
+                      height="100%"
+                    />
+                </>
+              : <>
+                  <div>
+                    Missing Video File.
+                  </div>
+                </>
+            }
           </div>
           <div className='flex w-[850px] justify-start'>
             <div className='flex flex-col justify-center items-start p-4'>
@@ -42,7 +44,6 @@ export default function S9 ({
               </div>
             </div>
           </div>
-          
         </div>
       </div>
       {/* <div className={triangleOrientation === 'reverse' ? `triangle-right` : `triangle-left`}/> */}

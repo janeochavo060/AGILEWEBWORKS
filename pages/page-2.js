@@ -12,20 +12,40 @@ import S10 from '@/components/slices/S10'
 import SliceBackground from '@/components/partials/SliceBackground';
 import ContactForm  from '@/components/partials/ContactForm';
 const Website = ({}) => {
+  const [initialload, setInitialload] = useState(false);
+  useEffect(() => {
+    setInitialload(true);
+  }, []);
+
   return (
     <>
       <div className='flex flex-col'>
-        <S1/>
-        <S8/>
-        <S9
-          backgroundColor={'#386EC1'}
-        />
-        <S10
-          backgroundColor={'#00AAE8'}
-        />
-        <S9
-          backgroundColor={'#B2272D'}
-        />
+        
+        {
+          initialload ?
+            <>
+              <S1/>
+              <S8
+                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+              />
+              <S9
+                backgroundColor={'#386EC1'}
+                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+              />
+              <S10
+                backgroundColor={'#00AAE8'}
+                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+              />
+              <S9
+                backgroundColor={'#B2272D'}
+                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+              />
+            </>
+          : <>
+            </>
+        }
+        
+         
         {/* <S2/> */}
         {/* <S3/> */}
         {/* <S4/> */}

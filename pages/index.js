@@ -1,33 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import S1 from '@/components/slices/S1'
-import S2 from '@/components/slices/S2'
-import S3 from '@/components/slices/S3'
-import S4 from '@/components/slices/S4'
-import S5 from '@/components/slices/S5'
-import S6 from '@/components/slices/S6'
-import S7 from '@/components/slices/S7'
-import SliceBackground from '@/components/partials/SliceBackground';
-import ContactForm  from '@/components/partials/ContactForm';
+import React from "react";
+import { props } from "@/lib/props/page";
+import dynamic from "next/dynamic";
+import Head from "next/head";
+export const getStaticProps = props;
 
-import { props } from '@/lib/props/page'
-export const getStaticProps = props
+const Website = ({ page, slices }) => {
+  const staticSlices = Array(7)
+    .fill()
+    .map((_, i) => {
+      return {
+        key: `S${i + 1}`,
+      };
+    });
 
-const Website = ({page, slices}) => {
-  console.log(page, "page")
-  
+  const sliceComponents = staticSlices.map((e) => {
+    return dynamic(() => import("@/components/slices/" + e.key));
+  });
+
   return (
     <>
-      <div className="flex flex-col">
-        <S1 />
-        <S2 />
-        <S3 />
-        <S4 />
-        <S5 />
-        <S6 />
-        <S7 />
-      </div>
+      <Head>
+        <title>{page?.name || "Page"}</title>
+        <meta name="description" content={page?.id || "Description"} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      {sliceComponents.map((SliceComponent, key) => (
+        <SliceComponent key={key} slice={slices[key]?.data} />
+      ))}
     </>
   );
-}
+};
 
-export default Website
+export default Website;

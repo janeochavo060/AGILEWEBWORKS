@@ -1,20 +1,25 @@
 import Image from 'next/image'
-export default function Slice ({ slice }) {
+export default function Slice({ slice }) {
   // console.log(slice)
   return (
     <div
-      className="flex flex-col justify-end items-center w-full lg:h-[520px] h-full lg:mx-0 px-6"
+      className="flex flex-col justify-end items-center w-full  h-full lg:mx-0 px-6 py-6 lg:py-12"
       style={{ backgroundColor: `${slice?.main?.bg_color || "#FFFFFF"}` }}
     >
-      <div className="flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full mb-12">
+      <div className="flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full">
         <div className="flex xxl:max-w-[800px] xl:max-w-[800px] w-full items-center">
           <div className="flex flex-col items-start ">
             <div className="lg:text-[74px] leading-[80px] text-[35px] font-bold text-slate-800 py-4">
-              {slice?.main?.title}
+              {slice?.main?.title ||
+                "Donec quam felis, ultricies pellentesque eu sem."}
             </div>
             <div
               className="text-[18px] leading-[24px] text-teal-800 my-2"
-              dangerouslySetInnerHTML={{ __html: slice?.main?.content }}
+              dangerouslySetInnerHTML={{
+                __html:
+                  slice?.main?.content ||
+                  "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p>",
+              }}
             />
             <div className="my-4">
               <button

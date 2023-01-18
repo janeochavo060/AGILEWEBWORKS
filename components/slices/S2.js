@@ -9,10 +9,52 @@ export default function S2 ({slice}) {
     { name: "Website", },
   ]);
   const [images, setImages] = useState([
-    { src: "/mockups/wingzone.jpg"},
-    { src: "/mockups/mimosa.jpg"}
-  ])
-  const [active, setActive] = useState('Software Development')
+    { src: "/mockups/wingzone.jpg" },
+    { src: "/mockups/mimosa.jpg" },
+    { src: "/mockups/mimosa.jpg" },
+    { src: "/mockups/wingzone_mobilea.jpg" },
+  ]);
+  const [active, setActive] = useState("Software Development");
+
+  return (
+    <div className="bg-sky-600 text-white overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-3 max-w-7xl mx-auto">
+        <div className="lg:col-span-1 p-8 flex flex-col gap-2">
+          <h2 className="text-3xl font-bold leading-0 mb-4">
+            Donec quan felis, ultrices pellentesque eu sem.
+          </h2>
+          {servicesOffered.map((item) => (
+            <button
+              key={item?.name}
+              aria-label={item?.name}
+              className={`w-full text-left before:border-2 before:w-8 before:px-2 before:rounded-full transition-all ${
+                active !== item?.name && "before:border-transparent"
+              } flex items-center gap-x-4 text-xl`}
+              onClick={() => setActive(item?.name)}
+            >
+              {item?.name}
+            </button>
+          ))}
+        </div>
+        <div className="col-span-2">
+          <div className="masonry-effect w-[1200px] max-h-[640px] lg:max-h-[480px]">
+            {images.map((image, i) => (
+              <div key={i} className="h-full w-full masonry-item">
+                <Image
+                  alt=""
+                  blurDataURL={image?.src}
+                  src={image?.src}
+                  width="100"
+                  height="920"
+                  className="w-full h-full shadow-lg"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     // BIG TITLE LEFT; MENU; IMAGES WEB

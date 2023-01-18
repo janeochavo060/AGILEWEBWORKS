@@ -1,12 +1,15 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, userRef, useState } from "react";
 import ReactPlayer from "react-player";
 import PlayIcon from "@/components/svgComponents/PlayIcon";
 
 export default function YouTubeEmbed({
   src = "",
-  height = "calc(100vh - 120px)",
+  height = "calc(100vh - 60%)",
 }) {
+  const containerRef = useRef();
+  const clientHeight = containerRef?.current?.clientHeight || 0;
+  const clientWidth = containerRef?.current?.clientWidth || 0;
   const getYoutubeId = () => {
     var regExp =
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -23,7 +26,7 @@ export default function YouTubeEmbed({
   };
 
   return src ? (
-    <div className="relative w-full h-full" style={{ minHeight: height }}>
+    <div ref={containerRef} className="relative w-full h-full">
       {played ? (
         <ReactPlayer url={src} playing={played} height={height} width="100%" />
       ) : (
@@ -32,7 +35,7 @@ export default function YouTubeEmbed({
             alt=""
             src={thumbnail}
             blurDataURL={thumbnail}
-            className="w-full h-full object-cover object-center z-10 relative"
+            className="w-full h-full object-cover object-center z-10 relative max-h-full"
             style={{
               height: height,
             }}

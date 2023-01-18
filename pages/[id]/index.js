@@ -7,7 +7,7 @@ export const getStaticPaths = paths
 export const getStaticProps = props
 
 export default function Page({ page, slices }) {
-  // console.log(page, 'Page')
+  console.log(page, 'Page')
   // console.log(slices, 'Slices')
 
   const sliceComponents = slices.map((e) => {

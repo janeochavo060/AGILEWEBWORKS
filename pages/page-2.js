@@ -19,45 +19,39 @@ const Website = ({}) => {
 
   return (
     <>
-      <div className='flex flex-col'>
-        
-        {
-          initialload ?
-            <>
-              <S1/>
-              <S8
-                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
-              />
-              <S9
-                backgroundColor={'#386EC1'}
-                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
-              />
-              <S10
-                backgroundColor={'#00AAE8'}
-                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
-              />
-              <S9
-                backgroundColor={'#B2272D'}
-                link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
-              />
-            </>
-          : <>
-            </>
-        }
-        
-         
+      <div className="flex flex-col">
+        {initialload ? (
+          <>
+            <S1 />
+            <S8
+              link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+            />
+            <S9
+              backgroundColor={"#386EC1"}
+              link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+            />
+            <S10
+              backgroundColor={"#00AAE8"}
+              link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+            />
+            <S9
+              backgroundColor={"#B2272D"}
+              link={`https://www.youtube.com/watch?v=8dGdIcyDk1w&ab_channel=edureka%21`}
+            />
+          </>
+        ) : (
+          <></>
+        )}
+
         {/* <S2/> */}
         {/* <S3/> */}
         {/* <S4/> */}
         {/* <S5/> */}
-        <S6/>
-        <S7/>
-        <SliceBackground>
-          <ContactForm/>
-        </SliceBackground>
+        <S6 />
+        <S7 />
       </div>
     </>
-  )
+  );
 }
 
 export default Website

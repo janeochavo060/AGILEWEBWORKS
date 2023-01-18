@@ -1,9 +1,12 @@
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import PlayIcon from "../svgComponents/PlayIcon";
+import PlayIcon from "@/components/svgComponents/PlayIcon";
 
-export default function YouTubeEmbed({ src = "", height = "80vh" }) {
+export default function YouTubeEmbed({
+  src = "",
+  height = "calc(100vh - 120px)",
+}) {
   const getYoutubeId = () => {
     var regExp =
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -29,17 +32,20 @@ export default function YouTubeEmbed({ src = "", height = "80vh" }) {
             alt=""
             src={thumbnail}
             blurDataURL={thumbnail}
-            className="w-full h-full"
+            className="w-full h-full object-cover object-center z-10 relative"
+            style={{
+              height: height,
+            }}
             width="100"
             height="100"
             unoptimized
           />
           <button
             aria-label="Play Video"
-            className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+            className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-50"
             onClick={onPlay}
           >
-            <PlayIcon width="40%" height="40%" />
+            <PlayIcon width="100" height="100" />
           </button>
         </>
       )}

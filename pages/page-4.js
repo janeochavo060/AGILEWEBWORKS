@@ -17,25 +17,18 @@ const Website = ({}) => {
   
   return (
     <>
-      <div className='flex flex-col'>
-        <S1
-          backgroundColor={`#E9EEF7`}
-        />
+      <div className="flex flex-col">
+        <S1 backgroundColor={`#E9EEF7`} />
         {/* <S12/>
         <S13/> */}
 
-        <S14
-          backgroundColor={`#E9EEF7`}
-        />
-        <S15/>
-        <S16/>
-        <S7/>
-        <SliceBackground>
-          <ContactForm/>
-        </SliceBackground>
+        <S14 backgroundColor={`#E9EEF7`} />
+        <S15 />
+        <S16 />
+        <S7 />
       </div>
     </>
-  )
+  );
 }
 
 export default Website

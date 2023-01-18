@@ -14,22 +14,19 @@ const Website = ({}) => {
   
   return (
     <>
-      <div className='flex flex-col'>
-        <S1/>
-        <S12/>
-        <S13/>
+      <div className="flex flex-col">
+        <S1 />
+        <S12 />
+        <S13 />
         {/* <S2/>
         <S3/>
         <S4/>
         <S5/> */}
-        <S6/>
-        <S7/>
-        <SliceBackground>
-          <ContactForm/>
-        </SliceBackground>
+        <S6 />
+        <S7 />
       </div>
     </>
-  )
+  );
 }
 
 export default Website

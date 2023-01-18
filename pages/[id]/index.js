@@ -27,10 +27,7 @@ export default function Page({ page, slices }) {
          <SliceComponent key={key} slice={slices[key].data} />
       ))}
 
-      <SliceBackground>
-        <ContactForm/>
-      </SliceBackground>
-
+     
     </div>
   )
 }

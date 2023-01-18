@@ -6,7 +6,7 @@ export default function Slice ({ slice }) {
   return (
     // VIDEO LEFT; TITLE; DESCRIPTION
     <div className='flex my-8 ml-8'>
-      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 trapezoid-left' style={{'backgroundColor':`${slice?.main?.as || 'none'}`}}>
+      <div className='flex flex-col justify-center items-center w-full lg:h-[600px] h-full lg:mx-0 trapezoid-left' style={{'backgroundColor':`${slice?.main?.b_g_color || 'none'}`}}>
         <div className='flex md:flex-row flex-col justify-between items-center xxl:max-w-[1920px] xl:max-w-[1920px] w-full relative'>
           <div className='flex w-[1000px] justify-center'>
             <div className='flex flex-col justify-center items-start p-4'>

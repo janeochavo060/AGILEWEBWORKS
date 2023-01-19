@@ -5,9 +5,9 @@ export default function S9 ({
   backgroundColor,
   link,
 }) {
-  useEffect(() => {
-    document.documentElement.style.setProperty('--triangle-color', backgroundColor)
-  }, [])
+  // useEffect(() => {
+  //   document.documentElement.style.setProperty('--triangle-color', backgroundColor)
+  // }, [])
   return (
     // VIDEO RIGHT; TITLE; DESCRIPTION
     <div className='flex my-8 ml-8'>

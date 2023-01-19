@@ -3,13 +3,7 @@ import React, { useRef, userRef, useState } from "react";
 import ReactPlayer from "react-player";
 import PlayIcon from "@/components/svgComponents/PlayIcon";
 
-export default function YouTubeEmbed({
-  src = "",
-  height = "calc(100vh - 60%)",
-}) {
-  const containerRef = useRef();
-  const clientHeight = containerRef?.current?.clientHeight || 0;
-  const clientWidth = containerRef?.current?.clientWidth || 0;
+export default function YouTubeEmbed({ src = "", height = "calc(100vh-60%)" }) {
   const getYoutubeId = () => {
     var regExp =
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -26,7 +20,7 @@ export default function YouTubeEmbed({
   };
 
   return src ? (
-    <div ref={containerRef} className="relative w-full h-full">
+    <div className="relative w-full h-full">
       {played ? (
         <ReactPlayer url={src} playing={played} height={height} width="100%" />
       ) : (

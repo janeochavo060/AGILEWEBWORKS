@@ -5,16 +5,9 @@ import Head from "next/head";
 export const getStaticProps = props;
 
 const Website = ({ page, slices }) => {
-  const staticSlices = Array(7)
-    .fill()
-    .map((_, i) => {
-      return {
-        key: `S${i + 1}`,
-      };
-    });
-
-  const sliceComponents = staticSlices.map((e) => {
-    return dynamic(() => import("@/components/slices/" + e.key));
+  const sliceComponents = slices.map((e) => {
+    let key = e?.key === "MainFeature2" ? e?.data?.main?.text : e.key;
+    return dynamic(() => import("@/components/slices/" + key));
   });
 
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import TitleContentBlock from "../partials/TitleContentBlock";
+import TitleContentBlock from "@/components/partials/TitleContentBlock";
 export default function S4({
   slice = {
     main: {
@@ -20,7 +20,6 @@ export default function S4({
   ];
 
   // MULTIPLE IMAGES WITH TEXT BLOCK ON LEFT
-
   return (
     <div className="trapezoid-left bg-primary">
       <div className="w-[95%] md:w-full my-8 max-w-screen-xl mx-auto pl-[7%] xl:pl-0">

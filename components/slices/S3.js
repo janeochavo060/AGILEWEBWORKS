@@ -33,7 +33,7 @@ export default function S3(props) {
                 src={image?.url}
                 width="300"
                 height="700"
-                className={`h-[520px] w-full object-cover rounded-xxl ${
+                className={`h-[460px] w-full object-cover rounded-xxl ${
                   i % 2 ? "mt-auto" : "my-8 sm:mb-16"
                 }`}
               />

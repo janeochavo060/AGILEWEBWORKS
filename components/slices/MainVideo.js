@@ -4,7 +4,7 @@ export default function Slice({ slice }) {
   // console.log(slice)
   return (
     <div className="m-8">
-      <YouTubeEmbed src={slice?.main?.link} height="85vh" />
+      <YouTubeEmbed src={slice?.main?.link} height="90vh" />
     </div>
   );
 }

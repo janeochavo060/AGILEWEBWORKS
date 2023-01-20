@@ -1,6 +1,6 @@
 import React, { useState, useEffect, } from 'react';
 import Image from 'next/image';
-import TitleContentBlock from "../partials/TitleContentBlock";
+import TitleContentBlock from "@/components/partials/TitleContentBlock";
 export default function S5({
   slice = {
     main: {
@@ -8,7 +8,7 @@ export default function S5({
     },
   },
 }) {
-  // SINGLE IMAGE WITH TEXT BLOCK
+  // SINGLE IMAGE WITH TEXT BLOCK     
 
   return (
     <div className="trapezoid-right bg-accent-2">

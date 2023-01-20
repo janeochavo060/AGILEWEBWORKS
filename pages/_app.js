@@ -3,6 +3,9 @@ import "../styles/main.css";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import Header from "@/components/partials/Header"
 export default function App({ Component, pageProps }) {
+
+  console.log(pageProps)
+
   return (
     <>
       <Header/>

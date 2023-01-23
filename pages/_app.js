@@ -1,20 +1,23 @@
 import '@/styles/globals.css'
-import "../styles/main.css";
+import "@/styles/main.css";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
-import Header from "@/components/partials/Header"
+import Header from "@/components/partials/Header";
+import Head from "next/head";
 export default function App({ Component, pageProps }) {
-
-  console.log(pageProps)
-
   return (
     <>
-      <Header/>
+      <Head>
+        <title>{pageProps?.name || "Page"}</title>
+        <meta name="description" content={pageProps?.id || "Description"} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
       <DefaultLayout>
-        <div className='text-gray-800'>
+        <div className="text-gray-800">
           <Component {...pageProps} />
         </div>
       </DefaultLayout>
     </>
-    
-  )
+  );
 }

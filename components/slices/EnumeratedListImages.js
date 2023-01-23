@@ -16,8 +16,6 @@ export default function EnumeratedListImages({ slice }) {
   ]);
   const [active, setActive] = useState("Plan");
 
-  return <></>;
-
   return (
     // BIG TITLE; LEFT MENU; 3 IMAGES DIFFERENT SIZES
     <div className="my-8">

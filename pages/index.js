@@ -5,8 +5,9 @@ import Head from "next/head";
 export const getStaticProps = props;
 
 const Website = ({ page, slices }) => {
+  console.log({ slices });
   const sliceComponents = slices.map((e) => {
-    let key = e?.key === "MainFeature2" ? e?.data?.main?.text : e.key;
+    let key = e?.key === "MainFeature2" ? e?.data?.main?.text : e?.key;
     return dynamic(() => import("@/components/slices/" + key));
   });
 

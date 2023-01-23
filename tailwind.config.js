@@ -14,6 +14,7 @@ module.exports = {
       },
       maxWidth: {
         content: "1210px",
+        "95p": "95%",
       },
       borderRadius: {
         xxl: "32px",

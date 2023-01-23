@@ -6,6 +6,12 @@
 	--triangle-color-left: rgb(255, 255, 255);
 	--triangle-color-right:rgb(255, 255, 255);
 }
+input,
+textarea,
+select,
+button {
+	outline: none;
+}
 .triangle-left {
 	width: 0;
 	height: 0;
@@ -87,7 +93,8 @@
 } */
 
 .sliceGradient {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, rgb(16, 122, 179) 40%, rgb(16, 122, 179) 40%)
+	/* background: linear-gradient(180deg, #00AAE8 0%, #2C80A6 119.16%); */
+		background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, #00AAE8 40%, #2C80A6 119.16%)
 }
 
 .background-animate {

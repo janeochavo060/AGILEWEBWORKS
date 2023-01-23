@@ -6,6 +6,9 @@ import Header from "@/components/partials/Header"
 
 export default function App({ Component, pageProps }) {
   // console.log(globalData, 'Global')
+
+  console.log(pageProps)
+
   return (
     <>
       <Header/>

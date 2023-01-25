@@ -11,8 +11,27 @@ const Menu = ({ className }) => {
     { name: "Capabilities", url: "/capabilities" },
     { name: "Contact", url: "/contact" },
   ]);
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className={`sticky top-0 py-6 z-50 w-full transition duration-600 ease-in-out bg-transparent backdrop-blur ${className || ""}`}>
+    <div
+      className={`sticky top-0 py-6 z-50 w-full transition duration-600 ease-in-out bg-white/50 backdrop-blur ${
+        className || ""
+      } ${scrollPosition === 0 ? "" : "shadow-lg slideDown"}`}
+    >
+      {/* <div className={`sticky top-0 py-6 z-50 w-full transition duration-600 ease-in-out bg-transparent backdrop-blur ${className || ""}`}> */}
       <div
         className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >

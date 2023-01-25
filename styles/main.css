@@ -192,6 +192,21 @@ button {
     background-position: 100% 50%;
   }
 }
+@keyframes slideDown {
+	from {
+		transform: translateY(-100%);
+		transform-origin: top;
+	}
+
+	to {
+		transform: translateY(0%);
+		transform-origin: top;
+	}
+}
+
+.slideDown {
+	animation: slideDown 600ms;
+}
 /* lg */
 @media (min-width: 1024px) {
 	.trapezoid-right {

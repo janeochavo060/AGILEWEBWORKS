@@ -27,11 +27,14 @@ const Menu = ({ className }) => {
 
   return (
     <div
-      className={`sticky top-0 py-6 z-50 w-full transition duration-600 ease-in-out bg-white/50 backdrop-blur ${
+      className={`sticky top-0 py-6 z-[100] w-full transition duration-600 ease-in-out backdrop-blur ${
         className || ""
-      } ${scrollPosition === 0 ? "" : "shadow-lg slideDown"}`}
+      } ${
+        scrollPosition === 0
+          ? "bg-transparent"
+          : "shadow-lg slideDown bg-white/[65%] "
+      }`}
     >
-      {/* <div className={`sticky top-0 py-6 z-50 w-full transition duration-600 ease-in-out bg-transparent backdrop-blur ${className || ""}`}> */}
       <div
         className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
@@ -46,20 +49,24 @@ const Menu = ({ className }) => {
           />
           <div className="hidden xl:flex md:mx-0 mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-16 gap-y-2">
             {upperHeaderMenu.length > 0 ? (
-              upperHeaderMenu.map((nav, i) => (
-                <Link
-                  href={nav.url ? nav.url : router.pathname}
-                  as={nav.url ? nav.url : router.pathname}
-                  key={i}
-                  className={`md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal ${
-                    router.pathname.includes(nav.url) && router.pathname !== "/"
-                      ? "underline underline-offset-4"
-                      : ""
-                  }`}
-                >
-                  {nav.name}
-                </Link>
-              ))
+              upperHeaderMenu.map((nav, i) => {
+                let pathname = "/" + router?.query?.id;
+                const isActive = pathname === nav?.url;
+                return (
+                  <Link
+                    href={nav.url ? nav.url : router.pathname}
+                    as={nav.url ? nav.url : router.pathname}
+                    key={i}
+                    className={`md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal ${
+                      isActive
+                        ? "underline underline-offset-8 text-primary"
+                        : ""
+                    }`}
+                  >
+                    {nav.name}
+                  </Link>
+                );
+              })
             ) : (
               <span className="border-b-4 border-transparent ">Loading</span>
             )}

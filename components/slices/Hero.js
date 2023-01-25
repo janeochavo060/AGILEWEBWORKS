@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import { Router } from "next/router";
 export default function Slice({ slice }) {
-  // console.log(slice)
+  console.log(slice);
   return (
     <div
-      className="flex flex-col justify-end items-center w-full  h-full lg:mx-0 px-6 py-6 lg:py-12"
+      className="flex flex-col justify-end items-center w-full  h-full lg:mx-0 px-8 py-6 lg:py-12"
       style={{ backgroundColor: `${slice?.main?.bg_color || "#FFFFFF"}` }}
     >
       <div className="flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full">
@@ -21,21 +22,23 @@ export default function Slice({ slice }) {
                   "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p>",
               }}
             />
-            <div className="my-4">
-              <button
-                className="flex px-4 py-2 transition ease-in-out delay-150 bg-sky-400 hover:bg-blue-500 hover:to-blue-500 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer"
-                onClick={() => {}}
-              >
-                <span>Learn More</span>
-                <Image
-                  src="/svg/arrow-right-white.svg"
-                  alt="Arrow right"
-                  className="mx-1"
-                  width={24}
-                  height={24}
-                />
-              </button>
-            </div>
+            {slice?.link && (
+              <div className="my-4">
+                <button
+                  className="flex px-4 py-2 transition ease-in-out delay-150 bg-sky-400 hover:bg-blue-500 hover:to-blue-500 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer"
+                  onClick={() => Router.push(slice?.link)}
+                >
+                  <span>Learn More</span>
+                  <Image
+                    src="/svg/arrow-right-white.svg"
+                    alt="Arrow right"
+                    className="mx-1"
+                    width={24}
+                    height={24}
+                  />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

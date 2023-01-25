@@ -7,9 +7,7 @@ export default function TitleContentBlock({ slice, titleClass, contentClass }) {
         {slice?.main?.title || ""}
       </h2>
       <div
-        className={`text-lg tracking-normal hover:underline ${
-          contentClass || ""
-        }`}
+        className={`text-lg tracking-normal ${contentClass || ""}`}
         dangerouslySetInnerHTML={{
           __html: slice?.main?.content || "",
         }}

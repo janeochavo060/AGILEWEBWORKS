@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Header />
       <DefaultLayout>
-        <div className="text-gray-800">
+        <div className="text-dim-black">
           <Component {...pageProps} />
         </div>
       </DefaultLayout>

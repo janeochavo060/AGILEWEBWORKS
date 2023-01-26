@@ -1,6 +1,5 @@
 import Image from 'next/image'
 const S1 = ({ slice }) => {
-  console.log(slice, 'Slice')
   return (
     <div className="flex flex-col justify-center items-center w-full lg:h-[500px] h-full lg:mx-0 px-6">
       <div className="flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full">
@@ -33,5 +32,5 @@ const S1 = ({ slice }) => {
       </div>
     </div>
   );
-}
+};
 export default S1

@@ -12,11 +12,16 @@ const Menu = ({ className }) => {
     { name: "Contact", url: "/contact" },
   ]);
 
+  const [showMenu, setShowMenu] = useState(true);
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
+      const screenHeight = window?.screen?.height;
+      console.log({ position, screenHeight }, position >= screenHeight);
+      setShowMenu(position >= screenHeight || position === 0);
       setScrollPosition(position);
     };
 
@@ -27,12 +32,14 @@ const Menu = ({ className }) => {
 
   return (
     <div
-      className={`sticky top-0 py-6 z-[100] w-full transition duration-600 ease-in-out backdrop-blur ${
+      className={`py-6 z-[100] w-full transition duration-600 ease-in-out ${
         className || ""
       } ${
-        scrollPosition === 0
-          ? "bg-transparent"
-          : "shadow-lg slideDown bg-white/[65%] "
+        showSideMenu
+          ? scrollPosition === 0
+            ? "bg-transparent"
+            : "shadow-lg slideDown bg-white/[65%] backdrop-blur sticky top-0 "
+          : ""
       }`}
     >
       <div

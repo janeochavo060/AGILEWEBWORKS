@@ -23,12 +23,12 @@ export default function TextMultipleImage({ slice }) {
                 <span>Learn More</span>
                 <svg
                   width="16"
-                  height="16"
+                  height="12"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 16 12"
                   fill="currentColor"
                 >
-                  <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+                  <path d="M10 12L8.6 10.55L12.15 7H0V5H12.15L8.6 1.45L10 0L16 6L10 12Z" />
                 </svg>
               </Link>
             )}

@@ -3,7 +3,11 @@ import React, { useRef, userRef, useState } from "react";
 import ReactPlayer from "react-player";
 import PlayIcon from "@/components/svgComponents/PlayIcon";
 
-export default function YouTubeEmbed({ src = "", height = "calc(100vh-60%)" }) {
+export default function YouTubeEmbed({
+  src = "",
+  height = "calc(100vh-60%)",
+  playButtonClass,
+}) {
   const getYoutubeId = () => {
     var regExp =
       /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -39,7 +43,9 @@ export default function YouTubeEmbed({ src = "", height = "calc(100vh-60%)" }) {
           />
           <button
             aria-label="Play Video"
-            className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-50 hover:bg-black/10 transition"
+            className={`absolute top-0 left-0 w-full h-full flex items-center justify-center z-50 hover:bg-black/10 transition ${
+              playButtonClass || "text-white/50"
+            }`}
             onClick={onPlay}
           >
             <PlayIcon width="100" height="100" />

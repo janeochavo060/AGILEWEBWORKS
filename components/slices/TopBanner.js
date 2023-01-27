@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -5,13 +6,15 @@ export default function TopBanner({ slice }) {
   const image = `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`;
   return (
     <div
-      className="min-h-screen -mt-[111px] bg-no-repeat bg-cover bg-center flex flex-col justify-center"
+      className="relative min-h-screen -mt-[111px] bg-no-repeat bg-cover bg-center flex flex-col justify-center"
       style={{
-        backgroundImage: `${slice?.main?.bg_color}, url(${image})`,
+        background: slice?.main?.bg_color,
+        // backgroundImage: `${slice?.main?.bg_color}, url(${image})`,
       }}
     >
-      <div className="max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8">
-        <h1 className="text-7xl font-bold">{slice?.main?.title}</h1>
+      <Image alt="" src={image} fill priority />
+      <div className="max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
+        <h1 className="text-6xl font-bold leading-tight">{slice?.main?.title}</h1>
         {slice?.main?.link && (
           <Link
             href={slice?.main?.link}

@@ -11,7 +11,6 @@ const Menu = ({ className }) => {
     { name: "Capabilities", url: "/capabilities" },
     { name: "Contact", url: "/contact" },
   ]);
-
   const [showMenu, setShowMenu] = useState(true);
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -20,25 +19,26 @@ const Menu = ({ className }) => {
     const handleScroll = () => {
       const position = window.scrollY;
       const screenHeight = window?.screen?.height;
-      console.log({ position, screenHeight }, position >= screenHeight);
-      setShowMenu(position >= screenHeight || position === 0);
+      setShowMenu(
+        router.pathname !== "/" || position >= screenHeight || position === 0
+      );
       setScrollPosition(position);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [router]);
 
   return (
     <div
-      className={`py-6 z-[100] w-full transition duration-600 ease-in-out ${
+      className={`py-6 z-[100] w-full transition-all duration-600 ease-in-out ${
         className || ""
-      } ${
-        showSideMenu
+      }${
+        showMenu
           ? scrollPosition === 0
-            ? "bg-transparent"
-            : "shadow-lg slideDown bg-white/[65%] backdrop-blur sticky top-0 "
+            ? "bg-transparent relative slideDown"
+            : "shadow-lg slideDown bg-white backdrop-blur sticky top-0 "
           : ""
       }`}
     >

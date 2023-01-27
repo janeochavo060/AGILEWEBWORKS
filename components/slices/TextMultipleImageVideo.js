@@ -25,11 +25,10 @@ export default function TextMultipleImageVideo({ slice }) {
         </div>
         <div className="flex flex-wrap">
           {/* <div className="grid grid-cols-5 gap-4 h-full"> */}
-          <div className="w-full flex justify-center max-h-[45vh]">
+          <div className="w-full flex justify-center max-h-[45vh] min-h-[45vh]">
             <div className="lg:max-w-[45vw] aspect-video lg:aspect-square  rounded-r-xxl rounded-bl-xxl overflow-hidden lg:-mr-[10%]">
               <YouTubeEmbed
                 src={slice?.main?.video}
-                height="100%"
                 playButtonClass="text-white"
               />
             </div>

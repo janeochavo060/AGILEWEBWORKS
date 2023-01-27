@@ -8,7 +8,6 @@ export default function TextMultipleImageVideo({ slice }) {
     (image) =>
       `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`
   );
-  console.log({ slice, images });
   return (
     <div className="relative py-8 h-screen flex items-center">
       <span
@@ -20,14 +19,14 @@ export default function TextMultipleImageVideo({ slice }) {
           // clipPath: "polygon(0 20%, 35% 20%, 35% 60%, 0% 100%)",
         }}
       />
-      <div className="flex flex-col lg:flex-row items-center gap-8 max-w-screen-xl mx-auto px-4 md:px-8 2xl:px-0 h-full">
-        <div className="lg:max-w-lg space-y-4">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-y-12 lg:gap-y-8 gap-x-8 max-w-screen-xl mx-auto px-4 md:px-8 2xl:px-0 h-full">
+        <div className="lg:max-w-md space-y-4">
           <TitleContentBlock slice={slice} titleClass="text-4xl" />
         </div>
-        <div className="flex flex-wrap h-full">
+        <div className="flex flex-wrap">
           {/* <div className="grid grid-cols-5 gap-4 h-full"> */}
-          <div className="w-full flex justify-center border">
-            <div className="w-1/2 h-auto aspect-square  rounded-r-xxl rounded-bl-xxl overflow-hidden lg:-mr-[10%]">
+          <div className="w-full flex justify-center max-h-[45vh]">
+            <div className="lg:max-w-[45vw] aspect-video lg:aspect-square  rounded-r-xxl rounded-bl-xxl overflow-hidden lg:-mr-[10%]">
               <YouTubeEmbed
                 src={slice?.main?.video}
                 height="100%"
@@ -39,10 +38,10 @@ export default function TextMultipleImageVideo({ slice }) {
             return (
               <div
                 key={img + i}
-                className={`flex w-1/2 ${
+                className={`flex w-1/2 py-4 ${
                   i === 0
-                    ? "max-h-[240px] lg:-mt-[15%] px-4"
-                    : "max-h-[240px] py-4"
+                    ? "lg:max-h-[200px] pr-2 lg:py-0 lg:-mt-[10%] lg:px-4"
+                    : "lg:max-h-[240px] pl-2"
                 }`}
               >
                 <Image

@@ -2,8 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    maxAge: 86400,
-    minimumCacheTTL: 86400,
     remotePatterns: [
       {
         protocol: "https",

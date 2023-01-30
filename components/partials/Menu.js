@@ -46,20 +46,14 @@ const Menu = ({ className }) => {
         className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
         <div className="flex justify-between items-center h-full">
-          <img src="/images/logo.png" alt="Halcyon Logo"
-            className='mx-1 xl:px-0 px-4'
-            width={200}
-            height={24} 
-          />
-
-          {/* <Image
+          <Image
             src="/images/logo.png"
             alt="Halcyon Logo"
             className="mx-1 xl:px-0 px-4"
             width={200}
             height={24}
             onClick={() => router.push(`/`)}
-          /> */}
+          />
           <div className="hidden xl:flex md:mx-0 mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-16 gap-y-2">
             {upperHeaderMenu.length > 0 ? (
               upperHeaderMenu.map((nav, i) => {

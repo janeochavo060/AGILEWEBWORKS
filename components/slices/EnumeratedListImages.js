@@ -3,7 +3,6 @@ import Image from 'next/image';
 import TitleContentBlock from "../partials/TitleContentBlock";
 export default function EnumeratedListImages({ slice }) {
   const [active, setActive] = useState("");
-
   const stages = slice?.main?.stages || [];
   const stage = stages.find((stage) => stage?.name === active) || stages[0];
   const images = (stage?.images || []).map(
@@ -12,7 +11,7 @@ export default function EnumeratedListImages({ slice }) {
   );
 
   return (
-    <div className="w-full max-w-screen-xl mx-auto py-8 md:max-h-[calc(100vh-111px)] space-y-4 px-8 xl:px-0">
+    <div className="w-full max-w-screen-xl mx-auto py-8 space-y-4 px-8 xl:px-0">
       <TitleContentBlock
         slice={slice}
         className="text-center"

@@ -3,7 +3,6 @@ import React from "react";
 import TitleContentBlock from "../partials/TitleContentBlock";
 
 export default function TextImageList({ slice }) {
-  console.log({ slice });
   const images = slice?.main?.images || [];
   return (
     <div className="flex flex-col text-center space-y-4">

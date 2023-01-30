@@ -19,6 +19,19 @@ module.exports = {
       borderRadius: {
         xxl: "32px",
       },
+      keyframes: {
+        "scale-in": {
+          from: {
+            transform: "scale(0)",
+          },
+          to: {
+            transform: "scale(1)",
+          },
+        },
+      },
+      animation: {
+        "scale-in": "scale-in 1s ease-in-out",
+      },
     },
   },
   plugins: [],

@@ -1,84 +1,78 @@
 import React, { useState, useEffect, } from 'react';
 import Image from 'next/image';
+import TitleContentBlock from "../partials/TitleContentBlock";
 export default function EnumeratedListImages({ slice }) {
-  const [agileSteps, setAgileSteps] = useState([
-    { name: "Plan" },
-    { name: "Design" },
-    { name: "Develop" },
-    { name: "Test" },
-    { name: "Deploy" },
-    { name: "Review" },
-    { name: "Launch" },
-  ]);
-  const [images, setImages] = useState([
-    { src: "/mockups/wingzone.jpg" },
-    { src: "/mockups/mimosa.jpg" },
-  ]);
-  const [active, setActive] = useState("Plan");
+  const [active, setActive] = useState("");
+
+  const stages = slice?.main?.stages || [];
+  const stage = stages.find((stage) => stage?.name === active) || stages[0];
+  const images = (stage?.images || []).map(
+    (img) =>
+      `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${img}`
+  );
 
   return (
-    // BIG TITLE; LEFT MENU; 3 IMAGES DIFFERENT SIZES
-    <div className="my-8">
-      <div className="flex flex-col justify-center items-center w-full md:h-[900px] h-full lg:mx-0  ">
-        <div className="flex lg:text-[40px] text-[30px] font-bold text-gray-700 max-w-[1000px] text-center ">
-          {`Applying the Agile Methodology (Scrum) together with a creative thinking approach`}
+    <div className="w-full max-w-screen-xl mx-auto py-8 md:max-h-[calc(100vh-111px)] space-y-4 px-8 xl:px-0">
+      <TitleContentBlock
+        slice={slice}
+        className="text-center"
+        contentClass="max-w-lg px-4 mx-auto"
+      />
+      <div className="flex flex-col-reverse md:flex-row items-center my-8 justify-around">
+        <div
+          className="grid grid-flow-col md:flex flex-col gap-8 h-full w-full md:w-1/3"
+          style={{
+            gridTemplateRows: `repeat(${Math.ceil(stages.length / 2)}, 1fr)`,
+          }}
+        >
+          {stages.map((item, i) => (
+            <button
+              key={item?.name}
+              aria-label={item?.name}
+              className={`text-left transition-all flex flex-col md:flex-row md:items-center gap-x-4 text-3xl font-bold`}
+              onClick={() => setActive(item?.name)}
+            >
+              <span className="text-sm">{String(i + 1).padStart(2, "0")}</span>
+              <span
+                className={`underline-animation ${
+                  stage?.name === item?.name && "underline-animation-active"
+                }`}
+              >
+                {item?.name}
+              </span>
+            </button>
+          ))}
         </div>
-        <div className="flex md:flex-row flex-col justify-between items-center xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full my-8">
-          <div className="flex flex-col justify-center items-start">
-            {agileSteps &&
-              agileSteps.map((item, i) => (
-                <div key={i} onClick={() => setActive(item?.name)}>
-                  <div
-                    className={`
-                        flex items-center text-gray-700 my-2 md:px-0 font-bold border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline
-                          
-                        `}
-                  >
-                    <span className="text-[12px] px-6">{`0${i + 1}`}</span>
-                    <span
-                      className={`
-                        md:text-[38px] text-[30px] 
-                        ${
-                          active === item?.name
-                            ? "underline underline-offset-4"
-                            : ""
-                        }
-                      `}
-                    >
-                      {item.name}
-                    </span>
-                  </div>
-                </div>
-              ))}
-          </div>
-          <div className="flex flex-col md:items-end items-center">
-            <div className="flex items-end ">
-              <div className="relative md:w-[500px] w-[190px] md:h-[300px] h-[300px] m-2">
-                <Image
-                  src={"/images/stock/stock3.jpg"}
-                  alt="image"
-                  className="rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] shadow-md"
-                  fill
-                />
-              </div>
-              <div className="relative md:w-[200px] w-[150px] md:h-[300px] h-[250px] m-2">
-                <Image
-                  src={"/images/stock/stock4.jpg"}
-                  alt="image"
-                  className="rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] shadow-md"
-                  fill
-                />
-              </div>
+        <div className="w-full flex flex-col md:items-end items-center">
+          <div className="flex items-end w-full md:w-auto">
+            <div className="relative w-2/3 lg:w-[500px] md:w-[190px] lg:h-[300px] h-[250px] m-2">
+              <Image
+                src={images[0]}
+                blurDataURL={images[0]}
+                alt="image"
+                className="object-cover rounded-b-xxl rounded-tr-xxl shadow-md"
+                fill
+              />
             </div>
-            <div className="flex justify-end items-end">
-              <div className="relative  md:w-[600px] w-[300px] md:h-[370px] h-[200px] m-4">
-                <Image
-                  src={"/images/stock/stock2.jpg"}
-                  alt="image"
-                  fill
-                  className=" rounded-tr-[20px] rounded-bl-[20px] rounded-br-[20px] shadow-md"
-                />
-              </div>
+            <div className="relative w-1/3 lg:w-[200px] md:w-[150px] lg:h-[300px] h-[250px] m-2">
+              <Image
+                src={images[1]}
+                blurDataURL={images[1]}
+                alt="image"
+                className="object-cover rounded-b-xxl rounded-tr-xxl shadow-md"
+                fill
+              />
+            </div>
+          </div>
+          <div className="flex justify-end items-end w-full">
+            <div className="relative lg:w-[600px] w-2/3 md:w-[300px] lg:h-[370px] md:h-[200px] aspect-video m-4">
+              <Image
+                src={images[2]}
+                blurDataURL={images[2]}
+                alt="image"
+                fill
+                className="object-cover rounded-b-xxl rounded-tr-xxl shadow-md"
+              />
             </div>
           </div>
         </div>

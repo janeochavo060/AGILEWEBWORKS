@@ -183,6 +183,16 @@ button {
 	box-sizing: border-box;
 	font-weight: 600;
 }
+.underline-animation {
+	background: linear-gradient(currentColor 0 0) bottom left/ var(--underline-width, 0%) 0.1em no-repeat;
+	display: inline-block;
+	text-decoration: none;
+	transition: background-size 0.5s;
+}
+
+.underline-animation-active {
+	--underline-width: 100%;
+}
 @keyframes AnimationName {
   0%,
   100% {

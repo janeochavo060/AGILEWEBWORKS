@@ -34,16 +34,17 @@ const Menu = ({ className }) => {
     <div
       className={`py-6 z-[100] w-full transition-all duration-600 ease-in-out ${
         className || ""
-      }${
+      } ${
         showMenu
           ? scrollPosition === 0
-            ? "bg-transparent relative slideDown"
+            ? "bg-transparent fixed top-0 slideDown"
             : "shadow-lg slideDown bg-white backdrop-blur sticky top-0 "
           : ""
       }`}
     >
       <div
-        className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
+        className={`max-w-screen-xl w-full mx-auto px-2 xl:px-0`}
+        // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
         <div className="flex justify-between items-center h-full">
           <Image
@@ -61,13 +62,10 @@ const Menu = ({ className }) => {
                 const isActive = pathname === nav?.url;
                 return (
                   <Link
-                    href={nav.url ? nav.url : router.pathname}
-                    as={nav.url ? nav.url : router.pathname}
+                    href={nav?.url || router.pathname}
                     key={i}
-                    className={`md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal ${
-                      isActive
-                        ? "underline underline-offset-8 text-primary"
-                        : ""
+                    className={`md:text-base text-sm md:px-0 border-b-2 py-1 border-transparent slide-line-hover tracking-normal underline-animation ${
+                      isActive ? "text-primary underline-animation-active" : ""
                     }`}
                   >
                     {nav.name}

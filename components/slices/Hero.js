@@ -1,43 +1,67 @@
-import Image from 'next/image'
-import { Router } from "next/router";
+import Link from "next/link";
+import TitleContentBlock from "../partials/TitleContentBlock";
 export default function Slice({ slice }) {
-  console.log(slice);
+  console.log({ slice });
+
+  const scrollToComponent = (e) => {
+    const elem = document.getElementById(slice?.main?.btn_scroll_to);
+    console.log({ elem });
+
+    return;
+    window.scrollTo({
+      top: document.getElementById(slice?.main?.btn_scroll_to).offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
-      className="flex flex-col justify-end items-center w-full  h-full lg:mx-0 px-8 py-6 lg:py-12"
+      id={slice?.id}
+      className="flex items-center w-full  h-full lg:mx-0 px-8 py-6 lg:py-12 min-h-[65vh]"
       style={{ backgroundColor: `${slice?.main?.bg_color || "#FFFFFF"}` }}
     >
-      <div className="flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full">
+      <div className="flex justify-start items-start max-w-screen-xl mx-auto w-full">
+        {/* <div className="flex justify-start items-start xxl:min-w-[1345px] xl:min-w-[1260px] max-w-full"> */}
         <div className="flex xxl:max-w-[800px] xl:max-w-[800px] w-full items-center">
-          <div className="flex flex-col items-start ">
-            <div className="lg:text-[74px] leading-[80px] text-[35px] font-bold text-slate-800 py-4">
-              {slice?.main?.title ||
-                "Donec quam felis, ultricies pellentesque eu sem."}
-            </div>
-            <div
-              className="text-[18px] leading-[24px] text-teal-800 my-2"
-              dangerouslySetInnerHTML={{
-                __html:
-                  slice?.main?.content ||
-                  "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p>",
-              }}
+          <div className="flex flex-col gap-8">
+            <TitleContentBlock
+              slice={slice}
+              titleClass="text-6xl"
+              className="max-w-xl"
             />
-            {slice?.link && (
-              <div className="my-4">
-                <button
-                  className="flex px-4 py-2 transition ease-in-out delay-150 bg-sky-400 hover:bg-blue-500 hover:to-blue-500 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer"
-                  onClick={() => Router.push(slice?.link)}
+            {slice?.main?.link && (
+              <Link
+                href={slice?.main?.link}
+                className="mr-auto flex items-center gap-2 px-4 py-2 transition ease-in-out delay-150 bg-primary text-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
+              >
+                <span>Learn More</span>
+                <svg
+                  width="16"
+                  height="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 12"
+                  fill="currentColor"
                 >
-                  <span>Learn More</span>
-                  <Image
-                    src="/svg/arrow-right-white.svg"
-                    alt="Arrow right"
-                    className="mx-1"
-                    width={24}
-                    height={24}
-                  />
-                </button>
-              </div>
+                  <path d="M10 12L8.6 10.55L12.15 7H0V5H12.15L8.6 1.45L10 0L16 6L10 12Z" />
+                </svg>
+              </Link>
+            )}
+            {slice?.main?.btn_scroll_to && (
+              <button
+                onClick={scrollToComponent}
+                className="mr-auto flex items-center gap-2 px-4 py-2 transition ease-in-out delay-150 bg-primary text-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
+              >
+                <span>Learn More</span>
+                <svg
+                  width="16"
+                  height="12"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 12"
+                  fill="currentColor"
+                >
+                  <path d="M10 12L8.6 10.55L12.15 7H0V5H12.15L8.6 1.45L10 0L16 6L10 12Z" />
+                </svg>
+              </button>
             )}
           </div>
         </div>

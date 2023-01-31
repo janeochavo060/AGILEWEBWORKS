@@ -10,9 +10,13 @@ export default function Page({ page, slices }) {
 
   return (
     <div>
-      {sliceComponents.map((SliceComponent, key) => (
-        <SliceComponent key={key} slice={slices[key].data} />
-      ))}
+      {sliceComponents.map((SliceComponent, key) => {
+        let data = {
+          ...slices[key]?.data,
+          id: `${slices[key]?.key}-${key}`,
+        };
+        return <SliceComponent key={key} slice={data} />;
+      })}
     </div>
   );
 }

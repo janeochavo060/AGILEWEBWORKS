@@ -16,13 +16,13 @@ export default function TitledListWithMultiImages({ slice }) {
     >
       <div
         id={slice?.id}
-        className="min-h-[75vh] w-full max-w-screen-xl mx-auto py-8 space-y-4 px-8 xl:px-0 flex items-center gap-8 border-t-2 border-black/10"
+        className="min-h-[75vh] w-full max-w-screen-xl mx-auto py-8 px-8 xl:px-0 flex flex-col lg:flex-row items-center gap-24 lg:gap-8 border-t-2 border-black/10"
       >
-        <div>
+        <div className="w-full md:w-auto">
           {slice?.main?.title && <h2 className="mb-4">{slice?.main?.title}</h2>}
           {stages && stages.length > 0 && (
             <div
-              className="grid grid-flow-col md:flex flex-col gap-8 h-full w-full md:w-1/3"
+              className="grid grid-flow-col lg:flex flex-col gap-8 h-full w-full md:w-1/3"
               style={{
                 gridTemplateRows: `repeat(${Math.ceil(
                   stages.length / 2
@@ -51,7 +51,7 @@ export default function TitledListWithMultiImages({ slice }) {
             </div>
           )}
         </div>
-        <div className="flex gap-8 w-full">
+        <div className="flex flex-col md:flex-row gap-8 w-full">
           <div className="w-full space-y-12">
             {stage?.title && (
               <h3 className="text-3xl font-bold text-center max-w-2xl mx-auto">
@@ -93,7 +93,8 @@ export default function TitledListWithMultiImages({ slice }) {
                     blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
                     width="400"
                     height="200"
-                    className="aspect-[9/16] w-full max-w-[55%] max-h-[40vh] object-top rounded-xxl shadow-lg last:-ml-[10%] first:-mt-[50%]"
+                    className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] last:z-10 first:relative first:md:-top-[50%]"
+                    // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] first:md:-mt-[50%]"
                   />
                 );
               })}

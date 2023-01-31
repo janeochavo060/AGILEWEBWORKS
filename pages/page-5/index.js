@@ -11,9 +11,7 @@ const index = ({projects}) => {
       {projects.map((project, index) => (
         <h2 key={index}>
           <Link href={`/page-5/` + project.slug}>
-            <a href={`/page-5/` + project.slug}>
               {project.title}
-            </a>
           </Link>
         </h2>
       ))}

@@ -28,9 +28,20 @@ module.exports = {
             transform: "scale(1)",
           },
         },
+        "slide-out": {
+          from: {
+            transform: "translate-x-0",
+            opacity: "1",
+          },
+          to: {
+            transform: "translate-x-100",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "scale-in": "scale-in 1s ease-in-out",
+        "slide-out": "slide-out 1s ease-in-out",
       },
     },
   },

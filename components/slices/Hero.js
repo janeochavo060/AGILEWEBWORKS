@@ -5,11 +5,11 @@ export default function Slice({ slice }) {
 
   const scrollToComponent = (e) => {
     const elem = document.getElementById(slice?.main?.btn_scroll_to);
-    console.log({ elem });
 
-    return;
+    const scrollY = window.scrollY - 120;
+    const scrollTo = elem?.offsetTop;
     window.scrollTo({
-      top: document.getElementById(slice?.main?.btn_scroll_to).offsetTop,
+      top: scrollTo,
       behavior: "smooth",
     });
   };
@@ -58,6 +58,7 @@ export default function Slice({ slice }) {
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 16 12"
                   fill="currentColor"
+                  className="rotate-90"
                 >
                   <path d="M10 12L8.6 10.55L12.15 7H0V5H12.15L8.6 1.45L10 0L16 6L10 12Z" />
                 </svg>

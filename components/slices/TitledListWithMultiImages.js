@@ -17,36 +17,39 @@ export default function TitledListWithMultiImages({ slice }) {
       <div
         id={slice?.id}
         className="min-h-[75vh] w-full max-w-screen-xl mx-auto py-8 space-y-4 px-8 xl:px-0 flex items-center gap-8 border-t-2 border-black/10"
-        // className="min-h-[calc(100vh-111px)] w-full max-w-screen-xl mx-auto py-8 space-y-4 px-8 xl:px-0 flex items-center gap-8 border-t-2 border-black/10"
       >
         <div>
           {slice?.main?.title && <h2 className="mb-4">{slice?.main?.title}</h2>}
-          <div
-            className="grid grid-flow-col md:flex flex-col gap-8 h-full w-full md:w-1/3"
-            style={{
-              gridTemplateRows: `repeat(${Math.ceil(stages.length / 2)}, 1fr)`,
-            }}
-          >
-            {stages.map((item, i) => (
-              <button
-                key={item?.name}
-                aria-label={item?.name}
-                className={`text-left transition-all flex flex-col md:flex-row md:items-center gap-x-4 text-3xl font-bold`}
-                onClick={() => setActive(item?.name)}
-              >
-                <span className="text-sm">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span
-                  className={`underline-animation ${
-                    stage?.name === item?.name && "underline-animation-active"
-                  }`}
+          {stages && stages.length > 0 && (
+            <div
+              className="grid grid-flow-col md:flex flex-col gap-8 h-full w-full md:w-1/3"
+              style={{
+                gridTemplateRows: `repeat(${Math.ceil(
+                  stages.length / 2
+                )}, 1fr)`,
+              }}
+            >
+              {stages.map((item, i) => (
+                <button
+                  key={item?.name}
+                  aria-label={item?.name}
+                  className={`text-left transition-all flex flex-col md:flex-row md:items-center gap-x-4 text-3xl font-bold`}
+                  onClick={() => setActive(item?.name)}
                 >
-                  {item?.name}
-                </span>
-              </button>
-            ))}
-          </div>
+                  <span className="text-sm">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span
+                    className={`underline-animation ${
+                      stage?.name === item?.name && "underline-animation-active"
+                    }`}
+                  >
+                    {item?.name}
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
         <div className="flex gap-8 w-full">
           <div className="w-full space-y-12">
@@ -56,29 +59,32 @@ export default function TitledListWithMultiImages({ slice }) {
               </h3>
             )}
             {/* DESKTOP IMAGE */}
-            <div className="relative">
-              <Image
-                alt=""
-                src={laptop}
-                blurDataURL={laptop}
-                width="400"
-                height="200"
-                className="h-full w-full z-10"
-              />
-              <div className="absolute top-[6.3%] w-full max-w-[78%] max-h-[85%] h-full left-1/2 -translate-x-1/2">
+            {stage?.desktop_image && (
+              <div className="relative">
                 <Image
                   alt=""
-                  src={desktopImage}
-                  blurDataURL={desktopImage}
-                  fill
-                  className="h-full w-full object-cover bg-white"
+                  src={laptop}
+                  blurDataURL={laptop}
+                  width="400"
+                  height="200"
+                  className="h-full w-full z-10"
                 />
+                <div className="absolute top-[6.3%] w-full max-w-[78%] max-h-[85%] h-full left-1/2 -translate-x-1/2">
+                  <Image
+                    alt=""
+                    src={desktopImage}
+                    blurDataURL={desktopImage}
+                    fill
+                    className="h-full w-full object-cover bg-white"
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
           {stage?.mobile_images && stage?.mobile_images.length > 0 && (
             <div className="flex pt-[15%]">
               {stage?.mobile_images.map((image) => {
+                if (!image) return <></>;
                 return (
                   <Image
                     key={image}

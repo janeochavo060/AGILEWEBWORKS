@@ -32,7 +32,7 @@ const Menu = ({ className }) => {
 
   return (
     <div
-      className={`py-6 z-[100] w-full transition-all duration-600 ease-in-out ${
+      className={`py-4 z-[100] w-full transition-all duration-600 ease-in-out ${
         className || ""
       } ${
         showMenu
@@ -43,7 +43,11 @@ const Menu = ({ className }) => {
       }`}
     >
       <div
-        className={`max-w-screen-xl w-full mx-auto px-2 lg:px-8 xxl:px-0`}
+        className={`px-4 lg:px-0 w-full mx-auto ${
+          router.pathname !== "/" || scrollPosition !== 0
+            ? "max-w-screen-xl"
+            : "lg:px-[calc(2rem+5%)]"
+        }`}
         // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
         <div className="flex justify-between items-center h-full">

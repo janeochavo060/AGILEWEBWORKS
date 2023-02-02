@@ -52,7 +52,7 @@ const Menu = ({ className }) => {
               src="/images/logo.png"
               alt="Halcyon Logo"
               className="mx-1 xl:px-0 px-4"
-              width={175}
+              width={150}
               height={24}
             />
           </Link>

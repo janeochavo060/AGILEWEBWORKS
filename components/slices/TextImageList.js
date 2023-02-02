@@ -5,7 +5,7 @@ import TitleContentBlock from "../partials/TitleContentBlock";
 export default function TextImageList({ slice }) {
   const images = slice?.main?.images || [];
   return (
-    <div className="flex flex-col text-center space-y-4">
+    <div className="flex flex-col text-center space-y-4 my-16">
       <TitleContentBlock slice={slice} contentClass="max-w-xl px-4 mx-auto" />
       <div className="flex flex-wrap items-center justify-center gap-16 p-8">
         {images.map((image, i) => (

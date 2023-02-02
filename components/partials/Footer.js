@@ -16,25 +16,19 @@ const Footer = (props) => {
       <div
         className={`md:py-4 py-0 z-50 w-full transition duration-600 ease-in-out`}
       >
-        <div className='flex flex-col justify-center items-center text-gray-500'>
+        <div className="flex flex-col justify-center items-center text-gray-500">
           <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden ">
             <div className="xl:flex hidden flex-row md:mx-0 mx-4 py-4 items-center justify-between">
-                <div className="flex flex-no-wrap border-transparent items-center whitespace-nowrap overflow-x-auto">
-                  {!upperHeaderMenu.length && (
-                    <div className="border-b-4 border-transparent ">
-                      Loading
-                    </div>
-                  )}
+              <div className="flex flex-no-wrap border-transparent items-center whitespace-nowrap overflow-x-auto">
+                {!upperHeaderMenu.length && (
+                  <div className="border-b-4 border-transparent ">Loading</div>
+                )}
 
-                  {upperHeaderMenu &&
-                    upperHeaderMenu.map((nav, i) => (
-                      <Link
-                        href={nav.url ? nav.url : router.pathname}
-                        as={nav.url ? nav.url : router.pathname}
-                        key={i}
-                      >
-                        <div
-                          className={`
+                {upperHeaderMenu &&
+                  upperHeaderMenu.map((nav, i) => (
+                    <Link href={nav.url || router.pathname} key={i}>
+                      <div
+                        className={`
                               md:text-base text-sm mr-16  md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal
                               ${
                                 router.pathname.includes(nav.url) &&
@@ -43,35 +37,36 @@ const Footer = (props) => {
                                   : ""
                               }
                             `}
-                        >
-                          {nav.name}
-                        </div>
-                      </Link>
-                    ))
-                  }
-                  
-                </div>
-                <div className=''>
-                  <p className={`md:text-base font-semibold text-sm mx-10  md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}>
-                    sales@halcyonagile.com.au
-                  </p>
-                </div>
-                <div className=''>
-                  <p className={`text-right font-semibold md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}>
-                    L3-02B, SOHO Retail Podium 748 <br/> Shaw Blvd, Greenfield District, <br/> Mandaluyong City, 1552
-                  </p>
-                </div>
+                      >
+                        {nav.name}
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+              <div className="">
+                <p
+                  className={`md:text-base font-semibold text-sm mx-10  md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}
+                >
+                  sales@halcyonagile.com.au
+                </p>
+              </div>
+              <div className="">
+                <p
+                  className={`text-right font-semibold md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}
+                >
+                  L3-02B, SOHO Retail Podium 748 <br /> Shaw Blvd, Greenfield
+                  District, <br /> Mandaluyong City, 1552
+                </p>
               </div>
             </div>
+          </div>
           <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden border-t border-gray-400">
             <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-center">
-              <div
-                className="flex text-sm xxl:mx-0 py-6 cursor-pointer"
-              >
+              <div className="flex text-sm xxl:mx-0 py-6 cursor-pointer">
                 <Image
                   src="/images/logo.png"
                   alt="Halcyon Logo"
-                  className='mx-1'
+                  className="mx-1"
                   width={150}
                   height={24}
                 />
@@ -100,15 +95,15 @@ const Footer = (props) => {
                     height={24}
                   />
                 </div> */}
-                <div className='flex flex-col md:items-end items-center'>
-                  <div className='cursor-pointer'>
+                <div className="flex flex-col md:items-end items-center">
+                  <div className="cursor-pointer">
                     Privacy | Terms & Conditions
                   </div>
-                  <div className='flex items-center cursor-pointer'>
+                  <div className="flex items-center cursor-pointer">
                     <Image
                       src="/svg/copyright.svg"
                       alt="Copyright Logo"
-                      className='mx-1'
+                      className="mx-1"
                       width={15}
                       height={15}
                     />
@@ -119,7 +114,6 @@ const Footer = (props) => {
             </div>
           </div>
         </div>
-        
       </div>
     </>
   );

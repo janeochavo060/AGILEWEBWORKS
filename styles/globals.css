@@ -105,6 +105,9 @@ a {
     color-scheme: dark;
   }
 } */
+* {
+  font-family: Inter;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

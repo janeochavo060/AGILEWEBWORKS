@@ -10,7 +10,7 @@ export default function TextMultipleImage({ slice }) {
       className="trapezoid-left"
       style={{ backgroundColor: slice?.main?.bg_color }}
     >
-      <div className="w-[95%] md:w-full my-8 max-w-screen-xl mx-auto pl-[7%] 2xl:pl-0">
+      <div className="w-[95%] md:w-full my-16 max-w-screen-xl mx-auto pl-[7%] 2xl:pl-0">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 xl:gap-16 max-w-screen-xl ml-auto p-4 xl:p-0">
           <div className="col-span-1 flex flex-col justify-center gap-4 text-white">
             <TitleContentBlock slice={slice} />

@@ -44,7 +44,7 @@ export default function EnumeratedListImages({ slice }) {
         </div>
         <div className="w-full flex flex-col md:items-end items-center">
           <div className="flex items-end w-full md:w-auto">
-            <div className="relative w-2/3 lg:w-[500px] md:w-[190px] lg:h-[300px] h-[250px] m-2">
+            <div className="relative w-2/3 lg:w-[500px] md:w-[190px] lg:h-[35vh] h-[250px] m-2">
               <Image
                 src={images[0]}
                 blurDataURL={images[0]}
@@ -53,7 +53,7 @@ export default function EnumeratedListImages({ slice }) {
                 fill
               />
             </div>
-            <div className="relative w-1/3 lg:w-[200px] md:w-[150px] lg:h-[300px] h-[250px] m-2">
+            <div className="relative w-1/3 lg:w-[200px] md:w-[150px] lg:h-[35vh] h-[250px] m-2">
               <Image
                 src={images[1]}
                 blurDataURL={images[1]}
@@ -64,7 +64,8 @@ export default function EnumeratedListImages({ slice }) {
             </div>
           </div>
           <div className="flex justify-end items-end w-full">
-            <div className="relative lg:w-[600px] w-2/3 md:w-[300px] lg:h-[370px] md:h-[200px] aspect-video m-4">
+            <div className="relative w-2/3 lg:w-[600px] md:w-[190px] lg:h-[35vh] h-[250px] m-2">
+              {/* <div className="relative lg:w-[600px] w-2/3 md:w-[300px] lg:h-[370px] md:h-[200px] aspect-video m-4"> */}
               <Image
                 src={images[2]}
                 blurDataURL={images[2]}

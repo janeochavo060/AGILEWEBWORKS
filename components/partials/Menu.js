@@ -32,29 +32,34 @@ const Menu = ({ className }) => {
 
   return (
     <div
-      className={`py-6 z-[100] w-full transition-all duration-600 ease-in-out ${
+      className={`py-4 z-[100] w-full transition-all duration-600 ease-in-out ${
         className || ""
       } ${
         showMenu
           ? scrollPosition === 0
             ? "bg-transparent fixed top-0 slideDown"
-            : "shadow-lg slideDown bg-white backdrop-blur sticky top-0 "
+            : "shadow-lg shadow-black/15 slideDown bg-white backdrop-blur sticky top-0 "
           : ""
       }`}
     >
       <div
-        className={`max-w-screen-xl w-full mx-auto px-2 xl:px-0`}
+        className={`px-4 lg:px-0 w-full mx-auto ${
+          router.pathname !== "/" || scrollPosition !== 0
+            ? "max-w-screen-xl"
+            : "lg:px-[calc(2rem+5%)]"
+        }`}
         // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
         <div className="flex justify-between items-center h-full">
-          <Image
-            src="/images/logo.png"
-            alt="Halcyon Logo"
-            className="mx-1 xl:px-0 px-4"
-            width={200}
-            height={24}
-            onClick={() => router.push(`/`)}
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="Halcyon Logo"
+              className="mx-1 xl:px-0 px-4"
+              width={150}
+              height={24}
+            />
+          </Link>
           <div className="hidden xl:flex md:mx-0 mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-16 gap-y-2">
             {upperHeaderMenu.length > 0 ? (
               upperHeaderMenu.map((nav, i) => {
@@ -64,8 +69,10 @@ const Menu = ({ className }) => {
                   <Link
                     href={nav?.url || router.pathname}
                     key={i}
-                    className={`md:text-base text-sm md:px-0 border-b-2 py-1 border-transparent slide-line-hover tracking-normal underline-animation ${
-                      isActive ? "text-primary underline-animation-active" : ""
+                    className={`md:text-base text-sm md:px-0 py-1 slide-line-hover tracking-normal underline-animation  ${
+                      isActive
+                        ? "text-primary underline-animation-active"
+                        : "hover:text-black/75"
                     }`}
                   >
                     {nav.name}
@@ -73,7 +80,8 @@ const Menu = ({ className }) => {
                 );
               })
             ) : (
-              <span className="border-b-4 border-transparent ">Loading</span>
+              <></>
+              // <span className="md:text-base text-sm md:px-0 py-1"></span>
             )}
             <button
               aria-label="Get a Quote"

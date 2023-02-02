@@ -64,7 +64,8 @@ export default function EnumeratedListImages({ slice }) {
             </div>
           </div>
           <div className="flex justify-end items-end w-full">
-            <div className="relative lg:w-[600px] w-2/3 md:w-[300px] lg:h-[370px] md:h-[200px] aspect-video m-4">
+            <div className="relative w-2/3 lg:w-[600px] md:w-[190px] lg:h-[300px] h-[250px] m-2">
+              {/* <div className="relative lg:w-[600px] w-2/3 md:w-[300px] lg:h-[370px] md:h-[200px] aspect-video m-4"> */}
               <Image
                 src={images[2]}
                 blurDataURL={images[2]}

@@ -10,7 +10,7 @@ export default function SingleImageText({ slice }) {
       className="trapezoid-right"
       style={{ backgroundColor: slice?.main?.bg_color }}
     >
-      <div className="w-[95%] md:w-full my-8 max-w-screen-xl mx-auto pr-[7%] 2xl:pr-0">
+      <div className="w-[95%] md:w-full my-16 max-w-screen-xl mx-auto pr-[7%] 2xl:pr-0">
         <div className="flex flex-col lg:flex-row items-center gap-4 xl:gap-16 max-w-screen-xl ml-auto p-4 md:py-8">
           <Image
             alt=""

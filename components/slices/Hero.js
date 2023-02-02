@@ -17,7 +17,7 @@ export default function Slice({ slice }) {
   return (
     <div
       id={slice?.id}
-      className="flex items-center w-full  h-full lg:mx-0 px-8 py-6 lg:py-12 min-h-[65vh]"
+      className="flex items-center w-full  h-full lg:mx-0 px-8 py-6 lg:py-12 min-h-[620px]"
       style={{ backgroundColor: `${slice?.main?.bg_color || "#FFFFFF"}` }}
     >
       <div className="flex justify-start items-start max-w-screen-xl mx-auto w-full">

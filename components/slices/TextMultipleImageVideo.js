@@ -9,7 +9,7 @@ export default function TextMultipleImageVideo({ slice }) {
       `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`
   );
   return (
-    <div className="relative py-8 h-screen flex items-center">
+    <div className="relative flex items-center my-16">
       <span
         className="w-full h-full absolute -z-10 left-0"
         style={{

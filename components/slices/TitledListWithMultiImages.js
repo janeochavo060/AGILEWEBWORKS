@@ -49,7 +49,7 @@ export default function TitledListWithMultiImages({ slice }) {
           )}
         </div>
         <div className="flex flex-col md:flex-row gap-8 w-full">
-          <div className="w-full space-y-12">
+          <div className="w-full space-y-20">
             {stage?.title && (
               <h3 className="text-3xl font-bold text-center max-w-2xl mx-auto">
                 {stage?.title}
@@ -78,9 +78,9 @@ export default function TitledListWithMultiImages({ slice }) {
               </div>
             )}
           </div>
-          {stage?.mobile_images && stage?.mobile_images.length > 0 && (
-            <div className="flex border">
-              {/* <div className="flex pt-[15%] "> */}
+          {/* {stage?.mobile_images && stage?.mobile_images.length > 0 && (
+            // <div className="flex relative -top-[50%]">
+            <div className="flex pt-[15%] ">
               {stage?.mobile_images.map((image) => {
                 if (!image) return <></>;
                 return (
@@ -91,9 +91,29 @@ export default function TitledListWithMultiImages({ slice }) {
                     blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
                     width="400"
                     height="200"
-                    className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"
+                    // className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] lg:h-[75%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"
                     // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] last:z-10 first:relative first:md:-top-[50%]"
-                    // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] first:md:-mt-[50%]"
+                    className="aspect-[9/16] w-full min-w-[55%] md:max-h-[50%] rounded-xxl shadow-lg last:-ml-[10%] first:md:-mt-[50%] last:md:-mb-[50%]"
+                  />
+                );
+              })}
+            </div>
+          )} */}
+          {stage?.mobile_images && stage?.mobile_images.length > 0 && (
+            <div className="flex justify-around gap-4 md:block relative min-w-[35%] min-h-[50vh] md:min-h-full">
+              {stage?.mobile_images.map((image) => {
+                if (!image) return <></>;
+                return (
+                  <Image
+                    key={image}
+                    alt=""
+                    src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                    blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                    width="400"
+                    height="200"
+                    // className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] lg:h-[75%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"
+                    // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] last:z-10 first:relative first:md:-top-[50%]"
+                    className="aspect-[9/20] w-1/2 md:w-full md:max-w-[55%] rounded-xxl shadow-lg md:absolute last:bottom-0 last:right-0 object-cover object-top"
                   />
                 );
               })}

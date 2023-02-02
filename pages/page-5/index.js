@@ -10,7 +10,7 @@ const index = ({projects}) => {
       </h1>
       {projects.map((project, index) => (
         <h2 key={index}>
-          <Link href={`/page-5/` + project.slug}>
+          <Link className="font-bold text-[50px]" href={`/page-5/` + project.slug}>
               {project.title}
           </Link>
         </h2>

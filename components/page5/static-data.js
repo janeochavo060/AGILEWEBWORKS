@@ -59,6 +59,64 @@ const ProjectsData = [
                 ]
             },
 
+            {
+                sliceType: 'ImageTitleDescription',
+                title: 'Feature Overview',
+                alignmentRight: 0, 
+                sliceId: 3,
+                image: {
+                    uri: '/page-5/Rectangle 11.png'
+                },
+                description: '<p><ul><li>The Progressive Web Application (PWA) provides Mobile App functionality, providing improved user retention and performance, without the complications involved in maintaining a mobile app.</li><li>It’s not downloaded from an app store. Users only need to click on the link (bottom right) to install it on their desktop or mobile phone home screen.</li><li>PWAs load in seconds, and use a very small amount of phone memory.</li><li>PWAs work offline like mobile apps.</li></ul></p>'
+            },
+            {
+                sliceType: 'ImageTitleDescription',
+                title: 'Select Delivery Date & Time',
+                alignmentRight: 1,
+                sliceId: 4,
+                image: {
+                    uri: '/page-5/Rectangle 12.png'
+                },
+                description: "<p><ul><li>A client can choose “Deliver Now” or a delivery date and time.</li><li>The store admin can set up the operating hours, and the days in advance which a customer can order for. In this example, it's a week in advance.</li><li>Each product has a “preparation time” and a “delivery time”. An order cannot be placed for a time if it’s less than the delivery and preparation time.</li><li>Special meals could have many hours of cooking time, where custom cakes may have a one or two day preparation time.</li></ul></p>"
+            },
+
+            {
+                sliceType: 'Carousel',
+                sliceId: 5,
+                title: 'Sites Built',
+                bgColor: '#E9EEF6',
+                images: [
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone'
+                    },
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone 1'
+                    },
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone 2'
+                    },
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone 3'
+                    },
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone 4'
+                    },
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone 5'
+                    },
+                    {
+                        uri: '/page-5/Rectangle 37.png',
+                        title: 'Wing Zone 6'
+                    }
+                ]
+            }
+
         ]
     }
 ]

@@ -10,7 +10,7 @@ export default function ImageWithMultipleList({ slice }) {
       style={{ backgroundColor: `${slice?.main?.bg_color || "transparent"}` }}
       className="px-8 xl:px-0"
     >
-      <div className="w-full max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-8 py-6 md:py-12">
+      <div className="w-full max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-8 py-6 md:py-16">
         <Image
           alt=""
           src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`}
@@ -33,11 +33,11 @@ export default function ImageWithMultipleList({ slice }) {
                       key={i.toString() + index}
                       className="flex items-center gap-2"
                     >
-                      {/* <span
+                      <span
                         dangerouslySetInnerHTML={{
                           __html: item?.bullet_icon,
                         }}
-                      /> */}
+                      />
                       <div
                         dangerouslySetInnerHTML={{ __html: innerItem?.content }}
                       />

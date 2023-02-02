@@ -8,7 +8,7 @@ export default function ImageWithMultipleList({ slice }) {
     <div
       id={slice?.id}
       style={{ backgroundColor: `${slice?.main?.bg_color || "transparent"}` }}
-      className="px-8 xl:px-0"
+      className="px-8 xxl:px-0"
     >
       <div className="w-full max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-8 py-6 md:py-16">
         <Image

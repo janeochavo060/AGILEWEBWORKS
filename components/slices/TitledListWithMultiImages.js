@@ -12,10 +12,9 @@ export default function TitledListWithMultiImages({ slice }) {
   return (
     <div
       style={{ backgroundColor: `${slice?.main?.bg_color || "transparent"}` }}
-      className=""
       id={slice?.id}
     >
-      <div className="min-h-[75vh] w-full max-w-screen-xl mx-auto py-8 px-8 xl:px-0 flex flex-col lg:flex-row items-center gap-24 lg:gap-8 border-t-2 border-black/10">
+      <div className="min-h-[75vh] w-full max-w-screen-xl mx-auto py-8 px-8 xxl:px-0 flex flex-col lg:flex-row items-center gap-24 lg:gap-8 border-t-2 border-black/10">
         <div className="w-full md:w-auto">
           {slice?.main?.title && <h2 className="mb-4">{slice?.main?.title}</h2>}
           {stages && stages.length > 0 && (

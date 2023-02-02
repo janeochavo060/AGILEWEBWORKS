@@ -48,7 +48,7 @@ export default function YouTubeEmbed({
             }`}
             onClick={onPlay}
           >
-            <PlayIcon width="100" height="100" />
+            <PlayIcon width="100" height="100" className="drop-shadow-md" />
           </button>
         </>
       )}

@@ -38,7 +38,7 @@ const Menu = ({ className }) => {
         showMenu
           ? scrollPosition === 0
             ? "bg-transparent fixed top-0 slideDown"
-            : "shadow-lg slideDown bg-white backdrop-blur sticky top-0 "
+            : "shadow-lg shadow-black/15 slideDown bg-white backdrop-blur sticky top-0 "
           : ""
       }`}
     >

@@ -79,7 +79,8 @@ export default function TitledListWithMultiImages({ slice }) {
             )}
           </div>
           {stage?.mobile_images && stage?.mobile_images.length > 0 && (
-            <div className="flex pt-[15%]">
+            <div className="flex border">
+              {/* <div className="flex pt-[15%] "> */}
               {stage?.mobile_images.map((image) => {
                 if (!image) return <></>;
                 return (
@@ -90,7 +91,8 @@ export default function TitledListWithMultiImages({ slice }) {
                     blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
                     width="400"
                     height="200"
-                    className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] last:z-10 first:relative first:md:-top-[50%]"
+                    className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"
+                    // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] last:z-10 first:relative first:md:-top-[50%]"
                     // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] first:md:-mt-[50%]"
                   />
                 );

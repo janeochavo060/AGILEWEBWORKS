@@ -3,6 +3,7 @@ import "@/styles/main.css";
 import DefaultLayout from "@/components/layouts/DefaultLayout";
 import Header from "@/components/partials/Header";
 import Head from "next/head";
+
 export default function App({ Component, pageProps }) {
   return (
     <>

@@ -1,6 +1,7 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
 import "@/styles/main.css";
-import DefaultLayout from "@/components/layouts/DefaultLayout";
+import "@/styles/unreset.css";
+import DefaultLayout from "@/layout/DefaultLayout";
 import Header from "@/components/partials/Header";
 import Head from "next/head";
 

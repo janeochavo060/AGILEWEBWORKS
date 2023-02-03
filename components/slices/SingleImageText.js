@@ -4,6 +4,8 @@ import TitleContentBlock from "@/components/partials/TitleContentBlock";
 import Link from "next/link";
 export default function SingleImageText({ slice }) {
   // SINGLE IMAGE WITH TEXT BLOCK
+  // Default Layout - Left: Image, Right: Text Title and Content
+  // Reversed Layout - Left: Text Title and Content, Right: Title (if slice.main.reverse_column is true)
 
   return (
     <div
@@ -22,7 +24,7 @@ export default function SingleImageText({ slice }) {
       <div className="w-[95%] md:w-full my-16 max-w-screen-xl mx-auto pr-[7%] 2xl:pr-0">
         <div
           className={`flex flex-col lg:flex-row items-center gap-4 xl:gap-16 max-w-screen-xl ml-auto p-4 md:py-8 ${
-            slice?.main?.reverse_column && "lg:flex-row-reverse"
+            slice?.main?.reverse_column && "lg:flex-row-reverse" // Reverse the elements order - in this case, image goes to right while content will be on left
           }`}
         >
           <Image

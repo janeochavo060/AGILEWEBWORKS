@@ -23,9 +23,10 @@ const Menu = ({ className }) => {
         if (position === 1) setShowMenu(false);
         else setShowMenu(true);
       } else {
-        setShowMenu(
-          router.pathname !== "/" || position >= screenHeight || position === 0
-        );
+        // setShowMenu(
+        //   router.pathname !== "/" || position >= screenHeight || position === 0
+        // );
+        setShowMenu(position >= screenHeight || position === 0);
       }
       setScrollPosition(position);
     };

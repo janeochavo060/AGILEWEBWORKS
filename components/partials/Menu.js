@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import {useRouter} from 'next/router';
-import Image from 'next/image'
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Image from "next/image";
 const Menu = ({ className }) => {
   const router = useRouter();
   const [showSideMenu, setShowSideMenu] = useState(false);
@@ -19,9 +19,15 @@ const Menu = ({ className }) => {
     const handleScroll = () => {
       const position = window.scrollY;
       const screenHeight = window?.screen?.height;
-      setShowMenu(
-        router.pathname !== "/" || position >= screenHeight || position === 0
-      );
+      if (router.pathname !== "/") {
+        if (position === 1) setShowMenu(false);
+        else setShowMenu(true);
+      } else {
+        // setShowMenu(
+        //   router.pathname !== "/" || position >= screenHeight || position === 0
+        // );
+        setShowMenu(position >= screenHeight || position === 0);
+      }
       setScrollPosition(position);
     };
 

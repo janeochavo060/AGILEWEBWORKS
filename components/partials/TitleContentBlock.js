@@ -14,7 +14,7 @@ export default function TitleContentBlock({
         {slice?.main?.title || ""}
       </h2>
       <div
-        className={`text-lg tracking-normal ${className || ""} ${
+        className={`unreset text-lg tracking-normal ${className || ""} ${
           contentClass || ""
         }`}
         dangerouslySetInnerHTML={{

@@ -3,9 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "@/lib/*": ["lib/*"],
+      "@/layout/*": ["layout/*"],
       "@/styles/*": ["styles/*"],
       "@/components/*": ["components/*"],
-      "@/public/*": ["public/*"],
+      "@/public/*": ["public/*"]
     }
   }
 }

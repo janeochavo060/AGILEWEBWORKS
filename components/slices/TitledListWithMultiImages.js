@@ -6,7 +6,6 @@ export default function TitledListWithMultiImages({ slice }) {
   const [active, setActive] = useState("");
   const stages = slice?.main?.stages || [];
   const stage = stages.find((stage) => stage?.name === active) || stages[0];
-
   const desktopImage = `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${stage?.desktop_image}`;
 
   return (

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 const S1 = ({ slice }) => {
   return (
     <div className="flex flex-col justify-center items-center w-full lg:h-[500px] h-full lg:mx-0 px-6">
@@ -9,7 +9,7 @@ const S1 = ({ slice }) => {
               {slice?.main?.heading}
             </div>
             <div
-              className="text-lg text-teal-800 my-2"
+              className="unreset text-lg text-teal-800 my-2"
               dangerouslySetInnerHTML={{ __html: slice?.main?.content }}
             />
             <div className="my-4">
@@ -33,4 +33,4 @@ const S1 = ({ slice }) => {
     </div>
   );
 };
-export default S1
+export default S1;

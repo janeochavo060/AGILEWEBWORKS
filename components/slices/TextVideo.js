@@ -22,7 +22,7 @@ export default function TextVideo({ slice, reverse }) {
       >
         <h2 className="font-bold text-white text-3xl">{slice?.main?.title}</h2>
         <div
-          className="text-white text-xl border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline"
+          className="unreset text-white text-xl border-b-2 border-transparent slide-line-hover tracking-normal cursor-pointer hover:underline"
           dangerouslySetInnerHTML={{ __html: slice?.main?.content }}
         />
       </div>

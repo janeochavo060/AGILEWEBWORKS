@@ -1,12 +1,8 @@
 import Link from "next/link";
 import TitleContentBlock from "../partials/TitleContentBlock";
 export default function Slice({ slice }) {
-  console.log({ slice });
-
   const scrollToComponent = (e) => {
     const elem = document.getElementById(slice?.main?.btn_scroll_to);
-
-    const scrollY = window.scrollY - 120;
     const scrollTo = elem?.offsetTop;
     window.scrollTo({
       top: scrollTo,

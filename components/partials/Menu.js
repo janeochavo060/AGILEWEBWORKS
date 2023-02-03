@@ -38,6 +38,7 @@ const Menu = ({ className }) => {
 
   return (
     <div
+      id="menu"
       className={`py-4 z-[100] w-full transition-all duration-600 ease-in-out ${
         className || ""
       } ${

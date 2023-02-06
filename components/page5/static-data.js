@@ -115,7 +115,27 @@ const ProjectsData = [
                         title: 'Wing Zone 6'
                     }
                 ]
-            }
+            },
+            {
+                sliceType: 'ImageTitleDescription',
+                title: 'Branch Manager Dashboard',
+                alignmentRight: 0, 
+                sliceId: 6,
+                image: {
+                    uri: '/page-5/Group 88.png'
+                },
+                description: '<p><ul><li>The app is setup to receive orders for the assigned Branch.</li><li>Works on any low cost Android phone that has Bluetooth.</li><li>Works on any low cost Android phone that has Bluetooth.</li><li>The phone beeps when an order is received, or when the order needs to be moved to the POS/kitchen. The phone beeps until the order is acknowledged to ensure that the order is not overlooked.</li><li>The app allows for managing the orders without the need for a laptop or PC. Orders can be searched. The status of any order can be set on the app, including being cancelled.</li><li>The printout is ideal for restaurants where the kitchen orders are managed through the POS. In that case, the order notification is made when the job needs to be entered into the POS. The printout has all the details required for entering the order into the POS.</li><li>A printout is also available for the delivery person.</li><li>The app connects via the internet, usually through WiFi.</li></ul></p>'
+            },
+            {
+                sliceType: 'ImageTitleDescription',
+                title: 'Branch Manager Dashboard',
+                alignmentRight: 1, 
+                sliceId: 7,
+                image: {
+                    uri: '/page-5/Rectangle 14.png'
+                },
+                description: '<p>The Branch managers dashboard allow the branch manager to:</p> <p><ul><li>View full details of all orders for any day</li> <li>Cancel orders, or mark them as pending, in progress, ready for delivery and delivered.</li><li>Block any time slot in a day for orders, such as for overload at that time slot.</li><li>Block dates such as. <ul><li>Closed due to Coronavirus</li><li>Closed due to holidays such as Christmas</li><li>Closed Sunday for example</li></ul></li><li>Adjust stock levels, and set out-of-stock for certain items.</li></ul></p>'
+            },
 
         ]
     }

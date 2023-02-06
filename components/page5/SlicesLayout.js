@@ -14,7 +14,7 @@ export const SlicesLayout = ({slices, post}) => {
                     return(
                         <div key={index}>
                             {slice.sliceType === 'PhonesCenterLaptop' && (
-                                <PhonesCenterLaptop key={index} slice={slice} post={post} index={index}/>
+                                <PhonesCenterLaptop key={index} slice={slice} post={post} index={index} />
                             )}
                             
                             {slice.sliceType === 'TitleList' && (

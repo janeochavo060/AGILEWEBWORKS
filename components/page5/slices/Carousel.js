@@ -21,8 +21,14 @@ export const Carousel = ({slice, post}) => {
 
     const handleAfterChange = (currentSlideIndex) => {
         console.log('after')
-        setCurrentSlide(currentSlideIndex);
+        // setCurrentSlide(currentSlideIndex);
         setcurrentData(data[currentSlideIndex])
+    };
+
+    const handlerBeforeChange = (currentSlide, nextSlide) => {
+        setTimeout(function() {
+            setCurrentSlide(nextSlide)
+        }, 100);
     };
 
     
@@ -46,6 +52,7 @@ export const Carousel = ({slice, post}) => {
         variableWidth: true,
         variableHeight: true,
         focusOnSelect: true,
+        beforeChange: handlerBeforeChange,
         afterChange: handleAfterChange,
         onInit: handleInit,
     };
@@ -53,12 +60,12 @@ export const Carousel = ({slice, post}) => {
     <section className={`block py-[50px] w-full slice slice-type-${slice.sliceType} bg-[${slice.bgColor}]`}>
         <div className='container mx-auto'>
             <h2 className='font-bold text-center font-bold text-5xl mb-[30px]'>{slice.title}</h2>
-            <div className="relative">
-                <Slider ref={sliderRef} {...settings} className="relative">
+            <div className="relative scale-[.8]">
+                <Slider ref={sliderRef} {...settings}>
                 {slice.images.map((image, index) => {
                         return(
-                            <div className={`py-[100px] d-block relative ${index === currentSlide ? 'active' : 'opacity-30 hover:opacity-100 transition duration-150 ease-out'}`} key={index}>
-                                <img className={`z-0 transition duration-150 ease-out w-full ${index === currentSlide ? 'scale-[1.1]' : 'scale-[.5]'}`} src={image.uri} />
+                            <div className={`transition transform- py-[100px] d-block relative ${index === currentSlide ? 'z-[100] scale-[1.6] top-[50%] origin-center active ' : 'not-active z-[0] opacity-30 hover:opacity-100'}`} key={index}>
+                                <img className={`z-0 transition duration-150 ease-out w-full ${index === currentSlide ? '' : ''}`} src={image.uri} />
                                 {/* <h3 className={`w-full text-center z-40 transition duration-100 ease-out text-center font-bold text-center font-bold text-5xl ${index === currentSlide ? 'opacity-1' : 'opacity-0'}`}>
                                     {image.title}
                                 </h3> */}
@@ -66,8 +73,8 @@ export const Carousel = ({slice, post}) => {
                         )
                     })}
                 </Slider>
-
-                <div className="flex justify-center items-center mt-[30px]">
+            </div>
+            <div className="flex justify-center items-center">
                     <div className="pr-[40px] h-[18px]">
                         <button onClick={handlePrev}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
@@ -87,7 +94,6 @@ export const Carousel = ({slice, post}) => {
                         </button>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
   )

@@ -14,6 +14,7 @@ export default function Page({ page, slices }) {
         let data = {
           ...slices[key]?.data,
           id: `${slices[key]?.key}-${key}`,
+          key: `${slices[key]?.key}`,
         };
         return <SliceComponent key={key} slice={data} />;
       })}

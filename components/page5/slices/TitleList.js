@@ -3,7 +3,7 @@ import React from 'react'
 export const TitleList = ({slice}) => {
   return (
         <section key={slice.sliceId} className={`py-[50px] slice slice-type-` + slice.sliceType}>
-            <div className='max-w-screen-xl mx-auto'>
+            <div className='max-w-screen-xl px-[15px] mx-auto'>
               <h2 className="font-bold text-5xl block-title mb-[50px]">
                 {slice.title}
               </h2>

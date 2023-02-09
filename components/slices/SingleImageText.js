@@ -17,8 +17,8 @@ export default function SingleImageText({ slice }) {
           : ""
       }
       style={{
-        backgroundColor: slice?.main?.bg_color,
-        color: slice?.main?.color || "",
+        backgroundColor: slice?.main?.bg_color || "none",
+        color: slice?.main?.color || "none",
       }}
     >
       <div

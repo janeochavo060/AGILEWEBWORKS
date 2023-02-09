@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import TitleContentBlock from "@/components/partials/TitleContentBlock";
 // import Link from "next/link";

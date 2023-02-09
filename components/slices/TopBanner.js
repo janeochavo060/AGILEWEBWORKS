@@ -20,7 +20,7 @@ export default function TopBanner({ slice }) {
         {slice?.main?.link && (
           <Link
             href={slice?.main?.link}
-            className="text-lg font-semibold mr-auto flex items-center gap-3 px-6 py-2 transition ease-in-out delay-150 bg-primary text-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
+            className="text-lg black-shadow mr-auto flex items-center gap-3 px-6 py-2 transition ease-in-out delay-150 bg-primary text-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
           >
             <span>{slice?.main?.link_label || "Learn more"}</span>
             <svg

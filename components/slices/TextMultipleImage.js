@@ -7,7 +7,7 @@ export default function TextMultipleImage({ slice }) {
 
   return (
     <div
-      className="trapezoid-left"
+      className="trapezoid-left black-shadow"
       style={{ backgroundColor: slice?.main?.bg_color }}
     >
       <div className="w-[95%] md:w-full my-16 max-w-screen-xl mx-auto pl-[7%] 2xl:pl-0">

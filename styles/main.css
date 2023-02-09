@@ -12,6 +12,9 @@ select,
 button {
 	outline: none;
 }
+.black-shadow {
+	text-shadow: 1px 1px 1px #3e3e3e;
+}
 .triangle-left {
 	width: 0;
 	height: 0;

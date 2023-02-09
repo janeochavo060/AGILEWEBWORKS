@@ -73,7 +73,7 @@ export default function Contact() {
                 </Fragment>
               ))}
               <div className="md:col-span-2 text-center">
-                <Button label="Submit" type="submit" />
+                <Button className="black-shadow" label="Submit" type="submit" />
               </div>
             </form>
           </Fragment>

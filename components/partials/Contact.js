@@ -1,21 +1,14 @@
 import FORMAPI from "@/lib/api/forms/request";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import Jsona from "jsona";
+const dataFormatter = new Jsona();
 import FormField from "../forms/FormField";
 import Button from "../forms/Button";
-import axios from "axios";
-const dataFormatter = new Jsona();
-export default function Contact() {
-  const slug = "contact";
-  const { data, isValidating } = FORMAPI.findFormsSwr(
-    "/contact?include=blueprint",
-    {
-      revalidateOnFocus: false,
-    }
-  );
+import globalData from "@/lib/preBuildScripts/static/globalData.json";
 
-  const isLoading = data === undefined && isValidating;
-  const form = dataFormatter.deserialize(data || {});
+export default function Contact() {
+  const { form: formData } = globalData
+  const form = dataFormatter.deserialize(formData || {});
   const sections = form?.blueprint?.schema?.sections || [];
 
   const onSubmit = (e) => {
@@ -31,23 +24,17 @@ export default function Contact() {
       payload[section?.state_name] = sectionPayload;
     });
 
-    axios
-      .post(
-        `${process.env.NEXT_PUBLIC_TENANT_API}/api/forms/${slug}/submissions`,
-        payload
-      )
-      .then((res) => {
-        console.log({ res });
-        e.target.reset();
-      })
-      .catch((err) => {
-        console.log({ err });
-      });
-
-    console.log({ payload });
+    FORMAPI.submitForm('contact', payload)
+    .then((res) => {
+      console.log({ res });
+      e.target.reset();
+    })
+    .catch((err) => {
+      console.log({ err });
+    });
   };
 
-  return isLoading ? (
+  return !form ? (
     <></>
   ) : (
     <div className="flex flex-col justify-center items-center max-w-95p md:max-w-2xl w-full mx-auto gap-8 bg-white py-12 px-4">

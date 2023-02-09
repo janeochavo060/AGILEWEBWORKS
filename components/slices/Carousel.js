@@ -1,4 +1,4 @@
-import React, { Component, useState, useRef } from "react";
+import { useState, useRef } from "react";
 // Import css files
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -71,7 +71,7 @@ export default function Slice ({slice}) {
                 {slice.main.images.map((image, index) => {
                         return(
                             <div className={`transition  py-[125px] d-block relative ${index === currentSlide ? `z-[100] scale-y-[1.4] top-[50%] origin-center ${styles.active}` : 'cursor-pointer not-active z-[0] opacity-30 hover:opacity-70'}`} key={index}>
-                                <Image src={`${imageDomain}` + image.image} width={642} height={403} />
+                                <Image alt={image.image} src={`${imageDomain}` + image.image} width={642} height={403} />
                             </div>
                         )
                     })}

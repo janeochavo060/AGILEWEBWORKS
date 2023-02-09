@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "predev": "node lib/preBuildScripts/preBuildDev.js",
+    "prebuild": "node lib/preBuildScripts/preBuildDev.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

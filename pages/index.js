@@ -2,6 +2,7 @@ import { props } from "@/lib/props/page";
 import dynamic from "next/dynamic";
 export const getStaticProps = props;
 const Homepage = ({ page, slices }) => {
+  console.log(page)
   const sliceComponents = slices.map((e) => {
     return dynamic(() => import("@/components/slices/" + e?.key));
   });

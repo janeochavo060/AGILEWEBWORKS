@@ -1,8 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import TitleContentBlock from "@/components/partials/TitleContentBlock";
-import Link from "next/link";
+// import Link from "next/link";
+import { useRouter } from "next/router";
+
 export default function MultipleImageText({ slice }) {
+  const router = useRouter();
   const images = slice?.main?.images || [];
   // MULTIPLE IMAGES WITH TEXT BLOCK ON RIGHT
   return (
@@ -30,8 +33,9 @@ export default function MultipleImageText({ slice }) {
           <div className="flex flex-col justify-center gap-4 text-white">
             <TitleContentBlock slice={slice} />
             {slice?.main?.link && (
-              <Link
-                href={slice?.main?.link}
+              <div
+                onClick={() => router.push(slice?.main?.link) }
+                // href={slice?.main?.link}
                 className="mr-auto flex items-center gap-2 px-4 py-2 transition ease-in-out delay-150 bg-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
                 style={{ color: slice?.main?.bg_color }}
               >
@@ -45,7 +49,7 @@ export default function MultipleImageText({ slice }) {
                 >
                   <path d="M10 12L8.6 10.55L12.15 7H0V5H12.15L8.6 1.45L10 0L16 6L10 12Z" />
                 </svg>
-              </Link>
+              </div>
             )}
           </div>
         </div>

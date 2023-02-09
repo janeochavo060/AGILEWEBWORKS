@@ -3,11 +3,12 @@ import React, { Component, useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "../Styles/Carousel.module.css"
 import Image from "next/image"
+import styles from "@/styles/Carousel.module.css"
 
-export const Carousel = ({slice, post}) => {
-    const data = slice.images;
+export default function Slice ({slice}) {
+    const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/'
+    const data = slice.main.images;
     const [currentSlide, setCurrentSlide] = useState({});
     const [currentData, setcurrentData] = useState({});
     const sliderRef = useRef(null);
@@ -20,6 +21,7 @@ export const Carousel = ({slice, post}) => {
 
     const handleAfterChange = (currentSlideIndex) => {
         console.log('afterChange')
+        
         // setCurrentSlide(currentSlideIndex);
         // setcurrentData(data[currentSlideIndex])
     };
@@ -59,27 +61,23 @@ export const Carousel = ({slice, post}) => {
         afterChange: handleAfterChange,
         onInit: handleInit,
     };
-    
-  return (
-    <section className={`block py-[50px] w-full slice slice-type-${slice.sliceType}`} style={{backgroundColor: slice.bgColor}}>
+    return (
+     
+        <section className={`block py-[50px] w-full slice slice-type-${slice.sliceType}`} style={{backgroundColor: slice.bgColor}}>
         <div className='px-[15px] max-w-screen-xl mx-auto'>
-            <h2 className='font-bold  text-center font-bold text-5xl mb-[30px] desktop:w-48'>{slice.title}</h2>
+            <h2 className='font-bold  text-center font-bold text-5xl mb-[50px] desktop:w-48'>{slice.main.block_title}</h2>
             <div className="relative scale-y-[.7] origin-top">
                 <Slider ref={sliderRef} {...settings}>
-                {slice.images.map((image, index) => {
+                {slice.main.images.map((image, index) => {
                         return(
-                            <div className={`transition  py-[125px] d-block relative ${index === currentSlide ? 'z-[100] scale-y-[1.4] top-[50%] origin-center active ' : 'cursor-pointer not-active z-[0] opacity-30 hover:opacity-70'}`} key={index}>
-                                {/* <img className={`z-0 transition duration-150 ease-out w-full ${index === currentSlide ? '' : ''}`} src={image.uri} /> */}
-                                <Image src={image.uri} width={642} height={403} />
-                                {/* <h3 className={`w-full text-center z-40 transition duration-100 ease-out text-center font-bold text-center font-bold text-5xl ${index === currentSlide ? 'opacity-1' : 'opacity-0'}`}>
-                                    {image.title}
-                                </h3> */}
+                            <div className={`transition  py-[125px] d-block relative ${index === currentSlide ? `z-[100] scale-y-[1.4] top-[50%] origin-center ${styles.active}` : 'cursor-pointer not-active z-[0] opacity-30 hover:opacity-70'}`} key={index}>
+                                <Image src={`${imageDomain}` + image.image} width={642} height={403} />
                             </div>
                         )
                     })}
                 </Slider>
             </div>
-            <div className="flex justify-center items-center" style={{ marginTop: "calc((.85 - 1) * 100%)" }}>
+            <div className={`flex justify-center items-center ${styles.slickNav}`}>
                 <div className="pr-[40px] h-[18px]">
                     <button onClick={handlePrev}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
@@ -101,5 +99,6 @@ export const Carousel = ({slice, post}) => {
             </div>
         </div>
     </section>
-  )
-}
+
+   )
+  }

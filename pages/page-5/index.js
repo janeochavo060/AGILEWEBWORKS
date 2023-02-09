@@ -5,12 +5,12 @@ import Link from 'next/link'
 const index = ({projects}) => {
   return (
     <>
-      <h1 className="pt-[100px]">
-        Test
+      <h1 className="pt-[100px] font-bold text-[50px]">
+        {'Mobile Apps & Software'}
       </h1>
       {projects.map((project, index) => (
         <h2 key={index}>
-          <Link className="font-bold text-[50px]" href={`/page-5/` + project.slug}>
+          <Link className="font-bold text-[30px]" href={`/page-5/` + project.slug}>
               {project.title}
           </Link>
         </h2>

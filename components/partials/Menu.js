@@ -92,7 +92,7 @@ const Menu = ({ className }) => {
             )}
             <button
               aria-label="Get a Quote"
-              className="px-4 py-2 gray-shadow transition ease-in-out delay-150 bg-primary hover:bg-sky-400 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer"
+              className="px-4 py-2 black-shadow transition ease-in-out delay-150 bg-primary hover:bg-sky-400 hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full text-white cursor-pointer"
               onClick={() => {}}
             >
               Get A Quote

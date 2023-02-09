@@ -15,6 +15,9 @@ button {
 .black-shadow {
 	text-shadow: 1px 1px 1px #3e3e3e;
 }
+.gray-shadow {
+	text-shadow: 1px 1px 1px #6a6a6a;
+}
 .triangle-left {
 	width: 0;
 	height: 0;

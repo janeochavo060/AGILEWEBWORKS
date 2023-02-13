@@ -4,7 +4,6 @@ import "@/styles/unreset.css";
 import DefaultLayout from "@/layout/DefaultLayout";
 import Header from "@/components/partials/Header";
 import Head from "next/head";
-
 export default function App({ Component, pageProps }) {
   return (
     <>

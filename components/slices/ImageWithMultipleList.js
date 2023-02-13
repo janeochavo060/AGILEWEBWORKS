@@ -34,13 +34,13 @@ export default function ImageWithMultipleList({ slice }) {
                       className="flex items-center gap-2"
                     >
                       <span
-                        className="unreset"
+                        // className="unreset"
                         dangerouslySetInnerHTML={{
                           __html: item?.bullet_icon,
                         }}
                       />
                       <div
-                        className="unreset"
+                        // className="unreset"
                         dangerouslySetInnerHTML={{ __html: innerItem?.content }}
                       />
                     </div>

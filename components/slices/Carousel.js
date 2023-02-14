@@ -79,7 +79,7 @@ export default function Slice ({slice}) {
             </div>
             <div className={`flex justify-center items-center ${styles.slickNav}`}>
                 <div className="pr-[40px] h-[18px]">
-                    <button onClick={handlePrev}>
+                    <button title="Previous" onClick={handlePrev}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
                         <path d="M9.375 1.36598e-06L11.5625 2.175L6.01562 7.5L25 7.5L25 10.5L6.01562 10.5L11.5625 15.825L9.375 18L-7.86805e-07 9L9.375 1.36598e-06Z" fill="#353535"/>
                     </svg>
@@ -90,7 +90,7 @@ export default function Slice ({slice}) {
                 {currentData.title}
                 </p>
                 <div className="pl-[40px] h-[18px]">
-                    <button onClick={handleNext}>
+                    <button title="Next" onClick={handleNext}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18" fill="none">
                     <path d="M15.625 18L13.4375 15.825L18.9844 10.5H0V7.5H18.9844L13.4375 2.175L15.625 0L25 9L15.625 18Z" fill="#353535"/>
                     </svg>

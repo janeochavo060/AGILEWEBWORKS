@@ -28,6 +28,7 @@ export default function Slice ({slice}) {
               alt=""
               blurDataURL={imageDomain + main?.images[1]}
               src={imageDomain + main?.images[1]}
+              priority
             />
           </div>
           <div className='phone2 absolute right-0 bottom-0'>

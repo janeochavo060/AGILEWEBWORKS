@@ -1,11 +1,6 @@
 import YouTubeEmbed from "@/components/partials/YouTubeEmbed";
 
-export default function TextVideo({ slice, reverse }) {
-  console.log(slice)
-  // useEffect(() => {
-  //   document.documentElement.style.setProperty('--triangle-color', 'red')
-  // }, [])
-
+export default function TextVideo({ slice }) {
   return (
     <div
       className={`w-[calc(100%-2rem)] lg:max-h-[600px] h-full lg:mx-0 grid grid-cols-1 lg:grid-cols-2 py-8 my-4 ${

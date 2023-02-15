@@ -11,7 +11,7 @@ export default function SingleImageText({ slice }) {
     <div
       className={
         slice?.main?.bg_color
-          ? slice?.main?.image_position === 'right'
+          ? slice?.main?.image_position === "right"
             ? "trapezoid-left"
             : "trapezoid-right"
           : ""
@@ -23,12 +23,14 @@ export default function SingleImageText({ slice }) {
     >
       <div
         className={`w-[95%] md:w-full max-w-screen-xl mx-auto ${
-          slice?.main?.bg_color && "pr-[7%] 2xl:pr-0 my-16 "
+          slice?.main?.bg_color && slice?.main?.image_position === "right"
+            ? "pl-[7%] 2xl:pl-0 my-16"
+            : "pr-[7%] 2xl:pr-0 my-16"
         }`}
       >
         <div
           className={`flex flex-col lg:flex-row items-center gap-4 xl:gap-16 max-w-screen-xl ml-auto p-4 md:py-8 ${
-            slice?.main?.image_position === 'right' && "lg:flex-row-reverse" // Reverse the elements order - in this case, image goes to right while content will be on left
+            slice?.main?.image_position === "right" && "lg:flex-row-reverse" // Reverse the elements order - in this case, image goes to right while content will be on left
           }`}
         >
           <Image

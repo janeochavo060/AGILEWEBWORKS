@@ -4,8 +4,6 @@ import TitleContentBlock from "@/components/partials/TitleContentBlock";
 import Link from "next/link";
 export default function TextMultipleImage({ slice }) {
   const images = slice?.main?.images || [];
-  console.log({ slice });
-
   return (
     <div
       className={`black-shadow ${

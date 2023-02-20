@@ -2,19 +2,23 @@ import Menu from "@/components/partials/Menu";
 import Footer from "@/components/partials/Footer";
 import SliceBackground from "@/components/partials/SliceBackground";
 import Contact from "@/components/partials/Contact";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 const DefaultLayout = (props) => {
-  const [test, setTest] = useState(false)
-
-  setTimeout(() => {
-    setTest(true)
-  }, 1000)
-
+  const router = useRouter();
+  const [load, setLoad] = useState(false)
+  useEffect(() => {
+    setLoad(false)
+    const timer = setTimeout(() => {
+      setLoad(true)
+      clearTimeout(timer)
+    }, 2000)
+  }, [router?.asPath, router?.isReady])
   return (
     <>
       <Menu />
       {props.children}
-      {test && (
+      {load && (
         <>
           <SliceBackground>
             <Contact />

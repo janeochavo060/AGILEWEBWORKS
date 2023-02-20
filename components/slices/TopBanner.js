@@ -7,12 +7,12 @@ export default function TopBanner({ slice }) {
   return (
     <div
       className="relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col justify-center"
-      style={{
-        // background: slice?.main?.bg_color,
-        backgroundImage: `${slice?.main?.bg_color}, url(${image})`,
-      }}
+      // style={{
+      //   // background: slice?.main?.bg_color,
+      //   backgroundImage: `${slice?.main?.bg_color}, url(${image})`,
+      // }}
     >
-      {/* <Image alt="" src={image} fill priority /> */}
+      <Image alt="" src={image} fill priority />
       <div className="max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
         <h1 className="text-6xl font-bold leading-tight">
           {slice?.main?.title}

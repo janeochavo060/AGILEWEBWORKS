@@ -37,3 +37,4 @@ yarn-error.log*
 /public/sitemap-0.xml
 
 /lib/preBuildScripts/static/globalData.json
+/lib/preBuildScripts/static/pagesData.json

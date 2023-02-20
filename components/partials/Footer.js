@@ -106,7 +106,7 @@ const Footer = (props) => {
                   </div>
                   <div className="flex items-center cursor-pointer">
                     <Image
-                      src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${global?.logo}`}
+                      src="/svg/copyright.svg"
                       alt="Copyright Logo"
                       className="mx-1"
                       width={15}

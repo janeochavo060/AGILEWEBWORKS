@@ -1,10 +1,9 @@
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 // // import ParentPage from "@/components/page/ParentPage";
-// import { paths, props } from "@/lib/props/level1";
-// export const getStaticPaths = paths;
-// export const getStaticProps = props;
+import { paths, props } from "@/lib/props/level1";
+export const getStaticPaths = paths;
+export const getStaticProps = props;
 const Homepage = ({ page, slices }) => {
-  return <></>
   // return <ParentPage page={page} slices={slices} />
   const sliceComponents = slices.map((e) => {
     return dynamic(() => import("@/components/slices/" + e?.key));

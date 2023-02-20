@@ -7,10 +7,10 @@ const DefaultLayout = (props) => {
     <>
       <Menu />
       {props.children}
-      {/* <SliceBackground>
+      <SliceBackground>
         <Contact />
       </SliceBackground>
-      <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import Image from 'next/image'
+import Jsona from "jsona";
+const dataFormatter = new Jsona();
+import globalData from "@/lib/preBuildScripts/static/globalData.json";
+import { getCurrentYear } from '@/lib/services/globalService';
 const Footer = (props) => {
   const router = useRouter()
-  const [showSideMenu, setShowSideMenu] = useState(false);
+  const tenantDetails = dataFormatter.deserialize(globalData?.tenantDetails|| {});
+  const global = tenantDetails?.data?.main;
   const [upperHeaderMenu, setUpperHeaderMenu] = useState([
     { name: "Websites", url: "/websites" },
     { name: "Apps & Software", url: "/apps-and-software" },
@@ -47,7 +52,7 @@ const Footer = (props) => {
                 <p
                   className={`md:text-base font-semibold text-sm mx-10  md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}
                 >
-                  sales@halcyonagile.com.au
+                  {global?.email}
                 </p>
               </div>
               <div className="">
@@ -64,7 +69,7 @@ const Footer = (props) => {
             <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-center">
               <div className="flex text-sm xxl:mx-0 py-6 cursor-pointer">
                 <Image
-                  src="/images/logo.png"
+                  src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${global?.logo}`}
                   alt="Halcyon Logo"
                   className="mx-1"
                   width={150}
@@ -101,13 +106,13 @@ const Footer = (props) => {
                   </div>
                   <div className="flex items-center cursor-pointer">
                     <Image
-                      src="/svg/copyright.svg"
+                      src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${global?.logo}`}
                       alt="Copyright Logo"
                       className="mx-1"
                       width={15}
                       height={15}
                     />
-                    <p>Copyright 2022 Halcyon Digital Media Design Inc.</p>
+                    <p>Copyright {getCurrentYear()} {global.name}</p>
                   </div>
                 </div>
               </div>

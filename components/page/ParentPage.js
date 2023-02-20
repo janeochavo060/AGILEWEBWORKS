@@ -1,9 +1,11 @@
 import dynamic from "next/dynamic";
-import BottomComponent from "@/components/lazyload/BottomComponent";
 export default function ParentPage ({page, slices}) {
-  const sliceComponents = slices.map((e) => {
+  let sliceComponents = slices.map((e) => {
     return dynamic(() => import("@/components/slices/" + e?.key));
   });
+
+  sliceComponents.push(dynamic(() => import("@/components/lazyload/BottomComponent")))
+
   return (
     <>
       {sliceComponents.map((SliceComponent, key) => {
@@ -14,7 +16,6 @@ export default function ParentPage ({page, slices}) {
         };
         return <SliceComponent key={key} slice={data} />;
       })}
-      <BottomComponent/>
     </>
   );
 }

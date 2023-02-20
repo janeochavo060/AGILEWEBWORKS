@@ -1,15 +1,11 @@
 import dynamic from "next/dynamic";
-import { paths, props } from "@/lib/props/page";
-export const getStaticPaths = paths;
-export const getStaticProps = props;
-
-export default function Page({ page, slices }) {
+export default function ParentPage ({page, slices}) {
+  // console.log(page, 'page)
   const sliceComponents = slices.map((e) => {
-    return dynamic(() => import("@/components/slices/" + e.key));
+    return dynamic(() => import("@/components/slices/" + e?.key));
   });
-
   return (
-    <div>
+    <>
       {sliceComponents.map((SliceComponent, key) => {
         let data = {
           ...slices[key]?.data,
@@ -18,6 +14,6 @@ export default function Page({ page, slices }) {
         };
         return <SliceComponent key={key} slice={data} />;
       })}
-    </div>
+    </>
   );
 }

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Jsona from "jsona";
-const dataFormatter = new Jsona();
-import globalData from "@/lib/preBuildScripts/static/globalData.json";
+import { useContext } from "react";
+import { GlobalContext } from "@/lib/context/GlobalContext";
+
 const Menu = ({ className }) => {
+  const { tenantDetails } = useContext(GlobalContext);
+  const main = tenantDetails?.data?.main;
   const router = useRouter();
-  const tenantDetails = dataFormatter.deserialize(globalData?.tenantDetails || {});
-  const global = tenantDetails?.data?.main;
   const [showSideMenu, setShowSideMenu] = useState(false);
   const [upperHeaderMenu, setUpperHeaderMenu] = useState([
     { name: "Websites", url: "/websites" },
@@ -65,7 +65,7 @@ const Menu = ({ className }) => {
         <div className="flex justify-between items-center h-full">
           <Link href="/">
             <Image
-              src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${global?.logo}`}
+              src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${main?.logo}`}
               alt="Halcyon Logo"
               className="mx-1 xl:px-0 px-4"
               width={150}

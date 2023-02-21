@@ -1,14 +1,11 @@
 import FORMAPI from "@/lib/api/forms/request";
 import { Fragment } from "react";
-import Jsona from "jsona";
-const dataFormatter = new Jsona();
 import FormField from "../forms/FormField";
 import Button from "../forms/Button";
-import globalData from "@/lib/preBuildScripts/static/globalData.json";
-
+import { useContext } from "react";
+import { GlobalContext } from "@/lib/context/GlobalContext";
 export default function Contact() {
-  const { form: formData } = globalData
-  const form = dataFormatter.deserialize(formData || {});
+  const { form } = useContext(GlobalContext);
   const sections = form?.blueprint?.schema?.sections || [];
 
   const onSubmit = (e) => {

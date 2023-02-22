@@ -1,5 +1,5 @@
 import ParentPage from "@/components/page/ParentPage";
-import { paths, props } from "@/lib/props/level3";
+import { paths, props } from "@/lib/props/slug";
 export const getStaticPaths = paths;
 export const getStaticProps = props;
 const Homepage = ({ page, slices }) => {

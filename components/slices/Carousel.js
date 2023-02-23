@@ -7,7 +7,7 @@ import Image from "next/image"
 import styles from "@/styles/Carousel.module.css"
 
 export default function Slice ({slice}) {
-    const imageDomain = ''
+    const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/'
     const data = slice.main.images;
     const [currentSlide, setCurrentSlide] = useState({});
     const [currentData, setcurrentData] = useState({});

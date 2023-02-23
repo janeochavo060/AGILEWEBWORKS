@@ -37,8 +37,8 @@ export default function MultipleImageText({ slice }) {
               <Image
                 key={i}
                 alt=""
-                blurDataURL={`${image}`}
-                src={`${image}`}
+                blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
                 width="300"
                 height="700"
                 className={`h-[460px] rounded-xxl mx-auto xl:mx-0 ${

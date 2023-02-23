@@ -1,15 +1,21 @@
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import Image from 'next/image'
+import Jsona from "jsona";
+const dataFormatter = new Jsona();
+import globalData from "@/lib/preBuildScripts/static/globalData.json";
 import { getCurrentYear } from '@/lib/services/globalService';
-import { useContext } from "react";
-import { GlobalContext } from "@/lib/context/GlobalContext";
-
-const Footer = () => {
+const Footer = (props) => {
   const router = useRouter()
-  const { tenantDetails, menus } = useContext(GlobalContext);
+  const tenantDetails = dataFormatter.deserialize(globalData?.tenantDetails|| {});
   const global = tenantDetails?.data?.main;
-  const menuHandler = menus?.parentNodes;
+  const [upperHeaderMenu, setUpperHeaderMenu] = useState([
+    { name: "Websites", url: "/websites" },
+    { name: "Apps & Software", url: "/apps-and-software" },
+    { name: "Capabilities", url: "/capabilities" },
+    { name: "Contact", url: "/contact" },
+  ]);
   return (
     <>
       <div
@@ -19,12 +25,12 @@ const Footer = () => {
           <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden ">
             <div className="xl:flex hidden flex-row md:mx-0 mx-4 py-4 items-center justify-between">
               <div className="flex flex-no-wrap border-transparent items-center whitespace-nowrap overflow-x-auto">
-                {!menuHandler.length && (
+                {!upperHeaderMenu.length && (
                   <div className="border-b-4 border-transparent ">Loading</div>
                 )}
 
-                {menuHandler &&
-                  menuHandler.map((nav, i) => (
+                {upperHeaderMenu &&
+                  upperHeaderMenu.map((nav, i) => (
                     <Link href={nav.url || router.pathname} key={i}>
                       <div
                         className={`
@@ -37,7 +43,7 @@ const Footer = () => {
                               }
                             `}
                       >
-                        {nav.label}
+                        {nav.name}
                       </div>
                     </Link>
                   ))}

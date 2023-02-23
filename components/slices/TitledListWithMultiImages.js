@@ -6,7 +6,7 @@ export default function TitledListWithMultiImages({ slice }) {
   const [active, setActive] = useState("");
   const stages = slice?.main?.stages || [];
   const stage = stages.find((stage) => stage?.name === active) || stages[0];
-  const desktopImage = `${stage?.desktop_image}`;
+  const desktopImage = `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${stage?.desktop_image}`;
 
   return (
     <div
@@ -86,8 +86,8 @@ export default function TitledListWithMultiImages({ slice }) {
                   <Image
                     key={image}
                     alt=""
-                    src={`${image}`}
-                    blurDataURL={`${image}`}
+                    src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                    blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
                     width="400"
                     height="200"
                     // className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] lg:h-[75%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"
@@ -106,8 +106,8 @@ export default function TitledListWithMultiImages({ slice }) {
                   <Image
                     key={image}
                     alt=""
-                    src={`${image}`}
-                    blurDataURL={`${image}`}
+                    src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                    blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
                     width="400"
                     height="200"
                     // className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] lg:h-[75%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"

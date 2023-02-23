@@ -12,7 +12,7 @@ export default function TextImageList({ slice }) {
           <div key={i}>
             <Image
               alt=""
-              src={`${image}`}
+              src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
               width={100}
               height={100}
               className="w-full max-h-[200px] grayscale hover:grayscale-0 transition hover:scale-110 duration-300"

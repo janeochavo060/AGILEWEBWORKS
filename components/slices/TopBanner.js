@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 export default function TopBanner({ slice }) {
-  const image = `${slice?.main?.image}`;
+  const image = `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`;
   return (
     <div
       className="relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col justify-center"

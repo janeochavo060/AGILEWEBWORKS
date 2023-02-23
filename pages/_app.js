@@ -10,8 +10,9 @@ const dataFormatter = new Jsona();
 export default function App({ Component, pageProps }) {
   const tenantDetails = dataFormatter.deserialize(globalData?.tenantDetails || {});
   const form = dataFormatter.deserialize(globalData?.form || {});
+  const menus = dataFormatter.deserialize(globalData?.menus || {});
   return (
-    <GlobalContext.Provider value={{tenantDetails, form}}>
+    <GlobalContext.Provider value={{tenantDetails, form, menus}}>
       <Header />
       <DefaultLayout>
         <div className="text-dim-black">

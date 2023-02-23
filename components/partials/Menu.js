@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useContext } from "react";
 import { GlobalContext } from "@/lib/context/GlobalContext";
 
 const Menu = ({ className }) => {
-  const { tenantDetails } = useContext(GlobalContext);
+  const { tenantDetails, menus } = useContext(GlobalContext);
   const main = tenantDetails?.data?.main;
+  const menuHandler = menus?.parentNodes;
   const router = useRouter();
   const [showSideMenu, setShowSideMenu] = useState(false);
-  const [upperHeaderMenu, setUpperHeaderMenu] = useState([
-    { name: "Websites", url: "/websites" },
-    { name: "Apps & Software", url: "/apps-and-software" },
-    { name: "Capabilities", url: "/capabilities" },
-    { name: "Contact", url: "/contact" },
-  ]);
   const [showMenu, setShowMenu] = useState(true);
-
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -73,8 +66,8 @@ const Menu = ({ className }) => {
             />
           </Link>
           <div className="hidden xl:flex md:mx-0 mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-16 gap-y-2">
-            {upperHeaderMenu.length > 0 ? (
-              upperHeaderMenu.map((nav, i) => {
+            {menuHandler?.length > 0 ? (
+              menuHandler.map((nav, i) => {
                 let pathname = "/" + router?.query?.id;
                 const isActive = pathname === nav?.url;
                 return (
@@ -87,7 +80,7 @@ const Menu = ({ className }) => {
                         : "hover:text-black/75"
                     }`}
                   >
-                    {nav.name}
+                    {nav.label}
                   </Link>
                 );
               })

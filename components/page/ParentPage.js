@@ -1,12 +1,12 @@
 import dynamic from "next/dynamic";
-import Header from "@/components/partials/Header";
+import Header from "@/layout/partials/Header";
 export default function ParentPage ({page, slices}) {
   const sliceComponents = slices.map((e) => {
     return dynamic(() => import("@/components/slices/" + e?.key));
   });
   // Push global component
   // Put it here to prevent displaying before the upper content
-  sliceComponents.push(dynamic(() => import("@/components/lazyload/BottomComponent")))
+  sliceComponents.push(dynamic(() => import("@/components/partials/BottomComponent")))
   return (
     <>
       <Header meta={page?.metaData || {}} />

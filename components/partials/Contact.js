@@ -1,8 +1,7 @@
 import FORMAPI from "@/lib/api/forms/request";
-import { Fragment } from "react";
-import FormField from "../forms/FormField";
-import Button from "../forms/Button";
-import { useContext } from "react";
+import FormField from "@/components/forms/FormField";
+import Button from "@/components/forms/Button";
+import { useContext, Fragment } from "react";
 import { GlobalContext } from "@/lib/context/GlobalContext";
 export default function Contact() {
   const { form } = useContext(GlobalContext);

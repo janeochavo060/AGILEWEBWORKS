@@ -31,33 +31,31 @@ const Header = ({meta}) => {
   }
 
   return (
-    <>
-      <Head>
-        
-        <link rel="icon" href={findMeta('ico')} />
-        <title>{findMeta('title')}</title>
-        <meta name="description" content={findMeta('description')} />
-        <meta name="author" content={findMeta('author')} />
-        <meta name="keywords" content={findMeta('keywords')} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <Head>
+      
+      <link rel="icon" href={findMeta('ico')} />
+      <title>{findMeta('title')}</title>
+      <meta name="description" content={findMeta('description')} />
+      <meta name="author" content={findMeta('author')} />
+      <meta name="keywords" content={findMeta('keywords')} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <meta name="url" property="og:url" content={findMeta('url')}/>
-        <meta name="site_name" property="og:site_name" content={findMeta('title')}/>
-        <meta name="description" property="og:description" content={findMeta('description')} />
-        <meta name="secure_url" property="og:image:secure_url" content={findMeta('image')} />
-        <meta name="image" property="og:image" content={findMeta('image')} />
-        <meta name="type" property="og:image:type" content={imageType()} />
+      <meta name="url" property="og:url" content={findMeta('url')}/>
+      <meta name="site_name" property="og:site_name" content={findMeta('title')}/>
+      <meta name="description" property="og:description" content={findMeta('description')} />
+      <meta name="secure_url" property="og:image:secure_url" content={findMeta('image')} />
+      <meta name="image" property="og:image" content={findMeta('image')} />
+      <meta name="type" property="og:image:type" content={imageType()} />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content={findMeta('title')} />
-        <meta name="twitter:creator" content={findMeta('author')} />
-        <meta name="twitter:title" content={findMeta('title')} />
-        <meta name="twitter:description" content={findMeta('description')} />
-        <meta name="twitter:image" content={findMeta('image')} />
-        <meta name="twitter:domain" content={findMeta('url')} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={findMeta('title')} />
+      <meta name="twitter:creator" content={findMeta('author')} />
+      <meta name="twitter:title" content={findMeta('title')} />
+      <meta name="twitter:description" content={findMeta('description')} />
+      <meta name="twitter:image" content={findMeta('image')} />
+      <meta name="twitter:domain" content={findMeta('url')} />
 
-      </Head>
-    </>
+    </Head>
   )
 }
 

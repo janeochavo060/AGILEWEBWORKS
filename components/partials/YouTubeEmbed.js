@@ -1,7 +1,7 @@
 import Image from "next/image";
-import React, { useRef, userRef, useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player";
-import PlayIcon from "@/components/svgComponents/PlayIcon";
+import PlayIcon from "@/components/svg/PlayIcon";
 
 export default function YouTubeEmbed({
   src = "",

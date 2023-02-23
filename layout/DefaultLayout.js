@@ -1,4 +1,4 @@
-import Menu from "@/components/partials/Menu";
+import Menu from "@/layout/partials/Menu";
 const DefaultLayout = (props) => {
   return (
     <>

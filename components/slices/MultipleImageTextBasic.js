@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Slice ({slice}) {
   const main = slice?.main
-  const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/'
+  const imageDomain = ''
 
   return (
     <>

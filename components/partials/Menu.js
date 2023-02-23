@@ -58,7 +58,7 @@ const Menu = ({ className }) => {
         <div className="flex justify-between items-center h-full">
           <Link href="/">
             <Image
-              src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${main?.logo}`}
+              src={`${main?.logo}`}
               alt="Halcyon Logo"
               className="mx-1 xl:px-0 px-4"
               width={150}

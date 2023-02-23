@@ -6,7 +6,7 @@ import YouTubeEmbed from "../partials/YouTubeEmbed";
 export default function TextMultipleImageVideo({ slice }) {
   const images = (slice?.main?.images || []).map(
     (image) =>
-      `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`
+      `${image}`
   );
   return (
     <div className="flex items-center h-screen">

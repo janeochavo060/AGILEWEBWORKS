@@ -3,7 +3,7 @@ import styles from "@/styles/SingleImageTextBasic.module.css"
 
 export default function SingleImageText({ slice }) {
   // SINGLE IMAGE WITH TEXT BLOCK
-  const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/'
+  const imageDomain = ''
   return (
     <section className={`block py-[100px] w-full overflow-hidden`}>
 			<div className="px-[15px] max-w-screen-xl mx-auto">

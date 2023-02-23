@@ -7,7 +7,7 @@ export default function EnumeratedListImages({ slice }) {
   const stage = stages.find((stage) => stage?.name === active) || stages[0];
   const images = (stage?.images || []).map(
     (img) =>
-      `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${img}`
+      `${img}`
   );
 
   return (

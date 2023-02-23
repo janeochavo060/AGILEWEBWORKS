@@ -55,8 +55,8 @@ export default function TextMultipleImage({ slice }) {
               <Image
                 key={i}
                 alt=""
-                blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
-                src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                blurDataURL={`${image}`}
+                src={`${image}`}
                 width="1000"
                 height="1000"
                 className={`rounded-xxl mx-auto xl:mx-0 w-auto ${
@@ -86,8 +86,8 @@ export default function TextMultipleImage({ slice }) {
               <Image
                 key={i}
                 alt=""
-                blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
-                src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                blurDataURL={`${image}`}
+                src={`${image}`}
                 width={200}
                 height={200}
                 className={`w-full object-cover rounded-xxl ${

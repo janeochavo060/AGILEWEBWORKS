@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { getCurrentYear } from '@/lib/services/globalService';
 import { GlobalContext } from "@/lib/context/GlobalContext";
 
-const Footer = () => {
+export default function Footer () {
   const router = useRouter()
   const { tenantDetails, menus } = useContext(GlobalContext);
   const global = tenantDetails?.data?.main;
@@ -118,5 +118,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

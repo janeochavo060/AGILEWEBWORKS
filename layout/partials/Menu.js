@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { GlobalContext } from "@/lib/context/GlobalContext";
 
-const Menu = ({ className }) => {
+export default function Menu ({ className }) {
   const router = useRouter();
   const { tenantDetails, menus } = useContext(GlobalContext);
   const main = tenantDetails?.data?.main;
@@ -111,5 +111,3 @@ const Menu = ({ className }) => {
     </div>
   );
 };
-
-export default Menu;

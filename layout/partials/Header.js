@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useContext } from "react";
 import { GlobalContext } from "@/lib/context/GlobalContext";
-const Header = ({meta}) => {
+export default function Header ({meta}) {
   const { tenantDetails } = useContext(GlobalContext);
   const defaultMeta = tenantDetails?.data?.meta_data;
   const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate'
@@ -58,5 +58,3 @@ const Header = ({meta}) => {
     </Head>
   )
 }
-
-export default Header

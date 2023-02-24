@@ -1,5 +1,5 @@
 import Menu from "@/layout/partials/Menu";
-const DefaultLayout = (props) => {
+export default function DefaultLayout (props) {
   return (
     <>
       <Menu />
@@ -7,5 +7,3 @@ const DefaultLayout = (props) => {
     </>
   );
 };
-
-export default DefaultLayout;

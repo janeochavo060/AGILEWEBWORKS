@@ -1,6 +1,6 @@
 import ParentPage from "@/components/page/ParentPage";
 // import PAGEAPI from "@/lib/api/pages/request";
-import { props } from "@/lib/props/slug";
+import { props } from "@/lib/props/page";
 export const getStaticProps = props;
 export default function Homepage ({page, slices}) {
 

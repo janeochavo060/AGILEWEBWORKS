@@ -1,9 +1,9 @@
-import CollectionAPI from "@/lib/api/collection/request"
+import COLLECTIONAPI from "@/lib/api/collection/request"
 import Jsona from 'jsona';
 const dataFormatter = new Jsona();
 export default function Slice({ slice }) {
   const collectionId = slice?.main?.collection?.id
-  const { data } = CollectionAPI.getCollectionsSwr(`/${collectionId}/entries`, {
+  const { data } = COLLECTIONAPI.getCollectionsSwr(`/${collectionId}/entries`, {
     render: collectionId
   })
   const collections = dataFormatter.deserialize(data || {}) || []

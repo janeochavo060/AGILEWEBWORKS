@@ -1,12 +1,14 @@
-import COLLECTIONAPI from "@/lib/api/collection/request"
-import Jsona from 'jsona';
-const dataFormatter = new Jsona();
+// import COLLECTIONAPI from "@/lib/api/collection/request"
+// import Jsona from 'jsona';
+// const dataFormatter = new Jsona();
 export default function Slice({ slice }) {
-  const collectionId = slice?.main?.collection?.id
-  const { data } = COLLECTIONAPI.getCollectionsSwr(`/${collectionId}/entries`, {
-    render: collectionId
-  })
-  const collections = dataFormatter.deserialize(data || {}) || []
+  // console.log(slice, 'test')
+  // const collectionId = slice?.main?.collection?.id
+  // const { data } = COLLECTIONAPI.getCollectionsSwr(`/${collectionId}/entries`, {
+  //   render: collectionId
+  // })
+  // const collections = dataFormatter.deserialize(data || {}) || []
+  const collections = slice?.main?.collection?.collections || []
   return (
     <div className="max-w-screen-xl mx-auto w-full mt-[100px]">
       <h3 className="text-[25px] font-bold mb-[10px]">News Collections</h3>

@@ -1,17 +1,19 @@
-import FORMAPI from "@/lib/api/forms/request"
-import Jsona from 'jsona';
-const dataFormatter = new Jsona();
+// import FORMAPI from "@/lib/api/forms/request"
+// import Jsona from 'jsona';
+// const dataFormatter = new Jsona();
 import FormField from "@/components/forms/FormField";
 import Button from "@/components/forms/Button";
 import { Fragment, useState } from "react";
 import { formSubmit, isError } from '@/lib/services/formService';
 export default function Slice({ slice }) {
+  // const {data} = FORMAPI.findFormsSwr(`/${id}?include=blueprint`, {
+  //   render: id
+  // })
+  // const form = dataFormatter.deserialize(data || {})
+  // const sections = form?.blueprint?.schema?.sections || [];
   const id = slice?.main?.form?.id
-  const {data} = FORMAPI.findFormsSwr(`/${id}?include=blueprint`, {
-    render: id
-  })
-  const form = dataFormatter.deserialize(data || {})
-  const sections = form?.blueprint?.schema?.sections || [];
+  const sections = slice?.main?.form?.fields?.blueprint?.schema?.sections || [];
+
   const [errors, setErrors] = useState([])
   return (
     <div className="max-w-screen-xl mx-auto w-full mt-[120px]">

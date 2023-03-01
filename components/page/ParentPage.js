@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import Header from "@/layout/partials/Header";
-export default function ParentPage ({page, slices}) {
+import Header from "@/components/_layout/partials/Header";
+export default function ParentPage ({page, slices, bottomComponent = false}) {
   const sliceComponents = slices.map((e) => {
     return dynamic(() => import("@/components/slices/" + e?.key), {
       loading: () => <div className="min-h-[100vh] w-full"></div>
@@ -8,7 +8,9 @@ export default function ParentPage ({page, slices}) {
   });
   // Push global component
   // Put it here to prevent displaying before the upper content
-  sliceComponents.push(dynamic(() => import("@/components/partials/BottomComponent")))
+  if (bottomComponent) {
+    // sliceComponents.push(dynamic(() => import(`@/components/partials/BottomComponent/${bottomComponent}`)))
+  }
   return (
     <>
       <Header meta={page?.metaData || {}} />

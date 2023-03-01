@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/main.css";
 import "@/styles/unreset.css";
 import DefaultLayout from "@/components/_layout/DefaultLayout";
 import globalData from "@/lib/preBuildScripts/static/globalData.json";

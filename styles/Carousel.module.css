@@ -1,0 +1,23 @@
+.active:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/laptop.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 92%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    --tw-scale: 1.4;
+    transform: scaleX(var(--tw-scale)) scaleY(var(--tw-scale));
+}
+
+
+
+@media (min-width: 1200px) {
+    .slickNav {
+        margin-top: calc((.89 - 1) * 100%);
+    }
+}

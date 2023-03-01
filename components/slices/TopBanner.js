@@ -13,7 +13,7 @@ export default function TopBanner({ slice }) {
       {/* <Image alt="" src={slice?.main?.image} fill priority /> */}
       <div className="max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
         <h1 className="text-6xl font-bold leading-tight">
-          {slice?.main?.title} testing
+          {slice?.main?.title}
         </h1>
         {slice?.main?.link && (
           <Link

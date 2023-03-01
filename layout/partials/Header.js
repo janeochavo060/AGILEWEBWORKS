@@ -4,8 +4,6 @@ import { GlobalContext } from "@/lib/context/GlobalContext";
 export default function Header ({meta}) {
   const { tenantDetails } = useContext(GlobalContext);
   const defaultMeta = tenantDetails?.data?.meta_data;
-  const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate'
-
   const findMeta = (type) => {
     switch (type) {
       case 'title':
@@ -13,9 +11,9 @@ export default function Header ({meta}) {
       case 'description':
         return meta?.description || defaultMeta?.description || process.env.NEXT_PUBLIC_APP_NAME
       case 'image':
-        return meta?.image ? `${imageDomain}/${meta?.image}` : (defaultMeta?.image ? `${imageDomain}/${defaultMeta?.image}` : '/website.png')
+        return meta?.image || defaultMeta?.image || `${process.env.NEXT_PUBLIC_SITE_URL}/website.png`
       case 'ico':
-        return defaultMeta?.ico ? `${imageDomain}/${defaultMeta?.ico}` : '/favicon.ico'
+        return defaultMeta?.ico || `${process.env.NEXT_PUBLIC_SITE_URL}/favicon.ico`
       case 'author':
         return meta?.author || defaultMeta?.author || process.env.NEXT_PUBLIC_APP_NAME
       case 'keywords':
@@ -26,8 +24,9 @@ export default function Header ({meta}) {
   }
 
   const imageType = () => {
-    const image = meta?.image ? `${meta?.image}` : (defaultMeta?.image ? `${defaultMeta?.image}` : '/website.png')
-    return image.split('.')[1]
+    const image = meta?.image || defaultMeta?.image || '/website.png'
+    const arr =  image.split('.')
+    return arr[arr.length - 1]
   }
 
   return (

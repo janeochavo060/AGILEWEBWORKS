@@ -1,12 +1,10 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import laptop from "@/public/images/laptop.png";
-
 export default function TitledListWithMultiImages({ slice }) {
   const [active, setActive] = useState("");
   const stages = slice?.main?.stages || [];
   const stage = stages.find((stage) => stage?.name === active) || stages[0];
-  const desktopImage = `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${stage?.desktop_image}`;
 
   return (
     <div
@@ -68,8 +66,8 @@ export default function TitledListWithMultiImages({ slice }) {
                 <div className="absolute top-[6.3%] w-full max-w-[78%] max-h-[85%] h-full left-1/2 -translate-x-1/2">
                   <Image
                     alt=""
-                    src={desktopImage}
-                    blurDataURL={desktopImage}
+                    src={stage?.desktop_image}
+                    blurDataURL={stage?.desktop_image}
                     fill
                     className="h-full w-full object-cover bg-white"
                   />
@@ -77,27 +75,6 @@ export default function TitledListWithMultiImages({ slice }) {
               </div>
             )}
           </div>
-          {/* {stage?.mobile_images && stage?.mobile_images.length > 0 && (
-            // <div className="flex relative -top-[50%]">
-            <div className="flex pt-[15%] ">
-              {stage?.mobile_images.map((image) => {
-                if (!image) return <></>;
-                return (
-                  <Image
-                    key={image}
-                    alt=""
-                    src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
-                    blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
-                    width="400"
-                    height="200"
-                    // className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] lg:h-[75%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"
-                    // className="aspect-[9/16] w-full max-w-[55%] md:max-h-[40vh] rounded-xxl shadow-lg last:-ml-[10%] last:z-10 first:relative first:md:-top-[50%]"
-                    className="aspect-[9/16] w-full min-w-[55%] md:max-h-[50%] rounded-xxl shadow-lg last:-ml-[10%] first:md:-mt-[50%] last:md:-mb-[50%]"
-                  />
-                );
-              })}
-            </div>
-          )} */}
           {stage?.mobile_images && stage?.mobile_images.length > 0 && (
             <div className="flex justify-around gap-4 md:block relative min-w-[35%] min-h-[50vh] md:min-h-full">
               {stage?.mobile_images.map((image) => {
@@ -105,9 +82,9 @@ export default function TitledListWithMultiImages({ slice }) {
                 return (
                   <Image
                     key={image}
-                    alt=""
-                    src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
-                    blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`}
+                    alt={image}
+                    src={image}
+                    blurDataURL={image}
                     width="400"
                     height="200"
                     // className="aspect-[9/16] w-full max-w-[55%] object-cover object-top md:h-[60%] lg:h-[75%] rounded-xxl shadow-lg last:mt-auto first:relative first:left-4 last:z-10"

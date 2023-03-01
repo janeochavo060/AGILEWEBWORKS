@@ -1,13 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import TitleContentBlock from "../partials/TitleContentBlock";
-import YouTubeEmbed from "../partials/YouTubeEmbed";
+import TitleContentBlock from "@/components/partials/TitleContentBlock";
+import YouTubeEmbed from "@/components/partials/YouTubeEmbed";
 
 export default function TextMultipleImageVideo({ slice }) {
-  const images = (slice?.main?.images || []).map(
-    (image) =>
-      `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${image}`
-  );
+  const images = slice?.main?.images || []
   return (
     <div className="flex items-center h-screen">
       <div className="relative w-full">

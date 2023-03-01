@@ -13,8 +13,8 @@ export default function ImageWithMultipleList({ slice }) {
       <div className="w-full max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-8 py-6 md:py-16">
         <Image
           alt=""
-          src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`}
-          blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`}
+          src={slice?.main?.image}
+          blurDataURL={slice?.main?.image}
           width={460}
           height={460}
           className="h-full w-full rounded-r-xxl rounded-bl-xxl aspect-auto object-cover mx-auto"

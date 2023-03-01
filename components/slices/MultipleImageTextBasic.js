@@ -1,8 +1,6 @@
 import Image from "next/image";
 export default function Slice ({slice}) {
   const main = slice?.main
-  const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/'
-
   return (
     <>
       <div className="page-header max-w-screen-xl mx-auto pb-[50px] pt-[150px]">
@@ -17,8 +15,8 @@ export default function Slice ({slice}) {
               width="234"
               height="400"
               alt=""
-              blurDataURL={imageDomain + main?.images[0]}
-              src={imageDomain + main?.images[0]}
+              blurDataURL={main?.images[0]}
+              src={main?.images[0]}
             />
           </div>
           <div className='laptop'>
@@ -26,8 +24,8 @@ export default function Slice ({slice}) {
               width="723"
               height="415"
               alt=""
-              blurDataURL={imageDomain + main?.images[1]}
-              src={imageDomain + main?.images[1]}
+              blurDataURL={main?.images[1]}
+              src={main?.images[1]}
               priority
             />
           </div>
@@ -36,8 +34,8 @@ export default function Slice ({slice}) {
               width="234"
               height="400"
               alt=""
-              blurDataURL={imageDomain + main?.images[2]}
-              src={imageDomain + main?.images[2]}
+              blurDataURL={main?.images[2]}
+              src={main?.images[2]}
             />
           </div>
         </div>

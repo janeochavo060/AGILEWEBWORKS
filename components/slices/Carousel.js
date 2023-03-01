@@ -7,7 +7,6 @@ import Image from "next/image"
 import styles from "@/styles/Carousel.module.css"
 
 export default function Slice ({slice}) {
-    const imageDomain = 'https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/'
     const data = slice.main.images;
     const [currentSlide, setCurrentSlide] = useState({});
     const [currentData, setcurrentData] = useState({});
@@ -71,7 +70,7 @@ export default function Slice ({slice}) {
                 {slice.main.images.map((image, index) => {
                         return(
                             <div className={`transition  py-[125px] d-block relative ${index === currentSlide ? `z-[100] scale-y-[1.4] top-[50%] origin-center ${styles.active}` : 'cursor-pointer not-active z-[0] opacity-30 hover:opacity-70'}`} key={index}>
-                                <Image alt={image.image} src={`${imageDomain}` + image.image} width={642} height={403} />
+                                <Image alt={image.image} src={image.image} width={642} height={403} />
                             </div>
                         )
                     })}

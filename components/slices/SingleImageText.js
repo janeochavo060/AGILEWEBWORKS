@@ -35,8 +35,8 @@ export default function SingleImageText({ slice }) {
         >
           <Image
             alt=""
-            blurDataURL={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`}
-            src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${slice?.main?.image}`}
+            blurDataURL={slice?.main?.image}
+            src={slice?.main?.image}
             width={460}
             height={460}
             className="w-full rounded-r-xxl rounded-bl-xxl max-h-[360px] lg:max-h-[460px] lg:max-w-[460px] object-cover"

@@ -5,10 +5,7 @@ export default function EnumeratedListImages({ slice }) {
   const [active, setActive] = useState("");
   const stages = slice?.main?.stages || [];
   const stage = stages.find((stage) => stage?.name === active) || stages[0];
-  const images = (stage?.images || []).map(
-    (img) =>
-      `https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${img}`
-  );
+  const images = stage?.images || []
 
   return (
     <div className="w-full max-w-screen-xl mx-auto py-8 space-y-4 px-8 xl:px-0">

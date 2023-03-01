@@ -64,7 +64,7 @@ export default function Footer () {
             <div className="flex lg:flex-row flex-col lg:justify-between justify-center items-center">
               <div className="flex text-sm xxl:mx-0 py-6 cursor-pointer">
                 <Image
-                  src={`https://s3.ap-southeast-1.amazonaws.com/halcyon-agile-saas-platform-boilerplate/${global?.logo}`}
+                  src={global?.logo}
                   alt="Halcyon Logo"
                   className="mx-1"
                   width={150}

@@ -5,9 +5,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "s3.ap-southeast-1.amazonaws.com",
+        hostname: process.env.NEXT_PUBLIC_TENANT_S3_HOSTNAME,
         port: "",
-        pathname: "/halcyon-agile-saas-platform-boilerplate/**",
+        pathname: `/${process.env.NEXT_PUBLIC_TENANT_S3_PATHNAME}/**`,
       },
     ],
   },

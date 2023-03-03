@@ -20,9 +20,9 @@ export const LoginForm = ({slice}) => {
                 </Link> 
               </div>
               <div>
-                <button className="font-bold flex text-[20px] flex-column items-end text-right" type="submit" form={slice.form.id} value="Submit">
+                <button className="flex-col font-bold flex text-[20px] flex-column items-end text-right" type="submit" form={slice.form.id} value="Submit">
                     Login
-                    <span className="mt-[5px] h-[3px] radius-lg w-[50%] block bg-white"></span>
+                    <span className="rounded-xl mt-[5px] h-[3px] radius-lg w-[50%] block bg-white"></span>
                 </button>
               </div>
             </div>

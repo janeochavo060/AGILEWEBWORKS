@@ -97,9 +97,9 @@ const resourcePortal = {
                     ]
                 },
                 {
-                    sliceType: 'images',
-                    tabTitle: 'Images',
-                    title: "Sample Title Here",
+                    sliceType: 'videos',
+                    tabTitle: 'Videos',
+                    title: "Videos Here",
                     videos: [
                         {
                             title: "Sample Video Title",

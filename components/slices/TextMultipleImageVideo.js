@@ -18,7 +18,7 @@ export default function TextMultipleImageVideo({ slice }) {
         />
         <div className=" flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-y-12 lg:gap-y-8 gap-x-8 max-w-screen-xl mx-auto px-4 md:px-8 2xl:px-0 h-full">
           <div className="lg:max-w-md space-y-4">
-            <TitleContentBlock slice={slice} titleClass="mt-10 text-3xl sm:text-4xl " />
+            <TitleContentBlock slice={slice} titleClass="text-3xl sm:text-4xl md:mt-20 lg:mt-0 " />
           </div>
           <div className="flex flex-wrap">
             {/* <div className="grid grid-cols-5 gap-4 h-full"> */}

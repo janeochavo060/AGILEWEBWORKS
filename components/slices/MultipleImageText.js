@@ -12,24 +12,24 @@ export default function MultipleImageText({ slice }) {
       className={
         slice?.main?.bg_color
           ? slice?.main?.image_position === "right"
-            ? "trapezoid-left"
-            : "trapezoid-right"
+            ? "trapezoid-bottom-left  md:trapezoid-left md:ml-5 lg:ml-10"
+            : "trapezoid-bottom-right  md:trapezoid-right md:mr-5 lg:mr-10"
           : ""
       }
       style={{ backgroundColor: slice?.main?.bg_color }}
     >
       <div
-        className={`w-[95%] md:w-full my-8 max-w-screen-xl mx-auto ${
+        className={`w-[95%] md:w-full my-8 max-w-screen-xl mx-auto md:p-5 ${
           slice?.main?.image_position === "left"
             ? "pr-[7%] 2xl:pr-0"
             : "pl-[7%] 2xl:pl-0  "
         }`}
       >
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-16 max-w-screen-xl ml-auto p-4 xl:p-0">
+        <div className="flex flex-col flex-col-reverse pb-20 md:pb-0 md:grid md:grid-cols-2 gap-4 xl:gap-16 max-w-screen-xl ml-auto">
           <div
-            className={`flex flex-col sm:flex-row justify-center xl:justify-start sm:gap-8 xxl:p-0 ${
+            className={`grid grid-cols-2 justify-center lg:justify-start gap-4 lg:gap-8 ${
               slice?.main?.image_position === "right"
-                ? "order-last lg:pr-6 "
+                ? "lg:pr-6 "
                 : "lg:pl-6"
             }`}
           >
@@ -41,13 +41,13 @@ export default function MultipleImageText({ slice }) {
                 src={image}
                 width="300"
                 height="700"
-                className={`h-[460px] rounded-xxl mx-auto xl:mx-0 ${
-                  i % 2 ? "mt-auto" : "my-8 sm:mb-16"
+                className={`rounded-xl lg:rounded-xxl ${
+                  i % 2 ? "mt-[100px]" : ""
                 }`}
               />
             ))}
           </div>
-          <div className="flex flex-col justify-center gap-4 text-white">
+          <div className="flex flex-col justify-center lg:gap-4 text-white pt-7 md:pt-0">
             <TitleContentBlock slice={slice} />
             {slice?.main?.link && (
               <div

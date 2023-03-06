@@ -4,3 +4,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .trapezoid-right{
+    clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
+  }
+  .trapezoid-left{
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 7% 100%);
+  }
+
+  .trapezoid-bottom-right{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  }
+  .trapezoid-bottom-left{
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+}

@@ -8,14 +8,14 @@ export default function TitleContentBlock({
   return (
     <>
       <h2
-        className={`font-bold text-3xl ${className || ""} ${titleClass || ""}`}
+        className={`font-bold text-2xl lg:text-3xl ${className || ""} ${titleClass || ""}`}
         style={style}
       >
         {slice?.main?.title || ""}
       </h2>
       <div
         style={style}
-        className={`unreset text-lg tracking-normal ${className || ""} ${
+        className={`unreset text-md lg:text-lg tracking-normal ${className || ""} ${
           contentClass || ""
         }`}
         dangerouslySetInnerHTML={{

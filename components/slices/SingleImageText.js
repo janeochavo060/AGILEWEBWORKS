@@ -12,8 +12,8 @@ export default function SingleImageText({ slice }) {
       className={
         slice?.main?.bg_color
           ? slice?.main?.image_position === "right"
-            ? "trapezoid-left"
-            : "trapezoid-right"
+          ? "trapezoid-bottom-left  md:trapezoid-left md:ml-5 lg:ml-10"
+          : "trapezoid-bottom-right  md:trapezoid-right md:mr-5 lg:mr-10"
           : ""
       }
       style={{
@@ -22,14 +22,14 @@ export default function SingleImageText({ slice }) {
       }}
     >
       <div
-        className={`w-[95%] md:w-full max-w-screen-xl mx-auto ${
+        className={`md:w-full max-w-screen-xl mx-auto px-3 md:p-5 my-8 ${
           slice?.main?.bg_color && slice?.main?.image_position === "right"
-            ? "pl-[7%] 2xl:pl-0 my-16"
-            : "pr-[7%] 2xl:pr-0 my-16"
+            ? ""
+            : ""
         }`}
       >
         <div
-          className={`flex flex-col lg:flex-row items-center gap-4 xl:gap-16 max-w-screen-xl ml-auto p-4 md:py-8 ${
+          className={`flex flex-col flex-col-reverse pb-20 md:pb-0 md:grid md:grid-cols-2 gap-4 xl:gap-16 max-w-screen-xl ml-auto ${
             slice?.main?.image_position === "right" && "lg:flex-row-reverse" // Reverse the elements order - in this case, image goes to right while content will be on left
           }`}
         >
@@ -43,7 +43,7 @@ export default function SingleImageText({ slice }) {
             style={{ aspectRatio: slice?.main?.image_aspect_ratio || "auto" }} // Lets you set image ratio from cms dynamically
           />
           <div
-            className={`flex flex-col justify-center gap-4 ${
+            className={`flex flex-col justify-center lg:gap-4 text-white pt-7 md:pt-0 ${
               slice?.main?.bg_color && !slice?.main?.color ? "text-white" : ""
             }`}
           >

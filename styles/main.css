@@ -70,15 +70,13 @@ button {
 	border-top: 65px solid transparent;
 }
 
-.trapezoid-right{
-	/* 97% - top right, 93% - bottom right */
+/* .trapezoid-right{
 		clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
 }
 
 .trapezoid-left{
-	/* 3% - top left, 7% - bottom left */
 		clip-path: polygon(0% 0, 100% 0, 100% 100%, 7% 100%);
-}
+} */
 
 .video-wrapper {
 	position: relative;
@@ -224,14 +222,12 @@ button {
 	animation: slideDown 600ms;
 }
 /* lg */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
 	.trapezoid-right {
-		/* 97% - top right, 93% - bottom right */
 		clip-path: polygon(0 0, 97% 0, 93% 100%, 0% 100%);
 	}
 
 	.trapezoid-left {
-		/* 3% - top left, 7% - bottom left */
 		clip-path: polygon(3% 0, 100% 0, 100% 100%, 7% 100%);
 	}
-}
+} */

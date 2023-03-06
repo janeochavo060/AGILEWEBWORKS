@@ -4,7 +4,7 @@ import React from "react";
 export default function TopBanner({ slice }) {
   return (
     <div
-      className="relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col justify-center"
+      className="relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col pt-[100px] md:pt-0 sm:justify-center"
       style={{
         // background: slice?.main?.bg_color,
         backgroundImage: `${slice?.main?.bg_color}, url(${slice?.main?.image})`,
@@ -12,7 +12,7 @@ export default function TopBanner({ slice }) {
     >
       {/* <Image alt="" src={slice?.main?.image} fill priority /> */}
       <div className="max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
-        <h1 className="text-6xl font-bold leading-tight">
+        <h1 className="leading-normal font-bold text-4xl sm:text-5xl sm:leading-[60px] lg:text-6xl lg:leading-[70px]">
           {slice?.main?.title}
         </h1>
         {slice?.main?.link && (

@@ -16,7 +16,7 @@ export default function TextMultipleImage({ slice }) {
       style={{ backgroundColor: slice?.main?.bg_color }}
     >
       <div
-        className={`w-[95%] md:w-full max-w-screen-xl mx-auto ${
+        className={`w-full max-w-screen-xl mx-auto p-3 md:p-5 ${
           slice?.main?.image_position === "left"
             ? ""
             : ""

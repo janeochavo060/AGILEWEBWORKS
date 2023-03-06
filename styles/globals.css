@@ -20,4 +20,20 @@
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
 
+  .halcyon-advantage {
+    background: rgba(253, 147, 41, .5);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    clip-path: polygon(0 50%, 35% 50%, 35% 60%, 0% 100%);
+  }
+  .halcyon-advantage1 {
+    background: rgba(253, 147, 41, .5);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    clip-path: polygon(0 40%, 35% 40%, 35% 60%, 0% 100%);
+  }
+  .halcyon-advantage2 {
+    background: rgba(253, 147, 41, .5);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    clip-path: polygon(0 10%, 35% 10%, 35% 60%, 0% 100%);
+  }
+
 }

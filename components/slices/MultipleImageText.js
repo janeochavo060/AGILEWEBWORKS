@@ -19,10 +19,10 @@ export default function MultipleImageText({ slice }) {
       style={{ backgroundColor: slice?.main?.bg_color }}
     >
       <div
-        className={`w-[95%] md:w-full my-8 max-w-screen-xl mx-auto md:p-5 ${
+        className={`w-full my-8 max-w-screen-xl mx-auto p-3 md:p-5 ${
           slice?.main?.image_position === "left"
-            ? "pr-[7%] 2xl:pr-0"
-            : "pl-[7%] 2xl:pl-0  "
+            ? ""
+            : "  "
         }`}
       >
         <div className="flex flex-col flex-col-reverse pb-20 md:pb-0 md:grid md:grid-cols-2 gap-4 xl:gap-16 max-w-screen-xl ml-auto">

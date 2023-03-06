@@ -6,21 +6,19 @@ import YouTubeEmbed from "@/components/partials/YouTubeEmbed";
 export default function TextMultipleImageVideo({ slice }) {
   const images = slice?.main?.images || []
   return (
-    <div className="flex items-center h-screen">
+    <div className="flex items-center h-screen my-20 sm:my-10 sm:mb-28 lg:my-0">
       <div className="relative w-full">
         {/* <div className="relative flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-y-12 lg:gap-y-8 gap-x-8 max-w-screen-xl mx-auto px-4 md:px-8 2xl:px-0 h-full"> */}
         <span
-          className="w-full h-full absolute -z-10 left-0"
-          style={{
-            background: "rgba(253, 147, 41, .5)",
-            transform: "matrix(-1, 0, 0, 1, 0, 0)",
-            clipPath: "polygon(0 10%, 35% 10%, 35% 50%, 0% 100%)",
-            // clipPath: "polygon(0 20%, 35% 20%, 35% 60%, 0% 100%)",
-          }}
+          className="w-full h-full absolute -z-10 left-0 halcyon-advantage sm:halcyon-advantage1 lg:halcyon-advantage2"
+          // style={{
+          //   background: "rgba(253, 147, 41, .5)",
+          //   transform: "matrix(-1, 0, 0, 1, 0, 0)",
+          // }}
         />
         <div className=" flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-y-12 lg:gap-y-8 gap-x-8 max-w-screen-xl mx-auto px-4 md:px-8 2xl:px-0 h-full">
           <div className="lg:max-w-md space-y-4">
-            <TitleContentBlock slice={slice} titleClass="text-4xl" />
+            <TitleContentBlock slice={slice} titleClass="mt-10 text-3xl sm:text-4xl " />
           </div>
           <div className="flex flex-wrap">
             {/* <div className="grid grid-cols-5 gap-4 h-full"> */}

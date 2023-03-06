@@ -1,14 +1,14 @@
-import Link from "next/link";
-import TitleContentBlock from "../partials/TitleContentBlock";
+import Link from "next/link"
+import TitleContentBlock from "../partials/TitleContentBlock"
 export default function Slice({ slice }) {
   const scrollToComponent = (e) => {
-    const elem = document.getElementById(slice?.main?.btn_scroll_to);
-    const scrollTo = elem?.offsetTop;
+    const elem = document.getElementById(slice?.main?.btn_scroll_to)
+    const scrollTo = elem?.offsetTop
     window.scrollTo({
       top: scrollTo,
       behavior: "smooth",
-    });
-  };
+    })
+  }
 
   return (
     <div
@@ -22,7 +22,7 @@ export default function Slice({ slice }) {
           <div className="flex flex-col gap-8">
             <TitleContentBlock
               slice={slice}
-              titleClass="text-6xl"
+              titleClass="sm:text-6xl text-5xl"
               className="max-w-xl"
             />
             {slice?.main?.link && (
@@ -64,5 +64,5 @@ export default function Slice({ slice }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

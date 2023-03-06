@@ -110,33 +110,48 @@ export default function FooterAbc () {
             <hr />
 
             {/* logos */}
-            <div className="flex justify-between items-center xl:float-left py-2">
+            <div className="flex justify-center items-center xl:justify-between xl:float-left py-2">
                 <Link href="/">
-                    <Image
-                        src={depedLogo}
-                        alt="DepEd Logo"
-                        className="mx-1 xl:px-0 pr-2"
-                        width={150}
-                        height={24}
-                    />
+                    <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[50px]">
+                        <Image
+                            src={depedLogo}
+                            alt="DepEd Logo"
+                            className="px-2"
+                            fill
+                            style={{
+                                objectFit: "contain",
+                                objectPosition: "center",
+                            }}
+                        />
+                    </div>
                 </Link>
                 <Link href="/" className='xl:mx-4'>
-                    <Image
-                        src={usAidLogo}
-                        alt="USAID Logo"
-                        className="mx-1 xl:px-0"
-                        width={200}
-                        height={24}
-                    />
+                    <div className="relative w-[140px] h-[40px] sm:w-[180px] sm:h-[80px]">
+                        <Image
+                            src={usAidLogo}
+                            alt="USAID Logo"
+                            className="px-2"
+                            fill
+                            style={{
+                                objectFit: "contain",
+                                objectPosition: "center",
+                            }}
+                        />
+                    </div>
                 </Link>
                 <Link href="/">
-                    <Image
-                        src={rtiLogo}
-                        alt="RTI Logo"
-                        className="mx-1 xl:px-0 pl-2"
-                        width={150}
-                        height={24}
-                    />
+                    <div className="relative w-[110px] h-[30px] sm:w-[130px] sm:h-[40px]">
+                        <Image
+                            src={rtiLogo}
+                            alt="RTI Logo"
+                            className="px-2"
+                            fill
+                            style={{
+                                objectFit: "contain",
+                                objectPosition: "center",
+                            }}
+                        />
+                    </div>
                 </Link>
             </div>
 

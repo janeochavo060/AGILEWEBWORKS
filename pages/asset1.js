@@ -4,6 +4,7 @@ import resourcePortal from 'static-data/resourcePortal';
 import { LoginForm } from '@/components/asset/slices/LoginForm';
 import { Tabs } from '@/components/asset/slices/Tabs';
 const asset1 = ({slices}) => {
+  console.log(slices, "slices")
   return (
     <div className='pt-[100px]'>
         {slices.map((slice, index) => {

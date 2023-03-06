@@ -6,7 +6,7 @@ import newsArticleImage2 from "@/public/img/news_article_2.png";
 import newsArticleImage3 from "@/public/img/news_article_3.png";
 import newsArticleImage4 from "@/public/img/news_article_4.png";
 
-export default function HomePageSlice3 ({page, slices}) {
+export default function AboutPageSlice3 ({page, slices}) {
     const articles = [
         {
             image: newsArticleImage1,
@@ -100,6 +100,8 @@ export default function HomePageSlice3 ({page, slices}) {
                             </p>
                         </Link>
                     ))}
+
+                    
                 </div>
             </div>
         </>

@@ -1,9 +1,17 @@
-// import ParentPage from "@/components/page/ParentPage";
-// import { props } from "@/lib/props/page";
-// export const getStaticProps = props;
 import AboutPage from "@/components/page/AboutPage";
-export default function Aboutpage ({page, slices}) {
-  // return <>Page</>
-  // return <ParentPage page={page} slices={slices} />
-  return <AboutPage page={page} slices={slices} />
+import aboutPageData from 'static-data/about';
+
+const Aboutpage = ({slices}) => {
+  return <AboutPage slices={slices} />
 };
+
+export async function getStaticProps() {
+  const slices = aboutPageData.slices;
+  return {
+    props: {
+      slices,
+    },
+  }
+}
+
+export default Aboutpage

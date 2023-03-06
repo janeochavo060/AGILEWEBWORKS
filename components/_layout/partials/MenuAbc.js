@@ -101,34 +101,49 @@ export default function MenuAbc ({ className }) {
         <div className="flex justify-between items-center h-full py-4 bg-[#04316C]">
           <div className="flex justify-center items-center w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="">
+              <div className="relative w-[140px] h-[50px]">
                 <Image
                   src={depedLogo}
                   alt="DepEd Logo"
-                  className="mx-1 xl:px-0 px-4"
-                  width={150}
-                  height={24}
+                  className="px-2"
+                  fill
+                  style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                  }}
                 />
+              </div>
             </Link>
             <Link href="/" className=" ">
-              <Image
-                src={usAidLogo}
-                alt="USAID Logo"
-                className="mx-1 xl:px-0 px-4"
-                width={150}
-                height={24}
-              />
+              <div className="relative w-[180px] h-[80px]">
+                <Image
+                  src={usAidLogo}
+                  alt="USAID Logo"
+                  className="px-2"
+                  fill
+                  style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                  }}
+                />
+              </div>
             </Link>
             <Link href="/" className="">
-              <Image
-                src={rtiLogo}
-                alt="RTI Logo"
-                className="mx-1 xl:px-0 px-4"
-                width={150}
-                height={24}
-              />
+              <div className="relative w-[130px] h-[40px]">
+                <Image
+                  src={rtiLogo}
+                  alt="RTI Logo"
+                  className="px-2"
+                  fill
+                  style={{
+                      objectFit: "contain",
+                      objectPosition: "center",
+                  }}
+                />
+              </div>
             </Link>
           </div>
-          <div className="hidden xl:flex xl:mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-16 gap-y-2 text-white">
+          <div className="hidden xl:flex xl:mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-10 gap-y-2 text-white">
             {menus2.map((menu, i) => (
               <div key={i}>
                 {menu.childrens?.length > 0 ? (

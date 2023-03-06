@@ -1,23 +1,16 @@
+import { Fragment } from 'react'
 import Image from "next/image";
-import PageHeader from "@/components/slices/PageHeader";
-import Slice1 from "@/components/slices/Slice1";
-import HomePageSlice2 from "@/components/slices/HomePageSlice2";
-import HomePageSlice3 from "@/components/slices/HomePageSlice3";
-import vector from "@/public/img/vector.png";
-import aboutUs1 from "@/public/img/about_us_1.jpg";
 
-export default function AboutPage () {
+import PageHeader from "@/components/slices/PageHeader";
+import SectionLeftArticle from "@/components/slices/SectionLeftArticle";
+import SectionRightArticle from "@/components/slices/SectionRightArticle";
+import SectionImageArticle from "@/components/slices/SectionImageArticle";
+import SectionArticles from "@/components/slices/SectionArticles";
+import vector from "@/public/img/vector.png";
+
+export default function AboutPage ({slices}) {
     const pageHeaderProps = {
         pageBackgroundImage: 'img/about_page_background.jpg',
-    }
-
-    const slice1Props = {
-        image: aboutUs1,
-        paragraphTitle: "Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy",
-        paragraphs: [
-            "School leaders developed and implemented their projects after attending USAID's \"Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy.\" The training focused on developing literacy leaders who can foster conditions for integrating social and emotional learning, gender equity and social inclusion, and developmentally appropriate practices to support quality literacy instruction.",
-            "USAID officials, DepEd representatives, educators from DepEd Regions 5 and 6, and other key partners and stakeholders attended the conference where teachers and administrators shared their results."
-        ]
     }
 
     return (
@@ -44,13 +37,22 @@ export default function AboutPage () {
             </PageHeader>
             <div className="mt-12 md:mt-16 lg:mt-18 xl:mt-24 px-4 w-full xl:flex xl:justify-center">
                 <div className="xl:w-[1345px] mx-4 mb-8 py-8 px-4">
-                    <Slice1
-                        image={slice1Props.image}
-                        paragraphTitle={slice1Props.paragraphTitle}
-                        paragraphs={slice1Props.paragraphs}
-                    />
-                    {/* <HomePageSlice2 />
-                    <HomePageSlice3 /> */}
+                    {slices.map((slice, i) => (
+                        <Fragment key={i}>
+                            {slice.sliceType === 'section-left-article' && (
+                                <SectionLeftArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-image-article' && (
+                                <SectionImageArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-right-article' && (
+                                <SectionRightArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'articles' && (
+                                <SectionArticles slice={slice} />
+                            )}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </>

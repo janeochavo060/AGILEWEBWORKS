@@ -1,20 +1,13 @@
-import PageHeader from "@/components/slices/PageHeader";
-import Slice1 from "@/components/slices/Slice1";
-import HomePageSlice2 from "@/components/slices/HomePageSlice2";
-import HomePageSlice3 from "@/components/slices/HomePageSlice3";
+import { Fragment } from 'react'
 
-export default function HomePage () {
+import PageHeader from "@/components/slices/PageHeader";
+import SectionLeftArticle from "@/components/slices/SectionLeftArticle";
+import SectionCurriculums from "@/components/slices/SectionCurriculums";
+import SectionArticles from "@/components/slices/SectionArticles";
+
+export default function HomePage ({slices}) {
     const pageHeaderProps = {
         pageBackgroundImage: 'img/page_background.png',
-    }
-
-    const slice1Props = {
-        title: "Project Summary",
-        subtitle: "The ABC+: Advancing Basic Education in the Philippines",
-        paragraphs: [
-            "The ABC+: Advancing Basic Education in the Philippines project works with DepEd, local governments, and the private sector to address factors that contribute to low learning outcomes in Bicol (Region V) and Western Visayas (Region VI) and is also implementing a smaller set of interventions in select School Divisions in the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM).",
-            "ABC+ operates in partnership with central and regional education officials, and local organizations to ensure that evidence-based solutions for improved early literacy and numeracy instruction can be adopted and sustained by the Philippine education system. The project also focuses on fostering a more equitable, inclusive, and nurturing climate for learning in the early grades as part of its social and emotional learning (SEL) focus."
-        ]
     }
 
     return (
@@ -29,13 +22,19 @@ export default function HomePage () {
             </PageHeader>
             <div className="mt-12 md:mt-16 lg:mt-18 xl:mt-24 px-4 w-full xl:flex xl:justify-center">
                 <div className="xl:w-[1345px] mx-4 mb-8 py-8 px-4">
-                    <Slice1
-                        title={slice1Props.title}
-                        subtitle={slice1Props.subtitle}
-                        paragraphs={slice1Props.paragraphs}
-                    />
-                    <HomePageSlice2 />
-                    <HomePageSlice3 />
+                    {slices.map((slice, i) => (
+                        <Fragment key={i}>
+                            {slice.sliceType === 'section-left-article' && (
+                                <SectionLeftArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-curriculums' && (
+                                <SectionCurriculums slice={slice} />
+                            )}
+                            {slice.sliceType === 'articles' && (
+                                <SectionArticles slice={slice} />
+                            )}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </>

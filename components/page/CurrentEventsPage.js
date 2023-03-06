@@ -1,10 +1,12 @@
+import { Fragment } from 'react'
 import Image from "next/image";
+
 import PageHeader from "@/components/slices/PageHeader";
-import CurrentEventsPageSlice1 from "@/components/slices/CurrentEventsPageSlice1";
-import CurrentEventsPageSlice2 from "@/components/slices/CurrentEventsPageSlice2";
+import SectionFilter from "@/components/slices/SectionFilter";
+import SectionEvents from "@/components/slices/SectionEvents";
 import vector from "@/public/img/vector.png";
 
-export default function CurrentEventsPage () {
+export default function CurrentEventsPage ({slices}) {
     const pageHeaderProps = {
         pageBackgroundImage: 'img/current_events_page_background.jpg',
     }
@@ -32,8 +34,16 @@ export default function CurrentEventsPage () {
             </PageHeader>
             <div className="mt-8 px-4 w-full xl:flex xl:justify-center">
                 <div className="xl:w-[1345px] mx-4 mb-8 py-8 px-4">
-                    <CurrentEventsPageSlice1 />
-                    <CurrentEventsPageSlice2 />
+                    {slices.map((slice, i) => (
+                        <Fragment key={i}>
+                            {slice.sliceType === 'section-filter' && (
+                                <SectionFilter slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-events' && (
+                                <SectionEvents slice={slice} />
+                            )}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </>

@@ -1,9 +1,11 @@
-import PageHeader from "@/components/slices/PageHeader";
-import HomePageSlice1 from "@/components/slices/HomePageSlice1";
-import HomePageSlice2 from "@/components/slices/HomePageSlice2";
-import HomePageSlice3 from "@/components/slices/HomePageSlice3";
+import { Fragment } from 'react'
 
-export default function HomePage () {
+import PageHeader from "@/components/slices/PageHeader";
+import SectionLeftArticle from "@/components/slices/SectionLeftArticle";
+import SectionCurriculums from "@/components/slices/SectionCurriculums";
+import SectionArticles from "@/components/slices/SectionArticles";
+
+export default function HomePage ({slices}) {
     const pageHeaderProps = {
         pageBackgroundImage: 'img/page_background.png',
     }
@@ -20,9 +22,19 @@ export default function HomePage () {
             </PageHeader>
             <div className="mt-12 md:mt-16 lg:mt-18 xl:mt-24 px-4 w-full xl:flex xl:justify-center">
                 <div className="xl:w-[1345px] mx-4 mb-8 py-8 px-4">
-                    <HomePageSlice1 />
-                    <HomePageSlice2 />
-                    <HomePageSlice3 />
+                    {slices.map((slice, i) => (
+                        <Fragment key={i}>
+                            {slice.sliceType === 'section-left-article' && (
+                                <SectionLeftArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-curriculums' && (
+                                <SectionCurriculums slice={slice} />
+                            )}
+                            {slice.sliceType === 'articles' && (
+                                <SectionArticles slice={slice} />
+                            )}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </>

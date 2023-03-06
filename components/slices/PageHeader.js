@@ -1,5 +1,4 @@
 export default function PageHeader (props) {
-    console.log(props)
     return (
         <div
             className='relative w-auto mt-24 h-[220px] sm:mt-32 sm:h-[320px] md:h-[420px] lg:h-[600px] xl:mt-20 xl:h-[800px]'

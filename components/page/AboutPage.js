@@ -1,11 +1,14 @@
+import { Fragment } from 'react'
 import Image from "next/image";
+
 import PageHeader from "@/components/slices/PageHeader";
-import AboutPageSlice1 from "@/components/slices/AboutPageSlice1";
-import AboutPageSlice2 from "@/components/slices/AboutPageSlice2";
-import AboutPageSlice3 from "@/components/slices/AboutPageSlice3";
+import SectionLeftArticle from "@/components/slices/SectionLeftArticle";
+import SectionRightArticle from "@/components/slices/SectionRightArticle";
+import SectionImageArticle from "@/components/slices/SectionImageArticle";
+import SectionArticles from "@/components/slices/SectionArticles";
 import vector from "@/public/img/vector.png";
 
-export default function AboutPage () {
+export default function AboutPage ({slices}) {
     const pageHeaderProps = {
         pageBackgroundImage: 'img/about_page_background.jpg',
     }
@@ -34,9 +37,22 @@ export default function AboutPage () {
             </PageHeader>
             <div className="mt-12 md:mt-16 lg:mt-18 xl:mt-24 px-4 w-full xl:flex xl:justify-center">
                 <div className="xl:w-[1345px] mx-4 mb-8 py-8 px-4">
-                    <AboutPageSlice1 />
-                    <AboutPageSlice2 />
-                    <AboutPageSlice3 />
+                    {slices.map((slice, i) => (
+                        <Fragment key={i}>
+                            {slice.sliceType === 'section-left-article' && (
+                                <SectionLeftArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-image-article' && (
+                                <SectionImageArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'section-right-article' && (
+                                <SectionRightArticle slice={slice} />
+                            )}
+                            {slice.sliceType === 'articles' && (
+                                <SectionArticles slice={slice} />
+                            )}
+                        </Fragment>
+                    ))}
                 </div>
             </div>
         </>

@@ -24,7 +24,7 @@ export default function Contact() {
                 <Fragment key={field?.state_name}>
                   <FormField
                     {...field}
-                    className={field?.state_name === "message" ? "md:col-span-2" : ""}
+                    className={`placeholder-slate-500 ${field?.state_name === "message" ? "md:col-span-2" : ""}`}
                     error={isError(errors, section?.state_name, field?.state_name)}
                   />
                 </Fragment>

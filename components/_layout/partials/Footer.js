@@ -28,7 +28,7 @@ export default function Footer() {
                   <Link href={nav.url || router.pathname} key={i}>
                     <div
                       className={`
-                              md:text-base text-sm mr-6 sm:mr-16 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal
+                              md:text-base text-sm mt-1 sm:mt-0 text-sm mr-6 sm:mr-16 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal
                               ${
                                 router.pathname.includes(nav.url) &&
                                 router.pathname !== "/"
@@ -52,7 +52,7 @@ export default function Footer() {
               </div>
               <div className="">
                 <p
-                  className={`font-semibold md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}
+                  className={`mt-4 sm:mt-0 font-semibold md:text-base text-sm md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal`}
                 >
                   L3-02B, SOHO Retail Podium 748 <br /> Shaw Blvd, Greenfield
                   District, <br /> Mandaluyong City, 1552

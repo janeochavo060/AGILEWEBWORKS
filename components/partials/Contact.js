@@ -8,7 +8,7 @@ export default function Contact() {
   const sections = form?.blueprint?.schema?.sections || [];
   const [errors, setErrors] = useState([])
   return (
-    <div className="flex flex-col justify-center items-center max-w-95p md:max-w-2xl w-full mx-auto gap-8 bg-white py-12 px-4">
+    <div className="flex flex-col justify-center items-center max-w-95p md:max-w-2xl w-full mx-auto gap-8 bg-white py-4 px-4">
       {sections.map((section) => {
         const fields = section?.fields || [];
         return (

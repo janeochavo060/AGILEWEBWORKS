@@ -1,18 +1,41 @@
 // import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
+
 export default function TopBanner({ slice }) {
+  const router = useRouter();
+  const [bgImage, setBgImage] = useState(null)
+  useEffect(() => {
+    handleScroll()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router])
+
+  const handleScroll = () => {
+    const width = window?.screen?.width;
+    if (width < 640) {
+        return setBgImage(slice?.main?.mobile_image)
+    } else if (width < 1024) {
+        return setBgImage(slice?.main?.tablet_image)
+    } else {
+        return setBgImage(slice?.main?.image)
+    }
+  };
+
+  window.addEventListener("resize", handleScroll, { passive: true });
+
   return (
     <div
-      className="relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col pt-[100px] md:pt-0 sm:justify-center"
+      className={`relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col pt-[150px] lg:pt-0 lg:justify-center`}
       style={{
         // background: slice?.main?.bg_color,
-        backgroundImage: `${slice?.main?.bg_color}, url(${slice?.main?.image})`,
+        // backgroundImage: `${slice?.main?.bg_color}, url(${slice?.main?.image})`,
+        backgroundImage: `${ bgImage ? `url(${bgImage})` : '' }`,
       }}
     >
       {/* <Image alt="" src={slice?.main?.image} fill priority /> */}
-      <div className="max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
-        <h1 className="leading-normal font-bold text-3xl sm:text-5xl sm:leading-[60px] lg:text-6xl lg:leading-[70px]">
+      <div className="max-w-2xl md:max-w-[700px] lg:max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
+        <h1 className="leading-normal font-bold text-3xl sm:text-4xl md:text-5xl sm:leading-[60px] md:leading-[65px] lg:text-6xl lg:leading-[70px]">
           {slice?.main?.title}
         </h1>
         {slice?.main?.link && (

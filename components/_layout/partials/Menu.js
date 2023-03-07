@@ -35,14 +35,16 @@ export default function Menu ({ className }) {
   return (
     <div
       id="menu"
-      className={`${showSideMenu ? 'h-screen bg-white md:w-[50%] md:ml-[50%] lg:w-full lg:h-fit lg:ml-0' : ''} pt-4 pb-3 z-[100] w-full transition-all duration-600 ease-in-out  ${
+      className={`${showSideMenu ? 'h-screen md:w-[50%] md:ml-[50%] lg:w-full lg:h-fit lg:ml-0' : ''} bg-white fixed pt-4 pb-3 z-[100] w-full transition-all duration-600 ease-in-out ${
         className || ""
       } ${
-        showMenu
-          ? scrollPosition === 0
-            ? `lg:bg-transparent fixed top-0 slideDown`
-            : "shadow-lg shadow-black/15 slideDown bg-white top-0 fixed"
-          : ""
+        showMenu && scrollPosition === 0 ? `lg:bg-transparent` : "shadow-lg shadow-black/15 bg-white lg:px-8"
+        // showMenu ? scrollPosition === 0 ? `lg:bg-transparent fixed top-0 slideDown` : "shadow-lg shadow-black/15 slideDown bg-white top-0 fixed" : ""
+          // showMenu
+          //   ? scrollPosition === 0
+          //     ? `lg:bg-transparent fixed top-0 slideDown`
+          //     : "shadow-lg shadow-black/15 slideDown bg-white top-0 fixed"
+          //   : ""
       }`}
     >
       <div

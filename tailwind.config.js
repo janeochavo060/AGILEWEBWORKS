@@ -44,6 +44,9 @@ module.exports = {
         "scale-in": "scale-in 1s ease-in-out",
         "slide-out": "slide-out 1s ease-in-out",
       },
+      backgroundSize: {
+        '140%': '140%',
+      }
     },
     screens: {
       'smallerMobile': '361px',

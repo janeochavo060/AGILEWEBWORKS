@@ -61,7 +61,7 @@ export default function Footer () {
             </div>
           </div>
           <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden border-t border-gray-400">
-            <div className="flex md:flex-row flex-col md:justify-around justify-center items-center">
+            <div className="flex md:flex-row flex-col justify-between justify-center items-center px-4">
               <div className="flex text-sm xxl:mx-0 py-6 cursor-pointer">
                 <Image
                   src={global?.logo}

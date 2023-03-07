@@ -1,25 +1,65 @@
 import Image from "next/image";
 import React from "react";
 import TitleContentBlock from "../partials/TitleContentBlock";
+import { Slide } from "react-slideshow-image"
+import { useWindowSize } from "react-use"
 
 export default function TextImageList({ slice }) {
-  const images = slice?.main?.images || [];
-  return (
-    <div className="flex flex-col text-center space-y-4 my-16">
-      <TitleContentBlock slice={slice} contentClass="max-w-xl px-4 mx-auto" />
-      <div className="flex flex-wrap items-center justify-center gap-16 p-8">
-        {images.map((image, i) => (
-          <div key={i}>
-            <Image
-              alt={image}
-              src={image}
-              width={100}
-              height={100}
-              className="w-full max-h-[200px] grayscale hover:grayscale-0 transition hover:scale-110 duration-300"
-            />
-          </div>
-        ))}
+  const images = slice?.main?.images || []
+  const { width } = useWindowSize()
+  const isLaptop = width <= 1024 && width > 768
+  const isTablet = width <= 768 && width > 425
+  const isMobile = width <= 425
+  const isMobileLarge = width <= 425 && width > 375
+  const isMobileMedium = width <= 375 && width > 320
+  const isMobileSmall = width <= 320
+
+  const MultipleSlidesExample = () => {
+    const properties = {
+      duration: 3000,
+      slidesToShow: isLaptop
+        ? 8
+        : isTablet
+        ? 6
+        : isMobileLarge
+        ? 3
+        : isMobileMedium
+        ? 2
+        : isMobileSmall
+        ? 1
+        : 10,
+      slidesToScroll: 1,
+      autoplay: false,
+      arrows: slice?.main?.images?.length <= 8 ? false : true,
+      canSwipe: slice?.main?.images?.length <= 8 ? false : true,
+      indicators: false,
+    }
+
+    return images.length ? (
+      <div>
+        <div className="block justify-center m-8">
+          <Slide {...properties}>
+            {images.map((image, i) => (
+              <div key={i} className="flex justify-center m-4">
+                <Image
+                  alt={image}
+                  src={image}
+                  width={100}
+                  height={100}
+                  className="object-contain h-16 w-24 xl:h-56 xl:w-64 lg:h-40 lg:w-48 md:h-40 md:w-40 hover:scale-110 duration-300"
+                />
+              </div>
+            ))}
+          </Slide>
+        </div>
       </div>
+    ) : null
+  }
+
+  return (
+    <div className="flex flex-col text-center space-y-4 mt-16">
+      <TitleContentBlock slice={slice} contentClass="max-w-xl px-4 mx-auto" />
+      <MultipleSlidesExample />
     </div>
-  );
+  )
 }

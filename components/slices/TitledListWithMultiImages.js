@@ -27,7 +27,7 @@ export default function TitledListWithMultiImages({ slice }) {
                 <button
                   key={item?.name}
                   aria-label={item?.name}
-                  className={`text-left transition-all flex flex-col md:flex-row md:items-center gap-x-4 text-3xl font-bold`}
+                  className={`text-left transition-all flex flex-col md:flex-row md:items-center gap-x-4 sm:text-3xl text-2xl font-bold`}
                   onClick={() => setActive(item?.name)}
                 >
                   <span className="text-sm">

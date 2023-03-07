@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "@/styles/main.css";
 import "@/styles/unreset.css";
+import "react-slideshow-image/dist/styles.css"
 import DefaultLayout from "@/components/_layout/DefaultLayout";
 import globalData from "@/lib/preBuildScripts/static/globalData.json";
 import { GlobalContext } from "@/lib/context/GlobalContext";

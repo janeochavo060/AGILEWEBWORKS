@@ -35,35 +35,49 @@ export default function Menu ({ className }) {
   return (
     <div
       id="menu"
-      className={`py-4 z-[100] w-full transition-all duration-600 ease-in-out ${
+      className={`${showSideMenu ? 'h-screen bg-[#e9eef6] md:w-[50%] md:ml-[50%] lg:w-full lg:h-fit lg:ml-0' : ''} pt-4 pb-3 z-[100] w-full transition-all duration-600 ease-in-out  ${
         className || ""
       } ${
         showMenu
           ? scrollPosition === 0
             ? "bg-transparent fixed top-0 slideDown"
-            : "shadow-lg shadow-black/15 slideDown bg-white backdrop-blur sticky top-0 "
+            : "shadow-lg shadow-black/15 slideDown bg-white backdrop-blur top-0 bg-white fixed"
           : ""
       }`}
     >
       <div
-        className={`px-4 lg:px-0 w-full mx-auto ${
+        className={`px-10 lg:px-0 w-full mx-auto ${
           router.pathname !== "/" || scrollPosition !== 0
             ? "max-w-screen-xl"
             : "lg:px-[calc(2rem+5%)]"
         }`}
         // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
-        <div className="flex justify-between items-center h-full">
-          <Link href="/">
+
+
+        <div className={`${showSideMenu ? '' : ''} ml-[-80px] absolute w-full text-right lg:hidden`}>
+          <button
+            aria-label="Toggle Menu"
+            className={`mt-1 menuToggle ${showSideMenu && "show"}`}
+            onClick={() => setShowSideMenu(!showSideMenu)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <div className={`${'flex flex-col justify-between'} lg:flex-row`}>
+          <Link href="/" className={`${showSideMenu ? 'place-self-center mt-20 mb-10' : ''} lg:my-0`}>
             <Image
               src={main?.logo}
               alt="Halcyon Logo"
-              className="mx-1 xl:px-0 px-4"
+              className={`${showSideMenu ? 'w-[200px] text-center	' : 'w-28 lg:w-40'} lg:w-40`}
               width={150}
               height={24}
             />
           </Link>
-          <div className="hidden xl:flex md:mx-0 mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-16 gap-y-2">
+          <div className={`${showSideMenu ? 'lg:pt-0' : 'hidden lg:pt-1 lg:block'} flex flex-col lg:flex-row items-center lg:gap-0 gap-8 lg:space-x-16 `}>
             {menuHandler?.length > 0 ? (
               menuHandler.map((nav, i) => {
                 let pathname = "/" + router?.query?.id;
@@ -72,7 +86,7 @@ export default function Menu ({ className }) {
                   <Link
                     href={nav?.url || router.pathname}
                     key={i}
-                    className={`md:text-base text-sm md:px-0 py-1 slide-line-hover tracking-normal underline-animation  ${
+                    className={`text-xl md:text-base md:px-0 py-1 slide-line-hover tracking-normal underline-animation  ${
                       isActive
                         ? "text-primary underline-animation-active"
                         : "hover:text-black/75"
@@ -94,16 +108,9 @@ export default function Menu ({ className }) {
               Get A Quote
             </button>
           </div>
-          <button
-            aria-label="Toggle Menu"
-            className={`xl:hidden mx-6 menuToggle ${showSideMenu && "show"}`}
-            onClick={() => setShowSideMenu(!showSideMenu)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
+
+
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ export default function Footer() {
                   <Link href={nav.url || router.pathname} key={i}>
                     <div
                       className={`
-                              md:text-base text-sm mt-1 sm:mt-0 text-sm mr-6 sm:mr-16 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal
+                              md:text-base text-sm mt-1 sm:mt-0 mr-6 sm:mr-16 md:px-0 border-b-2 border-transparent slide-line-hover tracking-normal
                               ${
                                 router.pathname.includes(nav.url) &&
                                 router.pathname !== "/"
@@ -61,8 +61,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="xxl:max-w-[1345px] xl:max-w-[1260px] w-full items-center mx-auto overflow-x-hidden overflow-y-hidden border-t border-gray-400">
-            <div className="flex md:flex-row flex-col justify-between justify-center items-center">
-              <div className="flex text-sm xxl:mx-0 py-6 cursor-pointer">
+            <div className="flex mobile:flex-row flex-col justify-between justify-center items-center">
+              <div className="flex text-sm xxl:mx-0 pt-6 pb-2 cursor-pointer">
                 <Image
                   src={global?.logo}
                   alt="Halcyon Logo"
@@ -71,9 +71,9 @@ export default function Footer() {
                   height={24}
                 />
               </div>
-              <div className="flex-row md:mx-0 mx-6 py-6 ">
-                <div className="flex flex-col md:items-end items-center">
-                  <div className="cursor-pointer">
+              <div className="flex-row mobile:mx-0 mx-6 py-6 ">
+                <div className="flex flex-col mobile:items-end items-center">
+                  <div className="cursor-pointer text-[10px] sm:text-base">
                     Privacy | Terms & Conditions
                   </div>
                   <div className="flex items-center cursor-pointer">
@@ -84,7 +84,7 @@ export default function Footer() {
                       width={15}
                       height={15}
                     />
-                    <p>
+                    <p className="text-[9px] sm:text-base">
                       Copyright {getCurrentYear()} {global.name}
                     </p>
                   </div>

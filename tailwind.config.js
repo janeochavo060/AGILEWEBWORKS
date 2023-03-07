@@ -46,6 +46,9 @@ module.exports = {
       },
     },
     screens: {
+      'smallerMobile': '361px',
+			'smallmobile': '375px',
+			'mobile': '426px',
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',

@@ -1,33 +1,33 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
-// import { useRouter } from "next/router";
-// import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 export default function TopBanner({ slice }) {
-  // const router = useRouter();
-  // const [bgImage, setBgImage] = useState(null)
-  // useEffect(() => {
-  //   handleScroll()
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [router])
+  const router = useRouter();
+  const [bgImage, setBgImage] = useState(null)
+  useEffect(() => {
+    handleScroll()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [router])
 
-  // const handleScroll = () => {
-  //   const width = window?.screen?.width;
-  //   if (width < 640) {
-  //       return setBgImage(slice?.main?.mobile_image)
-  //   } else if (width < 1024) {
-  //       return setBgImage(slice?.main?.tablet_image)
-  //   } else {
-  //       return setBgImage(slice?.main?.image)
-  //   }
-  // };
+  const handleScroll = () => {
+    const width = window?.screen?.width;
+    if (width < 640) {
+        return setBgImage(slice?.main?.mobile_image)
+    } else if (width < 1024) {
+        return setBgImage(slice?.main?.tablet_image)
+    } else {
+        return setBgImage(slice?.main?.image)
+    }
+  };
 
-  // window.addEventListener("resize", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll, { passive: true });
 
   return (
     <>
 
-      <div className="sm:hidden absolute h-screen w-full grid grid-cols-1 justify-end overflow-hidden	">
+      {/* <div className="sm:hidden absolute h-screen w-full grid grid-cols-1 justify-end overflow-hidden	">
         <Image priority className="max-w-[unset] w-screen" alt="" src={slice?.main?.mobile_image} width="400" height="400" />
       </div>
       <div className="hidden sm:grid lg:hidden absolute h-screen w-full grid-rows-1 justify-center overflow-hidden	">
@@ -35,15 +35,15 @@ export default function TopBanner({ slice }) {
       </div>
       <div className="hidden lg:grid absolute h-screen w-full grid-rows-1 justify-center overflow-hidden	">
         <Image priority className=" max-w-[unset] h-full" alt="" src={slice?.main?.image} width="2000" height="2000" />
-      </div>
+      </div> */}
 
       <div
         className={`min-h-screen bg-no-repeat bg-cover bg-center flex flex-col pt-[100px] md:pt-[150px] lg:pt-0 lg:justify-center`}
-        // style={{
-        //   // background: slice?.main?.bg_color,
-        //   // backgroundImage: `${slice?.main?.bg_color}, url(${slice?.main?.image})`,
-        //   // backgroundImage: `${ bgImage ? `url(${bgImage})` : '' }`,
-        // }}
+        style={{
+          // background: slice?.main?.bg_color,
+          // backgroundImage: `${slice?.main?.bg_color}, url(${slice?.main?.image})`,
+          backgroundImage: `${ bgImage ? `url(${bgImage})` : '' }`,
+        }}
       >
 
         {/* <Image alt="" src={slice?.main?.image} fill priority /> */}

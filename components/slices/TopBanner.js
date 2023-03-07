@@ -26,7 +26,7 @@ export default function TopBanner({ slice }) {
 
   return (
     <div
-      className={`relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col pt-[150px] lg:pt-0 lg:justify-center`}
+      className={`relative min-h-screen bg-no-repeat bg-cover bg-center flex flex-col pt-[100px] md:pt-[150px] lg:pt-0 lg:justify-center`}
       style={{
         // background: slice?.main?.bg_color,
         // backgroundImage: `${slice?.main?.bg_color}, url(${slice?.main?.image})`,

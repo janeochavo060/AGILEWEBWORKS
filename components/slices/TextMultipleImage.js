@@ -6,7 +6,7 @@ export default function TextMultipleImage({ slice }) {
   const images = slice?.main?.images || [];
   return (
     <div
-      className={`black-shadow md:p-10 ${
+      className={`black-shadow md:pl-10 ${
         slice?.main?.bg_color
           ? slice?.main?.image_position === "right"
           ? "trapezoid-bottom-left  md:trapezoid-left md:ml-5 lg:ml-10"

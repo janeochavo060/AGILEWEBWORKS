@@ -25,7 +25,7 @@ export default function MultipleImageText({ slice }) {
             : "  "
         }`}
       >
-        <div className="flex flex-col flex-col-reverse pb-20 md:pb-0 md:grid md:grid-cols-2 gap-4 xl:gap-16 max-w-screen-xl ml-auto">
+        <div className="flex flex-col flex-col-reverse pb-20 md:pb-0 md:grid md:grid-cols-2 gap-4 xl:gap-16 ml-auto">
           <div
             className={`grid grid-cols-2 justify-center lg:justify-start gap-4 lg:gap-8 ${
               slice?.main?.image_position === "right"
@@ -41,13 +41,13 @@ export default function MultipleImageText({ slice }) {
                 src={image}
                 width="300"
                 height="700"
-                className={`rounded-xl lg:rounded-xxl ${
+                className={`rounded-xl lg:rounded-xxl xl:min-h-[500px] w-auto ${
                   i % 2 ? "mt-[100px]" : ""
                 }`}
               />
             ))}
           </div>
-          <div className="flex flex-col justify-center lg:gap-4 text-white pt-7 md:pt-0">
+          <div className="flex flex-col justify-center lg:gap-4 text-white pt-7 md:pt-0 md:max-w-[90%]">
             <TitleContentBlock slice={slice} />
             {slice?.main?.link && (
               <div

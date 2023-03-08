@@ -13,7 +13,7 @@ export default function Contact() {
         const fields = section?.fields || [];
         return (
           <Fragment key={section?.state_name}>
-            <h2 className="text-5xl md:text-7xl font-bold text-center text-dim-black mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-center text-dim-black mb-16">
               {section?.title}
             </h2>
             <form

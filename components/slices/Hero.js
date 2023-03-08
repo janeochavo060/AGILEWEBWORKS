@@ -22,7 +22,7 @@ export default function Slice({ slice }) {
           <div className="flex flex-col gap-8">
             <TitleContentBlock
               slice={slice}
-              titleClass="sm:text-6xl text-5xl"
+              titleClass="sm:text-5xl mobile:text-3xl xl:text-5xl 2xl:text-5xl"
               className="max-w-xl"
             />
             {slice?.main?.link && (

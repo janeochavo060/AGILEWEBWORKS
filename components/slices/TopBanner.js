@@ -47,7 +47,7 @@ export default function TopBanner({ slice }) {
       >
 
         {/* <Image alt="" src={slice?.main?.image} fill priority /> */}
-        {/* <div className="max-w-2xl sm:max-w-[550px] md:max-w-[700px] lg:max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
+        <div className="max-w-2xl sm:max-w-[550px] md:max-w-[700px] lg:max-w-3xl px-8 lg:ml-[5%] flex flex-col gap-8 z-50">
           <h1 className="leading-normal font-bold text-3xl sm:text-4xl md:text-5xl sm:leading-[60px] md:leading-[65px] lg:text-6xl lg:leading-[70px]">
             {slice?.main?.title}
           </h1>
@@ -68,7 +68,7 @@ export default function TopBanner({ slice }) {
               </svg>
             </Link>
           )}
-        </div> */}
+        </div>
       </div>
 
     </>

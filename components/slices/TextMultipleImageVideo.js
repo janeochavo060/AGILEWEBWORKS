@@ -6,7 +6,7 @@ import YouTubeEmbed from "@/components/partials/YouTubeEmbed";
 export default function TextMultipleImageVideo({ slice }) {
   const images = slice?.main?.images || []
   return (
-    <div className="lg:flex items-center h-screen my-10 sm:mb-28 lg:my-0">
+    <div className="lg:flex items-center min-h-screen my-10 sm:mb-28 lg:my-0">
       <div className="relative w-full">
         {/* <div className="relative flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-y-12 lg:gap-y-8 gap-x-8 max-w-screen-xl mx-auto px-4 md:px-8 2xl:px-0 h-full"> */}
         <span

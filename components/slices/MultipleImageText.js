@@ -10,11 +10,11 @@ export default function MultipleImageText({ slice }) {
   return (
     <div
       className={
-        slice?.main?.bg_color
+        `${slice?.main?.bg_color
           ? slice?.main?.image_position === "right"
             ? "trapezoid-bottom-left  md:trapezoid-left md:ml-5 lg:ml-10"
             : "trapezoid-bottom-right  md:trapezoid-right md:mr-5 lg:mr-10"
-          : ""
+          : ""}`
       }
       style={{ backgroundColor: slice?.main?.bg_color }}
     >

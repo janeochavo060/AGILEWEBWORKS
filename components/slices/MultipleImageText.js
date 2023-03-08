@@ -41,7 +41,7 @@ export default function MultipleImageText({ slice }) {
                 src={image}
                 width="300"
                 height="700"
-                className={`rounded-xl lg:rounded-xxl xl:min-h-[500px] w-auto ${
+                className={`rounded-xl lg:rounded-xxl xl:min-h-[450px] w-auto ${
                   i % 2 ? "mt-[100px]" : ""
                 }`}
               />

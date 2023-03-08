@@ -12,6 +12,7 @@ export default function Menu ({ className }) {
   const [showMenu, setShowMenu] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   useEffect(() => {
+    setShowSideMenu(false)
     const handleScroll = () => {
       const position = window.scrollY;
       const screenHeight = window?.screen?.height;
@@ -48,7 +49,7 @@ export default function Menu ({ className }) {
       }`}
     >
       <div
-        className={`px-10 lg:px-0 w-full mx-auto ${
+        className={`px-10 lg:px-0 w-full mx-auto ${showSideMenu ? '' : 'flex flex-row-reverse justify-between lg:block'}  ${
           router.pathname !== "/" || scrollPosition !== 0
             ? "max-w-screen-xl"
             : "lg:px-[calc(2rem+5%)]"
@@ -57,7 +58,8 @@ export default function Menu ({ className }) {
       >
 
 
-        <div className={`${showSideMenu ? '' : ''} ml-[-80px] absolute w-full text-right lg:hidden`}>
+        {/* <div className={`${showSideMenu ? '' : ''} ml-[-80px] absolute w-full text-right lg:hidden`}> */}
+        <div className={`${showSideMenu ? '' : ''} text-right lg:hidden`}>
           <button
             aria-label="Toggle Menu"
             className={`mt-1 menuToggle ${showSideMenu && "show"}`}
@@ -70,7 +72,7 @@ export default function Menu ({ className }) {
         </div>
 
         <div className={`${'flex flex-col justify-between'} lg:flex-row`}>
-          <Link href="/" className={`${showSideMenu ? 'place-self-center mt-20 mb-10' : ''} lg:my-0`}>
+          <Link href="/" className={`${showSideMenu ? 'place-self-center mt-20 mb-10' : ''} lg:my-0	w-fit`}>
             <Image
               src={main?.logo}
               alt="Halcyon Logo"
@@ -86,6 +88,7 @@ export default function Menu ({ className }) {
                 const isActive = pathname === nav?.url;
                 return (
                   <Link
+                    // onClick={() => setShowSideMenu(false)}
                     href={nav?.url || router.pathname}
                     key={i}
                     className={`text-xl md:text-base md:px-0 py-1 slide-line-hover tracking-normal underline-animation  ${

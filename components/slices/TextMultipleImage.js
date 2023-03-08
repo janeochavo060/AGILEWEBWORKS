@@ -22,7 +22,7 @@ export default function TextMultipleImage({ slice }) {
             : ""
         }`}
       >
-        <div className="flex flex-col pb-20 gap-4 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3  xl:gap-16 max-w-screen-xl ml-auto">
+        <div className="flex flex-col pb-20 gap-4 md:pb-0 md:grid md:grid-cols-3 lg:grid-cols-3  xl:gap-16 max-w-screen-xl ml-auto">
           <div className="flex flex-col justify-center gap-4 text-white pt-7 md:pt-0">
             <TitleContentBlock slice={slice} />
             {slice?.main?.link && (
@@ -45,7 +45,7 @@ export default function TextMultipleImage({ slice }) {
             )}
           </div>
           <div
-            className={`lg:col-span-2 grid grid-cols-3 gap-4 ${
+            className={`lg:col-span-2 md:col-span-2 grid grid-cols-3 gap-4 ${
               slice?.main?.image_position === "left"
                 ? "order-first lg:pr-6 "
                 : "lg:pl-6"

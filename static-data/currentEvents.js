@@ -9,6 +9,12 @@ import currentEventsImage10 from "@/public/img/news_article_3.png";
 const currentEvents = {
     slices: [
         {
+            sliceType: "secondary-page-header",
+            backgroundImage: "img/current_events_page_background.jpg",
+            title: "News",
+            subtitle: "Current Events"
+        },
+        {
             sliceType: "section-filter",
             filters: []
         },

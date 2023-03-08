@@ -101,7 +101,7 @@ export default function MenuAbc ({ className }) {
         <div className="flex justify-between items-center h-full py-4 bg-[#04316C]">
           <div className="flex justify-center items-center w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="">
-              <div className="relative w-[140px] h-[50px]">
+              <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[50px]">
                 <Image
                   src={depedLogo}
                   alt="DepEd Logo"
@@ -115,7 +115,7 @@ export default function MenuAbc ({ className }) {
               </div>
             </Link>
             <Link href="/" className=" ">
-              <div className="relative w-[180px] h-[80px]">
+              <div className="relative w-[140px] h-[40px] sm:w-[180px] sm:h-[80px]">
                 <Image
                   src={usAidLogo}
                   alt="USAID Logo"
@@ -129,7 +129,7 @@ export default function MenuAbc ({ className }) {
               </div>
             </Link>
             <Link href="/" className="">
-              <div className="relative w-[130px] h-[40px]">
+              <div className="relative w-[110px] h-[30px] sm:w-[130px] sm:h-[40px]">
                 <Image
                   src={rtiLogo}
                   alt="RTI Logo"

@@ -9,7 +9,14 @@ import newsArticleImage4 from "@/public/img/news_article_4.png";
 const about = {
     slices: [
         {
-            sliceType: 'section-left-article',
+            sliceType: "secondary-page-header",
+            backgroundImage: "img/about_page_background.jpg",
+            title: "About Us",
+            subtitle: "State of EGL in the Philippines"
+        },
+        {
+            sliceType: 'leadership-training',
+            floatImage: "left",
             image: aboutUs1,
             paragraphTitle: "Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy",
             paragraphs: [
@@ -23,7 +30,8 @@ const about = {
             value: aboutUs2
         },
         {
-            sliceType: 'section-right-article',
+            sliceType: 'leadership-training',
+            floatImage: "right",
             image: aboutUs3,
             paragraphTitle: "Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy",
             paragraphs: [

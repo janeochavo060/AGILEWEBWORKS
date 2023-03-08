@@ -64,46 +64,47 @@ export default function FooterAbc () {
             backgroundSize: "cover",
         }}
     >
-        <div className='relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mx-4 mb-8 py-8 px-4'>
-
+        <div className='relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-8 px-4'>
             {/* menus */}
-            <div className='flex flex-wrap'>
+            <div className="grid grid-cols-2 xl:grid-cols-6 gap-6 mb-4 xl:mb-8">
                 {menus2.map(menu => (
-                    <div key={menu.parent} className='w-1/2 xl:w-auto xl:mr-12 mb-4'>
-                        <div className='font-semibold text-[#07336E] flex items-center'>
-                            <div className='bg-[#E11C38] w-[10px] h-[15px] mr-2'></div>
+                    <div key={menu.parent} className="">
+                        <div className="font-extrabold text-[#07336E] text-lg xl:text-2xl flex items-center">
+                            <div className="bg-[#E11C38] w-[10px] h-[16px] mr-2"></div>
                             {menu.parent.toUpperCase()}
                         </div>
                         {menu.childrens.map(menuChildren => (
-                            <div key={menuChildren} className='text-[14px] text-[#656565] font-semibold py-2 w-full'>
+                            <div key={menuChildren} className="text-[13px] xl:text-base text-[#656565] font-semibold py-2 w-full">
                                 {menuChildren}
                             </div>
                         ))}
                     </div>
                 ))}
 
-                <div className='w-full lg:w-auto mb-4'>
-                    <div className='font-semibold text-[#07336E] flex items-center mb-2'>
-                        <div className='bg-[#E11C38] w-[10px] h-[15px] mr-2'></div>
+                <div className="col-span-2">
+                    <div className="font-extrabold text-[#07336E] text-lg xl:text-2xl flex items-center mb-2">
+                        <div className="bg-[#E11C38] w-[10px] h-[16px] mr-2"></div>
                         GET IN TOUCH
                     </div>
-                    <input
-                        type='text'
-                        name='name'
-                        className='text-xs border-[0.5px] py-[8.5px] px-4 mb-2 w-full outline-0'
-                        placeholder='Name'
-                    />
-                    <input
-                        type='email'
-                        name='email'
-                        className='text-xs border-[0.5px] py-[8.5px] px-4 mb-2 w-full outline-0'
-                        placeholder='Email'
-                    />
-                    <textarea name='message' placeholder='Message' className='text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0' />
-                    <div className='font-semibold text-[#07336E] text-right'>
+                    <div className="grid grid-cols-2 gap-y-2 gap-x-4">
+                        <input
+                            type="text"
+                            name="name"
+                            className="text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0 col-span-2 xl:col-span-1"
+                            placeholder="Name"
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            className="text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0 col-span-2 xl:col-span-1"
+                            placeholder="Email"
+                        />
+                        <textarea name="message" placeholder="Message" className="text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0 col-span-2" />
+                    </div>
+                    <div className="font-extrabold text-[#07336E] text-right">
                         SEND
                     </div>
-                    <hr className='bg-[#07336E] h-[4px] w-[27px] float-right' />
+                    <hr className="bg-[#07336E] h-[4px] w-[27px] float-right" />
                 </div>
             </div>
 
@@ -156,7 +157,7 @@ export default function FooterAbc () {
             </div>
 
             {/* abc+ */}
-            <p className='xl:hidden font-semibold text-[#07336E] text-center py-4'>
+            <p className='xl:hidden font-extrabold text-base text-[#07336E] text-center py-4'>
                 <span className='text-[#E11C38]'>ABC+: </span>
                 Advancing Basic Education in the Philippines
             </p>
@@ -186,11 +187,11 @@ export default function FooterAbc () {
                         width={15}
                         height={15}
                     />
-                    <div className='text-[14px] text-[#656565] font-medium'>
+                    <div className='text-[12px] text-[#656565] font-medium'>
                         {getCurrentYear()} ABC+. All Rights Reserved.
                     </div>
                 </div>
-                <div className='text-[14px] text-[#656565] text-center font-medium'>
+                <div className='text-[12px] text-[#656565] text-center font-medium'>
                     Privacy Policy | Terms of Use
                 </div>
             </div>

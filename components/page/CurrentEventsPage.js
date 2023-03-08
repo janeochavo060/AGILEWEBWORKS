@@ -1,51 +1,37 @@
 import { Fragment } from 'react'
-import Image from "next/image";
 
-import PageHeader from "@/components/slices/PageHeader";
+import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
 import SectionFilter from "@/components/slices/SectionFilter";
 import SectionEvents from "@/components/slices/SectionEvents";
-import vector from "@/public/img/vector.png";
 
 export default function CurrentEventsPage ({slices}) {
-    const pageHeaderProps = {
-        pageBackgroundImage: 'img/current_events_page_background.jpg',
+    const renderSwitch = (slice) => {
+        let renderComponent = <></>
+        switch (slice.sliceType) {
+            case "secondary-page-header":
+                renderComponent = <SecondaryPageHeader slice={slice} />
+                break;
+            case "section-filter":
+                renderComponent = <SectionFilter slice={slice} />
+                break;
+            case "section-events":
+                renderComponent = <SectionEvents slice={slice} />
+                break;
+            default:
+                <></>
+                break;
+        }
+
+        return renderComponent
     }
 
     return (
         <>
-            <PageHeader pageBackgroundImage={pageHeaderProps.pageBackgroundImage}>
-                <div className="py-4 px-32">
-                    <div className="flex justify-center items-center mb-4 text-md sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
-                        <p className="font-semibold text-[#07336E] uppercase">
-                            News
-                        </p>
-                        <Image
-                            src={vector}
-                            alt="vector"
-                            className="mx-1 xl:px-0 px-4"
-                            width={150}
-                            height={24}
-                        />
-                    </div>
-                    <p className='font-bold text-[#343434] text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl'>
-                        Current Events
-                    </p>
-                </div>
-            </PageHeader>
-            <div className="mt-8 px-4 w-full xl:flex xl:justify-center">
-                <div className="xl:w-[1345px] mx-4 mb-8 py-8 px-4">
-                    {slices.map((slice, i) => (
-                        <Fragment key={i}>
-                            {slice.sliceType === 'section-filter' && (
-                                <SectionFilter slice={slice} />
-                            )}
-                            {slice.sliceType === 'section-events' && (
-                                <SectionEvents slice={slice} />
-                            )}
-                        </Fragment>
-                    ))}
-                </div>
-            </div>
+            {slices.map((slice, i) => (
+                <Fragment key={i}>
+                    {renderSwitch(slice)}
+                </Fragment>
+            ))}
         </>
     )
   };

@@ -11,7 +11,12 @@ import newsArticleImage4 from "@/public/img/news_article_4.png";
 const home = {
     slices: [
         {
-            sliceType: "section-left-article",
+            sliceType: "main-page-header",
+            backgroundImage: "img/page_background.png",
+            title: "ABC+: Advancing Basic Education in the Philippines"
+        },
+        {
+            sliceType: "project-summary",
             title: "Project Summary",
             subtitle: "The ABC+: Advancing Basic Education in the Philippines",
             paragraphs: [

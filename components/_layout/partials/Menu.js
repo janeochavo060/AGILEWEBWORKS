@@ -79,6 +79,7 @@ export default function Menu ({ className }) {
               className={`${showSideMenu ? 'w-[200px] text-center	' : 'w-28 lg:w-40'} lg:w-40`}
               width={150}
               height={24}
+              priority
             />
           </Link>
           <div className={`${showSideMenu ? 'lg:pt-0' : 'hidden lg:pt-1 lg:block'} flex flex-col lg:flex-row items-center lg:gap-0 gap-8 lg:space-x-16 `}>

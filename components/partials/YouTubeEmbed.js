@@ -5,7 +5,10 @@ import PlayIcon from "@/components/svg/PlayIcon";
 
 export default function YouTubeEmbed({
   src = "",
-  height = "calc(100vh-60%)",
+  optimized = false,
+  height = "",
+  width = "",
+  divHeight = "calc(100vh-60%)",
   playButtonClass,
 }) {
   const getYoutubeId = () => {
@@ -26,7 +29,7 @@ export default function YouTubeEmbed({
   return src ? (
     <div className="relative w-full h-full">
       {played ? (
-        <ReactPlayer url={src} playing={played} height={height} width="100%" />
+        <ReactPlayer url={src} playing={played} height={divHeight} width="100%" />
       ) : (
         <>
           <Image
@@ -35,11 +38,11 @@ export default function YouTubeEmbed({
             blurDataURL={thumbnail}
             className="w-full h-full object-cover object-center z-10 relative max-h-full"
             style={{
-              height: height,
+              height: divHeight,
             }}
-            width="100"
-            height="100"
-            unoptimized
+            width={width}
+            height={height}
+            unoptimized={optimized}
           />
           <button
             aria-label="Play Video"

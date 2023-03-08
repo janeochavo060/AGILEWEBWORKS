@@ -21,7 +21,7 @@ export default function TextVideo({ slice }) {
           dangerouslySetInnerHTML={{ __html: slice?.main?.content }}
         />
       </div>
-      <YouTubeEmbed src={slice?.main?.link} height="480px" />
+      <YouTubeEmbed src={slice?.main?.link} divHeight="480px" />
     </div>
   );
 }

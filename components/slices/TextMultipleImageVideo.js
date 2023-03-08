@@ -26,6 +26,9 @@ export default function TextMultipleImageVideo({ slice }) {
               <div className="lg:max-w-[45vw] aspect-video lg:aspect-square  rounded-r-xxl rounded-bl-xxl overflow-hidden lg:-mr-[10%]">
                 <YouTubeEmbed
                   src={slice?.main?.video}
+                  optimized={false}
+                  height="400"
+                  width="400"
                   playButtonClass="text-white"
                 />
               </div>

@@ -22,7 +22,7 @@ export default function TopBanner({ slice }) {
     }
   };
 
-  // window.addEventListener("resize", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll, { passive: true });
 
   return (
     <>

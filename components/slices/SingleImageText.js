@@ -35,8 +35,8 @@ export default function SingleImageText({ slice }) {
         >
           <Image
             alt=""
-            blurDataURL={slice?.main?.image}
-            src={slice?.main?.image}
+            blurDataURL={slice?.main?.image || slice?.main?.images[0]}
+            src={slice?.main?.image || slice?.main?.images[0]}
             width={460}
             height={460}
             className="w-full rounded-r-xxl rounded-bl-xxl max-h-[360px] lg:max-h-[460px] lg:max-w-[460px] object-cover"

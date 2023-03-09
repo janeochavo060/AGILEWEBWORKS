@@ -11,7 +11,7 @@ export default function TitleContentBlock({
         className={`font-bold text-2xl lg:text-3xl ${className || ""} ${titleClass || ""}`}
         style={style}
       >
-        {slice?.main?.title || ""}
+        {slice?.main?.title || slice?.title || ""}
       </h2>
       <div
         style={style}

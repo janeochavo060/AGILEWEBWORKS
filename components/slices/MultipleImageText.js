@@ -53,7 +53,7 @@ export default function MultipleImageText({ slice }) {
               <div
                 onClick={() => router.push(slice?.main?.link)}
                 // href={slice?.main?.link}
-                className="mr-auto flex items-center gap-2 px-4 py-2 transition ease-in-out delay-150 bg-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
+                className="text-xs md:text-sm lg:text-base mr-auto flex items-center gap-2 px-4 py-2 transition ease-in-out delay-150 bg-white hover:-translate-y-0.5 hover:scale-110 duration-300 rounded-full cursor-pointer"
                 style={{ color: slice?.main?.bg_color }}
               >
                 <span>Learn More</span>

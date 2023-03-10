@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export default function Slice () {
   return (
-    <div className="mt-24 my-16 text-white flex justify-center">
+    <div className="mt-20 my-16 text-white flex justify-center">
       <div className="w-full p-4 py-16 bg-[#1e4174] text-sm leading-[30px] sm:text-base md:max-w-[670px] md:px-16 md:rounded-3xl">
         <p className="text-center text-2xl lg:text-[27px] font-bold mb-5 ">Login into your account <br/> to download and access our modules</p>
         <p className="text-center m-auto text-sm max-w-[500px] ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper vitae elit eu convallis. Vestibulum porttitor elit vel turpis finibus volutpat.</p>

@@ -66,7 +66,7 @@ export default function SectionArticles ({slice}) {
                                     {article.title}
                                 </p>
                                 <p
-                                    className="text-xs xl:text-base text-[#616161] font-medium leading-5"
+                                    className="text-xs xl:text-base text-[#878989] font-medium leading-5"
                                     style={{
                                         overflow: "hidden",
                                         display: "-webkit-box",

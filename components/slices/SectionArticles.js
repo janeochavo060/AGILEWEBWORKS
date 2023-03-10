@@ -21,7 +21,7 @@ export default function SectionArticles ({slice}) {
 
                     <div className="flex justify-center md:justify-end mb-8 w-full md:w-1/2 order-3 md:order-2">
                         <button
-                            className="font-bold uppercase bg-[#034F8B] text-xs xl:text-sm px-8 text-white rounded-md h-[35px]"
+                            className="font-bold uppercase bg-[#034F8B] text-xs px-8 text-white rounded-md h-[35px]"
                             onClick={() => {}}
                         >
                             View more

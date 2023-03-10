@@ -79,7 +79,7 @@ export default function SectionEvents ({slice}) {
 
                     <div className="flex justify-center my-8 w-full">
                         <button
-                            className=" font-bold uppercase bg-[#034F8B] text-xs xl:text-sm px-8 text-white rounded-md h-[35px]"
+                            className=" font-bold uppercase bg-[#034F8B] text-xs px-8 text-white rounded-md h-[35px]"
                             onClick={() => {}}
                         >
                             Load more

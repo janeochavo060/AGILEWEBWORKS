@@ -14,99 +14,44 @@ export default function MenuAbc ({ className }) {
   const { tenantDetails, menus } = useContext(GlobalContext);
   const main = tenantDetails?.data?.main;
   const menuHandler = menus?.parentNodes;
-  const [showSideMenu, setShowSideMenu] = useState(false);
-  const [showMenu, setShowMenu] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [openSearchOrMenu, setOpenSearchOrMenu] = useState(null);
   const [showChildren, setShowChildren] = useState(null);
-  
+
   useEffect(() => {
     const handleScroll = () => {
-    //   const position = window.scrollY;
-    //   const screenHeight = window?.screen?.height;
-    //   if (router.pathname !== "/") {
-    //     if (position === 1) setShowMenu(false);
-    //     else setShowMenu(true);
-    //   } else {
-    //     // setShowMenu(
-    //     //   router.pathname !== "/" || position >= screenHeight || position === 0
-    //     // );
-    //     setShowMenu(position >= screenHeight || position === 0);
-    //   }
-    //   setScrollPosition(position);
+      const position = window.scrollY;
+      setScrollPosition(position)
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, [router]);
 
   return (
-    <div
-      id="menu"
-      className={`z-[100] w-full transition-all duration-600 ease-in-out ${
-        className || ""
-      } ${
-        showMenu
-          ? scrollPosition === 0
-            ? "bg-transparent fixed top-0 slideDown"
-            : "shadow-lg shadow-black/15 slideDown bg-white backdrop-blur sticky top-0 "
-          : ""
-      }`}
-    >
-      <div
-        className={`lg:px-0 w-full mx-auto ${
-          router.pathname !== "/" || scrollPosition !== 0
-            // ? "max-w-screen-xl"
-            // : "lg:px-[calc(2rem+5%)]"
-            ? ""
-            : ""
-        }`}
-        // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
-      >
-        <div className="flex justify-between items-center h-full py-4 xl:px-4 bg-[#1e4174]">
-          <div className="flex justify-center items-center w-full xl:mx-4 xl:justify-between xl:w-auto">
+    <div id="menu" className={`${className}`}>
+      <div className={`w-full mx-auto z-[100]  ${scrollPosition ? 'fixed' : ''}`}>
+        <div className={`flex justify-between items-center h-full xl:px-4 bg-[#1e4174] transition duration-150 ease-out md:ease-in  ${scrollPosition ? 'py-2' : 'py-6'}`}>
+          <div className="flex justify-center items-center gap-0 sm:gap-4 w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="">
-              <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[50px]">
                 <Image
                   src={depedLogo}
                   alt="DepEd Logo"
                   className="px-2"
-                  fill
-                  style={{
-                      objectFit: "contain",
-                      objectPosition: "center",
-                  }}
                 />
-              </div>
             </Link>
             <Link href="/" className=" ">
-              <div className="relative w-[140px] h-[40px] sm:w-[180px] sm:h-[80px]">
                 <Image
                   src={usAidLogo}
                   alt="USAID Logo"
                   className="px-2"
-                  fill
-                  style={{
-                      objectFit: "contain",
-                      objectPosition: "center",
-                  }}
                 />
-              </div>
             </Link>
             <Link href="/" className="">
-              <div className="relative w-[110px] h-[30px] sm:w-[130px] sm:h-[40px]">
                 <Image
                   src={rtiLogo}
                   alt="RTI Logo"
                   className="px-2"
-                  fill
-                  style={{
-                      objectFit: "contain",
-                      objectPosition: "center",
-                  }}
                 />
-              </div>
             </Link>
           </div>
           <div className="hidden xl:flex xl:mx-4 items-center whitespace-nowrap gap-x-6 text-white">
@@ -137,7 +82,7 @@ export default function MenuAbc ({ className }) {
                 )}
 
                 {showChildren === menu.parent && (
-                  <div className="absolute top-[80%] left-[-5%] bg-[#001B3D] shadow-lg w-auto h-auto">
+                  <div className="absolute z-10 top-[80%] left-[-5%] bg-[#001B3D] shadow-lg w-auto h-auto">
                     <div className="bg-[#0188C1] h-[5px] w-full"></div>
                     {menu.childrens.map((menuChildren, i) =>
                       <div key={i} className={`p-4 w-full text-white hover:text-[#016DA0]`}>
@@ -198,7 +143,7 @@ export default function MenuAbc ({ className }) {
         </div>
 
         {/* Search */}
-        <div className={`relative bg-white border-b-[1.5px] border-[#1e4174] transition duration-600 ease-in-out ${openSearchOrMenu === "search" ? 'h-[100px] visible' : 'h-0 invisible'}`}>
+        <div className={`relative bg-white border-b-[1.5px] border-[#1e4174] transition duration-600 ease-in-out ${openSearchOrMenu === "search" ? 'h-[100px] block' : 'h-0 hidden'}`}>
           <div className="flex justify-center items-center pt-4">
             <input
               type="text"
@@ -231,7 +176,7 @@ export default function MenuAbc ({ className }) {
         </div>
 
         {/* Menu */}
-        <div className={`relative bg-white border-b-[1.5px] border-[#1e4174] transition duration-600 ease-in-out ${openSearchOrMenu === "menu" ? 'h-auto visible' : 'h-0 invisible'}`}>
+        <div className={`relative bg-white border-b-[1.5px] border-[#1e4174] transition duration-600 ease-in-out ${openSearchOrMenu === "menu" ? 'h-auto block' : 'h-0 hidden'}`}>
           <div className="flex-col justify-center items-center pb-12">
             {menus2.map((menu, i) => (
               <div key={i}>
@@ -298,6 +243,8 @@ export default function MenuAbc ({ className }) {
           </div>
         </div>
       </div>
+      <div className={`${scrollPosition ? 'h-[110px] xl:h-[75px]' : ''}`}></div>
+
     </div>
   );
 };

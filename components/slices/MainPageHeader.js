@@ -1,7 +1,8 @@
 export default function MainPageHeader ({slice}) {
     return (
         <div
-            className="relative w-auto bg-no-repeat bg-cover bg-center mt-[115px] sm:mt-[150px] lg:mt-[140px] xl:mt-[110px] mb-4 sm:mb-12 md:mb-16 lg:mb-14 xl:mb-16 2xl:mb-28 h-[290px] sm:h-[360px] md:h-[460px] lg:h-[70vh] lg:h-[80vh]"
+            className="relative w-auto bg-no-repeat bg-cover bg-center mb-4 sm:mb-12 md:mb-16 lg:mb-14 xl:mb-16 2xl:mb-28 h-[290px] sm:h-[360px] md:h-[460px] lg:h-[70vh] lg:h-[80vh]"
+            // className="relative w-auto bg-no-repeat bg-cover bg-center mt-[115px] sm:mt-[150px] lg:mt-[140px] xl:mt-[110px] mb-4 sm:mb-12 md:mb-16 lg:mb-14 xl:mb-16 2xl:mb-28 h-[290px] sm:h-[360px] md:h-[460px] lg:h-[70vh] lg:h-[80vh]"
             style={{
                 backgroundImage: `url(${slice.backgroundImage})`,
             }}

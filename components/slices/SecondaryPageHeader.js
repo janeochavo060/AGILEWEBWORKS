@@ -2,7 +2,7 @@ import VectorImage from "@/components/partials/VectorImage";
 export default function SecondaryPageHeader ({slice}) {
     return (
         <div
-            className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover mt-[115px] sm:mt-[150px] lg:mt-[140px] xl:mt-[112px] mb-10 h-[160px] sm:h-[240px] md:h-[270px] lg:h-[420px] xl:h-[470px]"
+            className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover mb-10 h-[160px] sm:h-[240px] md:h-[270px] lg:h-[420px] xl:h-[470px]"
             style={{
                 backgroundImage: `url(${slice.backgroundImage})`,
             }}

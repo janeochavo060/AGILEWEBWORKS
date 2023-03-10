@@ -10,9 +10,9 @@ export default function SecondaryPageHeader ({slice}) {
             <div className="absolute bottom-[-20%] sm:bottom-[-10%] md:bottom-[-5%] lg:bottom-[-0%] xl:bottom-[5%] w-full">
                 <div className="flex justify-center w-full">
                     <div className="bg-white rounded-tl-3xl rounded-tr-3xl min-w-[300px]  sm:min-w-[450px]  md:min-w-[700px] lg:min-w-[850px] xl:min-w-[900px]">
-                        <div className="p-4 px-3 md:px-4 lg:px-8 ">
+                        <div className="p-4 pt-[10px] sm:pt-[15px] lg:pt-[20px] px-3 md:px-4 lg:px-8 ">
                             {slice?.title && (
-                                <div className="flex justify-center items-center mb-2 lg:mb-3 text-sm lg:text-lg xl:text-xl md:text-xl">
+                                <div className="flex justify-center items-center my-1 lg:mb-3 text-sm lg:text-lg xl:text-xl md:text-xl">
                                     <p className="font-bold text-[#E11C38] uppercase">
                                         <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                                         {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}

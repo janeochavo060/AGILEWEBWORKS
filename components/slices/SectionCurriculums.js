@@ -66,7 +66,7 @@ export default function SectionCurriculums ({slice}) {
                         <Link
                             href={curriculum.link}
                             key={i}
-                            className="w-1/2 xl:w-auto flex flex-col justify-center items-center mb-8"
+                            className="w-1/2 md:w-1/3 xl:w-auto flex flex-col justify-center items-center mb-8"
                         >
                             <div className="relative p-4 mb-4 w-[100px] h-[100px] sm:w-[110px] sm:h-[110px] md:w-[150px] md:h-[150px] lg:w-[180px] lg:h-[180px] xl:w-[180px] xl:h-[180px] rounded-full border-[1px] border-[#E11C38] flex justify-center items-center">
                                 <Image

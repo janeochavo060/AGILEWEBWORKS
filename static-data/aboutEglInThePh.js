@@ -6,11 +6,11 @@ import newsArticleImage2 from "@/public/img/news_article_2.png";
 import newsArticleImage3 from "@/public/img/news_article_3.png";
 import newsArticleImage4 from "@/public/img/news_article_4.png";
 
-const about = {
+const aboutEglInThePh = {
     slices: [
         {
             sliceType: "secondary-page-header",
-            backgroundImage: "img/about_page_background.jpg",
+            backgroundImage: "img/egl_in_the_ph_page_background.jpg",
             title: "About Us",
             subtitle: "State of EGL in the Philippines"
         },
@@ -19,10 +19,7 @@ const about = {
             floatImage: "left",
             image: aboutUs1,
             paragraphTitle: "Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy",
-            paragraphs: [
-                "School leaders developed and implemented their projects after attending USAID's \"Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy.\" The training focused on developing literacy leaders who can foster conditions for integrating social and emotional learning, gender equity and social inclusion, and developmentally appropriate practices to support quality literacy instruction.",
-                "USAID officials, DepEd representatives, educators from DepEd Regions 5 and 6, and other key partners and stakeholders attended the conference where teachers and administrators shared their results."
-            ]
+            description: "<p>School leaders developed and implemented their projects after attending USAID's \"Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy.\" The training focused on developing literacy leaders who can foster conditions for integrating social and emotional learning, gender equity and social inclusion, and developmentally appropriate practices to support quality literacy instruction. <br/><br/> USAID officials, DepEd representatives, educators from DepEd Regions 5 and 6, and other key partners and stakeholders attended the conference where teachers and administrators shared their results.</p>"
         },
         {
             sliceType: "section-image-article",
@@ -34,10 +31,7 @@ const about = {
             floatImage: "right",
             image: aboutUs3,
             paragraphTitle: "Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy",
-            paragraphs: [
-                "School leaders developed and implemented their projects after attending USAID's \"Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy.\" The training focused on developing literacy leaders who can foster conditions for integrating social and emotional learning, gender equity and social inclusion, and developmentally appropriate practices to support quality literacy instruction.",
-                "USAID officials, DepEd representatives, educators from DepEd Regions 5 and 6, and other key partners and stakeholders attended the conference where teachers and administrators shared their results."
-            ]
+            description: "<p>School leaders developed and implemented their projects after attending USAID's \"Instructional Leadership Training: Strengthening Learning Conditions for Early Literacy.\" The training focused on developing literacy leaders who can foster conditions for integrating social and emotional learning, gender equity and social inclusion, and developmentally appropriate practices to support quality literacy instruction. <br/><br/> USAID officials, DepEd representatives, educators from DepEd Regions 5 and 6, and other key partners and stakeholders attended the conference where teachers and administrators shared their results.</p>"
         },
         {
             sliceType: "articles",
@@ -73,4 +67,4 @@ const about = {
     ]
 }
 
-export default about; 
+export default aboutEglInThePh; 

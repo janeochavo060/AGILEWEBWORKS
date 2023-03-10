@@ -7,6 +7,7 @@ import Input from "@/components/forms/Input";
 import depedLogo from "@/public/img/deped_logo_white.png";
 import usAidLogo from "@/public/img/usaid_logo_white.png";
 import rtiLogo from "@/public/img/rti_logo_white.png";
+import menus2 from 'static-data/menu';
 
 export default function MenuAbc ({ className }) {
   const router = useRouter();
@@ -18,42 +19,7 @@ export default function MenuAbc ({ className }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [openSearchOrMenu, setOpenSearchOrMenu] = useState(null);
   const [showChildren, setShowChildren] = useState(null);
-  const menus2 = [
-    {
-      parent: "About",
-      childrens: [
-        "ABC+",
-        "Partners",
-        "What is EGL?",
-        "EGL in the Philippines",
-        "EGL Resources Portal",
-      ]
-    },
-    {
-      parent: "News",
-      childrens: [
-        "Current Events",
-        "Success Stories",
-      ]
-    },
-    {
-      parent: "Resources",
-      childrens: [
-        "EGRMs",
-        "Training Materials",
-        "Assessment Tools",
-        "Image Gallery",
-        "Videos",
-      ]
-    },
-    {
-      parent: "Contact",
-      childrens: [
-        "ABC+ Contact",
-        "DepEd Contact",
-      ]
-    },
-  ]
+  
   useEffect(() => {
     const handleScroll = () => {
     //   const position = window.scrollY;
@@ -98,7 +64,7 @@ export default function MenuAbc ({ className }) {
         }`}
         // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
-        <div className="flex justify-between items-center h-full py-4 bg-[#04316C]">
+        <div className="flex justify-between items-center h-full py-4 xl:px-4 bg-[#04316C]">
           <div className="flex justify-center items-center w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="">
               <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[50px]">
@@ -143,53 +109,49 @@ export default function MenuAbc ({ className }) {
               </div>
             </Link>
           </div>
-          <div className="hidden xl:flex xl:mx-4 flex-no-wrap items-center whitespace-nowrap gap-x-10 gap-y-2 text-white">
+          <div className="hidden xl:flex xl:mx-4 items-center whitespace-nowrap gap-x-6 text-white">
             {menus2.map((menu, i) => (
-              <div key={i}>
-                {menu.childrens?.length > 0 ? (
-                  <div className="relative py-4 flex justify-center">
-                    {menu.parent}
-                    {menu.childrens && showChildren !== menu.parent && (
-                      <button onClick={() => setShowChildren(menu.parent)}>
-                        <Image
-                          src="/svg/arrow_drop_down_white.svg"
-                          alt="show menu"
-                          width={25}
-                          height={25}
-                        />
-                      </button>
-                    )}
-                    {menu.childrens && showChildren === menu.parent && (
-                      <button onClick={() => setShowChildren(null)}>
-                        <Image
-                          src="/svg/arrow_drop_up_white.svg"
-                          alt="close menu"
-                          width={25}
-                          height={25}
-                        />
-                      </button>
-                    )}
-                    <div className="absolute top-[80%] left-[-50%] bg-white rounded-lg shadow-lg w-auto h-auto px-4">
-                        {menu.childrens && showChildren === menu.parent && menu.childrens.map((menuChildren, i) =>
-                            <div key={i} className="py-4 text-center w-full text-black">
-                                <Link href="/" key={i} >
-                                {menuChildren}
-                                </Link>
-                            </div>
-                        )}
-                    </div>
-                  </div>
+              <div
+                key={i}
+                className="relative p-4 flex justify-center cursor-pointer"
+                onMouseEnter={() => setShowChildren(menu.parent)}
+                onMouseLeave={() => setShowChildren(null)}
+                onClick={() => showChildren === menu.parent ? setShowChildren(null) : setShowChildren(menu.parent)}
+              >
+                {menu.parent}
+
+                {showChildren !== menu.parent ? (
+                  <Image
+                    src="/svg/arrow_drop_down_white.svg"
+                    alt="show menu"
+                    width={25}
+                    height={25}
+                  />
                 ) : (
-                  <Link
-                    href="/"
-                  >
-                    {menu.parent}
-                  </Link>
+                  <Image
+                    src="/svg/arrow_drop_up_white.svg"
+                    alt="close menu"
+                    width={25}
+                    height={25}
+                  />
+                )}
+
+                {showChildren === menu.parent && (
+                  <div className="absolute top-[80%] left-[-5%] bg-[#001B3D] shadow-lg w-auto h-auto">
+                    <div className="bg-[#0188C1] h-[5px] w-full"></div>
+                    {menu.childrens.map((menuChildren, i) =>
+                      <div key={i} className={`p-4 w-full text-white hover:text-[#016DA0]`}>
+                        <Link href={menuChildren.link} key={i} >
+                          {menuChildren.label}
+                        </Link>
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             ))}
-            <Link href="/register">Register</Link>
-            <Link href="/login">Log in</Link>
+            <Link href="/register" className="p-4">Register</Link>
+            <Link href="/login" className="p-4">Log in</Link>
             <button
                 onClick={() => setOpenSearchOrMenu(openSearchOrMenu === "search" ? null : "search")}
             >
@@ -304,8 +266,8 @@ export default function MenuAbc ({ className }) {
 
                 {menu.childrens && showChildren === menu.parent && menu.childrens.map((menuChildren, i) =>
                   <div key={i} className="py-4 text-center w-full">
-                    <Link href="/" key={i} >
-                      {menuChildren}
+                    <Link href={menuChildren.link} key={i} >
+                      {menuChildren.label}
                     </Link>
                   </div>
                 )}

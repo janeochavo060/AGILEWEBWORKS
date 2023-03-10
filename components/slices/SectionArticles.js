@@ -4,7 +4,7 @@ import vector from "@/public/img/vector.png";
 
 export default function SectionArticles ({slice}) {
     return (
-        <div className="px-4 w-full xl:flex xl:justify-center">
+        <div className="px-4 w-full xl:flex xl:justify-center mb-24">
             <div className="xl:w-[1345px] pt-4">
                 <div className="flex justify-start items-center mb-2">
                     <p className="font-semibold text-sm xl:text-xl text-[#E11C38] uppercase">
@@ -32,7 +32,7 @@ export default function SectionArticles ({slice}) {
 
                     <div className="flex justify-center md:justify-end mb-8 w-full md:w-1/2 order-3 md:order-2">
                         <button
-                            className=" uppercase bg-[#034F8B] py-2 px-8 text-white rounded-lg h-[40px]"
+                            className=" uppercase bg-[#034F8B] text-xs xl:text-base py-2 px-8 text-white rounded-lg h-[40px]"
                             onClick={() => {}}
                         >
                             View more

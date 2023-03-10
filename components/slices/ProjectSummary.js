@@ -3,12 +3,12 @@ import vector from "@/public/img/vector.png";
 
 export default function ProjectSummary ({slice}) {
     return (
-        <div className="px-4 w-full xl:flex xl:justify-center">
+        <div className="px-4 w-full xl:flex xl:justify-center mb-20">
             <div className="xl:w-[1345px] pt-4">
                 <div className="flex flex-wrap justify-center">
                     <div className="xl:flex-col xl:w-1/3">
-                        <div className="flex justify-center items-center mb-2">
-                            <p className="font-bold text-sm xl:text-xl text-[#E11C38] uppercase">
+                        <div className="flex justify-center xl:justify-start items-center mb-2">
+                            <p className="font-bold text-sm sm:text-lg xl:text-xl text-[#E11C38] uppercase">
                                 <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                                 {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                             </p>
@@ -32,11 +32,10 @@ export default function ProjectSummary ({slice}) {
                     </div>
 
                     <div className="xl:flex-col xl:w-2/3">
-                        {slice.paragraphs.map((paragraph, i) => (
-                            <p key={i} className="text-sm xl:text-base xl:font-medium text-[#636363] text-center xl:text-left mb-8">
-                                {paragraph}
-                            </p>
-                        ))}
+                        <div
+                            className="text-sm xl:text-base xl:font-medium text-[#636363] text-center xl:text-left mb-8"
+                            dangerouslySetInnerHTML={{ __html: slice.description }}
+                        ></div>
                     </div>
                 </div>
             </div>

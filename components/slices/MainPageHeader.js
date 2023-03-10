@@ -1,15 +1,14 @@
 export default function MainPageHeader ({slice}) {
     return (
         <div
-            className="relative w-auto mt-28 xl:mt-24 mb-12 h-[220px] sm:mt-32 sm:h-[320px] md:h-[420px] lg:h-[600px] xl:mt-20 xl:h-[800px]"
+            className="relative w-auto bg-contain xl:bg-contain 2xl:bg-cover mt-12 sm:mt-28 md:mt-24 lg:mt-20 xl:mt-12 2xl:mt-20 mb-4 sm:mb-12 md:mb-16 lg:mb-14 xl:mb-16 2xl:mb-28 h-[290px] sm:h-[360px] md:h-[460px] lg:h-[600px] xl:h-[700px] 2xl:h-[850px]"
             style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(255,255,255, 0) 40%, rgba(255,255,255) 100%), url(${slice.backgroundImage})`,
+                backgroundImage: `url(${slice.backgroundImage})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
-                backgroundSize: "cover"
             }}
         >
-            <div className="absolute bottom-[-20%] md:bottom-[-10%] xl:bottom-0 w-full">
+            <div className="absolute bottom-[0] sm:bottom-[-5%] md:bottom-[-5%] lg:bottom-[-2%] xl:bottom-[4%] 2xl:bottom-[-2%] w-full">
                 <div className="flex justify-center w-full">
                     <div className="xl:bg-white rounded-3xl">
                         <p

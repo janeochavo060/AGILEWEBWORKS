@@ -16,11 +16,12 @@ export default function LeadershipTraining ({slice}) {
             <div className="xl:w-[1345px] pt-4">
                 <div className="flex flex-wrap justify-center">
                     <div className={`xl:w-1/3 order-1 ${slice.floatImage === "right" ? 'xl:order-2 flex justify-end' : ''}`}>
-                        <div className="relative w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] lg:w-[500px] lg:h-[500px] xl:w-[390px] xl:h-[390px]">
+                        <div className={`${slice?.coverImage ? 'relative h-[350px] sm:h-[400px] md:h-[600px] lg:h-[500px] xl:h-[390px]' : 'flex flex-col justify-center h-[100%] mt-[-40px]'} relative w-[350px] sm:w-[400px] md:w-[600px] lg:w-[500px] xl:w-[390px]`}>
                             <Image
+                                className="m-auto"
                                 src={slice.image}
                                 alt={slice.title}
-                                fill
+                                fill={slice?.coverImage}
                                 style={{
                                     objectFit: "contain",
                                     objectPosition: "center",

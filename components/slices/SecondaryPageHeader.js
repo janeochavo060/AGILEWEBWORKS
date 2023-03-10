@@ -14,12 +14,12 @@ export default function SecondaryPageHeader ({slice}) {
                     <div className="bg-white rounded-tl-3xl rounded-tr-3xl md:min-w-[700px] lg:min-w-[850px] xl:min-w-[900px]">
                         <div className="p-4 px-8 mb-8 sm:mb-8">
                             {slice?.title && (
-                                <div className="flex justify-center items-center mb-2 lg:mb-3 text-sm sm:text-lg md:text-xl">
+                                <div className="flex justify-center items-center mb-2 lg:mb-3 text-sm lg:text-lg xl:text-xl md:text-xl">
                                     <p className="font-bold text-[#E11C38] uppercase">
                                         <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                                         {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                                     </p>
-                                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px] xl:w-[150px]">
+                                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
                                         <Image
                                             src={vector}
                                             alt="vector"

@@ -8,11 +8,11 @@ export default function ProjectSummary ({slice}) {
                 <div className="flex flex-wrap justify-center">
                     <div className="xl:flex-col xl:w-1/3">
                         <div className="flex justify-center xl:justify-start items-center mb-2">
-                            <p className="font-bold text-sm sm:text-lg xl:text-xl text-[#E11C38] uppercase">
+                            <p className="font-bold text-sm lg:text-lg xl:text-xl text-[#E11C38] uppercase">
                                 <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                                 {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                             </p>
-                            <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px] xl:w-[150px]">
+                            <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
                                 <Image
                                     src={vector}
                                     alt="vector"

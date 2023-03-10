@@ -31,7 +31,7 @@ export default function LeadershipTraining ({slice}) {
                     </div>
 
                     <div className={`xl:w-2/3 order-2 ${slice.floatImage === "right" ? 'xl:order-1' : ''}`}>
-                        <p className="text-[#343434] text-center xl:text-left my-4 mb-8 font-extrabold text-[31px] sm:text-xl md:text-2xl xl:text-3xl xl:text-4xl">
+                        <p className="text-[#343434] text-center xl:text-left my-4 mb-8 font-extrabold text-[31px] sm:text-xl md:text-2xl xl:text-3xl">
                             {slice.paragraphTitle}
                         </p>
 

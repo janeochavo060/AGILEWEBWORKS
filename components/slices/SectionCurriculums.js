@@ -39,11 +39,11 @@ export default function SectionCurriculums ({slice}) {
         <div className="px-4 w-full xl:flex xl:justify-center mb-20">
             <div className="xl:w-[1345px] pt-4">
                 <div className="flex justify-center items-center mb-2">
-                    <p className="font-semibold text-sm sm:text-lg xl:text-xl text-[#E11C38] uppercase">
+                    <p className="font-semibold text-sm lg:text-lg xl:text-xl text-[#E11C38] uppercase">
                         <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                         {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                     </p>
-                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px] xl:w-[150px]">
+                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
                         <Image
                             src={vector}
                             alt="vector"
@@ -57,7 +57,7 @@ export default function SectionCurriculums ({slice}) {
                     </div>
                 </div>
 
-                <p className="font-semibold text-3xl leading-[40px] lg:leading-[50px] lg:text-[38px] text-center mb-12">
+                <p className="font-semibold text-3xl leading-[40px] lg:leading-[50px] lg:text-[35px] text-center mb-12">
                     {slice.subtitle}
                 </p>
 

@@ -7,11 +7,11 @@ export default function SectionArticles ({slice}) {
         <div className="px-4 w-full xl:flex xl:justify-center mb-24">
             <div className="xl:w-[1345px] pt-4">
                 <div className="flex justify-start items-center mb-2">
-                    <p className="font-semibold text-sm xl:text-xl text-[#E11C38] uppercase">
+                    <p className="font-semibold text-sm lg:text-lg xl:text-xl text-[#E11C38] uppercase">
                         <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                         {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                     </p>
-                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px] xl:w-[150px]">
+                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
                         <Image
                             src={vector}
                             alt="vector"
@@ -26,7 +26,7 @@ export default function SectionArticles ({slice}) {
                 </div>
 
                 <div className="flex flex-wrap">
-                    <p className="font-semibold text-3xl lg:text-[38px]  text-left xl:text-left mb-8 w-full md:w-1/2 order-1">
+                    <p className="font-semibold text-3xl lg:text-[35px]  text-left xl:text-left mb-8 w-full md:w-1/2 order-1">
                         {slice.subtitle}
                     </p>
 

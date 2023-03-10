@@ -1,40 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import vector from "@/public/img/vector.png";
-// import EgrmIcon from "@/components/svg/EgrmIcon"
-// import TrainingMaterialsIcon from "@/components/svg/TrainingMaterialsIcon"
-// import LearningToolsIcon from "@/components/svg/LearningToolsIcon"
-// import ImageGalleryIcon from "@/components/svg/ImageGalleryIcon"
-// import VideosIcon from "@/components/svg/VideosIcon"
-
+import VectorImage from "@/components/partials/VectorImage";
 export default function SectionCurriculums ({slice}) {
-    // const SvgIcon = ({ icon, width, height }) => {
-    //     let svgIcon = <></>
-
-    //     switch (icon) {
-    //         case "egrms-icon":
-    //             svgIcon = <EgrmIcon width={width} height={height} />
-    //             break;
-    //         case "training-materials-icon":
-    //             svgIcon = <TrainingMaterialsIcon width={width} height={height} />
-    //             break;
-    //         case "learning-tools-icon":
-    //             svgIcon = <LearningToolsIcon width={width} height={height} />
-    //             break;
-    //         case "image-gallery-icon":
-    //             svgIcon = <ImageGalleryIcon width={width} height={height} />
-    //             break;
-    //         case "videos-icon":
-    //             svgIcon = <VideosIcon width={width} height={height} />
-    //             break;
-    //         default:
-    //             svgIcon = <></>
-    //             break;
-    //     }
-
-    //     return svgIcon
-    // }
-
     return (
         <div className="px-4 w-full xl:flex xl:justify-center mb-20">
             <div className="xl:w-[1345px] pt-4">
@@ -43,18 +10,7 @@ export default function SectionCurriculums ({slice}) {
                         <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                         {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                     </p>
-                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
-                        <Image
-                            src={vector}
-                            alt="vector"
-                            fill
-                            className="mx-2"
-                            style={{
-                                objectFit: "contain",
-                                objectPosition: "center",
-                            }}
-                        />
-                    </div>
+                    <VectorImage />
                 </div>
 
                 <p className="font-semibold text-3xl leading-[40px] lg:leading-[50px] lg:text-[35px] text-center mb-12">
@@ -80,21 +36,6 @@ export default function SectionCurriculums ({slice}) {
                                 {curriculum.label}
                             </p>
                         </Link>
-                        // <div key={i}>
-                        //     <Link
-                        //         href={curriculum.link}
-                        //         className="w-1/2 xl:w-auto flex justify-center mb-8"
-                        //     >
-                        //         <SvgIcon
-                        //             icon={curriculum.icon}
-                        //             width="190"
-                        //             height="190"
-                        //         />
-                        //     </Link>
-                        //     <p className="font-semibold text-[#07336E] mt-8 text-center text-sm xl:text-3xl">
-                        //         {curriculum.label}
-                        //     </p>
-                        // </div>
                     ))}
                 </div>
             </div>

@@ -10,7 +10,7 @@ export const Tabs = ({slice}) => {
     <div className='py-[100px] container max-w-[1200px] px-[15px] mx-auto'>
       <div className='flex'>
         <div className='col-6 w-1/2'>
-          <img className='h-full object-cover rounded-xl' src="https://via.placeholder.com/1920x700" />
+          {/* <img className='h-full object-cover rounded-xl' src="https://via.placeholder.com/1920x700" /> */}
         </div>
         <div className='col-6 w-1/2'>
           <div className="tab-nav mb-[20px] px-[10px]">

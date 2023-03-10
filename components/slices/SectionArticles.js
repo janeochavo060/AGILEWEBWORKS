@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import vector from "@/public/img/vector.png";
+import VectorImage from "@/components/partials/VectorImage";
 
 export default function SectionArticles ({slice}) {
     return (
@@ -11,18 +11,7 @@ export default function SectionArticles ({slice}) {
                         <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                         {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                     </p>
-                    <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
-                        <Image
-                            src={vector}
-                            alt="vector"
-                            fill
-                            className="mx-2"
-                            style={{
-                                objectFit: "contain",
-                                objectPosition: "center",
-                            }}
-                        />
-                    </div>
+                    <VectorImage />
                 </div>
 
                 <div className="flex flex-wrap">
@@ -39,7 +28,7 @@ export default function SectionArticles ({slice}) {
                         </button>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7 mb-8 w-full order-2 md:order-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-8 w-full order-2 md:order-3">
                         {slice?.articles?.length > 0 && slice?.articles?.map((article, i) => (
                             <Link href={article.link} key={i} className="mb-4">
                                 <div className="relative w-full h-[260px] sm:h-[380px] md:h-[300px] lg:h-[320px] xl:h-[300px] mb-2">
@@ -66,7 +55,7 @@ export default function SectionArticles ({slice}) {
                                     {article.title}
                                 </p>
                                 <p
-                                    className="text-xs xl:text-base text-[#5e5e5e] font-medium leading-5"
+                                    className="text-xs xl:text-sm text-[#5e5e5e] font-medium leading-5"
                                     style={{
                                         overflow: "hidden",
                                         display: "-webkit-box",

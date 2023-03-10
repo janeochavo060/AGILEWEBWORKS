@@ -69,21 +69,24 @@ export default function FooterAbc () {
             <div className="grid grid-cols-2 xl:grid-cols-6 gap-6 mb-4 xl:mb-8">
                 {menus2.map(menu => (
                     <div key={menu.parent} className="">
-                        <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-2">
-                            <div className="bg-[#E11C38] w-[10px] h-[16px] mr-2"></div>
+                        <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-1">
+                            <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
                             {menu.parent.toUpperCase()}
                         </div>
-                        {menu.childrens.map(menuChildren => (
-                            <div key={menuChildren} className="text-[13px] xl:text-sm text-[#656565] font-semibold py-[6px] w-full">
-                                {menuChildren}
-                            </div>
+                        {menu.childrens.map((menuChildren, i) => (
+                            <Link href={`/`} key={i}>
+                                <div className="text-[12px] lg:text-[13px] text-[#656565] py-[3px] w-full">
+                                    {menuChildren}
+                                </div>
+                            </Link>
+                            
                         ))}
                     </div>
                 ))}
 
                 <div className="col-span-2">
-                    <div className="font-extrabold text-[#07336E] text-lg xl:text-xl flex items-center mb-2">
-                        <div className="bg-[#E11C38] w-[10px] h-[16px] mr-2"></div>
+                    <div className="font-extrabold text-[#07336E] text-lg xl:text-xl flex items-center mb-1">
+                        <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
                         GET IN TOUCH
                     </div>
                     <div className="grid grid-cols-2 gap-y-3 gap-x-4 py-[6px]">

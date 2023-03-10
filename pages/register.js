@@ -1,15 +1,16 @@
 import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
-import Login from "@/components/slices/Login";
-export default function LoginPage () {
+import Register from "@/components/slices/Register";
+
+export default function RegistrationPage () {
   const data = {
       backgroundImage: "img/egl_in_the_ph_page_background.jpg",
       title: "",
-      subtitle: "Our Learning Resource Portal"
+      subtitle: "Create Your Account"
   }
   return (
     <>
       <SecondaryPageHeader slice={data}/>
-      <Login />
+      <Register />
     </>
   )
 } 

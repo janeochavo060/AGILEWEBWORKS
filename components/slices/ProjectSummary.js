@@ -1,5 +1,4 @@
-import Image from "next/image";
-import vector from "@/public/img/vector.png";
+import VectorImage from "@/components/partials/VectorImage";
 
 export default function ProjectSummary ({slice}) {
     return (
@@ -12,18 +11,7 @@ export default function ProjectSummary ({slice}) {
                                 <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                                 {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}
                             </p>
-                            <div className="relative w-[80px] h-[24px] sm:w-[100px] md:w-[100px] lg:w-[110px]">
-                                <Image
-                                    src={vector}
-                                    alt="vector"
-                                    fill
-                                    className="mx-2"
-                                    style={{
-                                        objectFit: "contain",
-                                        objectPosition: "center",
-                                    }}
-                                />
-                            </div>
+                            <VectorImage />
                         </div>
 
                         <p className="font-semibold text-3xl leading-[40px] xl:leading-[45px] xl:text-4xl text-center xl:text-left mb-8">

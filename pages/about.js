@@ -3,7 +3,6 @@ import LeadershipTraining from "@/components/slices/LeadershipTraining";
 import partners1 from "@/public/img/partners_1.png";
 export default function LoginPage () {
   const banner = {
-      sliceType: "secondary-page-header",
       backgroundImage: "img/egl_in_the_ph_page_background.jpg",
       title: "ABOUT US",
       subtitle: "ABC+"

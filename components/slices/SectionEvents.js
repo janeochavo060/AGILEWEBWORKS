@@ -6,7 +6,7 @@ export default function SectionEvents ({slice}) {
         <div className="w-full xl:flex xl:justify-center">
             <div className="xl:w-[1345px] pt-4">
                 <div className="flex flex-wrap px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7 mb-8 w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-8 w-full">
                         {slice.events.map((currentEvent, i) => (
                             <Link href="/" key={i}>
                                 <div className="relative w-auto h-[260px] sm:h-[380px] md:h-[300px] lg:h-[320px] xl:h-[300px] mb-2">
@@ -43,26 +43,26 @@ export default function SectionEvents ({slice}) {
                                 )}
 
                                 {currentEvent.subtitle && (
-                                    <p className="text-[#5e5e5e] text-sm xl:text-base">
+                                    <p className="text-[#5e5e5e] text-sm">
                                         {currentEvent.subtitle}
                                     </p>
                                 )}
 
                                 {currentEvent.issue && (
-                                    <p className="text-[#3E3E3E] font-bold text-sm xl:text-base">
+                                    <p className="text-[#3E3E3E] font-bold text-sm">
                                         {currentEvent.issue}
                                     </p>
                                 )}
 
                                 {currentEvent.location && (
-                                    <em className="text-[#5e5e5e] text-sm xl:text-base">
+                                    <p className="text-[#5e5e5e] text-sm italic">
                                         {currentEvent.location}
-                                    </em>
+                                    </p>
                                 )}
 
                                 {currentEvent.description && (
                                     <p
-                                        className="text-xs xl:text-base text-[#5e5e5e] font-medium"
+                                        className="text-xs xl:text-sm text-[#5e5e5e] font-medium"
                                         style={{
                                             overflow: "hidden",
                                             display: "-webkit-box",

@@ -4,7 +4,7 @@ const menu = [
         childrens: [
             {
                 label: "ABC+",
-                link: "/"
+                link: "/about"
             },
             {
                 label: "Partners",
@@ -12,7 +12,7 @@ const menu = [
             },
             {
                 label: "What is EGL?",
-                link: "/"
+                link: "/login"
             },
             {
                 label: "EGL in the Philippines",
@@ -20,7 +20,7 @@ const menu = [
             },
             {
                 label: "EGL Resources Portal",
-                link: "/"
+                link: "/login"
             }
         ]
     },

@@ -7,7 +7,7 @@ export default function SecondaryPageHeader ({slice}) {
                 backgroundImage: `url(${slice.backgroundImage})`,
             }}
         >
-            <div className="absolute bottom-[-20%] sm:bottom-[-10%] md:bottom-[-5%] lg:bottom-[-0%] xl:bottom-[5%] w-full">
+            <div className="absolute bottom-[-20%] sm:bottom-[-10%] md:bottom-[-5%] lg:bottom-[-0%] w-full">
                 <div className="flex justify-center w-full">
                     <div className="bg-white rounded-tl-3xl rounded-tr-3xl min-w-[300px]  sm:min-w-[450px]  md:min-w-[700px] lg:min-w-[850px] xl:min-w-[900px]">
                         <div className="p-4 pt-[10px] sm:pt-[15px] lg:pt-[20px] px-3 md:px-4 lg:px-8 ">

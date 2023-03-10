@@ -11,13 +11,13 @@ import currentEventsImage10 from "@/public/img/news_article_3.png";
 import currentEventsImage11 from "@/public/img/digest_no_3.png";
 import currentEventsImage12 from "@/public/img/issue_no_1.png";
 
-const currentEvents = {
+const successStories = {
     slices: [
         {
             sliceType: "secondary-page-header",
             backgroundImage: "img/current_events_page_background.jpg",
             title: "News",
-            subtitle: "Current Events"
+            subtitle: "Success Stories"
         },
         {
             sliceType: "section-filter",
@@ -47,70 +47,70 @@ const currentEvents = {
                     image: currentEventsImage10,
                     link: "/",
                     date: "January 25, 2023",
-                    title: "Current Events Sample 10",
+                    title: "Success Stories Sample 10",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage9,
                     link: "/",
                     date: "January 22, 2023",
-                    title: "Current Events Sample 9",
+                    title: "Success Stories Sample 9",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage8,
                     link: "/",
                     date: "January 21, 2023",
-                    title: "Current Events Sample 8",
+                    title: "Success Stories Sample 8",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage7,
                     link: "/",
                     date: "January 12, 2023",
-                    title: "Current Events Sample 7",
+                    title: "Success Stories Sample 7",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage6,
                     link: "/",
                     date: "January 10, 2023",
-                    title: "Current Events Sample 6",
+                    title: "Success Stories Sample 6",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage5,
                     link: "/",
                     date: "December 22, 2022",
-                    title: "Current Events Sample 5",
+                    title: "Success Stories Sample 5",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage4,
                     link: "/",
                     date: "December 18, 2022",
-                    title: "Current Events Sample 4",
+                    title: "Success Stories Sample 4",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage3,
                     link: "/",
                     date: "December 11, 2022",
-                    title: "Current Events Sample 3",
+                    title: "Success Stories Sample 3",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage2,
                     link: "/",
                     date: "December 06, 2022",
-                    title: "Current Events Sample 2",
+                    title: "Success Stories Sample 2",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
                 {
                     image: currentEventsImage1,
                     link: "/",
                     date: "November 26, 2022",
-                    title: "Current Events Sample 1",
+                    title: "Success Stories Sample 1",
                     description: "Short description only goes here to introduce the article. Will have limited characters so it doesn't break the design"
                 },
             ]
@@ -118,4 +118,4 @@ const currentEvents = {
     ]
 }
 
-export default currentEvents; 
+export default successStories; 

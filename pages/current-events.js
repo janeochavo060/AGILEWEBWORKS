@@ -1,12 +1,12 @@
 import CurrentEventsPage from "@/components/page/CurrentEventsPage";
-import currentEventPageData from 'static-data/currentEvents';
+import currentEventsPageData from 'static-data/currentEvents';
 
 const CurrentEventspage = ({page, slices}) => {
   return <CurrentEventsPage page={page} slices={slices} />
 };
 
 export async function getStaticProps() {
-  const slices = currentEventPageData.slices;
+  const slices = currentEventsPageData.slices;
   return {
     props: {
       slices,

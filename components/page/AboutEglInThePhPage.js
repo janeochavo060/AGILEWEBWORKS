@@ -5,7 +5,7 @@ import LeadershipTraining from "@/components/slices/LeadershipTraining";
 import SectionImageArticle from "@/components/slices/SectionImageArticle";
 import SectionArticles from "@/components/slices/SectionArticles";
 
-export default function AboutPage ({slices}) {
+export default function AboutEglInThePhPage ({slices}) {
     const renderSwitch = (slice) => {
         let renderComponent = <></>
         switch (slice.sliceType) {

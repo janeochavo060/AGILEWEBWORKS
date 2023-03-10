@@ -4,19 +4,18 @@ import vector from "@/public/img/vector.png";
 export default function SecondaryPageHeader ({slice}) {
     return (
         <div
-            className="relative w-auto mt-28 xl:mt-24 mb-12 h-[220px] sm:mt-32 sm:h-[320px] md:h-[420px] lg:h-[600px] xl:mt-20 xl:h-[800px]"
+            className="relative w-auto bg-contain 2xl:bg-cover mt-24 sm:mt-[7.2rem] md:mt-[7.2rem] lg:mt-20 xl:mt-0 2xl:mt-14 mb-16 lg:mb-24 xl:mb-16 2xl:mb-16 h-[120px] sm:h-[240px] md:h-[270px] lg:h-[400px] xl:h-[550px]"
             style={{
-                backgroundImage: `linear-gradient(to bottom, rgba(255,255,255, 0) 40%, rgba(255,255,255) 100%), url(${slice.backgroundImage})`,
+                backgroundImage: `url(${slice.backgroundImage})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
-                backgroundSize: "cover"
             }}
         >
-            <div className="absolute bottom-[-35%] sm:bottom-[-20%] md:bottom-[-10%] xl:bottom-[-5%] w-full">
+            <div className="absolute bottom-[-70%] sm:bottom-[-20%] md:bottom-[-20%] lg:bottom-[-8%] xl:bottom-[5%] 2xl:bottom-[-5%] w-full">
                 <div className="flex justify-center w-full">
-                    <div className="bg-white rounded-3xl">
-                        <div className="p-4 mb-8">
-                            <div className="flex justify-center items-center mb-2 text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                    <div className="bg-white rounded-3xl md:min-w-[700px]">
+                        <div className="p-4 mb-8 sm:mb-8">
+                            <div className="flex justify-center items-center mb-2 text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-2xl">
                                 <p className="font-bold text-[#E11C38] uppercase">
                                     <span className='text-[#07336E]'>{slice.title.split(" ")[0]} </span>
                                     {slice.title.split(" ").slice(1, slice.title.split(" ").length).join(" ")}

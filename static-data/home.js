@@ -12,17 +12,14 @@ const home = {
     slices: [
         {
             sliceType: "main-page-header",
-            backgroundImage: "img/page_background.png",
+            backgroundImage: "img/main_page_background.jpg",
             title: "ABC+: Advancing Basic Education in the Philippines"
         },
         {
             sliceType: "project-summary",
             title: "Project Summary",
             subtitle: "The ABC+: Advancing Basic Education in the Philippines",
-            paragraphs: [
-                "The ABC+: Advancing Basic Education in the Philippines project works with DepEd, local governments, and the private sector to address factors that contribute to low learning outcomes in Bicol (Region V) and Western Visayas (Region VI) and is also implementing a smaller set of interventions in select School Divisions in the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM).",
-                "ABC+ operates in partnership with central and regional education officials, and local organizations to ensure that evidence-based solutions for improved early literacy and numeracy instruction can be adopted and sustained by the Philippine education system. The project also focuses on fostering a more equitable, inclusive, and nurturing climate for learning in the early grades as part of its social and emotional learning (SEL) focus."
-            ]
+            description: "<p>The ABC+: Advancing Basic Education in the Philippines project works with DepEd, local governments, and the private sector to address factors that contribute to low learning outcomes in Bicol (Region V) and Western Visayas (Region VI) and is also implementing a smaller set of interventions in select School Divisions in the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM). <br/><br/> ABC+ operates in partnership with central and regional education officials, and local organizations to ensure that evidence-based solutions for improved early literacy and numeracy instruction can be adopted and sustained by the Philippine education system. The project also focuses on fostering a more equitable, inclusive, and nurturing climate for learning in the early grades as part of its social and emotional learning (SEL) focus.</p>"
         },
         {
             sliceType: "section-curriculums",
@@ -32,27 +29,32 @@ const home = {
                 {
                     label: "EGRMs",
                     link: "/",
-                    icon: egrmsIcon
+                    icon: egrmsIcon,
+                    // icon: "egrms-icon"
                 },
                 {
                     label: "Training Materials",
                     link: "/",
-                    icon: trainingMaterialsIcon
+                    icon: trainingMaterialsIcon,
+                    // icon: "training-materials-icon"
                 },
                 {
                     label: "Learning Tools",
                     link: "/",
-                    icon: learningToolsIcon
+                    icon: learningToolsIcon,
+                    // icon: "learning-tools-icon"
                 },
                 {
                     label: "Image Gallery",
                     link: "/",
-                    icon: imageGalleryIcon
+                    icon: imageGalleryIcon,
+                    // icon: "image-gallery-icon"
                 },
                 {
                     label: "Videos",
                     link: "/",
-                    icon: videosIcon
+                    icon: videosIcon,
+                    // icon: "videos-icon"
                 },
             ]
         },

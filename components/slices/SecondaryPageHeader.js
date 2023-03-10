@@ -4,7 +4,7 @@ import vector from "@/public/img/vector.png";
 export default function SecondaryPageHeader ({slice}) {
     return (
         <div
-            className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover mt-24 sm:mt-[7.2rem] md:mt-[7.2rem] lg:mt-20 xl:mt-0 2xl:mt-14 mb-16 lg:mb-24 xl:mb-16 2xl:mb-16 h-[120px] sm:h-[240px] md:h-[270px] lg:h-[400px] xl:h-[500px]"
+            className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover mt-[115px] sm:mt-[150px] lg:mt-[140px] xl:mt-[112px] mb-16 lg:mb-24 xl:mb-16 2xl:mb-16 h-[160px] sm:h-[240px] md:h-[270px] lg:h-[420px] xl:h-[470px]"
             style={{
                 backgroundImage: `url(${slice.backgroundImage})`,
             }}

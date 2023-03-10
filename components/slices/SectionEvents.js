@@ -43,7 +43,7 @@ export default function SectionEvents ({slice}) {
                                 )}
 
                                 {currentEvent.subtitle && (
-                                    <p className="text-[#878989] text-sm xl:text-base">
+                                    <p className="text-[#5e5e5e] text-sm xl:text-base">
                                         {currentEvent.subtitle}
                                     </p>
                                 )}
@@ -55,14 +55,14 @@ export default function SectionEvents ({slice}) {
                                 )}
 
                                 {currentEvent.location && (
-                                    <em className="text-[#878989] text-sm xl:text-base">
+                                    <em className="text-[#5e5e5e] text-sm xl:text-base">
                                         {currentEvent.location}
                                     </em>
                                 )}
 
                                 {currentEvent.description && (
                                     <p
-                                        className="text-xs xl:text-base text-[#878989] font-medium"
+                                        className="text-xs xl:text-base text-[#5e5e5e] font-medium"
                                         style={{
                                             overflow: "hidden",
                                             display: "-webkit-box",

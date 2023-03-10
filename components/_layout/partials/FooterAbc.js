@@ -167,13 +167,13 @@ export default function FooterAbc () {
             <div className='xl:float-right'>
                 {/* socmed icons */}
                 <div className='flex justify-center xl:justify-end pt-4'>
-                    <Link href="/">
+                    <Link aria-label="Twitter" href="/">
                         <TwitterIcon width="20" height="20" fill="#E11C38" className="drop-shadow-md" />
                     </Link>
-                    <Link href="/">
+                    <Link  aria-label="Facebook" href="/">
                         <FbIcon width="20" height="20" fill="#E11C38" className="drop-shadow-md mx-6" />
                     </Link>
-                    <Link href="/">
+                    <Link  aria-label="LinkedIn" href="/">
                         <LinkedInIcon width="20" height="20" fill="#E11C38" className="drop-shadow-md" />
                     </Link>
                 </div>

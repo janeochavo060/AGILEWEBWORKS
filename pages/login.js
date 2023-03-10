@@ -1,10 +1,15 @@
 import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
 import Login from "@/components/slices/login";
-import aboutPageData from 'static-data/about';
 export default function LoginPage () {
+  const data = {
+      sliceType: "secondary-page-header",
+      backgroundImage: "img/about_page_background.jpg",
+      title: "",
+      subtitle: "Our Learning Resource Portal"
+  }
   return (
     <>
-      <SecondaryPageHeader slice={aboutPageData?.slices[0]}/>
+      <SecondaryPageHeader slice={data}/>
       <Login />
     </>
   )

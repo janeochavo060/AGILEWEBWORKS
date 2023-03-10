@@ -7,21 +7,22 @@ export default function TitleContentBlock({
 }) {
   return (
     <>
-      <h2
-        className={`font-bold text-2xl lg:text-3xl ${className || ""} ${titleClass || ""}`}
-        style={style}
+      <h1
+        className={`font-bold md:text-3xl sm:text-4xl smallerMobile:text-3xl text-2xl ${
+          className || ""
+        } ${titleClass || ""}`}
       >
         {slice?.main?.title || slice?.title || ""}
-      </h2>
+      </h1>
       <div
         style={style}
-        className={`unreset text-md lg:text-lg tracking-normal ${className || ""} ${
-          contentClass || ""
-        }`}
+        className={`leading-6 lg:text-lg md:text-[16px] text-sm post-description ${
+          className || ""
+        } ${contentClass || ""}`}
         dangerouslySetInnerHTML={{
           __html: slice?.main?.content || "",
         }}
       />
     </>
-  );
+  )
 }

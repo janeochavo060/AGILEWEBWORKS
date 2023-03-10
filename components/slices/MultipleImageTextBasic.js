@@ -3,14 +3,14 @@ export default function Slice ({slice}) {
   const main = slice?.main
   return (
     <>
-      <div className="page-header max-w-screen-xl mx-auto pb-[50px] pt-[150px]">
-        <h1 className="font-bold text-5xl post-title mb-[20px]">{main?.title}</h1>
-        <div className="text-[18px] post-description" dangerouslySetInnerHTML={{__html: main?.content}} />
+      <div className="page-header xl:px-0 sm:px-5 px-3 smallerMobile:px-5 max-w-screen-xl mx-auto pb-[50px] lg:pt-[150px] xl:pt-[130px] sm:pt-[120px] pt-[100px]">
+        <h1 className="font-bold md:text-4xl sm:text-4xl smallerMobile:text-3xl text-2xl post-title mb-[20px]">{main?.title}</h1>
+        <div className="leading-6 lg:text-lg md:text-[16px] text-sm post-description" dangerouslySetInnerHTML={{__html: main?.content}} />
       </div>
 
       <section key={slice.sliceId} className={`slice slice-type-${main?.key}`} style={{ backgroundColor: main?.bg_color}}>
-        <div className="max-w-screen-xl py-[50px] px-[234px] relative flex flex-wrap mx-auto justify-center">
-          <div className="phone1 absolute top-0 left-0">
+        <div className="flex justify-center px-10">
+          <div>
             <Image
               width="234"
               height="400"
@@ -19,8 +19,8 @@ export default function Slice ({slice}) {
               src={main?.images[0]}
             />
           </div>
-          <div className='laptop'>
-            <Image
+          <div className="p-10">
+          <Image
               width="723"
               height="415"
               alt=""
@@ -29,8 +29,8 @@ export default function Slice ({slice}) {
               priority
             />
           </div>
-          <div className='phone2 absolute right-0 bottom-0'>
-            <Image
+          <div className="pt-[92px]">
+          <Image
               width="234"
               height="400"
               alt=""

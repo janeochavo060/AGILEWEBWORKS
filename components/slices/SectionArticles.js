@@ -39,7 +39,7 @@ export default function SectionArticles ({slice}) {
                         </button>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8 w-full order-2 md:order-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-7 mb-8 w-full order-2 md:order-3">
                         {slice?.articles?.length > 0 && slice?.articles?.map((article, i) => (
                             <Link href={article.link} key={i} className="mb-4">
                                 <div className="relative w-full h-[260px] sm:h-[380px] md:h-[300px] lg:h-[320px] xl:h-[300px] mb-2">

@@ -26,13 +26,13 @@ export default function SectionArticles ({slice}) {
                 </div>
 
                 <div className="flex flex-wrap">
-                    <p className="font-semibold text-3xl xl:text-5xl text-left xl:text-left mb-8 w-full md:w-1/2 order-1">
+                    <p className="font-semibold text-3xl lg:text-[38px]  text-left xl:text-left mb-8 w-full md:w-1/2 order-1">
                         {slice.subtitle}
                     </p>
 
                     <div className="flex justify-center md:justify-end mb-8 w-full md:w-1/2 order-3 md:order-2">
                         <button
-                            className=" uppercase bg-[#034F8B] text-xs xl:text-base py-2 px-8 text-white rounded-lg h-[40px]"
+                            className="font-bold uppercase bg-[#034F8B] text-xs xl:text-sm px-8 text-white rounded-md h-[35px]"
                             onClick={() => {}}
                         >
                             View more
@@ -55,7 +55,7 @@ export default function SectionArticles ({slice}) {
                                     />
                                 </div>
                                 <p
-                                    className="text-[#07336E] text-base xl:text-2xl font-semibold mb-2"
+                                    className="text-[#07336E] text-base lg:text-xl font-semibold mb-1 mt-4"
                                     style={{
                                         overflow: "hidden",
                                         display: "-webkit-box",
@@ -66,7 +66,7 @@ export default function SectionArticles ({slice}) {
                                     {article.title}
                                 </p>
                                 <p
-                                    className="text-xs xl:text-base text-[#616161] font-medium"
+                                    className="text-xs xl:text-base text-[#616161] font-medium leading-5"
                                     style={{
                                         overflow: "hidden",
                                         display: "-webkit-box",

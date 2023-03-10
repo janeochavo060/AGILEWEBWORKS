@@ -26,7 +26,7 @@ export default function ProjectSummary ({slice}) {
                             </div>
                         </div>
 
-                        <p className="font-semibold text-3xl xl:text-5xl text-center xl:text-left mb-8">
+                        <p className="font-semibold text-3xl leading-[40px] xl:leading-[45px] xl:text-4xl text-center xl:text-left mb-8">
                             {slice.subtitle}
                         </p>
                     </div>

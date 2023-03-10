@@ -64,7 +64,7 @@ export default function MenuAbc ({ className }) {
         }`}
         // className={`xxl:max-w-[1345px] xl:max-w-[1260px] w-full mx-auto px-2 xl:px-0`}
       >
-        <div className="flex justify-between items-center h-full py-4 xl:px-4 bg-[#04316C]">
+        <div className="flex justify-between items-center h-full py-4 xl:px-4 bg-[#1e4174]">
           <div className="flex justify-center items-center w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="">
               <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[50px]">
@@ -180,7 +180,7 @@ export default function MenuAbc ({ className }) {
             SEARCH
           </button>
 
-          <div className="px-[1px] bg-[#04316C]"></div>
+          <div className="px-[1px] bg-[#1e4174]"></div>
 
           <button
             className={`w-full py-2 flex justify-center items-center ${openSearchOrMenu === "menu" ? 'bg-[#BA0C2F]' : 'bg-[#072348]'}`}
@@ -198,7 +198,7 @@ export default function MenuAbc ({ className }) {
         </div>
 
         {/* Search */}
-        <div className={`relative bg-white border-b-[1.5px] border-[#04316C] transition duration-600 ease-in-out ${openSearchOrMenu === "search" ? 'h-[100px] visible' : 'h-0 invisible'}`}>
+        <div className={`relative bg-white border-b-[1.5px] border-[#1e4174] transition duration-600 ease-in-out ${openSearchOrMenu === "search" ? 'h-[100px] visible' : 'h-0 invisible'}`}>
           <div className="flex justify-center items-center pt-4">
             <input
               type="text"
@@ -206,7 +206,7 @@ export default function MenuAbc ({ className }) {
               className="text-xs border-[0.5px] rounded-l-lg py-[8.5px] px-4 outline-0"
               placeholder="Enter keywords to search..."
             />
-            <button className="text-white bg-[#04316C] rounded-r-lg py-[5.5px] px-2">
+            <button className="text-white bg-[#1e4174] rounded-r-lg py-[5.5px] px-2">
               <Image
                 src="/svg/subdirectory_arrow_left_white.svg"
                 alt="search icon"
@@ -217,7 +217,7 @@ export default function MenuAbc ({ className }) {
             </button>
           </div>
           <div
-            className="bg-[#04316C] absolute bottom-0 left-0 right-0 ml-auto mr-auto w-[55px] h-[23px] rounded-t-2xl flex items-center justify-center"
+            className="bg-[#1e4174] absolute bottom-0 left-0 right-0 ml-auto mr-auto w-[55px] h-[23px] rounded-t-2xl flex items-center justify-center"
             onClick={() => setOpenSearchOrMenu(null)}
           >
             <Image
@@ -231,7 +231,7 @@ export default function MenuAbc ({ className }) {
         </div>
 
         {/* Menu */}
-        <div className={`relative bg-white border-b-[1.5px] border-[#04316C] transition duration-600 ease-in-out ${openSearchOrMenu === "menu" ? 'h-auto visible' : 'h-0 invisible'}`}>
+        <div className={`relative bg-white border-b-[1.5px] border-[#1e4174] transition duration-600 ease-in-out ${openSearchOrMenu === "menu" ? 'h-auto visible' : 'h-0 invisible'}`}>
           <div className="flex-col justify-center items-center pb-12">
             {menus2.map((menu, i) => (
               <div key={i}>
@@ -285,7 +285,7 @@ export default function MenuAbc ({ className }) {
             </div>
           </div>
           <div
-            className="bg-[#04316C] absolute bottom-0 left-0 right-0 ml-auto mr-auto w-[55px] h-[23px] rounded-t-2xl flex items-center justify-center"
+            className="bg-[#1e4174] absolute bottom-0 left-0 right-0 ml-auto mr-auto w-[55px] h-[23px] rounded-t-2xl flex items-center justify-center"
             onClick={() => setOpenSearchOrMenu(null)}
           >
             <Image

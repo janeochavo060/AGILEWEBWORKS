@@ -57,7 +57,7 @@ export default function SectionCurriculums ({slice}) {
                     </div>
                 </div>
 
-                <p className="font-semibold text-3xl xl:text-5xl text-center mb-8">
+                <p className="font-semibold text-3xl leading-[40px] lg:leading-[50px] lg:text-[38px] text-center mb-12">
                     {slice.subtitle}
                 </p>
 

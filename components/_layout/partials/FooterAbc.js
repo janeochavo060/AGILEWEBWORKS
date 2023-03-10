@@ -69,12 +69,12 @@ export default function FooterAbc () {
             <div className="grid grid-cols-2 xl:grid-cols-6 gap-6 mb-4 xl:mb-8">
                 {menus2.map(menu => (
                     <div key={menu.parent} className="">
-                        <div className="font-extrabold text-[#07336E] text-lg xl:text-2xl flex items-center">
+                        <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-2">
                             <div className="bg-[#E11C38] w-[10px] h-[16px] mr-2"></div>
                             {menu.parent.toUpperCase()}
                         </div>
                         {menu.childrens.map(menuChildren => (
-                            <div key={menuChildren} className="text-[13px] xl:text-base text-[#656565] font-semibold py-2 w-full">
+                            <div key={menuChildren} className="text-[13px] xl:text-sm text-[#656565] font-semibold py-[6px] w-full">
                                 {menuChildren}
                             </div>
                         ))}
@@ -82,26 +82,26 @@ export default function FooterAbc () {
                 ))}
 
                 <div className="col-span-2">
-                    <div className="font-extrabold text-[#07336E] text-lg xl:text-2xl flex items-center mb-2">
+                    <div className="font-extrabold text-[#07336E] text-lg xl:text-xl flex items-center mb-2">
                         <div className="bg-[#E11C38] w-[10px] h-[16px] mr-2"></div>
                         GET IN TOUCH
                     </div>
-                    <div className="grid grid-cols-2 gap-y-2 gap-x-4">
+                    <div className="grid grid-cols-2 gap-y-3 gap-x-4 py-[6px]">
                         <input
                             type="text"
                             name="name"
-                            className="text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0 col-span-2 xl:col-span-1"
+                            className="text-xs border-[0.5px] py-[8.5px] px-3 w-full outline-0 col-span-2 xl:col-span-1"
                             placeholder="Name"
                         />
                         <input
                             type="email"
                             name="email"
-                            className="text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0 col-span-2 xl:col-span-1"
+                            className="text-xs border-[0.5px] py-[8.5px] px-3 w-full outline-0 col-span-2 xl:col-span-1"
                             placeholder="Email"
                         />
-                        <textarea name="message" placeholder="Message" className="text-xs border-[0.5px] py-[8.5px] px-4 w-full outline-0 col-span-2" />
+                        <textarea name="message" placeholder="Message" className="text-xs border-[0.5px] py-[8.5px] px-3 w-full outline-0 col-span-2" />
                     </div>
-                    <div className="font-extrabold text-[#07336E] text-right">
+                    <div className="font-extrabold text-[#07336E] text-right mt-1">
                         SEND
                     </div>
                     <hr className="bg-[#07336E] h-[4px] w-[27px] float-right" />

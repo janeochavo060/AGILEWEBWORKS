@@ -19,7 +19,7 @@ export default function Login () {
                   </Link> 
                 </div>
                 <div className='text-right'>
-                  <button className="border border-solid border-white py-1 px-5 rounded-md sm:pb-0" type="submit" value="Submit">
+                  <button className="border border-solid border-white py-1 px-6 rounded-md sm:pb-0" type="submit" value="Submit">
                       LOG IN
                       {/* <p className='ml-8 w-6 border-solid border-b-2 '></p> */}
                   </button>

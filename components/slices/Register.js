@@ -1,39 +1,63 @@
-export default function Slice () {
+export default function Slice() {
   return (
     <div className="p-4 mb-8 md:mb-16 text-[13px]">
       <div className="flex justify-center">
         <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 md:max-w-3xl lg:max-w-4xl">
           <div>
             <p className="mb-[1px]">First Name</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="Mary Jane"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="Mary Jane"
+            />
           </div>
           <div>
             <p className="mb-[1px]">Last Name</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="Magbanua"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="Magbanua"
+            />
           </div>
           <div>
             <p className="mb-[1px]">Phone Number</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="+63 915 264 2485"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="+63 915 264 2485"
+            />
           </div>
           <div>
             <p className="mb-[1px]">Email Address</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="mj.magbanua@gmail.com"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="mj.magbanua@gmail.com"
+            />
           </div>
           <div>
             <p className="mb-[1px]">City</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="Mandaluyong"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="Mandaluyong"
+            />
           </div>
           <div>
             <p className="mb-[1px]">Region</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="National Capital Region"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="National Capital Region"
+            />
           </div>
           <div>
             <p className="mb-[1px]">Accupation</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="Public School Teacher (Full Time)"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="Public School Teacher (Full Time)"
+            />
           </div>
           <div>
             <p className="mb-[1px]">School</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="Juan Sumulong Public School"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="Juan Sumulong Public School"
+            />
           </div>
         </div>
       </div>
@@ -72,16 +96,25 @@ export default function Slice () {
         <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 md:max-w-3xl lg:max-w-4xl">
           <div className="">
             <p className="mb-[1px]">Username</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="mjmagbanua"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="mjmagbanua"
+            />
           </div>
           <div className="hidden md:block"></div>
           <div>
             <p className="mb-[1px]">Password</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="**************"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="**************"
+            />
           </div>
           <div>
             <p className="mb-[1px]">Confirm Password</p>
-            <input className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]" placeholder="**************"/>
+            <input
+              className="border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
+              placeholder="**************"
+            />
           </div>
         </div>
       </div>
@@ -89,16 +122,23 @@ export default function Slice () {
       <div className="w-full flex flex-col mt-12 gap-5">
         <div class="flex self-center">
           <input type="checkbox" />
-          <p class="ml-2">Accept our <span className="font-bold text-[#07336E]">Term and Conditions</span></p>
+          <p class="ml-2">
+            Accept our{" "}
+            <span className="font-bold text-[#07336E]">
+              Term and Conditions
+            </span>
+          </p>
         </div>
         <button className="uppercase self-center bg-[#1e4174] text-white w-64 h-9 rounded-md">
           Create Account
         </button>
         <div className="self-center">
-          <p>Already have an account? <span className="font-bold text-[#07336E]">Log in here</span></p>
+          <p>
+            Already have an account?{" "}
+            <span className="font-bold text-[#07336E]">Log in here</span>
+          </p>
         </div>
       </div>
-
     </div>
-  )
+  );
 }

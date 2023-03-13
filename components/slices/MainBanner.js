@@ -1,10 +1,11 @@
-export default function MainPageHeader({ slice }) {
+export default function Slice({ slice }) {
+  console.log(slice)
+  const title = slice?.main?.title || ''
   return (
     <div
       className="relative w-auto bg-no-repeat bg-cover bg-center mb-4 sm:mb-12 md:mb-16 lg:mb-14 xl:mb-16 2xl:mb-28 h-[290px] sm:h-[360px] md:h-[460px] lg:h-[70vh] lg:h-[80vh]"
-      // className="relative w-auto bg-no-repeat bg-cover bg-center mt-[115px] sm:mt-[150px] lg:mt-[140px] xl:mt-[110px] mb-4 sm:mb-12 md:mb-16 lg:mb-14 xl:mb-16 2xl:mb-28 h-[290px] sm:h-[360px] md:h-[460px] lg:h-[70vh] lg:h-[80vh]"
       style={{
-        backgroundImage: `url(${slice.backgroundImage})`,
+        backgroundImage: `url(${slice?.main?.image})`,
       }}
     >
       <div className="absolute bottom-[0] md:bottom-[-5%] lg:bottom-0 w-full">
@@ -12,11 +13,11 @@ export default function MainPageHeader({ slice }) {
           <div className="xl:bg-white rounded-tl-3xl rounded-tr-3xl">
             <p className="py-6 px-8 font-bold text-[#07336E] text-center text-base sm:text-xl md:text-3xl lg:text-4xl xl:text-[40px]">
               <span className="text-[#E11C38]">
-                {slice.title.split(" ")[0]}{" "}
+                {title.split(" ")[0]}{" "}
               </span>
-              {slice.title
+              {title
                 .split(" ")
-                .slice(1, slice.title.split(" ").length)
+                .slice(1, title.split(" ").length)
                 .join(" ")}
             </p>
           </div>

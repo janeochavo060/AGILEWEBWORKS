@@ -15,8 +15,6 @@ export default function MenuAbc({ className }) {
   const main = tenantDetails?.data?.main;
   const menuHandler = menus?.parentNodes;
 
-  console.log(main, "sss");
-
   const [scrollPosition, setScrollPosition] = useState(0);
   const [openSearchOrMenu, setOpenSearchOrMenu] = useState(null);
   const [showChildren, setShowChildren] = useState(null);
@@ -40,7 +38,7 @@ export default function MenuAbc({ className }) {
             scrollPosition ? "py-2" : "py-6"
           }`}
         >
-          <div className="relative flex justify-center items-center gap-0 sm:gap-4 w-full xl:mx-4 xl:justify-between xl:w-auto">
+          <div className="relative flex justify-center items-center gap-0 sm:gap-4 xl:mx-4 lg:justify-between">
             <Link href="/" className="max-w-[115px] pb-2">
               <Image src={main?.deped_logo} width={400} height={0} alt="DepEd Logo" className="px-2 w-auto" />
             </Link>

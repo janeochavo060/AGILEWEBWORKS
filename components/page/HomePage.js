@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import MainPageHeader from "@/components/slices/MainPageHeader";
+import MainPageHeader from "@/components/slices/MainBanner";
 import ProjectSummary from "@/components/slices/ProjectSummary";
 import SectionCurriculums from "@/components/slices/OurResources";
 import SectionArticles from "@/components/slices/FeaturedArticles";

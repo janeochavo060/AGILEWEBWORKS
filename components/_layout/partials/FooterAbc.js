@@ -58,7 +58,7 @@ export default function FooterAbc () {
       <div
         className='px-4 pb-4 pt-8 w-full xl:flex xl:justify-center'
         style={{
-            backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
+            // backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",

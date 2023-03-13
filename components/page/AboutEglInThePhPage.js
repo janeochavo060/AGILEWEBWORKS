@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
 import LeadershipTraining from "@/components/slices/LeadershipTraining";
 import SectionImageArticle from "@/components/slices/SectionImageArticle";
-import SectionArticles from "@/components/slices/SectionArticles";
+import SectionArticles from "@/components/slices/FeaturedArticles";
 
 export default function AboutEglInThePhPage ({slices}) {
     const renderSwitch = (slice) => {

@@ -12,7 +12,7 @@ export default function Slice () {
           <div className="flex flex-col gap-3 mb-3 lg:gap-5 lg:my-8">
             <div className="flex">
               <div className="px-2">
-                <LocationPin width="20px" height="20px" />
+                <LocationPin width="17px" height="17px" />
               </div>
               <div>
                 2nd Floor 
@@ -21,7 +21,7 @@ export default function Slice () {
             </div>
             <div className="flex">
               <div className="px-2">
-                <MobileIcon width="20px" height="20px" />
+                <MobileIcon width="17px" height="17px" />
               </div>
               <div>
                 919 541 6000
@@ -29,7 +29,7 @@ export default function Slice () {
             </div>
             <div className="flex">
               <div className="px-2">
-                <EnvelopIcon width="18px" height="20px" />
+                <EnvelopIcon width="15px" height="17px" />
               </div>
               <div>
                 info@deped.gov.ph

@@ -2,8 +2,8 @@ import { Fragment } from 'react'
 
 import MainPageHeader from "@/components/slices/MainPageHeader";
 import ProjectSummary from "@/components/slices/ProjectSummary";
-import SectionCurriculums from "@/components/slices/SectionCurriculums";
-import SectionArticles from "@/components/slices/SectionArticles";
+import SectionCurriculums from "@/components/slices/OurResources";
+import SectionArticles from "@/components/slices/FeaturedArticles";
 
 export default function HomePage ({slices}) {
     const renderSwitch = (slice) => {

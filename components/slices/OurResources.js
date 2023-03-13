@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import VectorImage from "@/components/partials/VectorImage";
-export default function SectionCurriculums ({slice}) {
+export default function OurResources ({slice}) {
     return (
         <div className="px-4 w-full xl:flex xl:justify-center mb-20">
             <div className="xl:w-[1345px] pt-4">
@@ -13,7 +13,7 @@ export default function SectionCurriculums ({slice}) {
                     <VectorImage />
                 </div>
 
-                <p className="font-semibold text-3xl leading-[40px] lg:leading-[50px] lg:text-[35px] text-center mb-12">
+                <p className="m-auto font-semibold text-3xl leading-[40px] text-center mb-12 lg:leading-[50px] lg:text-[35px] lg:max-w-4xl">
                     {slice.subtitle}
                 </p>
 

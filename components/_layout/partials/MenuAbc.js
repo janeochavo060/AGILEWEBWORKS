@@ -34,7 +34,7 @@ export default function MenuAbc({ className }) {
         className={`w-full mx-auto z-[100]  ${scrollPosition ? "fixed" : ""}`}
       >
         <div
-          className={`flex justify-between items-center h-full xl:px-4 bg-[#1e4174] transition duration-150 ease-out md:ease-in  ${
+          className={`flex justify-between items-center h-full xl:px-4 bg-[#052a5c] transition duration-150 ease-out md:ease-in  ${
             scrollPosition ? "py-2" : "py-6"
           }`}
         >

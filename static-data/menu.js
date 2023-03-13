@@ -67,11 +67,11 @@ const menu = [
         childrens: [
             {
                 label: "ABC+ Contact",
-                link: "/"
+                link: "/contact-abc"
             },
             {
                 label: "DepEd Contact",
-                link: "/"
+                link: "/contact-deped"
             }
         ]
     },

@@ -57,7 +57,7 @@ export default function ArticleThumbnail ({ item }) {
 
       {item.description && (
           <p
-              className="text-xs xl:text-sm text-[#5e5e5e] font-medium leading-5"
+              className="text-xs md:text-sm text-[#5e5e5e] font-medium leading-5"
               style={{
                   overflow: "hidden",
                   display: "-webkit-box",

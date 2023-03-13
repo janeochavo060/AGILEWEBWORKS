@@ -2,7 +2,7 @@ export default function SectionFilter ({slice}) {
     return (
         <div className="w-full xl:flex xl:justify-center">
             <div className="xl:w-[1345px] pt-4">
-                <hr className="bg-[#cbcbcb] h-[2px] w-full z-10 relative"/>
+                <div className="bg-[#b1b1b1] h-[1px] w-full z-10 relative"/>
                     <div className="px-4 py-4 flex flex-nowrap justify-center lg:items-center">
                         <div className="w-auto py-4 lg:py-0 text-sm">
                             Filter:
@@ -54,7 +54,7 @@ export default function SectionFilter ({slice}) {
                             </div>
                         </div>
                     </div>
-                <hr className="bg-[#cbcbcb] h-[2px] w-full"/>
+                <div className="bg-[#b1b1b1] h-[1px] w-full"/>
             </div>
         </div>
     )

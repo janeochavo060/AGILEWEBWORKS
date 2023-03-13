@@ -40,10 +40,10 @@ export default function MenuAbc({ className }) {
         >
           <div className="relative flex justify-center items-center gap-0 sm:gap-4 w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="min-w-[110px] max-w-[115px] pb-2">
-              <Image src={main?.deped_logo} width={400} height={300} alt="DepEd Logo" className="px-2" />
+              <Image src={main?.deped_logo} width={400} height={0} alt="DepEd Logo" className="px-2" />
             </Link>
             <Link href="/" className="min-w-[110px] max-w-[170px]">
-              <Image src={main?.usaid_logo} alt="USAID Logo" width={400} height={300} className="px-2" />
+              <Image src={main?.usaid_logo} alt="USAID Logo" width={400} height={0} className="px-2" />
             </Link>
             <Link href="/" className="min-w-[110px] max-w-[110px]">
               <Image src={main?.rti_logo} alt="RTI Logo" width={400} height={0} className="px-2" />

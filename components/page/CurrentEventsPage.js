@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
 
 import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
-import SectionFilter from "@/components/slices/SectionFilter";
-import SectionEvents from "@/components/slices/SectionEvents";
+import SectionFilter from "@/components/partials/ArticleFilter";
+import ArticlesList from "@/components/slices/ArticlesList";
 
 export default function CurrentEventsPage ({slices}) {
     const renderSwitch = (slice) => {
@@ -15,7 +15,7 @@ export default function CurrentEventsPage ({slices}) {
                 renderComponent = <SectionFilter slice={slice} />
                 break;
             case "section-events":
-                renderComponent = <SectionEvents slice={slice} />
+                renderComponent = <ArticlesList slice={slice} />
                 break;
             default:
                 <></>

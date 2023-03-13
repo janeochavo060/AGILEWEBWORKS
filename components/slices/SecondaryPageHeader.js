@@ -20,7 +20,7 @@ export default function SecondaryPageHeader ({slice}) {
                                     <VectorImage />
                                 </div>
                             )}
-                            <p className={`mb-3 font-bold text-[#343434] text-center text-2xl md:text-3xl lg:text-[40px] xl:text-[45px] ${slice?.title ? '' : 'my-3'}`}>
+                            <p className={`mb-3 font-bold text-main-black text-center text-2xl md:text-3xl lg:text-[40px] xl:text-[45px] ${slice?.title ? '' : 'my-3'}`}>
                                 {slice.subtitle}
                             </p>
                         </div>

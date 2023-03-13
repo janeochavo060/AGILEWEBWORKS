@@ -11,7 +11,8 @@ module.exports = {
         primary: "#00AAE8", // light blue
         "accent-1": "#B2272D", // red
         "accent-2": "#386EC1", // blue
-        "dim-black": "#353535",
+        "main-black": "#323232",
+        "dim-black": "#636363",
       },
       maxWidth: {
         content: "1210px",

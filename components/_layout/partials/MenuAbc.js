@@ -58,7 +58,7 @@ export default function MenuAbc ({ className }) {
             {menus2.map((menu, i) => (
               <div
                 key={i}
-                className="relative p-4 flex justify-center cursor-pointer text-white"
+                className="relative p-4 flex justify-center cursor-pointer"
                 onMouseEnter={() => setShowChildren(menu.parent)}
                 onMouseLeave={() => setShowChildren(null)}
                 onClick={() => showChildren === menu.parent ? setShowChildren(null) : setShowChildren(menu.parent)}

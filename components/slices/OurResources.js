@@ -13,7 +13,7 @@ export default function OurResources ({slice}) {
                     <VectorImage />
                 </div>
 
-                <p className="m-auto font-semibold text-3xl leading-[40px] text-center mb-12 lg:leading-[50px] lg:text-[35px] lg:max-w-4xl">
+                <p className="m-auto text-main-black font-semibold text-3xl leading-[40px] text-center mb-12 lg:leading-[50px] lg:text-[35px] lg:max-w-4xl">
                     {slice.subtitle}
                 </p>
 

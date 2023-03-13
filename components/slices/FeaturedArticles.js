@@ -14,7 +14,7 @@ export default function FeaturedArticles ({slice}) {
                 </div>
 
                 <div className="flex flex-wrap">
-                    <p className="font-semibold text-3xl lg:text-[35px]  text-left xl:text-left mb-8 w-full md:w-1/2 order-1">
+                    <p className="font-semibold text-main-black text-3xl lg:text-[35px]  text-left xl:text-left mb-8 w-full md:w-1/2 order-1">
                         {slice.subtitle}
                     </p>
 

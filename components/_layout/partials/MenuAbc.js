@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { GlobalContext } from "@/lib/context/GlobalContext";
-import Input from "@/components/forms/Input";
+import Input from "@/components/_forms/Input";
 import depedLogo from "@/public/img/deped_logo_white.png";
 import usAidLogo from "@/public/img/usaid_logo_white.png";
 import rtiLogo from "@/public/img/rti_logo_white.png";

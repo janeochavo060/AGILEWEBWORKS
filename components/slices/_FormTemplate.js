@@ -1,5 +1,4 @@
-import FormField from "@/components/forms/FormField";
-import Button from "@/components/forms/Button";
+import FormField from "@/components/_forms/FormField";
 import { Fragment, useState } from "react";
 import { formSubmit, isError } from '@/lib/services/formService';
 export default function Slice({ slice }) {
@@ -27,9 +26,6 @@ export default function Slice({ slice }) {
                     />
                   </Fragment>
                 ))}
-                <div className="md:col-span-2 text-center">
-                  <Button className="black-shadow" label="Submit" type="submit" />
-                </div>
               </form>
             </Fragment>
           );

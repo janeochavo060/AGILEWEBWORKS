@@ -1,5 +1,5 @@
-import Input from "@/components/forms/Input";
-import Textarea from "@/components/forms/Textarea";
+import Input from "@/components/_forms/Input";
+import Textarea from "@/components/_forms/Textarea";
 export default function FormField(props) {
   const error = props?.error || ''
   const required = props?.rules.includes("required");

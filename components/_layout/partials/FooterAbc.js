@@ -50,14 +50,14 @@ export default function FooterAbc() {
   ];
 
   return (
-    <div
-      className="px-4 pb-4 pt-8 w-full xl:flex xl:justify-center"
-      style={{
-        backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+      <div
+        className='px-4 pb-4 pt-8 w-full xl:flex xl:justify-center'
+        style={{
+            // backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+        }}
     >
       <div className="relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-8 px-4">
         {/* menus */}

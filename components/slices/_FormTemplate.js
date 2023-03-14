@@ -1,4 +1,4 @@
-import FormField from "@/components/_forms/FormField";
+import FormField from "@/components/forms/FormField";
 import { Fragment, useState } from "react";
 import { formSubmit, isError } from '@/lib/services/formService';
 export default function Slice({ slice }) {

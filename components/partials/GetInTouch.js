@@ -1,4 +1,4 @@
-import FormField from "@/components/_forms/FormField";
+import FormField from "@/components/forms/FormField";
 import { useContext, Fragment, useState } from "react";
 import { GlobalContext } from "@/lib/context/GlobalContext";
 import { formSubmit, isError } from "@/lib/services/formService";

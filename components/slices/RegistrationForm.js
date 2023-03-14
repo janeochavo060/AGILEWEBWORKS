@@ -1,4 +1,6 @@
-export default function Slice() {
+import Link from "next/link";
+export default function Slice({slice}) {
+  const {login_link = '/', terms_link = '/'} = slice?.main 
   return (
     <div className="p-4 mb-8 md:mb-16 text-[13px]">
       <div className="flex justify-center">
@@ -124,9 +126,11 @@ export default function Slice() {
           <input type="checkbox" />
           <p class="ml-2">
             Accept our{" "}
-            <span className="font-bold text-[#07336E]">
-              Term and Conditions
-            </span>
+            <Link href={terms_link}>
+              <span className="font-bold text-[#07336E]">
+                Term and Conditions
+              </span>
+            </Link>
           </p>
         </div>
         <button className="uppercase self-center bg-[#1e4174] text-white w-64 h-9 rounded-md">
@@ -135,7 +139,9 @@ export default function Slice() {
         <div className="self-center">
           <p>
             Already have an account?{" "}
-            <span className="font-bold text-[#07336E]">Log in here</span>
+            <Link href={login_link}>
+              <span className="font-bold text-[#07336E]">Log in here</span>
+            </Link>
           </p>
         </div>
       </div>

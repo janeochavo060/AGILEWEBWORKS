@@ -1,4 +1,4 @@
-export default function SectionFilter({ slice }) {
+export default function SectionFilter() {
   return (
     <div className="w-full xl:flex xl:justify-center">
       <div className="xl:w-[1345px] pt-4">

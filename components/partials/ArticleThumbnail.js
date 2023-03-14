@@ -11,11 +11,6 @@ export default function ArticleThumbnail({ item }) {
           className="mb-2 w-full object-cover object-center"
           width={400}
           height={0}
-          // fill
-          // style={{
-          //   objectFit: "cover",
-          //   objectPosition: "center",
-          // }}
         />
       </div>
 

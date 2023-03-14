@@ -1,8 +1,8 @@
 import ParentPage from "@/components/page/ParentPage";
 import { props } from "@/lib/props/page";
 export const getStaticProps = props;
-import HomePage from "@/components/page/HomePage";
-import homePageData from 'static-data/home';
+// import HomePage from "@/components/page/HomePage";
+// import homePageData from 'static-data/home';
 
 export default function Homepage ({page, slices}) {
   // return <>Page</>

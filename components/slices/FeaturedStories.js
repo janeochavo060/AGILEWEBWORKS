@@ -1,8 +1,9 @@
 import VectorImage from "@/components/partials/VectorImage";
 import ArticleThumbnail from "@/components/partials/ArticleThumbnail";
+import Link from "next/link";
 
 export default function FeaturedArticles({ slice }) {
-  const { title = "", sub_title = "" } = slice?.main;
+  const { title = "", sub_title = "", button_label, button_link } = slice?.main;
   const collections = slice?.main?.collection?.collections || [];
   return (
     <div className="px-4 w-full xl:flex xl:justify-center mb-24">
@@ -21,12 +22,13 @@ export default function FeaturedArticles({ slice }) {
           </p>
 
           <div className="flex justify-center md:justify-end mb-8 w-full md:w-1/2 order-3 md:order-2">
-            <button
-              className="font-bold uppercase bg-[#034F8B] text-xs px-8 text-white rounded-md h-[35px]"
-              onClick={() => {}}
-            >
-              View more
-            </button>
+            <Link href={button_link}>
+              <button
+                className="font-bold uppercase bg-[#034F8B] text-xs px-8 text-white rounded-md h-[35px]"
+              >
+                {button_label}
+              </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-8 w-full order-2 md:order-3">

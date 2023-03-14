@@ -1,5 +1,5 @@
-import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
-import Register from "@/components/slices/Register";
+import SecondaryPageHeader from "@/components/slices/SecondaryBanner";
+import Register from "@/components/slices/RegistrationForm";
 
 export default function RegistrationPage () {
   const data = {

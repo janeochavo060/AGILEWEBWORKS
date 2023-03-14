@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 
-import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
+import SecondaryPageHeader from "@/components/slices/SecondaryBanner";
 import SectionFilter from "@/components/partials/ArticleFilter";
-import ArticlesList from "@/components/slices/ArticlesList";
+import ArticlesList from "@/components/slices/StoriesList";
 
 export default function CurrentEventsPage({ slices }) {
   const renderSwitch = (slice) => {

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 
-import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
-import LeadershipTraining from "@/components/slices/LeadershipTraining";
+import SecondaryPageHeader from "@/components/slices/SecondaryBanner";
+import LeadershipTraining from "@/components/slices/AboutABC";
 import SectionImageArticle from "@/components/slices/SectionImageArticle";
 import SectionArticles from "@/components/slices/FeaturedStories";
 

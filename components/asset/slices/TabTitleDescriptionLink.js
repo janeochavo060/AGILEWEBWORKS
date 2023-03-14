@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link';
 
 export const TabTitleDescriptionLink = ({tab}) => {
-  console.log(tab); 
+  // console.log(tab); 
   return (
     <div>
       <h2 className='font-bold font-[#343434] text-[35px] leading-[36px]'>

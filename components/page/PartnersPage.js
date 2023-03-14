@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 
-import SecondaryPageHeader from "@/components/slices/SecondaryPageHeader";
+import SecondaryPageHeader from "@/components/slices/SecondaryBanner";
 import PartnersTab from "@/components/slices/PartnersTab";
-import LeadershipTraining from "@/components/slices/LeadershipTraining";
+import LeadershipTraining from "@/components/slices/AboutABC";
 
 export default function PartnersPage({ slices }) {
   const renderSwitch = (slice) => {

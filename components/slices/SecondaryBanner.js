@@ -1,13 +1,22 @@
 import VectorImage from "@/components/partials/VectorImage";
+import Image from "next/image";
 export default function Slice({ slice }) {
-  const {image = '', title = '', subtitle = ''} = slice?.main 
+  const { image = "", title = "", subtitle = "" } = slice?.main;
   return (
     <div
       className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover mb-10 h-[160px] sm:h-[240px] md:h-[270px] lg:h-[420px] xl:h-[470px]"
-      style={{
-        backgroundImage: `url(${image})`,
-      }}
+      // style={{
+      //   backgroundImage: `url(${image})`,
+      // }}
     >
+      <Image
+        alt="ABC+"
+        src={image}
+        fill
+        priority
+        className="object-cover object-center"
+      />
+
       <div className="absolute bottom-[-10%]  md:bottom-0 w-full">
         <div className="flex justify-center w-full">
           <div className="bg-white rounded-tl-3xl rounded-tr-3xl min-w-[300px]  sm:min-w-[450px]  md:min-w-[700px] lg:min-w-[850px] xl:min-w-[900px]">

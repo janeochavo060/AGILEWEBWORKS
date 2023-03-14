@@ -231,3 +231,10 @@ button {
 		clip-path: polygon(3% 0, 100% 0, 100% 100%, 7% 100%);
 	}
 } */
+
+.react-slideshow-container .default-nav:first-of-type {
+  margin-left: -30px !important;
+}
+.react-slideshow-container .default-nav:last-of-type {
+  margin-right: -30px !important;
+}

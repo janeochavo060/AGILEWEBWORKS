@@ -26,7 +26,7 @@ export default function Slice({ slice }) {
       <div className="absolute bottom-[0] md:bottom-[-5%] lg:bottom-[-1px] w-full">
         <div className="flex justify-center w-full">
           <div className="xl:bg-white rounded-tl-3xl rounded-tr-3xl">
-            <p className="py-6 px-8 font-bold text-[#07336E] text-center text-base sm:text-xl md:text-3xl lg:text-4xl xl:text-[40px]">
+            <p className="py-6 px-8 font-bold text-[#07336E] text-center text-base sm:text-xl md:text-3xl lg:text-4xl xl:text-[50px]">
               <span className="text-[#E11C38]">{title.split(" ")[0]} </span>
               {title.split(" ").slice(1, title.split(" ").length).join(" ")}
             </p>

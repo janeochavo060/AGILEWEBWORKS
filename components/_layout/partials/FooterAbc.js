@@ -18,7 +18,6 @@ export default function FooterAbc() {
         alt="ABC+"
         src={footer?.background_image}
         fill
-        priority
         className="max-w-fit !w-auto md:max-w-full md:!w-full"
       />
       <div className="relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-12 px-4 md:px-8">

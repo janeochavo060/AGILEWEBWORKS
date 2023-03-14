@@ -3,16 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { GlobalContext } from "@/lib/context/GlobalContext";
-import Input from "@/components/forms/Input";
-import depedLogo from "@/public/img/deped_logo_white.png";
-import usAidLogo from "@/public/img/usaid_logo_white.png";
-import rtiLogo from "@/public/img/rti_logo_white.png";
 import menus2 from "static-data/menu";
 
 export default function MenuAbc({ className }) {
   const router = useRouter();
   const { tenantDetails, menus } = useContext(GlobalContext);
-  const main = tenantDetails?.data?.main;
+  const global = tenantDetails?.data?.main;
   const menuHandler = menus?.parentNodes;
 
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -40,13 +36,13 @@ export default function MenuAbc({ className }) {
         >
           <div className="relative flex justify-center items-center gap-0 sm:gap-4 w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="min-w-[110px] max-w-[115px] pb-2">
-              <Image src={main?.deped_logo} width={400} height={0} alt="DepEd Logo" className="px-2" />
+              <Image priority src={global?.deped_logo[0]} width={400} height={0} alt="DepEd Logo" className="px-2" />
             </Link>
             <Link href="/" className="min-w-[110px] max-w-[170px]">
-              <Image src={main?.usaid_logo} alt="USAID Logo" width={400} height={0} className="px-2" />
+              <Image priority src={global?.usaid_logo[0]} alt="USAID Logo" width={400} height={0} className="px-2" />
             </Link>
             <Link href="/" className="min-w-[110px] max-w-[110px]">
-              <Image src={main?.rti_logo} alt="RTI Logo" width={400} height={0} className="px-2" />
+              <Image priority src={global?.rti_logo[0]} alt="RTI Logo" width={400} height={0} className="px-2" />
             </Link>
           </div>
           <div className="hidden xl:flex xl:mx-4 items-center whitespace-nowrap gap-x-6 text-white">

@@ -53,13 +53,13 @@ export default function FooterAbc() {
       <div
         className='px-4 pb-4 pt-8 w-full xl:flex xl:justify-center'
         style={{
-            // backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
+            backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
         }}
     >
-      <div className="relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-8 px-4">
+      <div className="relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-12 px-4 md:px-8">
         {/* menus */}
         <div className="grid grid-cols-2 xl:grid-cols-6 gap-6 mb-4 xl:mb-8">
           {menus2.map((menu) => (
@@ -80,46 +80,17 @@ export default function FooterAbc() {
 
           <div className="col-span-2">
             <GetInTouch />
-            {/* <form action="">
-              <div className="font-extrabold text-[#07336E] text-lg xl:text-xl flex items-center mb-1">
-                <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
-                GET IN TOUCH
-              </div>
-              <div className="grid grid-cols-2 gap-y-3 gap-x-4 py-[6px]">
-                <input
-                  type="text"
-                  name="name"
-                  className="text-xs border-[0.5px] py-[8.5px] px-3 w-full outline-0 col-span-2 xl:col-span-1"
-                  placeholder="Name"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  className="text-xs border-[0.5px] py-[8.5px] px-3 w-full outline-0 col-span-2 xl:col-span-1"
-                  placeholder="Email"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  className="text-xs border-[0.5px] py-[8.5px] px-3 w-full outline-0 col-span-2"
-                />
-              </div>
-              <div className="font-extrabold text-[#07336E] text-right mt-1">
-                SEND
-              </div>
-              <hr className="bg-[#07336E] h-[4px] w-[27px] float-right" />
-            </form> */}
           </div>
         </div>
 
-        <hr />
+        <hr className="my-4" />
 
         {/* logos */}
         <div className="flex justify-center items-center xl:justify-between xl:float-left py-2">
           <Link href="/">
             <div className="relative w-[120px] h-[40px] sm:w-[140px] sm:h-[50px]">
               <Image
-                src={depedLogo}
+                src={global?.deped_logo[1]}
                 alt="DepEd Logo"
                 className="px-2"
                 fill
@@ -133,7 +104,7 @@ export default function FooterAbc() {
           <Link href="/" className="xl:mx-4">
             <div className="relative w-[140px] h-[40px] sm:w-[180px] sm:h-[80px]">
               <Image
-                src={usAidLogo}
+                src={global?.usaid_logo[1]}
                 alt="USAID Logo"
                 className="px-2"
                 fill
@@ -147,7 +118,7 @@ export default function FooterAbc() {
           <Link href="/">
             <div className="relative w-[110px] h-[30px] sm:w-[130px] sm:h-[40px]">
               <Image
-                src={rtiLogo}
+                src={global?.rti_logo[1]}
                 alt="RTI Logo"
                 className="px-2"
                 fill

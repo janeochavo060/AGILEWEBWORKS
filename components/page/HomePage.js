@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import MainPageHeader from "@/components/slices/MainBanner";
 import ProjectSummary from "@/components/slices/ProjectSummary";
 import SectionCurriculums from "@/components/slices/OurResources";
-import SectionArticles from "@/components/slices/FeaturedArticles";
+import SectionArticles from "@/components/slices/FeaturedStories";
 
 export default function HomePage({ slices }) {
   const renderSwitch = (slice) => {

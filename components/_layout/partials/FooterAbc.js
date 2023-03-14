@@ -1,90 +1,44 @@
 import { useContext } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { getCurrentYear } from "@/lib/services/globalService";
 import { GlobalContext } from "@/lib/context/GlobalContext";
-import depedLogo from "@/public/img/deped_logo.png";
-import usAidLogo from "@/public/img/usaid_logo.png";
-import rtiLogo from "@/public/img/rti_logo.png";
-import footerBg from "@/public/img/footer_bg.png";
 import TwitterIcon from "@/components/svg/TwitterIcon";
 import FbIcon from "@/components/svg/FbIcon";
 import LinkedInIcon from "@/components/svg/LinkedInIcon";
 import GetInTouch from "@/components/partials/GetInTouch";
-
 export default function FooterAbc() {
-  const router = useRouter();
   const { tenantDetails, menus } = useContext(GlobalContext);
   const global = tenantDetails?.data?.main;
+  const footer = tenantDetails?.data?.footer;
   const menuHandler = menus?.parentNodes;
-  const menus2 = [
-    {
-      parent: "About",
-      childrens: [
-        "ABC+",
-        "Partners",
-        "What is EGL?",
-        "EGL in the Philippines",
-        "EGL Resources Portal",
-      ],
-    },
-    {
-      parent: "News",
-      childrens: ["Current Events", "Success Stories"],
-    },
-    {
-      parent: "Resources",
-      childrens: [
-        "EGRMs",
-        "Training Materials",
-        "Assessment Tools",
-        "Image Gallery",
-        "Videos",
-      ],
-    },
-    {
-      parent: "Contact",
-      childrens: ["ABC+ Contact", "DepEd Contact"],
-    },
-  ];
-
   return (
-      <div
-        className='px-4 pb-4 pt-8 w-full xl:flex xl:justify-center'
-        style={{
-            backgroundImage: `linear-gradient(to top, rgba(255,255,255, 0) 50%, rgba(255,255,255) 100%), url('img/footer_bg.png')`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-        }}
-    >
+    <div className="relative px-4 pb-4 pt-8 w-full xl:flex xl:justify-center">
+      <Image alt="ABC+" src={footer?.background_image} fill priority />
       <div className="relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-12 px-4 md:px-8">
-        {/* menus */}
         <div className="grid grid-cols-2 xl:grid-cols-6 gap-6 mb-4 xl:mb-8">
-          {menus2.map((menu) => (
-            <div key={menu.parent} className="">
-              <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-1">
-                <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
-                {menu.parent.toUpperCase()}
+          {menuHandler
+            .filter((e) => e.children.length)
+            .map((menu) => (
+              <div key={menu.parent} className="">
+                <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-1">
+                  <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
+                  {menu?.label?.toUpperCase()}
+                </div>
+                {menu.children.map((menuChildren, i) => (
+                  <Link href={menuChildren?.url} key={i}>
+                    <div className="text-[12px] lg:text-[13px] text-[#656565] py-[3px] w-full">
+                      {menuChildren?.label}
+                    </div>
+                  </Link>
+                ))}
               </div>
-              {menu.childrens.map((menuChildren, i) => (
-                <Link href={`/`} key={i}>
-                  <div className="text-[12px] lg:text-[13px] text-[#656565] py-[3px] w-full">
-                    {menuChildren}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ))}
-
+            ))}
           <div className="col-span-2">
             <GetInTouch />
           </div>
         </div>
-
         <hr className="my-4" />
-
         {/* logos */}
         <div className="flex justify-center items-center xl:justify-between xl:float-left py-2">
           <Link href="/">
@@ -130,15 +84,12 @@ export default function FooterAbc() {
             </div>
           </Link>
         </div>
-
         {/* abc+ */}
         <p className="xl:hidden font-extrabold text-base text-[#07336E] text-center py-4">
           <span className="text-[#E11C38]">ABC+: </span>
           Advancing Basic Education in the Philippines
         </p>
-
         <hr className="xl:hidden" />
-
         <div className="xl:float-right">
           {/* socmed icons */}
           <div className="flex justify-center xl:justify-end pt-4">

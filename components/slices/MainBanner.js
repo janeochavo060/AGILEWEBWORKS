@@ -15,8 +15,15 @@ export default function Slice({ slice }) {
         priority
         className="object-cover object-center"
       />
+      <div
+        className="absolute w-full h-full mt-2"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(255,255,255,1) 2%, rgba(255,255,255,0) 45%)",
+        }}
+      ></div>
 
-      <div className="absolute bottom-[0] md:bottom-[-5%] lg:bottom-0 w-full">
+      <div className="absolute bottom-[0] md:bottom-[-5%] lg:bottom-[-1px] w-full">
         <div className="flex justify-center w-full">
           <div className="xl:bg-white rounded-tl-3xl rounded-tr-3xl">
             <p className="py-6 px-8 font-bold text-[#07336E] text-center text-base sm:text-xl md:text-3xl lg:text-4xl xl:text-[40px]">

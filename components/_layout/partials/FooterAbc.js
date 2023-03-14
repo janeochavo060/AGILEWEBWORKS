@@ -13,8 +13,14 @@ export default function FooterAbc() {
   const footer = tenantDetails?.data?.footer;
   const menuHandler = menus?.parentNodes;
   return (
-    <div className="relative px-4 pb-4 pt-8 w-full xl:flex xl:justify-center">
-      <Image alt="ABC+" src={footer?.background_image} fill priority />
+    <div className="relative overflow-hidden px-4 pb-4 pt-8 w-full xl:flex xl:justify-center">
+      <Image
+        alt="ABC+"
+        src={footer?.background_image}
+        fill
+        priority
+        className="max-w-fit !w-auto md:max-w-full md:!w-full"
+      />
       <div className="relative z-10 xl:w-[1345px] bg-white rounded-lg shadow-xl mb-8 py-12 px-4 md:px-8">
         <div className="grid grid-cols-2 xl:grid-cols-6 gap-6 mb-4 xl:mb-8">
           {menuHandler

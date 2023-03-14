@@ -20,7 +20,7 @@ export default function FooterAbc() {
           {menuHandler
             .filter((e) => e.children.length)
             .map((menu) => (
-              <div key={menu.parent} className="">
+              <div key={menu?.id} className="">
                 <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-1">
                   <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
                   {menu?.label?.toUpperCase()}

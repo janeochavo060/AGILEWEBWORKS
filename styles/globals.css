@@ -3,6 +3,9 @@
 	font-family: Arial, Helvetica, sans-serif;
   line-height: 27px;
 }
+#react-select-2-placeholder, #react-select-3-placeholder {
+  color: #9b9eb5
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

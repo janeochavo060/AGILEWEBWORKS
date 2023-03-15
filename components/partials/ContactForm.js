@@ -4,7 +4,16 @@ import { formSubmit, isError } from "@/lib/services/formService";
 export default function ContactForm({ form }) {
   const sections = form?.fields?.blueprint?.schema?.sections || [];
   const [errors, setErrors] = useState([]);
-  console.log(sections);
+  const findClass = (field) => {
+    switch (field) {
+      case "message":
+        return "ounded-[5px] border-[1px] py-[8.5px] px-3 min-h-[100px] sm:col-span-2";
+      case "inquiry":
+        return "";
+      default:
+        return "border outline-0 border-[#cfcfcf] rounded-[5px] h-[41px] text-[#424242] p-[10px] w-[100%]";
+    }
+  };
   return (
     <>
       {sections.map((section) => {
@@ -12,16 +21,12 @@ export default function ContactForm({ form }) {
         return (
           <Fragment key={section?.state_name}>
             <form onSubmit={(e) => formSubmit(e, form.id, sections, setErrors)}>
-              <div className="text-sm grid grid-cols-1 sm:grid-cols-2 gap-3 py-2 sm:gap-y-6 sm:py-3">
+              <div className="text-sm grid grid-cols-1 sm:grid-cols-2 gap-3 py-2 sm:gap-y-8 sm:py-8">
                 {fields.map((field) => (
                   <Fragment key={field?.state_name}>
                     <FormField
                       {...field}
-                      className={
-                        field?.state_name === "message"
-                          ? "ounded-[5px] border-[1px] py-[8.5px] px-3 min-h-[100px] sm:col-span-2"
-                          : "border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]"
-                      }
+                      className={findClass(field?.state_name)}
                       error={isError(
                         errors,
                         section?.state_name,

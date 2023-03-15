@@ -23,9 +23,7 @@ export default function FeaturedArticles({ slice }) {
 
           <div className="flex justify-center md:justify-end mb-8 w-full md:w-1/2 order-3 md:order-2">
             <Link href={button_link}>
-              <button
-                className="font-bold uppercase bg-[#034F8B] text-xs px-8 text-white rounded-md h-[35px]"
-              >
+              <button className="font-bold uppercase bg-[#034F8B] text-xs px-8 text-white rounded-md h-[35px]">
                 {button_label}
               </button>
             </Link>
@@ -33,7 +31,7 @@ export default function FeaturedArticles({ slice }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8 mb-8 w-full order-2 md:order-3">
             {collections.map((item, i) => (
-              <ArticleThumbnail key={i} item={item} />
+              <ArticleThumbnail key={i} item={item} showDate={false} />
             ))}
           </div>
         </div>

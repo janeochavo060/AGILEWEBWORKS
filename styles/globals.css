@@ -4,16 +4,28 @@
   line-height: 27px;
 }
 
-.objective-list ol {
-  padding-left: 20px; 
+
+/* React Select Custom */
+.css-qbdosj-Input {
+  margin: 0px !important;
+}
+.css-1xc3v61-indicatorContainer, .css-15lsz6c-indicatorContainer {
+  padding: 4px !important;
+}
+.css-1fdsijx-ValueContainer {
+  padding: 0px 8px !important;
+}
+.css-t3ipsp-control, .css-13cymwt-control {
+  cursor:  pointer !important;
+  min-height: 30px !important;
+  background-color: unset !important;
+  border-color: unset !important;
+  border-radius: unset !important;
+  border-style: unset !important;
+  border-width: unset !important;
+  box-shadow: unset !important;
 }
 
-.objective-list ol li{
-  list-style-type: decimal;
-  float: left;
-  /* margin: 0 10px;
-  padding: 0 10px; */
-}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,7 +1,8 @@
+import { convertDate } from "@/lib/services/globalService";
 import Image from "next/image";
 import Link from "next/link";
-export default function ArticleThumbnail({ item }) {
-  const main = item?.data?.main
+export default function ArticleThumbnail({ item, showDate = true }) {
+  const main = item?.data?.main;
   return (
     <Link href="/">
       <div className="relative flex overflow-hidden w-auto h-[260px] sm:h-[380px] md:h-[300px] lg:h-[320px] xl:h-[300px] mb-2">
@@ -14,8 +15,10 @@ export default function ArticleThumbnail({ item }) {
         />
       </div>
 
-      {item?.published_at && (
-        <p className="font-semibold text-[#999999] text-xs mt-3">{item?.published_at}</p>
+      {item?.published_at && showDate && (
+        <p className="font-semibold text-[#999999] text-xs mt-3">
+          {convertDate(item?.published_at)}
+        </p>
       )}
 
       {item?.title && (
@@ -54,8 +57,7 @@ export default function ArticleThumbnail({ item }) {
             WebkitBoxOrient: "vertical",
           }}
           dangerouslySetInnerHTML={{ __html: main?.content }}
-        >
-        </div>
+        ></div>
       )}
     </Link>
   );

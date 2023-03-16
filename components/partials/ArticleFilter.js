@@ -1,4 +1,77 @@
+import Select from "@/components/forms/Select";
 export default function SectionFilter() {
+  const year = () => {
+    const date = new Date();
+    let currentYear = date.getFullYear();
+    let y = [];
+    for (let index = 1; index <= 5; index++) {
+      y.push({
+        value: currentYear,
+        label: currentYear,
+      });
+      currentYear = --currentYear;
+    }
+    return y;
+  };
+
+  const months = [
+    {
+      value: 1,
+      label: "January",
+    },
+    {
+      value: 2,
+      label: "February",
+    },
+    {
+      value: 3,
+      label: "March",
+    },
+    {
+      value: 4,
+      label: "April",
+    },
+    {
+      value: 5,
+      label: "May",
+    },
+    {
+      value: 6,
+      label: "June",
+    },
+    {
+      value: 7,
+      label: "July",
+    },
+    {
+      value: 8,
+      label: "August",
+    },
+    {
+      value: 9,
+      label: "September",
+    },
+    {
+      value: 10,
+      label: "October",
+    },
+    {
+      value: 11,
+      label: "November",
+    },
+    {
+      value: 12,
+      label: "Decemmber",
+    },
+  ];
+
+  const order = [
+    {
+      value: 1,
+      label: "Newest First",
+    },
+  ]
+
   return (
     <div className="w-full xl:flex xl:justify-center">
       <div className="xl:w-[1345px] pt-4">
@@ -7,52 +80,36 @@ export default function SectionFilter() {
           <div className="w-auto py-4 lg:py-0 text-sm">Filter:</div>
           <div className="w-auto flex flex-wrap">
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
-              <select
-                className="text-[#3B3B3B] min-w-[120px] text-xs w-full xl:w-auto py-2 px-4 pr-8 rounded-lg border-[1px] border-[#b3b3b3] cursor-pointer"
-                style={{
-                  appearance: "none",
-                  background:
-                    "url(svg/arrow_drop_down_black.svg) 100% 50% no-repeat",
-                }}
-              >
-                <option value="">Year</option>
-              </select>
+              <Select
+                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                placeholder="Year"
+                isClearable={true}
+                options={year()}
+              />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
-              <select
-                className="text-[#3B3B3B] min-w-[120px] text-xs w-full xl:w-auto py-2 px-4 rounded-lg border-[1px] border-[#b3b3b3] cursor-pointer"
-                style={{
-                  appearance: "none",
-                  background:
-                    "url(svg/arrow_drop_down_black.svg) 100% 50% no-repeat",
-                }}
-              >
-                <option value="">Month</option>
-              </select>
+              <Select
+                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                placeholder="Month"
+                isClearable={true}
+                options={months}
+              />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
-              <select
-                className="text-[#3B3B3B] min-w-[120px] text-xs w-full xl:w-auto py-2 px-4 rounded-lg border-[1px] border-[#b3b3b3] cursor-pointer"
-                style={{
-                  appearance: "none",
-                  background:
-                    "url(svg/arrow_drop_down_black.svg) 100% 50% no-repeat",
-                }}
-              >
-                <option value="">Region</option>
-              </select>
+              <Select
+                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                placeholder="Region"
+                isClearable={true}
+                options={[]}
+              />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
-              <select
-                className="text-[#3B3B3B] min-w-[120px] text-xs w-full xl:w-auto py-2 px-4 rounded-lg border-[1px] border-[#b3b3b3] cursor-pointer"
-                style={{
-                  appearance: "none",
-                  background:
-                    "url(svg/arrow_drop_down_black.svg) 100% 50% no-repeat",
-                }}
-              >
-                <option value="">Newest First</option>
-              </select>
+              <Select
+                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                placeholder="Sort By"
+                isClearable={true}
+                options={[]}
+              />
             </div>
           </div>
         </div>

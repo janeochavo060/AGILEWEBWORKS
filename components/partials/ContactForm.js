@@ -7,11 +7,11 @@ export default function ContactForm({ form }) {
   const findClass = (field) => {
     switch (field) {
       case "message":
-        return "ounded-[5px] border-[1px] py-[8.5px] px-3 min-h-[100px] sm:col-span-2";
+        return "rounded-[5px] border-[1px] py-[8.5px] px-3 min-h-[100px] sm:col-span-2";
       case "inquiry":
-        return "";
+        return "cursor-pointer border-[1px] border-[#cfcfcf] rounded-[5px] h-[35px] pt-[1px] text-sm";
       default:
-        return "border outline-0 border-[#cfcfcf] rounded-[5px] h-[41px] text-[#424242] p-[10px] w-[100%]";
+        return "border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]";
     }
   };
   return (
@@ -27,6 +27,7 @@ export default function ContactForm({ form }) {
                     <FormField
                       {...field}
                       className={findClass(field?.state_name)}
+                      isClearable={true}
                       error={isError(
                         errors,
                         section?.state_name,

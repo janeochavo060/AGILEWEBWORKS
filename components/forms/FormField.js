@@ -17,7 +17,7 @@ export default function FormField(props) {
           <>
             <Textarea {...inputProps} />
             {error && (
-              <div className="text-[12px] mt-[-20px] text-red-600">{error}</div>
+              <div className="text-[12px] mt-[-30px] text-red-600">{error}</div>
             )}
           </>
         );

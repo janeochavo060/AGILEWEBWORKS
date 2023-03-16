@@ -6,16 +6,7 @@
 
 
 /* React Select Custom */
-.css-qbdosj-Input {
-  margin: 0px !important;
-}
-.css-1xc3v61-indicatorContainer, .css-15lsz6c-indicatorContainer {
-  padding: 4px !important;
-}
-.css-1fdsijx-ValueContainer {
-  padding: 0px 8px !important;
-}
-.css-t3ipsp-control, .css-13cymwt-control {
+.react-select > div:nth-child(3) {
   cursor:  pointer !important;
   min-height: 30px !important;
   background-color: unset !important;
@@ -24,6 +15,18 @@
   border-style: unset !important;
   border-width: unset !important;
   box-shadow: unset !important;
+}
+.react-select > div:nth-child(3) > div:first-child {
+  padding: 0px 8px !important;
+}
+.react-select > div:nth-child(3) > div:first-child > div:last-child {
+    margin: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.react-select > div:nth-child(3) > div:last-child > div {
+  padding: 4px;
 }
 
 @tailwind base;

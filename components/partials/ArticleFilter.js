@@ -81,7 +81,7 @@ export default function SectionFilter() {
           <div className="w-auto flex flex-wrap">
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
               <Select
-                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Year"
                 isClearable={true}
                 options={year()}
@@ -89,7 +89,7 @@ export default function SectionFilter() {
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
               <Select
-                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Month"
                 isClearable={true}
                 options={months}
@@ -97,7 +97,7 @@ export default function SectionFilter() {
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
               <Select
-                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Region"
                 isClearable={true}
                 options={[]}
@@ -105,7 +105,7 @@ export default function SectionFilter() {
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
               <Select
-                className="min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
+                className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Sort By"
                 isClearable={true}
                 options={[]}

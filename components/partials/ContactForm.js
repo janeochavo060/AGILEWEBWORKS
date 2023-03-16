@@ -2,6 +2,17 @@ import FormField from "@/components/forms/FormField";
 import { Fragment, useState } from "react";
 import { formSubmit, isError } from "@/lib/services/formService";
 export default function ContactForm({ form }) {
+
+//   const x = function _turnstileCb() {
+//     console.debug('_turnstileCb called');
+
+//     turnstile.render('#myWidget', {
+//       sitekey: '0x4AAAAAAADQV294WYEZ5YHU',
+//       theme: 'light',
+//     });
+// }
+
+
   const sections = form?.fields?.blueprint?.schema?.sections || [];
   const [errors, setErrors] = useState([]);
   const findClass = (field) => {
@@ -9,7 +20,7 @@ export default function ContactForm({ form }) {
       case "message":
         return "rounded-[5px] border-[1px] py-[8.5px] px-3 min-h-[100px] sm:col-span-2";
       case "inquiry":
-        return "cursor-pointer border-[1px] border-[#cfcfcf] rounded-[5px] h-[35px] pt-[1px] text-sm";
+        return "react-select cursor-pointer border-[1px] border-[#cfcfcf] rounded-[5px] h-[35px] pt-[1px] text-sm";
       default:
         return "border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]";
     }
@@ -27,7 +38,7 @@ export default function ContactForm({ form }) {
                     <FormField
                       {...field}
                       className={findClass(field?.state_name)}
-                      isClearable={true}
+                      // isClearable={true}
                       error={isError(
                         errors,
                         section?.state_name,
@@ -37,7 +48,8 @@ export default function ContactForm({ form }) {
                   </Fragment>
                 ))}
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-between">
+                {/* <div id="myWidget">{x()}</div> */}
                 <div>
                   <div className="font-extrabold text-[#07336E] text-right mt-1">
                     <button>SEND</button>

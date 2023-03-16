@@ -1,0 +1,32 @@
+import pdfDetails from 'static-data/pdfDetails';
+import PdfDetails from '@/components/slices/PdfDetails';
+
+const Page1 = ({slices,}) => {
+    return (
+        <>
+            {slices.map((slice, index) => {
+                return(
+                    <div key={index}>
+                        {slice.sliceType === "pdf-details" && (
+                            <PdfDetails slice={slice} />
+                        )}
+                        {/* {slice.sliceType === "related-resources" && (
+                            <TrainingMaterials slice={slice} />
+                        )} */}
+                    </div> 
+                ) 
+            })}
+        </>
+    )
+};
+
+export async function getStaticProps() {
+    const slices = pdfDetails.slices;
+    return {
+      props: {
+        slices,
+      },
+    }
+  }
+
+export default Page1

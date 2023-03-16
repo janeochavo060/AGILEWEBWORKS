@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/customs.css";
 import "@/styles/unreset.css";
 // import Header from "@/components/_layout/partials/Header";
 import DefaultLayout from "@/components/_layout/DefaultLayout";

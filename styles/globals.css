@@ -3,9 +3,29 @@
 	font-family: Arial, Helvetica, sans-serif;
   line-height: 27px;
 }
-#react-select-2-placeholder, #react-select-3-placeholder {
-  color: #9b9eb5
+
+
+/* React Select Custom */
+.css-qbdosj-Input {
+  margin: 0px !important;
 }
+.css-1xc3v61-indicatorContainer, .css-15lsz6c-indicatorContainer {
+  padding: 4px !important;
+}
+.css-1fdsijx-ValueContainer {
+  padding: 0px 8px !important;
+}
+.css-t3ipsp-control, .css-13cymwt-control {
+  cursor:  pointer !important;
+  min-height: 30px !important;
+  background-color: unset !important;
+  border-color: unset !important;
+  border-radius: unset !important;
+  border-style: unset !important;
+  border-width: unset !important;
+  box-shadow: unset !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

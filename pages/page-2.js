@@ -1,5 +1,6 @@
 import pdfDetails from 'static-data/pdfDetails';
 import PdfDetails from '@/components/slices/PdfDetails';
+import RelatedResources from '@/components/slices/RelatedResources';
 
 const Page1 = ({slices,}) => {
     return (
@@ -10,9 +11,9 @@ const Page1 = ({slices,}) => {
                         {slice.sliceType === "pdf-details" && (
                             <PdfDetails slice={slice} />
                         )}
-                        {/* {slice.sliceType === "related-resources" && (
-                            <TrainingMaterials slice={slice} />
-                        )} */}
+                        {slice.sliceType === "related-resources" && (
+                            <RelatedResources slice={slice} />
+                        )}
                     </div> 
                 ) 
             })}

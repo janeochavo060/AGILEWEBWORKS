@@ -1,10 +1,8 @@
 .objective-list ol {
-    padding-left: 20px; 
+    padding-left: 25px; 
+    padding-bottom: 2rem;
 }
 
 .objective-list ol li{
     list-style-type: decimal;
-    float: left;
-    /* margin: 0 10px;
-    padding: 0 10px; */
 }

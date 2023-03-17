@@ -16,7 +16,8 @@ export default function TrainingMaterials({slice}) {
     // GET INITIAL DATA
     useEffect(() => {
         getFiles(slice.apiUrl)
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [slice])
 
     const getFiles = async (url) => {
         setLoading(true)

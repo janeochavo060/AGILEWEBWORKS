@@ -36,13 +36,34 @@ export default function MenuAbc({ className }) {
         >
           <div className="relative flex justify-center items-center gap-0 sm:gap-4 w-full xl:mx-4 xl:justify-between xl:w-auto">
             <Link href="/" className="min-w-[110px] max-w-[115px] pb-2">
-              <Image priority src={global?.deped_logo[0]} width={400} height={0} alt="DepEd Logo" className="px-2" />
+              <Image
+                priority
+                src={global?.deped_logo[0]}
+                width={400}
+                height={0}
+                alt="DepEd Logo"
+                className="px-2"
+              />
             </Link>
             <Link href="/" className="min-w-[110px] max-w-[170px]">
-              <Image priority src={global?.usaid_logo[0]} alt="USAID Logo" width={400} height={0} className="px-2" />
+              <Image
+                priority
+                src={global?.usaid_logo[0]}
+                alt="USAID Logo"
+                width={400}
+                height={0}
+                className="px-2"
+              />
             </Link>
             <Link href="/" className="min-w-[110px] max-w-[110px]">
-              <Image priority src={global?.rti_logo[0]} alt="RTI Logo" width={400} height={0} className="px-2" />
+              <Image
+                priority
+                src={global?.rti_logo[0]}
+                alt="RTI Logo"
+                width={400}
+                height={0}
+                className="px-2"
+              />
             </Link>
           </div>
           <div className="hidden xl:flex xl:mx-4 items-center whitespace-nowrap gap-x-6 text-white">
@@ -80,14 +101,13 @@ export default function MenuAbc({ className }) {
                       <div className="absolute z-10 top-[80%] left-[-5%] bg-[#001B3D] shadow-lg w-auto h-auto">
                         <div className="bg-[#0188C1] h-[5px] w-full"></div>
                         {menu.children.map((menuChildren, i) => (
-                          <div
-                            key={i}
-                            className={`p-4 w-full text-white hover:text-[#016DA0]`}
-                          >
-                            <Link href={menuChildren.url} key={i}>
+                          <Link href={menuChildren.url} key={i}>
+                            <div
+                              className={`p-4 py-3 w-full text-white hover:text-[#016DA0]`}
+                            >
                               {menuChildren.label}
-                            </Link>
-                          </div>
+                            </div>
+                          </Link>
                         ))}
                       </div>
                     )}

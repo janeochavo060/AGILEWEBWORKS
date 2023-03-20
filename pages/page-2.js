@@ -2,7 +2,7 @@ import pdfDetails from 'static-data/pdfDetails';
 import PdfDetails from '@/components/slices/PdfDetails';
 import RelatedResources from '@/components/slices/RelatedResources';
 
-const Page1 = ({slices,}) => {
+const Page2 = ({slices,}) => {
     return (
         <>
             {slices.map((slice, index) => {
@@ -30,4 +30,4 @@ export async function getStaticProps() {
     }
   }
 
-export default Page1
+export default Page2

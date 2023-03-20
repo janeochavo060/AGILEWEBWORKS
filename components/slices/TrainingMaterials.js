@@ -19,6 +19,10 @@ export default function TrainingMaterials({slice}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [slice])
 
+    const onSearch = () => {
+        setShowFilters(false)
+    }
+
     const getFiles = async (url) => {
         setLoading(true)
 
@@ -111,7 +115,7 @@ export default function TrainingMaterials({slice}) {
                         <div className="w-full md:w-auto flex justify-between md:justify-end px-2 mt-2 md:mt-0">
                             <button
                                 className="px-4 py-[3px] flex justify-center items-center border-2 rounded-[5px] border-[#034F8B] mr-4"
-                                onClick={() => {}}
+                                onClick={() => onSearch()}
                             >
                                 <SearchIcon
                                     width="20"
@@ -121,7 +125,7 @@ export default function TrainingMaterials({slice}) {
                                     Search
                                 </p>
                             </button>
-                            <div className="relative w-full md:w-auto md:min-w-[200px]">
+                            <div className="relative w-full md:w-auto md:min-w-[200px] cursor-pointer">
                                 <div
                                     className="absolute left-2 top-0.5 md:top-1"
                                     onClick={() => setShowFilters(!showFilters)}
@@ -148,19 +152,19 @@ export default function TrainingMaterials({slice}) {
                                     )}
                                 </div>
                                 <div className={`absolute bottom-[-335%] w-full ${showFilters ? 'h-[155px]' : 'hidden'} transition-all duration-600 ease-in-aout overflow-auto px-[14px] py-[12px] border-[1px] border-[#8A8A8A] rounded-[10px] bg-[#FFFFFF] flex flex-col`}>
-                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px] cursor-pointer">
                                         <input type="checkbox" name="alphabetical" value="alphabetical" className="mr-2" />
                                         Alphabetical
                                     </label>
-                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px] cursor-pointer">
                                         <input type="checkbox" name="newest-first" value="newest-first" className="mr-2" />
                                         Newest First
                                     </label>
-                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px] cursor-pointer">
                                         <input type="checkbox" name="oldest-first" value="oldest-first" className="mr-2" />
                                         Oldest First
                                     </label>
-                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px] cursor-pointer">
                                         <input type="checkbox" name="newly-modified" value="newly-modified" className="mr-2" />
                                         Newly Modified
                                     </label>

@@ -72,6 +72,33 @@ export default function SectionFilter() {
     },
   ]
 
+  const regions = [
+    {
+      value: 1,
+      label: "Region I",
+    },
+    {
+      value: 1,
+      label: "Region II",
+    },
+    {
+      value: 1,
+      label: "Region III",
+    },
+    {
+      value: 1,
+      label: "Region IV",
+    },
+    {
+      value: 1,
+      label: "Region V",
+    },
+    {
+      value: 1,
+      label: "Region VI",
+    },
+  ]
+
   return (
     <div className="w-full xl:flex xl:justify-center">
       <div className="xl:w-[1345px] pt-4">
@@ -100,7 +127,7 @@ export default function SectionFilter() {
                 className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Region"
                 isClearable={true}
-                options={[]}
+                options={regions}
               />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
@@ -108,7 +135,7 @@ export default function SectionFilter() {
                 className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Sort By"
                 isClearable={true}
-                options={[]}
+                options={order}
               />
             </div>
           </div>

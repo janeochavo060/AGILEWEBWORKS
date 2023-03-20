@@ -6,6 +6,18 @@ const dataFormatter = new Jsona();
 export default function Slice({ slice }) {
   const { page_size } = slice?.main;
   const { id } = slice?.main?.collection_source;
+
+  const { data: parentCollectionHandler, isValidating: parentValidating } = COLLECTIONAPI.getCollectionsSwr(
+    `/${id}?include=taxonomies`,
+    {
+      render: id,
+    }
+  );
+
+  const parentCollection = dataFormatter.deserialize(
+    parentValidating ? {} : parentCollectionHandler
+  );
+
   const { data: collectionsHandler, isValidating } =
     COLLECTIONAPI.getCollectionsSwr(`/${id}/entries?page[size]=${page_size}`, {
       render: id,

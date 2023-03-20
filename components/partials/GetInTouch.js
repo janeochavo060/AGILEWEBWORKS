@@ -17,7 +17,7 @@ export default function GetInTouch() {
                 formSubmit(e, "get-in-touch", sections, setErrors)
               }
             >
-              <div className="font-extrabold text-[#07336E] text-lg xl:text-xl flex items-center mb-1">
+              <div className="font-extrabold text-[#07336E] text-lg xl:text-xl flex items-center mb-2">
                 <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
                 GET IN TOUCH
               </div>

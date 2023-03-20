@@ -2,20 +2,24 @@ import Image from "next/image";
 import Link from "next/link";
 import VectorImage from "@/components/partials/VectorImage";
 export default function OurResources({ slice }) {
-  const { title = "", sub_title = "", resources = [] } = slice?.main;
+  const { title = "", sub_title = "", show_header = false, resources = [] } = slice?.main;
   return (
     <div className="px-4 w-full xl:flex xl:justify-center mb-20">
       <div className="xl:w-[1345px] pt-4">
-        <div className="flex justify-center items-center mb-2">
-          <p className="font-semibold text-sm lg:text-lg xl:text-xl text-[#E11C38] uppercase">
-            <span className="text-[#07336E]">{title.split(" ")[0]} </span>
-            {title.split(" ").slice(1, title.split(" ").length).join(" ")}
-          </p>
-          <VectorImage />
-        </div>
-        <p className="m-auto text-main-black font-semibold text-3xl leading-[40px] text-center mb-12 lg:leading-[50px] lg:text-[35px] lg:max-w-4xl">
-          {sub_title}
-        </p>
+        {show_header && (
+          <>
+            <div className="flex justify-center items-center mb-2">
+              <p className="font-semibold text-sm lg:text-lg xl:text-xl text-[#E11C38] uppercase">
+                <span className="text-[#07336E]">{title.split(" ")[0]} </span>
+                {title.split(" ").slice(1, title.split(" ").length).join(" ")}
+              </p>
+              <VectorImage />
+            </div>
+            <p className="m-auto text-main-black font-semibold text-3xl leading-[40px] text-center mb-12 lg:leading-[50px] lg:text-[35px] lg:max-w-4xl">
+              {sub_title}
+            </p>
+          </>
+        )}
         <div className="flex flex-wrap xl:justify-between">
           {resources.map((resource, i) => (
             <Link

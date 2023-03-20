@@ -26,13 +26,13 @@ export default function FooterAbc() {
             .filter((e) => e.children.length)
             .map((menu) => (
               <div key={menu?.id} className="">
-                <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-1">
+                <div className="font-extrabold text-[#07336E] text-lg xl:text-1xl flex items-center mb-2">
                   <div className="bg-[#E11C38] w-[8px] h-[15px] mr-2"></div>
                   {menu?.label?.toUpperCase()}
                 </div>
                 {menu.children.map((menuChildren, i) => (
                   <Link href={menuChildren?.url} key={i}>
-                    <div className="text-[12px] lg:text-[13px] text-[#656565] py-[3px] w-full">
+                    <div className="text-[12px] lg:text-[14px] xl:text-[15px] text-[#656565] py-[3px] w-full">
                       {menuChildren?.label}
                     </div>
                   </Link>

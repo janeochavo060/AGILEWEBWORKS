@@ -4,7 +4,7 @@ export default function SectionFilter() {
     const date = new Date();
     let currentYear = date.getFullYear();
     let y = [];
-    for (let index = 1; index <= 5; index++) {
+    for (let index = 1; index <= 10; index++) {
       y.push({
         value: currentYear,
         label: currentYear,
@@ -61,7 +61,7 @@ export default function SectionFilter() {
     },
     {
       value: 12,
-      label: "Decemmber",
+      label: "December",
     },
   ];
 
@@ -78,23 +78,23 @@ export default function SectionFilter() {
       label: "Region I",
     },
     {
-      value: 1,
+      value: 2,
       label: "Region II",
     },
     {
-      value: 1,
+      value: 3,
       label: "Region III",
     },
     {
-      value: 1,
+      value: 4,
       label: "Region IV",
     },
     {
-      value: 1,
+      value: 5,
       label: "Region V",
     },
     {
-      value: 1,
+      value: 6,
       label: "Region VI",
     },
   ]

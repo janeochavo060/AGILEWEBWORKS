@@ -11,11 +11,13 @@ export default function TrainingMaterials({slice}) {
     const [files, setFiles] = useState([])
     const [loading, setLoading] = useState(true)
     const [breadCrumb, setBreadCrumb] = useState([])
+    const [showFilters, setShowFilters] = useState(false)
 
     // GET INITIAL DATA
     useEffect(() => {
         getFiles(slice.apiUrl)
-    }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [slice])
 
     const getFiles = async (url) => {
         setLoading(true)
@@ -120,20 +122,48 @@ export default function TrainingMaterials({slice}) {
                                 </p>
                             </button>
                             <div className="relative w-full md:w-auto md:min-w-[200px]">
-                                <div className="absolute left-2 top-0.5 md:top-1">
+                                <div
+                                    className="absolute left-2 top-0.5 md:top-1"
+                                    onClick={() => setShowFilters(!showFilters)}
+                                >
                                     <FilterIcon
                                         width="22"
                                         height="24"
                                     />
                                 </div>
-                                <select
-                                    className="appearance-none outline-none w-full md:w-auto md:min-w-[200px] text-[#034F8B] text-[20px] py-2 pr-4 pl-8 flex justify-center items-center border-b-[3px] border-[#034F8B]"
-                                    onClick={() => {}}
+                                <div
+                                    className="w-full text-start text-[#034F8B] text-[20px] py-2 pr-4 pl-8 border-b-[3px] border-[#034F8B]"
+                                    onClick={() => setShowFilters(!showFilters)}
                                 >
-                                    <option>Filter</option>
-                                </select>
-                                <div className="absolute right-5 top-[17px]">
-                                    <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-[#034F8B]"></div>
+                                    Filter
+                                </div>
+                                <div
+                                    className="absolute right-5 top-[17px]"
+                                    onClick={() => setShowFilters(!showFilters)}
+                                >
+                                    {showFilters ? (
+                                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-[#034F8B]"></div>
+                                    ) : (
+                                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-[#034F8B]"></div>
+                                    )}
+                                </div>
+                                <div className={`absolute bottom-[-335%] w-full ${showFilters ? 'h-[155px]' : 'hidden'} transition-all duration-600 ease-in-aout overflow-auto px-[14px] py-[12px] border-[1px] border-[#8A8A8A] rounded-[10px] bg-[#FFFFFF] flex flex-col`}>
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                        <input type="checkbox" name="alphabetical" value="alphabetical" className="mr-2" />
+                                        Alphabetical
+                                    </label>
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                        <input type="checkbox" name="newest-first" value="newest-first" className="mr-2" />
+                                        Newest First
+                                    </label>
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                        <input type="checkbox" name="oldest-first" value="oldest-first" className="mr-2" />
+                                        Oldest First
+                                    </label>
+                                    <label className="text-[#343434] text-[16px] leading-[20px] font-[400] my-[6px]">
+                                        <input type="checkbox" name="newly-modified" value="newly-modified" className="mr-2" />
+                                        Newly Modified
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +204,7 @@ export default function TrainingMaterials({slice}) {
                                                 <div className="w-full md:w-auto flex justify-between mt-8 md:mt-0">
                                                     <button
                                                         className="px-4 py-[2px] flex justify-center items-center border-2 rounded-[5px] border-[#034F8B] md:mr-4"
-                                                        onClick={() => getFiles(file)}
+                                                        onClick={() => {}}
                                                     >
                                                         <DetailsIcon
                                                             width="20"
@@ -186,7 +216,7 @@ export default function TrainingMaterials({slice}) {
                                                     </button>
                                                     <button
                                                         className="px-4 py-[2px] flex justify-center items-center border-2 rounded-[5px] bg-[#034F8B] border-[#034F8B]"
-                                                        onClick={() => getFiles(file)}
+                                                        onClick={() => {}}
                                                     >
                                                         <DownloadIcon
                                                             width="20"

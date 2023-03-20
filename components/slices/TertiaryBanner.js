@@ -41,11 +41,13 @@ export default function Slice({ slice }) {
                     />
                 </div>
 
-                <div className="my-4 w-full flex justify-center px-4">
+                <div className="my-2 w-full flex justify-center px-4">
                     <div className="xl:w-[1345px]">
                         <div className="text-[#343434] text-[14px] leading-[20px] font-[400]" dangerouslySetInnerHTML={{__html: description}} />
+                        <hr className="bg-[#C3C3C3] h-[1px] my-4" />
                     </div>
                 </div>
+
         </>
     );
 }

@@ -20,25 +20,29 @@ const traningMaterials = {
                             name: "Ang Aming Bahay",
                             type: "pdf",
                             filePath: "https://www.africau.edu/images/default/sample.pdf",
-                            fileSize: "94 mb"
+                            fileSize: "94 mb",
+                            image: pdfImage1
                         },
                         {
                             name: "Dito Sa Amin",
                             type: "pdf",
                             filePath: "https://www.africau.edu/images/default/sample.pdf",
-                            fileSize: "94 mb"
+                            fileSize: "94 mb",
+                            image: pdfImage2
                         },
                         {
                             name: "Pano kung nakakatakot ang aking guro",
                             type: "pdf",
                             filePath: "https://www.africau.edu/images/default/sample.pdf",
-                            fileSize: "94 mb"
+                            fileSize: "94 mb",
+                            image: pdfImage3
                         },
                         {
                             name: "Si Buboy Bote",
                             type: "pdf",
                             filePath: "https://www.africau.edu/images/default/sample.pdf",
-                            fileSize: "94 mb"
+                            fileSize: "94 mb",
+                            image: pdfImage4
                         }
                     ]
                 },

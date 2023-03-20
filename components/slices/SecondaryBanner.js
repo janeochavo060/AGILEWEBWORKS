@@ -17,6 +17,14 @@ export default function Slice({ slice }) {
         className="object-cover object-center"
       />
 
+      <div
+        className="absolute w-full h-full mt-2"
+        style={{
+          background:
+            "linear-gradient(0deg, rgba(255,255,255,1) 2%, rgba(255,255,255,0) 35%)",
+        }}
+      ></div>
+
       <div className="absolute bottom-[-10%]  md:bottom-0 w-full">
         <div className="flex justify-center w-full">
           <div className="bg-white rounded-tl-3xl rounded-tr-3xl min-w-[300px]  sm:min-w-[450px]  md:min-w-[700px] lg:min-w-[850px] xl:min-w-[900px]">

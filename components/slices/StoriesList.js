@@ -25,31 +25,32 @@ export default function Slice({ slice }) {
   const isLoading = useArticleFilterStore((state) => state.isLoading);
   const setIsLoading = useArticleFilterStore((state) => state.setIsLoading);
   const allCollections = useArticleFilterStore((state) => state.allCollections);
-  const setAllCollections = useArticleFilterStore((state) => state.setAllCollections);
+  const setAllCollections = useArticleFilterStore(
+    (state) => state.setAllCollections
+  );
 
   const updateMeta = (data) => {
     setMeta(data);
   };
 
-  const { data, isValidating } =
-    COLLECTIONAPI.getCollectionsSwr(
-      `/${id}/entries?page[size]=${page_size}&sort=${sort}`,
-      {
-        render: id,
-        revalidateOnFocus: false,
-        onSuccess: (res) => {
-          if (res) {
-            const collections = dataFormatter.deserialize(res?.data || {});
-            setAllCollections(collections)
-            updateMeta(res?.data?.meta);
-          }
-        },
-      }
-    );
+  const { isValidating } = COLLECTIONAPI.getCollectionsSwr(
+    `/${id}/entries?page[size]=${page_size}&sort=${sort}`,
+    {
+      render: id,
+      revalidateOnFocus: false,
+      onSuccess: (res) => {
+        if (res) {
+          const collections = dataFormatter.deserialize(res?.data || {});
+          setAllCollections(collections);
+          updateMeta(res?.data?.meta);
+        }
+      },
+    }
+  );
 
   const loadMore = () => {
     if (meta?.current_page < meta?.last_page) {
-      setIsLoading(true)
+      setIsLoading(true);
       COLLECTIONAPI.getCollections(
         id,
         `?page[size]=${page_size}&sort=${sort}&page[number]=${
@@ -57,9 +58,9 @@ export default function Slice({ slice }) {
         }`
       ).then((res) => {
         const newCollections = dataFormatter.deserialize(res);
-        const mergedCollections = [...allCollections, ...newCollections]
-        setAllCollections(mergedCollections)
-        setIsLoading(false)
+        const mergedCollections = [...allCollections, ...newCollections];
+        setAllCollections(mergedCollections);
+        setIsLoading(false);
         if (res?.meta) {
           updateMeta(res.meta);
         }
@@ -88,12 +89,16 @@ export default function Slice({ slice }) {
                   <div className="flex justify-center my-8 w-full">
                     {meta?.current_page < meta?.last_page && (
                       <button
-                      disabled={isLoading}
-                      className={`font-bold uppercase text-xs px-8 text-white rounded-md h-[35px] ${isLoading ? 'bg-[#cdcdcd] cursor-progress' : 'bg-[#034F8B]'}`}
-                      onClick={loadMore}
-                    >
-                      {isLoading ? 'Loading...' : 'Load more'}
-                    </button>
+                        disabled={isLoading}
+                        className={`font-bold uppercase text-xs px-8 text-white rounded-md h-[35px] ${
+                          isLoading
+                            ? "bg-[#cdcdcd] cursor-progress"
+                            : "bg-[#034F8B]"
+                        }`}
+                        onClick={loadMore}
+                      >
+                        {isLoading ? "Loading..." : "Load more"}
+                      </button>
                     )}
                   </div>
                 </div>

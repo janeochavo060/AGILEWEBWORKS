@@ -1,18 +1,9 @@
 import FormField from "@/components/forms/FormField";
 import { Fragment, useState } from "react";
 import { formSubmit, isError } from "@/lib/services/formService";
+import { Turnstile } from '@marsidev/react-turnstile'
+
 export default function ContactForm({ form }) {
-
-//   const x = function _turnstileCb() {
-//     console.debug('_turnstileCb called');
-
-//     turnstile.render('#myWidget', {
-//       sitekey: '0x4AAAAAAADQV294WYEZ5YHU',
-//       theme: 'light',
-//     });
-// }
-
-
   const sections = form?.fields?.blueprint?.schema?.sections || [];
   const [errors, setErrors] = useState([]);
   const findClass = (field) => {
@@ -25,6 +16,9 @@ export default function ContactForm({ form }) {
         return "border outline-0 border-[#cfcfcf] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]";
     }
   };
+
+  const [token, setToken] = useState()
+
   return (
     <>
       {sections.map((section) => {
@@ -49,9 +43,12 @@ export default function ContactForm({ form }) {
                 ))}
               </div>
               <div className="flex justify-between">
-                {/* <div id="myWidget">{x()}</div> */}
+              <Turnstile
+                siteKey='0x4AAAAAAADQV294WYEZ5YHU'
+                onSuccess={(token) => setToken(token)}
+              />
                 <div>
-                  <div className="font-extrabold text-[#07336E] text-right mt-1">
+                  <div className="font-extrabold text-[#07336E] text-right">
                     <button>SEND</button>
                   </div>
                   <div className="bg-[#07336E] h-[4px] w-[27px] float-right" />

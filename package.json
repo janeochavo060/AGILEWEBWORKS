@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^0.1.0",
     "axios": "^1.2.2",
     "dotenv": "^16.0.3",
     "eslint": "8.31.0",

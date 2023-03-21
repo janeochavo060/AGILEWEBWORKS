@@ -69,18 +69,22 @@ export default function SectionFilter() {
   ];
 
   const order = [
-    // {
-    //   value: '-published_at',
-    //   label: "Newest First",
-    // },
+    {
+      value: '-published_at',
+      label: "Newest First",
+    },
     {
       value: 'published_at',
       label: "Oldest First",
     },
-    // {
-    //   value: '-published_at',
-    //   label: "Alphabetical",
-    // },
+    {
+      value: 'title',
+      label: "Title A-Z",
+    },
+    {
+      value: '-title',
+      label: "Title Z-A",
+    },
   ]
 
   const regions = [

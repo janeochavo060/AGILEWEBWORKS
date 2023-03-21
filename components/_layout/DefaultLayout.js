@@ -1,5 +1,5 @@
-import MenuAbc from "@/components/_layout/partials/MenuAbc";
-import FooterAbc from "@/components/_layout/partials/FooterAbc";
+import MenuAbc from "@/layout/menus/MenuAbc";
+import FooterAbc from "@/layout/footers/FooterAbc";
 export default function DefaultLayout(props) {
   return (
     <>

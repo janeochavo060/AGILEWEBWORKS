@@ -5,7 +5,7 @@ import Image from "next/image";
 import { getCurrentYear } from "@/lib/services/globalService";
 import { GlobalContext } from "@/lib/context/GlobalContext";
 
-export default function Footer() {
+export default function FooterHalcyon() {
   const router = useRouter();
   const { tenantDetails, menus } = useContext(GlobalContext);
   const global = tenantDetails?.data?.main;

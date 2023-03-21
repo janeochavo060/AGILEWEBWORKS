@@ -1,5 +1,8 @@
 import Select from "@/components/forms/Select";
+import useArticleFilterStore from "@/lib/store/articleFilter"
+
 export default function SectionFilter() {
+  const setSort = useArticleFilterStore((state) => state.setSort)
   const year = () => {
     const date = new Date();
     let currentYear = date.getFullYear();
@@ -66,10 +69,18 @@ export default function SectionFilter() {
   ];
 
   const order = [
+    // {
+    //   value: '-published_at',
+    //   label: "Newest First",
+    // },
     {
-      value: 1,
-      label: "Newest First",
+      value: 'published_at',
+      label: "Oldest First",
     },
+    // {
+    //   value: '-published_at',
+    //   label: "Alphabetical",
+    // },
   ]
 
   const regions = [
@@ -98,6 +109,10 @@ export default function SectionFilter() {
       label: "Region VI",
     },
   ]
+
+  const sortBy = (e) => {
+    setSort(e?.value || '-published_at')
+  }
 
   return (
     <div className="w-full xl:flex xl:justify-center">
@@ -135,6 +150,7 @@ export default function SectionFilter() {
                 className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Sort By"
                 isClearable={true}
+                onChange={sortBy}
                 options={order}
               />
             </div>

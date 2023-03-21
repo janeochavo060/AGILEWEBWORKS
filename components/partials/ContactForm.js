@@ -48,10 +48,10 @@ export default function ContactForm({ form }) {
                 onSuccess={(token) => setToken(token)}
               />
                 <div>
-                  <div className="font-extrabold text-[#07336E] text-right">
-                    <button>SEND</button>
+                  <div className={`font-extrabold text-right ${token ? 'text-[#07336E]' : 'text-[#afafaf]'}`}>
+                    <button disabled={!token} className={`${token ? 'cursor-pointer' : 'cursor-not-allowed'}`}>SEND</button>
                   </div>
-                  <div className="bg-[#07336E] h-[4px] w-[27px] float-right" />
+                  <div className={`${token ? 'bg-[#07336E]' : 'bg-[#afafaf]'} h-[4px] w-[27px] float-right`} />
                 </div>
               </div>
             </form>

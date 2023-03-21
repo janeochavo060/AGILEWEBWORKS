@@ -11,7 +11,7 @@ export default function Slice({ slice }) {
   } = slice?.main;
   return (
     <>
-      <div className="flex justify-center items-center mt-5 mb-3 lg:mb-5 text-sm lg:text-lg xl:text-xl md:text-xl">
+      <div className="flex justify-center items-center mt-10 mb-3 md:mb-7 text-sm lg:text-lg xl:text-xl md:text-xl">
         <p className="font-bold text-[#E11C38] uppercase">
           <span className="text-[#07336E]">{title.split(" ")[0]} </span>
           {title.split(" ").slice(1, title.split(" ").length).join(" ")}
@@ -19,14 +19,14 @@ export default function Slice({ slice }) {
         <VectorImage />
       </div>
       <p
-        className={`mb-3 md:mb-5 font-bold text-main-black text-center text-2xl md:text-3xl lg:text-[40px] xl:text-[45px] ${
+        className={`mb-3 md:mb-7 font-bold text-main-black text-center text-2xl md:text-3xl lg:text-[40px] xl:text-[45px] ${
           title ? "" : "my-3"
         }`}
       >
         {subtitle}
       </p>
       <p
-        className={`mb-3 md:mb-5 text-main-black text-center font-bold text-xs md:text-sm lg:text-[14px] xl:text-[14px] ${
+        className={`mb-3 md:mb-7 text-main-black text-center font-bold text-xs md:text-sm lg:text-[14px] xl:text-[14px] ${
           subtitle ? "" : "my-3"
         }`}
       >

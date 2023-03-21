@@ -1,5 +1,6 @@
 import VectorImage from "@/components/partials/VectorImage";
 import Image from "next/image";
+import { convertDate } from "@/lib/services/globalService";
 export default function Slice({ slice }) {
   const {
     image = "",
@@ -29,28 +30,32 @@ export default function Slice({ slice }) {
           subtitle ? "" : "my-3"
         }`}
       >
-        {date}
+        {convertDate(date)}
       </p>
 
-      <div className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover h-[160px] sm:h-[240px] md:h-[270px] lg:h-[420px] xl:h-[470px]">
-        <Image
-          alt="ABC+"
-          src={image}
-          fill
-          priority
-          className="object-cover object-center"
-        />
-      </div>
+      {image && (
+        <>
+          <div className="relative w-auto bg-no-repeat bg-cover bg-center 2xl:bg-cover h-[160px] sm:h-[240px] md:h-[270px] lg:h-[420px] xl:h-[470px]">
+            <Image
+              alt="ABC+"
+              src={image}
+              fill
+              priority
+              className="object-cover object-center"
+            />
+          </div>
 
-      <div className="my-2 w-full flex justify-center px-4">
-        <div className="xl:w-[1345px]">
-          <div
-            className="text-[#343434] text-[14px] leading-[20px] font-[400]"
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-          <hr className="bg-[#C3C3C3] h-[1px] my-4" />
-        </div>
-      </div>
+          <div className="my-2 w-full flex justify-center px-4">
+            <div className="xl:w-[1345px]">
+              <div
+                className="text-[#343434] text-[14px] leading-[20px] font-[400] text-center"
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+              <hr className="bg-[#C3C3C3] h-[1px] my-4" />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

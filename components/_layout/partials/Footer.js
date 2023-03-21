@@ -1,12 +1,12 @@
-import { useContext } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import Image from 'next/image'
-import { getCurrentYear } from '@/lib/services/globalService';
+import { useContext } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Image from "next/image";
+import { getCurrentYear } from "@/lib/services/globalService";
 import { GlobalContext } from "@/lib/context/GlobalContext";
 
-export default function Footer () {
-  const router = useRouter()
+export default function Footer() {
+  const router = useRouter();
   const { tenantDetails, menus } = useContext(GlobalContext);
   const global = tenantDetails?.data?.main;
   const menuHandler = menus?.parentNodes;
@@ -84,7 +84,9 @@ export default function Footer () {
                       width={15}
                       height={15}
                     />
-                    <p>Copyright {getCurrentYear()} {global.name}</p>
+                    <p>
+                      Copyright {getCurrentYear()} {global.name}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -94,4 +96,4 @@ export default function Footer () {
       </div>
     </>
   );
-};
+}

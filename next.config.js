@@ -9,6 +9,12 @@ const nextConfig = {
         port: "",
         pathname: `/${process.env.NEXT_PUBLIC_TENANT_S3_PATHNAME}/**`,
       },
+      {
+        protocol: "https",
+        hostname: 'img.youtube.com',
+        port: "",
+        pathname: `/vi/**`,
+      },
     ],
   },
 };

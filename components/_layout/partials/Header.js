@@ -53,7 +53,7 @@ export default function Header ({meta}) {
       <meta name="twitter:description" content={findMeta('description')} />
       <meta name="twitter:image" content={findMeta('image')} />
       <meta name="twitter:domain" content={findMeta('url')} />
-
+      {/* <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> */}
     </Head>
   )
 }

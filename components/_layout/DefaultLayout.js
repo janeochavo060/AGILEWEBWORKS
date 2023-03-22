@@ -1,9 +1,11 @@
-import Menu from "@/components/_layout/partials/Menu";
-export default function DefaultLayout (props) {
+import MenuAbc from "@/layout/menus/MenuAbc";
+import FooterAbc from "@/layout/footers/FooterAbc";
+export default function DefaultLayout(props) {
   return (
     <>
-      <Menu />
+      <MenuAbc />
       {props.children}
+      <FooterAbc />
     </>
   );
-};
+}

@@ -1,0 +1,220 @@
+.objective-list ol {
+    padding-left: 25px; 
+    padding-bottom: 2rem;
+}
+
+.objective-list ol li{
+    list-style-type: decimal;
+}
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	scroll-behavior: smooth;
+}
+:root{
+	--triangle-color-left: rgb(255, 255, 255);
+	--triangle-color-right:rgb(255, 255, 255);
+}
+input,
+textarea,
+select,
+button {
+	outline: none;
+}
+.black-shadow {
+	text-shadow: 1px 1px 1px #3e3e3e;
+}
+.gray-shadow {
+	text-shadow: 1px 1px 1px #6a6a6a;
+}
+.triangle-left {
+	width: 0;
+	height: 0;
+	border-left: 73px solid var(--triangle-color-left);
+	border-bottom: 600px solid transparent;
+}
+.triangle-right {
+	width: 0;
+	height: 0;
+	border-right: 73px solid var(--triangle-color-right);
+	border-bottom: 600px solid transparent;
+}
+
+.triangle-red {
+	width: 0;
+	height: 0;
+	border-left: 73px solid rgb(185 28 28);
+	border-bottom: 600px solid transparent;
+}
+.triangle-light-blue {
+	width: 0;
+	height: 0;
+	border-right: 73px solid rgb(14 165 233);
+	border-bottom: 600px solid transparent;
+}
+.triangle-dark-blue
+ {
+	width: 0;
+	height: 0;
+	border-left: 73px solid rgb(3 105 161);
+	border-bottom: 600px solid transparent;
+}
+
+.triangle-slightly-big {
+	width: 0;
+	height: 0;
+	border-right: 100px solid #2a295c;
+	border-top: 105px solid transparent;
+}
+
+.triangle-small {
+	width: 0;
+	height: 0;
+	border-right: 65px solid #2a295c;
+	border-top: 65px solid transparent;
+}
+
+.video-wrapper {
+	position: relative;
+	padding-top: 56.25%;
+ }
+
+.player {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.sliceGradient {
+	background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, #00AAE8 40%, #2C80A6 119.16%)
+}
+
+.background-animate {
+  background-size: 400%;
+
+  -webkit-animation: AnimationName 8s ease infinite;
+  -moz-animation: AnimationName 8s ease infinite;
+  animation: AnimationName 8s ease infinite;
+}
+
+.menuToggle span {
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+
+	background: #232323;
+	border-radius: 3px;
+
+	z-index: 1;
+
+	transform-origin: 4px 0px;
+
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+		background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+		opacity 0.55s ease;
+}
+
+.menuToggle span:first-child {
+	transform-origin: 0% 0%;
+}
+
+.menuToggle span:nth-last-child(2) {
+	transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+.menuToggle.show span {
+	opacity: 1;
+	transform: rotate(45deg) translate(-3px, -12px);
+	background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.menuToggle.show span:nth-last-child(3) {
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+.menuToggle.show span:nth-last-child(2) {
+	transform: rotate(-45deg) translate(-7px, 18px);
+}
+
+
+.masonry-grid {
+	display: grid;
+	grid-template-columns: 20% 20% 20% 20%;
+	grid-template-rows: masonry;
+	align-tracks: start;
+	justify-tracks: start;
+}
+
+.masonry-effect {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.masonry-item {
+	flex-direction: column;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	position: relative;
+	width: calc(50% - 1rem);
+	border-radius: 10px;
+	font-size: 1.25rem;
+	box-sizing: border-box;
+	font-weight: 600;
+}
+.underline-animation {
+	background: linear-gradient(currentColor 0 0) bottom left/ var(--underline-width, 0%) 0.1em no-repeat;
+	display: inline-block;
+	text-decoration: none;
+	transition: background-size 0.5s;
+}
+
+.underline-animation-active {
+	--underline-width: 100%;
+}
+@keyframes AnimationName {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes slideDown {
+	from {
+		transform: translateY(-100%);
+		transform-origin: top;
+	}
+
+	to {
+		transform: translateY(0%);
+		transform-origin: top;
+	}
+}
+
+.slideDown {
+	animation: slideDown 600ms;
+}
+.react-slideshow-container .default-nav:first-of-type {
+  margin-left: -30px !important;
+}
+.react-slideshow-container .default-nav:last-of-type {
+  margin-right: -30px !important;
+}

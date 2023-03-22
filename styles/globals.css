@@ -1,6 +1,53 @@
+/* Testing */
 * {
-  font-family: Inter;
+  /* font-family: Inter; */
+	font-family: Arial, Helvetica, sans-serif;
+  line-height: 27px;
 }
+
+
+/* React Select Custom */
+.react-select > div:nth-child(3) {
+  cursor:  pointer !important;
+  min-height: 30px !important;
+  background-color: unset !important;
+  border-color: unset !important;
+  border-radius: unset !important;
+  border-style: unset !important;
+  border-width: unset !important;
+  box-shadow: unset !important;
+}
+.react-select > div:nth-child(3) > div:first-child {
+  padding: 0px 8px !important;
+}
+.react-select > div:nth-child(3) > div:first-child > div:last-child {
+    margin: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.react-select > div:nth-child(3) > div:last-child > div {
+  padding: 4px;
+}
+
+
+.react-select > div:nth-child(4) > div::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.react-select > div:nth-child(4) > div::-webkit-scrollbar
+{
+	width: 4px;
+	background-color: #F5F5F5;
+}
+
+.react-select > div:nth-child(4) > div::-webkit-scrollbar-thumb
+{
+	background-color: #949494;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

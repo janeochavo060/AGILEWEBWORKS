@@ -1,11 +1,11 @@
-import MenuAbc from "@/layout/menus/MenuAbc";
-import FooterAbc from "@/layout/footers/FooterAbc";
+import MenuHalcyon from "@/layout/menus/MenuHalcyon";
+import FooterHalcyon from "@/layout/footers/FooterHalcyon";
 export default function DefaultLayout(props) {
   return (
     <>
-      <MenuAbc />
+      <MenuHalcyon />
       {props.children}
-      <FooterAbc />
+      <FooterHalcyon />
     </>
   );
 }

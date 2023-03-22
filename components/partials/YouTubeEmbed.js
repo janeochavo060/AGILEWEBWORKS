@@ -6,8 +6,8 @@ import PlayIcon from "@/components/svg/PlayIcon";
 export default function YouTubeEmbed({
   src = "",
   optimized = false,
-  height = "",
-  width = "",
+  height = "100",
+  width = "100",
   divHeight = "calc(100vh-60%)",
   playButtonClass,
 }) {
@@ -29,7 +29,12 @@ export default function YouTubeEmbed({
   return src ? (
     <div className="relative w-full h-full">
       {played ? (
-        <ReactPlayer url={src} playing={played} height={divHeight} width="100%" />
+        <ReactPlayer
+          url={src}
+          playing={played}
+          height={divHeight}
+          width="100%"
+        />
       ) : (
         <>
           <Image

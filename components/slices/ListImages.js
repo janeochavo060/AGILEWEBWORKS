@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 export default function ListImages({ slice }) {
+  return <></>;
   const sampleImages = [
     { src: "/mockups/wingzone.jpg" },
     { src: "/mockups/mimosa.jpg" },

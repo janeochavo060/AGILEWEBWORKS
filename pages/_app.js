@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import "@/styles/customs.css";
 import "@/styles/unreset.css";
-import "react-slideshow-image/dist/styles.css";
 // import Header from "@/components/_layout/partials/Header";
 import DefaultLayout from "@/components/_layout/DefaultLayout";
 import globalData from "@/lib/preBuildScripts/static/globalData.json";

@@ -5,6 +5,7 @@ import { Slide } from "react-slideshow-image";
 import { useWindowSize } from "react-use";
 
 export default function TextImageList({ slice }) {
+  return <></>;
   const images = slice?.main?.images || [];
   const { width } = useWindowSize();
   const isLaptop = width <= 1024 && width > 768;

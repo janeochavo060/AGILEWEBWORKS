@@ -6,6 +6,7 @@ import EyeIcon from "@/components/svg/EyeIcon";
 import SelectAllDownload from "@/components/partials/SelectAllDownload";
 import SearchFilter from "@/components/partials/SearchFilter";
 
+
 export default function VideosGallery({slice}) {
     return (
         <div className="px-4 w-full xl:flex xl:justify-center mb-20">

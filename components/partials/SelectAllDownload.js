@@ -1,6 +1,6 @@
 import DownloadIcon from "@/components/svg/DownloadIcon";
 
-export default function SelectAllDownload() {
+export default function SelectAllDownload({ onSelectAll }) {
     return (
         <div className="w-full md:w-auto flex justify-center items-center md:justify-end px-2 mt-6 md:mt-0">
             <label
@@ -11,6 +11,7 @@ export default function SelectAllDownload() {
                     type="checkbox"
                     id="select-all"
                     value="select-all"
+                    onChange={(e) => onSelectAll(e.target.checked)}
                 />
                 <span className="checkbox-checkmark"></span>
                 Select All

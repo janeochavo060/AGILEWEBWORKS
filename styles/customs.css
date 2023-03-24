@@ -34,6 +34,7 @@
     border: 0.10em solid currentColor;
     border-radius: 0.15em;
     transform: translate(-1.2em, 0.12em);
+    background-color: #FFFFFF;
 }
 
 .checkbox-checkmark:after {

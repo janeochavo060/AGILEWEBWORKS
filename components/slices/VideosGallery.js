@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Image from "next/image";
 import DownloadIcon from "@/components/svg/DownloadIcon";
 import FolderIcon from "@/components/svg/FolderIcon";
@@ -8,6 +8,25 @@ import SearchFilter from "@/components/partials/SearchFilter";
 
 
 export default function VideosGallery({slice}) {
+    const [files, setFiles] = useState([])
+
+    useEffect(() => {
+        setFiles(slice.files.map(file => ({ ...file, selected: false })))
+    }, [])
+
+    const onSelectItem = async (selectedFile, selectedIdx) => {
+        setFiles((prevFiles) => ([
+            ...prevFiles.map((file, idx) => ({
+                ...file,
+                selected: selectedIdx === idx ? !selectedFile.selected : file.selected
+            }))
+        ]))
+    }
+
+    const onSelectAll = async (isAll) => {
+        setFiles(slice.files.map(file => ({ ...file, selected: isAll })))
+    }
+
     return (
         <div className="px-4 w-full xl:flex xl:justify-center mb-20">
             <div className="xl:w-[1345px] pt-4">
@@ -18,12 +37,14 @@ export default function VideosGallery({slice}) {
                         </div>
 
                         <div className="w-full md:w-1/2 flex flex-wrap md:justify-end">
-                            <SelectAllDownload />
+                            <SelectAllDownload
+                                onSelectAll={onSelectAll}
+                            />
                             <SearchFilter />
                         </div>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mt-8 mb-8 w-full">
-                            {slice.files.map((file, idx) => (
+                            {files.map((file, idx) => (
                                 <Fragment key={idx}>
                                     {!file.fileType && (
                                         <div key={idx} className="md:col-span-2 flex flex-col border-[1px] border-[#8A8A8A]">
@@ -103,6 +124,20 @@ export default function VideosGallery({slice}) {
                                                         width={69}
                                                         height={69}
                                                     />
+                                                </div>
+                                                <div className="absolute top-0 right-0">
+                                                    <label
+                                                        htmlFor={`select-all-${idx}`}
+                                                        className="checkbox-container text-[#343434] text-[20px] leading-[25px] font-[400] mt-[4px]"
+                                                    >
+                                                        <input
+                                                            type="checkbox"
+                                                            id={`select-all-${idx}`}
+                                                            checked={file.selected}
+                                                            onChange={() => onSelectItem(file, idx)}
+                                                        />
+                                                        <span className="checkbox-checkmark"></span>
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div className="border-[1px] border-[#8A8A8A] flex flex-col pt-2 pb-[4px] px-2">

@@ -2,7 +2,7 @@ import DownloadIcon from "@/components/svg/DownloadIcon";
 
 export default function SelectAllDownload() {
     return (
-        <div className="w-full md:w-auto flex justify-center items-center md:justify-end px-2 mt-2 md:mt-0">
+        <div className="w-full md:w-auto flex justify-center items-center md:justify-end px-2 mt-6 md:mt-0">
             <label
                 htmlFor="select-all"
                 className="checkbox-container text-[#343434] text-[20px] leading-[25px] font-[400] mr-4"

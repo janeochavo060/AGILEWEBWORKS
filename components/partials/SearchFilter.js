@@ -28,7 +28,7 @@ export default function SearchFilter() {
     }
 
     return (
-        <div className="w-full md:w-auto flex justify-between md:justify-end px-2 mt-2 md:mt-0">
+        <div className="w-full md:w-auto flex justify-between md:justify-end px-2 mt-6 md:mt-0">
             <button
                 className="px-4 flex justify-center items-center border-2 rounded-[5px] border-[#034F8B] mr-4"
                 onClick={() => onSearch()}

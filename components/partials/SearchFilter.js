@@ -33,7 +33,7 @@ export default function SearchFilter() {
         onClick={() => onSearch()}
       >
         <SearchIcon width="20" height="20" />
-        <p className="text-[#034F8B] text-[20px] ml-[5px]">Search</p>
+        <p className="text-[#034F8B] text-[18px] ml-[5px]">Search</p>
       </button>
       <div className="relative w-full md:w-auto md:min-w-[230px] cursor-pointer">
         <div
@@ -43,7 +43,7 @@ export default function SearchFilter() {
           <FilterIcon width="20" height="22" />
         </div>
         <div
-          className="w-full text-start text-[#034F8B] text-[20px] py-[6px] pr-4 pl-8 border-b-[3px] border-[#034F8B]"
+          className="w-full text-start text-[#034F8B] text-[18px] py-[6px] pr-4 pl-8 border-b-[3px] border-[#034F8B]"
           onClick={() => setShowFilters(!showFilters)}
         >
           Filter

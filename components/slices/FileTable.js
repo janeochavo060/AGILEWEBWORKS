@@ -23,7 +23,7 @@ export default function Slice({ slice }) {
               <div key={i} className="border-[1px] border-[#939393] mt-[-1px]">
                 <div className="flex flex-wrap justify-between items-center p-4">
                   <div className="w-full md:w-1/2 flex flex-nowrap items-center">
-                    <FolderIcon width="50" height="40" />
+                    <FolderIcon width="53" height="40" />
                     <p className="ml-4 md:ml-6 text-[18px] md:text-[18px] text-[#343434]">
                       Testing File
                     </p>

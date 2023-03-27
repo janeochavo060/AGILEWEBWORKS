@@ -22,13 +22,19 @@ export default function Slice({ slice }) {
               placeholder="Password"
             />
             <div className="grid grid-cols-2 mt-1">
-              <div className="grid grid-rows-2 gap-2">
-                <Link href="/forgot-password" className="text-sm">
-                  Forgot Password? <span className="font-bold">Click Here</span>
-                </Link>
-                <Link href="/Registration" className="text-sm">
-                  No account yet? <span className="font-bold">Click Here</span>
-                </Link>
+              <div className="flex flex-col gap-1 text-sm">
+                <div>
+                  Forgot Password? 
+                  <Link href="/forgot-password">
+                    <span className="ml-1 font-bold">Click Here</span>
+                  </Link>
+                </div>
+                <div>
+                  No account yet? 
+                  <Link href="/register">
+                    <span className="ml-1 font-bold">Click Here</span>
+                  </Link>
+                </div>
               </div>
               <div className="text-right">
                 <button

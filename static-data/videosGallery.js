@@ -12,105 +12,105 @@ import thumbnail11 from "@/public/img/videos_11.png";
 import thumbnail12 from "@/public/img/videos_12.png";
 
 const videosGallery = {
-    slices: [
+  slices: [
+    {
+      sliceType: "videos-gallery",
+      files: [
         {
-            sliceType: "videos-gallery",
-            files: [
-                {
-                    name: "Sample Folder",
-                    fileCount: "1 file",
-                    fileSize: "20 mb"
-                },
-                {
-                    name: "Sample Folder with super long title we will cut the super long title we will cut the with super long title we will cut the",
-                    fileCount: "12 files",
-                    fileSize: "58 mb"
-                },
-                {
-                    name: "Sample Folder 3",
-                    fileCount: "5 files",
-                    fileSize: "80 mb"
-                },
-                {
-                    name: "Sample Folder 4",
-                    fileCount: "2 files",
-                    fileSize: "20 mb"
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail1,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail2,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail3,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail4,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail5,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail6,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail7,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail8,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail9,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail10,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail11,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-                {
-                    description: "Grade 1 Decodable Training Video -Magindanawan",
-                    thumbnail: thumbnail12,
-                    fileType: "MP4",
-                    fileSize: "86 mb",
-                },
-            ]
-        }
-    ]
-}
+          name: "Sample Folder",
+          fileCount: "1 file",
+          fileSize: "20 mb",
+        },
+        {
+          name: "Sample Folder with super long title we will cut the super long title we will cut the with super long title we will cut the",
+          fileCount: "12 files",
+          fileSize: "58 mb",
+        },
+        {
+          name: "Sample Folder 3",
+          fileCount: "5 files",
+          fileSize: "80 mb",
+        },
+        {
+          name: "Sample Folder 4",
+          fileCount: "2 files",
+          fileSize: "20 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail1,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail2,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail3,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail4,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail5,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail6,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail7,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail8,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail9,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail10,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail11,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+        {
+          description: "Grade 1 Decodable Training Video -Magindanawan",
+          thumbnail: thumbnail12,
+          fileType: "MP4",
+          fileSize: "86 mb",
+        },
+      ],
+    },
+  ],
+};
 
-export default videosGallery; 
+export default videosGallery;

@@ -1,6 +1,7 @@
 import ArticleFilter from "@/components/partials/ArticleFilter";
 import ArticleThumbnail from "@/components/partials/ArticleThumbnail";
 import COLLECTIONAPI from "@/lib/api/collection/request";
+import TAXONOMYAPI from "@/lib/api/taxonomy/request";
 import Jsona from "jsona";
 const dataFormatter = new Jsona();
 import useArticleFilterStore from "@/lib/store/articleFilter";
@@ -8,16 +9,37 @@ export default function Slice({ slice }) {
   const { page_size } = slice?.main;
   const { id } = slice?.main?.collection_source;
 
-  // const { data: parentCollectionHandler, isValidating: parentValidating } = COLLECTIONAPI.getCollectionsSwr(
-  //   `/${id}?include=taxonomies`,
-  //   {
-  //     render: id,
-  //   }
-  // );
+  const { data: parentCollectionHandler, isValidating: parentValidating } =
+    COLLECTIONAPI.getCollectionsSwr(`/${id}?include=taxonomies`, {
+      render: id,
+      revalidateOnFocus: false,
+    });
 
-  // const parentCollection = dataFormatter.deserialize(
-  //   parentValidating ? {} : parentCollectionHandler
-  // );
+  const parentCollection = dataFormatter.deserialize(
+    parentValidating ? {} : parentCollectionHandler
+  );
+
+  const taxonomy = parentCollection?.taxonomies?.filter(
+    (e) => e.name === "Regions"
+  )[0];
+
+  const { data: taxonomyHandler } = TAXONOMYAPI.findTaxonomySwr(
+    taxonomy?.id,
+    "",
+    {
+      render: id && taxonomy?.id,
+      revalidateOnFocus: false,
+    }
+  );
+
+  const taxonomies = dataFormatter.deserialize(
+    taxonomyHandler ? taxonomyHandler : {}
+  )?.taxonomyTerms?.map((e) => {
+    return {
+      value: e.id,
+      label: e.name,
+    };
+  }) || [] ;
 
   const sort = useArticleFilterStore((state) => state.sort);
   const meta = useArticleFilterStore((state) => state.meta);
@@ -70,7 +92,7 @@ export default function Slice({ slice }) {
 
   return (
     <>
-      <ArticleFilter />
+      <ArticleFilter regions={taxonomies} />
       <div className="w-full xl:flex xl:justify-center">
         {isValidating ? (
           <div className="flex items-center justify-center h-[200px] sm:h-[400px]">

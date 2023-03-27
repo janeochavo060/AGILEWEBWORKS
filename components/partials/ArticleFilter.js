@@ -1,7 +1,7 @@
 import Select from "@/components/forms/Select";
 import useArticleFilterStore from "@/lib/store/articleFilter"
 
-export default function SectionFilter() {
+export default function SectionFilter({regions = []}) {
   const setSort = useArticleFilterStore((state) => state.setSort)
   const year = () => {
     const date = new Date();
@@ -87,32 +87,32 @@ export default function SectionFilter() {
     },
   ]
 
-  const regions = [
-    {
-      value: 1,
-      label: "Region I",
-    },
-    {
-      value: 2,
-      label: "Region II",
-    },
-    {
-      value: 3,
-      label: "Region III",
-    },
-    {
-      value: 4,
-      label: "Region IV",
-    },
-    {
-      value: 5,
-      label: "Region V",
-    },
-    {
-      value: 6,
-      label: "Region VI",
-    },
-  ]
+  // const regions = [
+  //   {
+  //     value: 1,
+  //     label: "Region I",
+  //   },
+  //   {
+  //     value: 2,
+  //     label: "Region II",
+  //   },
+  //   {
+  //     value: 3,
+  //     label: "Region III",
+  //   },
+  //   {
+  //     value: 4,
+  //     label: "Region IV",
+  //   },
+  //   {
+  //     value: 5,
+  //     label: "Region V",
+  //   },
+  //   {
+  //     value: 6,
+  //     label: "Region VI",
+  //   },
+  // ]
 
   const sortBy = (e) => {
     setSort(e?.value || '-published_at')

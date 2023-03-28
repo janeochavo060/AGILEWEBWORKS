@@ -2,24 +2,32 @@ import ArticleFilter from "@/components/partials/ArticleFilter";
 import ArticleThumbnail from "@/components/partials/ArticleThumbnail";
 import COLLECTIONAPI from "@/lib/api/collection/request";
 import TAXONOMYAPI from "@/lib/api/taxonomy/request";
+import useArticleFilterStore from "@/lib/store/articleFilter";
+import { shallow } from "zustand/shallow";
 import Jsona from "jsona";
 const dataFormatter = new Jsona();
-import useArticleFilterStore from "@/lib/store/articleFilter";
 export default function Slice({ slice }) {
   const { page_size } = slice?.main;
   const { id } = slice?.main?.collection_source;
-  const publishedAtYearMonth = useArticleFilterStore(
-    (state) => state.publishedAtYearMonth
-  );
-  const region = useArticleFilterStore((state) => state.region);
-  const sort = useArticleFilterStore((state) => state.sort);
-  const meta = useArticleFilterStore((state) => state.meta);
-  const updateMeta = useArticleFilterStore((state) => state.updateMeta);
-  const isLoading = useArticleFilterStore((state) => state.isLoading);
-  const loadMore = useArticleFilterStore((state) => state.loadMore);
-  const allCollections = useArticleFilterStore((state) => state.allCollections);
-  const updateAllCollections = useArticleFilterStore(
-    (state) => state.updateAllCollections
+  const [
+    publishedAtYearMonth,
+    region,
+    sort,
+    meta,
+    isLoading,
+    allCollections,
+    loadMore,
+  ] = useArticleFilterStore(
+    (state) => [
+      state.publishedAtYearMonth,
+      state.region,
+      state.sort,
+      state.meta,
+      state.isLoading,
+      state.allCollections,
+      state.loadMore,
+    ],
+    shallow
   );
 
   const { data: parentCollectionHandler, isValidating: parentValidating } =
@@ -63,8 +71,7 @@ export default function Slice({ slice }) {
       onSuccess: (res) => {
         if (res) {
           const collections = dataFormatter.deserialize(res?.data || {});
-          updateAllCollections(collections);
-          updateMeta(res?.data?.meta);
+          useArticleFilterStore.setState({allCollections: collections, meta: res?.data?.meta || {}})
         }
       },
     }

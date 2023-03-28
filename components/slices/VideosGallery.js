@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState } from "react";
 import Image from "next/image";
 import DownloadIcon from "@/components/svg/DownloadIcon";
 import FolderIcon from "@/components/svg/FolderIcon";
@@ -8,12 +8,7 @@ import SearchFilter from "@/components/partials/SearchFilter";
 import PlayIcon from "@/components/svg/PlayIcon";
 
 export default function VideosGallery({ slice }) {
-  const [files, setFiles] = useState([]);
-
-  useEffect(() => {
-    setFiles(slice.files.map((file) => ({ ...file, selected: false })));
-  }, []);
-
+  const [files, setFiles] = useState(slice.files.map((file) => ({ ...file, selected: false })));
   const onSelectItem = async (selectedFile, selectedIdx) => {
     setFiles((prevFiles) => [
       ...prevFiles.map((file, idx) => ({

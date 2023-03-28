@@ -1,14 +1,30 @@
 import Select from "@/components/forms/Select";
 import useArticleFilterStore from "@/lib/store/articleFilter";
+import { shallow } from "zustand/shallow";
 export default function SectionFilter({ regions = [] }) {
-  const year = useArticleFilterStore((state) => state.year);
-  const years = useArticleFilterStore((state) => state.years);
-  const sortBy = useArticleFilterStore((state) => state.sortBy);
-  const regionChanged = useArticleFilterStore((state) => state.regionChanged);
-  const yearChanged = useArticleFilterStore((state) => state.yearChanged);
-  const monthChanged = useArticleFilterStore((state) => state.monthChanged);
-  const months = useArticleFilterStore((state) => state.months);
-  const order = useArticleFilterStore((state) => state.order);
+  const [
+    year,
+    years,
+    months,
+    order,
+    sortChanged,
+    regionChanged,
+    yearChanged,
+    monthChanged,
+  ] = useArticleFilterStore(
+    (state) => [
+      state.year,
+      state.years,
+      state.months,
+      state.order,
+      state.sortChanged,
+      state.regionChanged,
+      state.yearChanged,
+      state.monthChanged,
+    ],
+    shallow
+  );
+
   return (
     <div className="w-full xl:flex xl:justify-center">
       <div className="xl:w-[1345px] pt-4">
@@ -49,7 +65,7 @@ export default function SectionFilter({ regions = [] }) {
                 className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Sort By"
                 isClearable={true}
-                onChange={sortBy}
+                onChange={sortChanged}
                 options={order}
               />
             </div>

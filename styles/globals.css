@@ -1,4 +1,3 @@
-/* Testing */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -47,39 +46,6 @@
   background-color: #f5f5f5;
 }
 
-@layer components {
-  .trapezoid-right{
-    clip-path: polygon(0 0, 100% 0, 93% 100%, 0% 100%);
-  }
-  .trapezoid-left{
-    clip-path: polygon(0% 0, 100% 0, 100% 100%, 7% 100%);
-  }
-
-  .trapezoid-bottom-right{
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-  }
-  .trapezoid-bottom-left{
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  }
-
-  .halcyon-advantage {
-    background: rgba(253, 147, 41, .5);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    clip-path: polygon(0 50%, 35% 50%, 35% 60%, 0% 100%);
-  }
-  .halcyon-advantage1 {
-    background: rgba(253, 147, 41, .5);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    clip-path: polygon(0 40%, 35% 40%, 35% 60%, 0% 100%);
-  }
-  .halcyon-advantage2 {
-    background: rgba(253, 147, 41, .5);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-    clip-path: polygon(0 10%, 35% 10%, 35% 60%, 0% 100%);
-  }
-
-
-}
 .react-select > div:nth-child(4) > div::-webkit-scrollbar-thumb {
   background-color: #949494;
 }

@@ -6,7 +6,7 @@ import { GlobalContext } from "@/lib/context/GlobalContext";
 import TwitterIcon from "@/components/svg/TwitterIcon";
 import FbIcon from "@/components/svg/FbIcon";
 import LinkedInIcon from "@/components/svg/LinkedInIcon";
-import GetInTouch from "@/components/partials/GetInTouch";
+import GetInTouch from "@/components/partials/forms/GetInTouch";
 export default function FooterAbc() {
   const { tenantDetails, menus } = useContext(GlobalContext);
   const global = tenantDetails?.data?.main;

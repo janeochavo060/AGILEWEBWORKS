@@ -1,122 +1,29 @@
 import Select from "@/components/forms/Select";
-import useArticleFilterStore from "@/lib/store/articleFilter"
-
-export default function SectionFilter() {
-  const setSort = useArticleFilterStore((state) => state.setSort)
-  const year = () => {
-    const date = new Date();
-    let currentYear = date.getFullYear();
-    let y = [];
-    for (let index = 1; index <= 10; index++) {
-      y.push({
-        value: currentYear,
-        label: currentYear,
-      });
-      currentYear = --currentYear;
-    }
-    return y;
-  };
-
-  const months = [
-    {
-      value: 1,
-      label: "January",
-    },
-    {
-      value: 2,
-      label: "February",
-    },
-    {
-      value: 3,
-      label: "March",
-    },
-    {
-      value: 4,
-      label: "April",
-    },
-    {
-      value: 5,
-      label: "May",
-    },
-    {
-      value: 6,
-      label: "June",
-    },
-    {
-      value: 7,
-      label: "July",
-    },
-    {
-      value: 8,
-      label: "August",
-    },
-    {
-      value: 9,
-      label: "September",
-    },
-    {
-      value: 10,
-      label: "October",
-    },
-    {
-      value: 11,
-      label: "November",
-    },
-    {
-      value: 12,
-      label: "December",
-    },
-  ];
-
-  const order = [
-    {
-      value: '-published_at',
-      label: "Newest First",
-    },
-    {
-      value: 'published_at',
-      label: "Oldest First",
-    },
-    {
-      value: 'title',
-      label: "Title A-Z",
-    },
-    {
-      value: '-title',
-      label: "Title Z-A",
-    },
-  ]
-
-  const regions = [
-    {
-      value: 1,
-      label: "Region I",
-    },
-    {
-      value: 2,
-      label: "Region II",
-    },
-    {
-      value: 3,
-      label: "Region III",
-    },
-    {
-      value: 4,
-      label: "Region IV",
-    },
-    {
-      value: 5,
-      label: "Region V",
-    },
-    {
-      value: 6,
-      label: "Region VI",
-    },
-  ]
-
-  const sortBy = (e) => {
-    setSort(e?.value || '-published_at')
-  }
+import useArticleFilterStore from "@/lib/store/articleFilter";
+import { shallow } from "zustand/shallow";
+export default function SectionFilter({ regions = [] }) {
+  const [
+    year,
+    years,
+    months,
+    order,
+    sortChanged,
+    regionChanged,
+    yearChanged,
+    monthChanged,
+  ] = useArticleFilterStore(
+    (state) => [
+      state.year,
+      state.years,
+      state.months,
+      state.order,
+      state.sortChanged,
+      state.regionChanged,
+      state.yearChanged,
+      state.monthChanged,
+    ],
+    shallow
+  );
 
   return (
     <div className="w-full xl:flex xl:justify-center">
@@ -130,7 +37,8 @@ export default function SectionFilter() {
                 className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Year"
                 isClearable={true}
-                options={year()}
+                options={years()}
+                onChange={yearChanged}
               />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
@@ -139,6 +47,8 @@ export default function SectionFilter() {
                 placeholder="Month"
                 isClearable={true}
                 options={months}
+                isDisabled={!year}
+                onChange={monthChanged}
               />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
@@ -147,6 +57,7 @@ export default function SectionFilter() {
                 placeholder="Region"
                 isClearable={true}
                 options={regions}
+                onChange={regionChanged}
               />
             </div>
             <div className="py-2 px-2 xl:px-4 w-1/2 lg:w-auto">
@@ -154,7 +65,7 @@ export default function SectionFilter() {
                 className="react-select min-w-[120px] cursor-pointer border-[1px] border-[#b3b3b3] rounded-md text-sm"
                 placeholder="Sort By"
                 isClearable={true}
-                onChange={sortBy}
+                onChange={sortChanged}
                 options={order}
               />
             </div>

@@ -1,7 +1,7 @@
 import EnvelopIcon from "@/components/svg/EnvelopIcon";
 import LocationPin from "@/components/svg/LocationPinIcon";
 import MobileIcon from "@/components/svg/MobileIcon";
-import ContactForm from "@/components/partials/ContactForm";
+import ContactForm from "@/components/partials/forms/ContactForm";
 export default function Slice({ slice }) {
   const main = slice?.main;
   return (

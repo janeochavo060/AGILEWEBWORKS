@@ -7,11 +7,7 @@ export default function VectorImage () {
         src={vector}
         alt="vector"    
         fill
-        className="mx-2"
-        style={{
-        objectFit: "contain",
-        objectPosition: "center",
-        }}
+        className="mx-2 object-contain object-center"
       />
     </div>
   )

@@ -8,6 +8,14 @@
   line-height: 27px;
 }
 
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
 /* React Select Custom */
 .react-select > div:nth-child(3) {
   cursor: pointer !important;

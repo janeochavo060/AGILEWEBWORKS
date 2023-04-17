@@ -3,7 +3,7 @@ import PAGEAPI from "@/lib/api/pages/request";
 import Jsona from "jsona";
 const dataFormatter = new Jsona();
 import { sortBlocks } from "@/lib/services/globalService";
-import ParentPage from "@/components/page/ParentPage";
+import ParentPage from "@/components/page/ParentBlock";
 export default function Previewpage() {
   const router = useRouter();
   const slug = router?.query?.slug;

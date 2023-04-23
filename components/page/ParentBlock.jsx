@@ -1,18 +1,12 @@
 import dynamic from "next/dynamic";
 import Header from "@/components/_layout/partials/Header";
 import PageLoading from "@/components/page/PageLoading";
-import { useEffect, useState } from "react";
+import globalState from "@/lib/store/globalState";
 export default function ParentBlock({ page, blocks = [], initialBlocks = 2 }) {
-  const [showLazy, setShowLazy] = useState(false);
+  const showLazy = globalState((state) => state.showLazy);
   const activeBlocks = blocks.slice(0, initialBlocks);
   const lazyBlocks = blocks.slice(initialBlocks);
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowLazy(true);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-  }, []);
-  const loadBlocks = (show, blocksHandler, placeholder = true) => {
+  const ComponentLoader = ({ show, blocksHandler, placeholder = true }) => {
     return (
       show &&
       blocksHandler.map((e, i) => {
@@ -38,8 +32,12 @@ export default function ParentBlock({ page, blocks = [], initialBlocks = 2 }) {
   };
   return (
     <>
-      {loadBlocks(true, activeBlocks)}
-      {loadBlocks(showLazy, lazyBlocks, false)}
+      <ComponentLoader show={true} blocksHandler={activeBlocks} />
+      <ComponentLoader
+        show={showLazy}
+        blocksHandler={lazyBlocks}
+        placeholder={false}
+      />
       <Header meta={page?.metaData || {}} />
     </>
   );

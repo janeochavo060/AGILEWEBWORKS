@@ -12,7 +12,7 @@ module.exports = {
         "accent-1": "#B2272D", // red
         "accent-2": "#386EC1", // blue
         "main-black": "#323232",
-        "dim-black": "#636363",
+        "dim-black": "#282828",
       },
       maxWidth: {
         content: "1210px",
@@ -46,19 +46,19 @@ module.exports = {
         "slide-out": "slide-out 1s ease-in-out",
       },
       backgroundSize: {
-        '140%': '140%',
-      }
+        "140%": "140%",
+      },
     },
     screens: {
-      'smallerMobile': '361px',
-			'smallmobile': '375px',
-			'mobile': '426px',
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    }
+      smallerMobile: "361px",
+      smallmobile: "375px",
+      mobile: "426px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
   plugins: [],
 };

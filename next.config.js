@@ -7,11 +7,11 @@ const nextConfig = {
         protocol: "https",
         hostname: process.env.NEXT_PUBLIC_TENANT_S3_HOSTNAME,
         port: "",
-        pathname: `/${process.env.NEXT_PUBLIC_TENANT_S3_PATHNAME}/**`,
+        pathname: `/**`,
       },
       {
         protocol: "https",
-        hostname: 'img.youtube.com',
+        hostname: "img.youtube.com",
         port: "",
         pathname: `/vi/**`,
       },
@@ -19,4 +19,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

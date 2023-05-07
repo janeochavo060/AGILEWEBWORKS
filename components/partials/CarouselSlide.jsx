@@ -72,6 +72,13 @@ export default function CarouselSlide(props) {
                 width={1000}
                 height={0}
               />
+
+              <div class="absolute inset-x-[15%] bottom-5 hidden py-5 text-center text-white md:block">
+                <h5 class="text-xl">Fisrt slide label</h5>
+                <p>
+                  Some representative placeholder content for the third slide.
+                </p>
+              </div>
             </div>
           );
         })}

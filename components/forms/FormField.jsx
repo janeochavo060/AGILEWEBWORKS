@@ -14,16 +14,16 @@ export default function FormField(props) {
     switch (props?.type) {
       case "textarea":
         return (
-          <>
+          <div className={props?.wrapperclassname}>
             <Textarea {...inputProps} />
             {error && (
-              <div className="text-[12px] mt-[-30px] text-red-600">{error}</div>
+              <div className="text-[12px] mt-[-15px] text-red-600">{error}</div>
             )}
-          </>
+          </div>
         );
       case "select":
         return (
-          <div>
+          <div className={props?.wrapperclassname}>
             <Select {...inputProps} />
             {error && (
               <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
@@ -32,7 +32,7 @@ export default function FormField(props) {
         );
       default:
         return (
-          <div>
+          <div className={props?.wrapperclassname}>
             <Input {...inputProps} />
             {error && (
               <div className="text-[12px] mt-[2px] text-red-600">{error}</div>

@@ -1,6 +1,6 @@
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useEffect, useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-export default function GoogleRecaptchaV2({ setToken }) {
+export default function CloudFlareRecaptcha({ setToken, sitekey }) {
   useEffect(() => {
     const handleScroll = () => {
       setShowForm(true);
@@ -11,10 +11,7 @@ export default function GoogleRecaptchaV2({ setToken }) {
   return (
     <>
       {showForm && (
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_GOGGLE_CAPTCHA_SITE_KEY}
-          onChange={(token) => setToken(token)}
-        />
+        <Turnstile siteKey={sitekey} onSuccess={(token) => setToken(token)} />
       )}
     </>
   );

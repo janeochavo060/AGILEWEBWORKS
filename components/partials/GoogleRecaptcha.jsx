@@ -1,6 +1,6 @@
-import { Turnstile } from "@marsidev/react-turnstile";
 import { useEffect, useState } from "react";
-export default function TurnstileEmbedV2({ setToken }) {
+import ReCAPTCHA from "react-google-recaptcha";
+export default function GoogleRecaptchaV2({ setToken, sitekey }) {
   useEffect(() => {
     const handleScroll = () => {
       setShowForm(true);
@@ -11,10 +11,7 @@ export default function TurnstileEmbedV2({ setToken }) {
   return (
     <>
       {showForm && (
-        <Turnstile
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_KEY}
-          onSuccess={(token) => setToken(token)}
-        />
+        <ReCAPTCHA sitekey={sitekey} onChange={(token) => setToken(token)} />
       )}
     </>
   );

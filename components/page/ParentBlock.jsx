@@ -1,43 +1,24 @@
-import dynamic from "next/dynamic";
 import Header from "@/components/_layout/partials/Header";
-import PageLoading from "@/components/page/PageLoading";
 import globalState from "@/lib/store/globalState";
+import { components } from "@/lib/services/componentService";
 export default function ParentBlock({ page, blocks = [], initialBlocks = 2 }) {
   const showLazy = globalState((state) => state.showLazy);
   const activeBlocks = blocks.slice(0, initialBlocks);
   const lazyBlocks = blocks.slice(initialBlocks);
-  const ComponentLoader = ({ show, blocksHandler, placeholder = true }) => {
-    return (
-      show &&
-      blocksHandler.map((e, i) => {
-        const Component = dynamic(
-          () => import("@/components/blocks/" + e?.key),
-          {
-            loading: () => {
-              return !i && placeholder ? <PageLoading /> : <></>;
-            },
-          }
-        );
-        return (
-          <Component
-            key={i}
-            block={{
-              ...e.data,
-              key: e.key,
-            }}
-          />
-        );
-      })
-    );
-  };
   return (
     <>
-      <ComponentLoader show={true} blocksHandler={activeBlocks} />
-      <ComponentLoader
-        show={showLazy}
-        blocksHandler={lazyBlocks}
-        placeholder={false}
-      />
+      {activeBlocks.map((block) => {
+        const Component = components[block.key];
+        return <Component key={block.key} block={block.data} />;
+      })}
+      {showLazy && (
+        <>
+          {lazyBlocks.map((block) => {
+            const Component = components[block.key];
+            return <Component key={block.key} block={block.data} />;
+          })}
+        </>
+      )}
       <Header meta={page?.metaData || {}} />
     </>
   );

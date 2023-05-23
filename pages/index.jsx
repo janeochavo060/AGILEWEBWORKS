@@ -4,6 +4,14 @@
 // export default function Homepage({ page, blocks }) {
 //   return <ParentBlock page={page} blocks={blocks} />;
 // }
-export default function Homepage({ page, blocks }) {
-  return "Home";
+import TestComponent1 from "@/components/blocks/TestComponent1";
+import TestComponent2 from "@/components/blocks/TestComponent2";
+
+export default function Homepage() {
+  return (
+    <>
+      <TestComponent1 />
+      <TestComponent2 />
+    </>
+  );
 }

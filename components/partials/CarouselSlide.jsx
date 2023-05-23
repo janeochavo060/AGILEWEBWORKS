@@ -1,13 +1,16 @@
-import { Carousel, initTE } from "tw-elements";
 import { useEffect } from "react";
 import Image from "next/image";
-
 export default function CarouselSlide(props) {
   useEffect(() => {
-    initTE({ Carousel });
+    const use = async () => {
+      const { Carousel, initTE } = await import("tw-elements");
+      initTE({ Carousel });
+    };
+    use();
     setInterval(() => {
-      document.getElementById("carouselSlideNext").click();
-    }, 3000);
+      setImageIni("all");
+      document.getElementById("carouselSlideNext")?.click();
+    }, 8000);
   }, []);
 
   const images = [

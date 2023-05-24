@@ -9,13 +9,25 @@ export default function ParentBlock({ page, blocks = [], initialBlocks = 2 }) {
     <>
       {activeBlocks.map((block) => {
         const Component = components[block.key];
-        return <Component key={block.key} block={block.data} />;
+        return (
+          <Component
+            key={block.key + block?.order?.toString()}
+            block={block.data}
+            index={block?.order}
+          />
+        );
       })}
       {showLazy && (
         <>
           {lazyBlocks.map((block) => {
             const Component = components[block.key];
-            return <Component key={block.key} block={block.data} />;
+            return (
+              <Component
+                key={block.key + block?.order?.toString()}
+                block={block.data}
+                index={block?.order}
+              />
+            );
           })}
         </>
       )}

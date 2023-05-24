@@ -15,9 +15,8 @@ export default function App({ Component, pageProps }) {
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);
-  const tenantDetails = globalData?.tenantDetails;
   return (
-    <GlobalContext.Provider value={{ tenantDetails }}>
+    <GlobalContext.Provider value={{ ...globalData }}>
       <DefaultLayout>
         <div className="text-dim-black">
           <Component {...pageProps} />

@@ -17,11 +17,11 @@ export default function App({ Component, pageProps }) {
   }, []);
   return (
     <GlobalContext.Provider value={{ ...globalData }}>
-      <DefaultLayout>
-        <div className="text-dim-black">
+      <div className="text-dim-black">
+        <DefaultLayout>
           <Component {...pageProps} />
-        </div>
-      </DefaultLayout>
+        </DefaultLayout>
+      </div>
     </GlobalContext.Provider>
   );
 }

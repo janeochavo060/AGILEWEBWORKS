@@ -1,3 +1,4 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -11,6 +12,9 @@ module.exports = {
       colors: {
         "main-black": "#323232",
         "dim-black": "#282828",
+      },
+      fontFamily: {
+        lato: ["lato", ...defaultTheme.fontFamily.sans],
       },
     },
     screens: {

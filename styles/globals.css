@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "lato";
+    font-display: swap;
+    font-weight: 100;
+    src: url("/fonts/lato300.woff2") format("woff2");
+  }
+}
+
 * {
   line-height: 27px;
 }

@@ -2,8 +2,6 @@ import "tw-elements/dist/css/tw-elements.min.css";
 import "@/styles/globals.css";
 import "@/styles/customs.css";
 import DefaultLayout from "@/components/_layout/DefaultLayout";
-import globalData from "@/lib/preBuildScripts/static/globalData.json";
-import { GlobalContext } from "@/lib/context/GlobalContext";
 import globalState from "@/lib/store/globalState";
 import { useEffect } from "react";
 export default function App({ Component, pageProps }) {
@@ -16,12 +14,10 @@ export default function App({ Component, pageProps }) {
     window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);
   return (
-    <GlobalContext.Provider value={{ ...globalData }}>
-      <div className="text-dim-black">
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
-      </div>
-    </GlobalContext.Provider>
+    <div className="text-dim-black">
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
+    </div>
   );
 }

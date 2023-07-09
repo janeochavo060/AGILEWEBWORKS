@@ -1,9 +1,9 @@
 import FormField from "@/components/forms/FormField";
-import { useContext, Fragment, useState } from "react";
-import { GlobalContext } from "@/lib/context/GlobalContext";
+import { Fragment, useState } from "react";
+import globalData from "@/lib/preBuildScripts/static/globalData.json";
 import { formSubmit, isError, RenderCaptcha } from "@/lib/services/formService";
 export default function BannerForm() {
-  const { form } = useContext(GlobalContext);
+  const { form } = globalData;
   const sections = form?.blueprint?.schema?.sections || [];
   const [errors, setErrors] = useState([]);
   const findClass = (field) => {

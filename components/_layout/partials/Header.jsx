@@ -1,8 +1,7 @@
 import Head from "next/head";
-import { useContext } from "react";
-import { GlobalContext } from "@/lib/context/GlobalContext";
+import globalData from "@/lib/preBuildScripts/static/globalData.json";
 export default function Header({ meta }) {
-  const { tenantDetails } = useContext(GlobalContext);
+  const { tenantDetails } = globalData;
   const defaultMeta = tenantDetails?.data?.meta_data;
   const findMeta = (type) => {
     switch (type) {

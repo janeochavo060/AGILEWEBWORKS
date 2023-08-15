@@ -1,6 +1,8 @@
 import Input from "@/components/forms/Input";
+import FileInput from "@/components/forms/FileInput";
 import Textarea from "@/components/forms/Textarea";
 import Select from "@/components/forms/Select";
+import Checkbox from "@/components/forms/Checkbox";
 export default function FormField(props) {
   const error = props?.error || "";
   const required = props?.rules.includes("required");
@@ -12,6 +14,10 @@ export default function FormField(props) {
     placeholder: `${props?.title}${required ? "*" : ""}`,
   };
   const errortype = props?.errortype || "text";
+  delete inputProps.reorder;
+  delete inputProps.wrapperclassname;
+  delete inputProps.errors;
+  delete inputProps.errors;
   const renderInput = () => {
     switch (props?.type) {
       case "textarea":
@@ -32,11 +38,36 @@ export default function FormField(props) {
         return (
           <div className={props?.wrapperclassname}>
             <Select
+              instanceId={inputProps.state_name}
+              automated={true}
               {...inputProps}
               className={`${fieldClass} ${
                 error && errortype === "border" ? "!border-1 !border-[red]" : ""
               }`}
             />
+            {error && errortype === "text" && (
+              <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
+            )}
+          </div>
+        );
+      case "file":
+        return (
+          <div className={props?.wrapperclassname}>
+            <FileInput
+              {...inputProps}
+              className={`${fieldClass} ${
+                error && errortype === "border" ? "!border-1 !border-[red]" : ""
+              }`}
+            />
+            {error && errortype === "text" && (
+              <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
+            )}
+          </div>
+        );
+      case "checkbox":
+        return (
+          <div className={props?.wrapperclassname}>
+            <Checkbox {...inputProps} />
             {error && errortype === "text" && (
               <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
             )}

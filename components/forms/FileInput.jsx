@@ -1,6 +1,5 @@
 import FORMAPI from "@/lib/api/forms/request";
 import formStore from "@/lib/store/formStore";
-import globalState from "@/lib/store/globalState";
 export default function FileInput(props) {
   return (
     <input
@@ -12,7 +11,7 @@ export default function FileInput(props) {
           const { type, name } = file;
           const ext = name.split(".").pop();
           if (ext) {
-            globalState.setState({ uploading: true });
+            formStore.setState({ uploading: true });
             await FORMAPI.gererateFileURL({ ext }).then(async (res) => {
               const { presigned_url, object_key } = res?.data;
               await FORMAPI.uploadFileURL(presigned_url, file, type).then(
@@ -23,7 +22,7 @@ export default function FileInput(props) {
                 }
               );
             });
-            globalState.setState({ uploading: false });
+            formStore.setState({ uploading: false });
           }
         }
       }}

@@ -2,11 +2,10 @@ import FormField from "@/components/forms/FormField";
 import { Fragment, useState } from "react";
 import { formSubmit, isError, RenderCaptcha } from "@/lib/services/formService";
 import formStore from "@/lib/store/formStore";
-import globalState from "@/lib/store/globalState";
 import { shallow } from "zustand/shallow";
 export default function ContactForm({ form }) {
   const formData = formStore((state) => state);
-  const [uploading, captcha, submitLoading] = globalState(
+  const [uploading, captcha, submitLoading] = formStore(
     (state) => [state.uploading, state.captcha, state.submitLoading],
     shallow
   );

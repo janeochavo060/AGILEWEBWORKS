@@ -4,6 +4,7 @@ export default function FileInput(props) {
   return (
     <input
       {...props}
+      multiple={false}
       onChange={async (e) => {
         const chosenFiles = Array.prototype.slice.call(e.target.files) || [];
         if (chosenFiles.length) {
@@ -12,16 +13,15 @@ export default function FileInput(props) {
           const ext = name.split(".").pop();
           if (ext) {
             formStore.setState({ uploading: true });
-            await FORMAPI.gererateFileURL({ ext }).then(async (res) => {
-              const { presigned_url, object_key } = res?.data;
-              await FORMAPI.uploadFileURL(presigned_url, file, type).then(
-                () => {
-                  formStore.setState({
-                    [props.name]: object_key,
-                  });
-                }
-              );
-            });
+            await FORMAPI.gererateFileURL({ ext, acl: "public-read" }).then(
+              async (res) => {
+                const { presigned_url, object_key } = res?.data;
+                formStore.setState({
+                  [props.name]: object_key,
+                });
+                await FORMAPI.uploadFileURL(presigned_url, file, type);
+              }
+            );
             formStore.setState({ uploading: false });
           }
         }

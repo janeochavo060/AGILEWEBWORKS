@@ -11,25 +11,31 @@ export default function Locales() {
   const isActive = (n) => {
     return ready ? locale === n.code : false;
   };
+  const findPath = (segments, curPath, text, textNew) => {
+    if (segments.length > 2) {
+      return curPath.replace(`/${text}/`, textNew);
+    } else {
+      return curPath.replace(`/${text}`, textNew);
+    }
+  };
   const onClick = (n) => {
     if (n.code === locale) return;
-    persistentStore.setState({ locale: n.code });
-    const currentPath = router?.asPath || "/";
-    const segments = currentPath.split("/");
+    const curPath = router?.asPath || "/";
+    const segments = curPath.split("/");
+    const initSegment = segments[1];
     if (defaultLocale.code === n.code) {
-      if (segments.length > 2) {
-        const path = currentPath.replace(`/${segments[1]}/`, "/");
-        router.push(path);
-        return;
-      }
-      const path = currentPath.replace(`/${segments[1]}`, "/");
+      const path = findPath(segments, curPath, initSegment, "/");
       router.push(path);
     } else {
-      if (segments[1] !== n.code) {
-        const path = "/" + n.code + currentPath;
+      if (initSegment === locale) {
+        const path = findPath(segments, curPath, initSegment, `/${n.code}/`);
+        router.push(path);
+      } else if (initSegment !== n.code) {
+        const path = "/" + n.code + curPath;
         router.push(path);
       }
     }
+    persistentStore.setState({ locale: n.code });
   };
   return (
     <div>

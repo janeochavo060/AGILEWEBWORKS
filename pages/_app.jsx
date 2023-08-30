@@ -12,6 +12,9 @@ export default function App({ Component, pageProps }) {
       });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    globalState.setState({
+      ready: true,
+    });
   }, []);
   return (
     <div className="text-dim-black">

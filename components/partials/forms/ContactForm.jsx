@@ -2,11 +2,13 @@ import FormField from "@/components/forms/FormField";
 import { Fragment, useState } from "react";
 import { formSubmit, isError, RenderCaptcha } from "@/lib/services/formService";
 import formStore from "@/lib/store/formStore";
+import globalState from "@/lib/store/globalState";
 import { shallow } from "zustand/shallow";
 export default function ContactForm({ form }) {
   const formData = formStore((state) => state);
-  const [uploading, captcha, submitLoading] = formStore(
-    (state) => [state.uploading, state.captcha, state.submitLoading],
+  const captcha = globalState((state) => state.captcha);
+  const [uploading, submitLoading] = formStore(
+    (state) => [state.uploading, state.submitLoading],
     shallow
   );
   const sections = form?.fields?.blueprint?.schema?.sections || [];
@@ -19,7 +21,7 @@ export default function ContactForm({ form }) {
         return "w-full rounded-[5px] border-[1px] border-[#C9AAE1] py-[8.5px] px-3 min-h-[100px] col-span-2";
       case "file":
         return "";
-      case "hobbies":
+      case "multi_select":
       case "single_select":
         return "react-select cursor-pointer border-[1px] rounded-[5px] h-[35px] pt-[1px] text-sm";
       case "radio_list":
@@ -40,10 +42,6 @@ export default function ContactForm({ form }) {
     }
   };
   const [token, setToken] = useState();
-  const errorCallback = () => {
-    captcha?.current?.reset();
-    setToken("");
-  };
   return (
     <>
       {sections.map((section) => {
@@ -55,12 +53,12 @@ export default function ContactForm({ form }) {
                 formSubmit({
                   e,
                   formId: form.id,
+                  setToken,
                   token,
+                  captcha,
                   sections,
                   setErrors,
                   formData,
-                  captcha,
-                  errorCallback,
                 })
               }
             >

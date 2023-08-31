@@ -47,47 +47,6 @@ export default function DynamicPage() {
     iterate();
   }, [dataHandler]);
 
-  // useEffect(() => {
-  //   globalState.setState({
-  //     showLazy: true,
-  //   });
-  //   const { slug = null, expires = null, signature = null } = params;
-  //   if (slug && expires && signature) {
-  //     PAGEAPI.findPage(
-  //       slug,
-  //       `?include=blockContents.block,metaData&expires=${expires}&signature=${signature}`
-  //     )
-  //       .then(async (res) => {
-  //         const pageHandler = dataFormatter.deserialize(res);
-  //         const blocksHandler =
-  //           pageHandler?.blockContents?.map((e) => {
-  //             return {
-  //               key: e?.block?.component || null,
-  //               order: e?.order || null,
-  //               data: e?.data || null,
-  //             };
-  //           }) || [];
-  //         const sortedBlocks = sortBlocks(blocksHandler);
-  //         setBlocks(await iterateBlock(sortedBlocks, dataFormatter));
-  //         delete pageHandler.relationshipNames;
-  //         delete pageHandler.blockContents;
-  //         // console.log(pageHandler, "sss");
-  //         setPage(pageHandler);
-
-  //         return {
-  //           blocks: await iterateBlock(sortedBlocks, dataFormatter),
-  //           page: pageHandler,
-  //         };
-  //       })
-  //       .catch(() => {
-  //         setError(true);
-  //       });
-  //   } else {
-  //     setError(true);
-  //   }
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   return (
     <>
       {page && blocks ? (

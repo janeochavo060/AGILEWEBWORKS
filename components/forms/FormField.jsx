@@ -40,7 +40,6 @@ export default function FormField(props) {
           <div className={props?.wrapperclassname}>
             <Select
               instanceId={inputProps.state_name}
-              automated={true}
               {...inputProps}
               className={`${fieldClass} ${
                 error && errortype === "border" ? "!border-1 !border-[red]" : ""

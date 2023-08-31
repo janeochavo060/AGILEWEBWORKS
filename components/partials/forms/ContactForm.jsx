@@ -3,14 +3,9 @@ import { Fragment, useState } from "react";
 import { formSubmit, isError, RenderCaptcha } from "@/lib/services/formService";
 import formStore from "@/lib/store/formStore";
 import globalState from "@/lib/store/globalState";
-import { shallow } from "zustand/shallow";
 export default function ContactForm({ form }) {
   const formData = formStore((state) => state);
   const captcha = globalState((state) => state.captcha);
-  const [uploading, submitLoading] = formStore(
-    (state) => [state.uploading, state.submitLoading],
-    shallow
-  );
   const sections = form?.fields?.blueprint?.schema?.sections || [];
   const [errors, setErrors] = useState([]);
   const findClass = (field) => {
@@ -85,9 +80,9 @@ export default function ContactForm({ form }) {
               <div className="flex flex-col mt-[18px]">
                 <div className="mt-[18px]">
                   <button
-                    disabled={uploading || submitLoading}
+                    disabled={formData.uploading || formData.submitLoading}
                     className={`${
-                      !uploading && !submitLoading
+                      !formData.uploading && !formData.submitLoading
                         ? "cursor-pointer bg-[#994cd7]"
                         : "cursor-not-allowed bg-[#c696ed]"
                     }  rounded-[10px] text-[#FFFFFF] text-[15px] flex justify-center items-center w-[95px] h-[40px] font-[600]`}

@@ -3,6 +3,7 @@ import FileInput from "@/components/forms/FileInput";
 import Textarea from "@/components/forms/Textarea";
 import Select from "@/components/forms/Select";
 import Checkbox from "@/components/forms/Checkbox";
+import Radio from "@/components/forms/Radio";
 export default function FormField(props) {
   const error = props?.error || "";
   const required = props?.rules.includes("required");
@@ -40,6 +41,20 @@ export default function FormField(props) {
             <Select
               instanceId={inputProps.state_name}
               automated={true}
+              {...inputProps}
+              className={`${fieldClass} ${
+                error && errortype === "border" ? "!border-1 !border-[red]" : ""
+              }`}
+            />
+            {error && errortype === "text" && (
+              <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
+            )}
+          </div>
+        );
+      case "radio":
+        return (
+          <div className={props?.wrapperclassname}>
+            <Radio
               {...inputProps}
               className={`${fieldClass} ${
                 error && errortype === "border" ? "!border-1 !border-[red]" : ""

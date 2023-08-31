@@ -22,6 +22,8 @@ export default function ContactForm({ form }) {
       case "hobbies":
       case "single_select":
         return "react-select cursor-pointer border-[1px] rounded-[5px] h-[35px] pt-[1px] text-sm";
+      case "radio_list":
+        return "cursor-pointer";
       default:
         return "border outline-0 border-[#C9AAE1] rounded-[5px] h-[35px] text-[#424242] p-[10px] w-[100%]";
     }
@@ -31,6 +33,8 @@ export default function ContactForm({ form }) {
       case "message":
       case "name":
         return "col-span-2";
+      case "radio_list":
+        return "flex flex-col";
       default:
         return "col-span-2 sm:col-span-1";
     }

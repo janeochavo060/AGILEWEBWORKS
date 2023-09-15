@@ -14,7 +14,7 @@ export default function Menu() {
   const nodes = activeMenu?.parentNodes || [];
   return (
     <div>
-      {ready &&
+      {/* {ready &&
         nodes.map((node, i) => {
           return (
             <Link href={node.url} key={i} target={node.target}>
@@ -22,7 +22,7 @@ export default function Menu() {
             </Link>
           );
         })}
-      <Locales />
+      <Locales /> */}
     </div>
   );
 }

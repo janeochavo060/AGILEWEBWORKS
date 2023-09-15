@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@marsidev/react-turnstile": "^0.1.0",
+    "@next/bundle-analyzer": "^13.4.19",
     "axios": "^1.2.2",
     "dotenv": "^16.0.3",
     "eslint": "8.31.0",

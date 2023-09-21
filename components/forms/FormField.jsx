@@ -19,6 +19,8 @@ export default function FormField(props) {
   delete inputProps.wrapperclassname;
   delete inputProps.errors;
   delete inputProps.can_download;
+  delete inputProps.children;
+  delete inputProps.helpText;
   const renderInput = () => {
     switch (props?.type) {
       case "textarea":

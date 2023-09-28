@@ -7,7 +7,7 @@ import { iterateBlock } from "@/lib/services/propService";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ParentBlock from "@/components/page/ParentBlock";
-import NotFound from "@/layout/partials/NotFound";
+import NotFound from "@/components/page/NotFound";
 import globalState from "@/lib/store/globalState";
 export default function DynamicPage() {
   const router = useRouter();

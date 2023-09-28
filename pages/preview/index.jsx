@@ -21,85 +21,111 @@ export default function DynamicPage() {
     const z = e.split("=");
     params[z[0]] = z[1];
   });
-  // const { slug = null, expires = null, signature = null } = params;
+  const {
+    slug = null,
+    expires = null,
+    signature = null,
+    contents = null,
+  } = params;
 
-  // PAGEAPI.getFindPagesSwr(
-  //   slug,
-  //   `?include=blockContents.block,metaData&expires=${expires}&signature=${signature}`,
-  //   {
-  //     render: slug,
-  //     expires,
-  //     signature,
-  //     onSuccess: async (res) => {
-  //       const pageHandler = dataFormatter.deserialize(res.data);
-  //       const blocksHandler =
-  //         pageHandler?.blockContents?.map((e) => {
-  //           return {
-  //             key: e?.block?.component || null,
-  //             order: e?.order || null,
-  //             data: e?.data || null,
-  //           };
-  //         }) || [];
-  //       const sortedBlocks = sortBlocks(blocksHandler);
-  //       setBlocks(await iterateBlock(sortedBlocks, dataFormatter));
-  //       delete pageHandler.relationshipNames;
-  //       delete pageHandler.blockContents;
-  //       setPage(pageHandler);
-  //     },
-  //   }
-  // );
+  PAGEAPI.getFindPagesSwr(
+    slug,
+    `?include=blockContents.block,metaData&expires=${expires}&signature=${signature}`,
+    {
+      render: slug && expires && signature && !contents,
+      expires,
+      signature,
+      onSuccess: async (res) => {
+        const pageHandler = dataFormatter.deserialize(res.data);
+        const blocksHandler =
+          pageHandler?.blockContents?.map((e) => {
+            return {
+              key: e?.block?.component || null,
+              order: e?.order || null,
+              data: e?.data || null,
+            };
+          }) || [];
+        const sortedBlocks = sortBlocks(blocksHandler);
+        setBlocks(await iterateBlock(sortedBlocks, dataFormatter));
+        delete pageHandler.relationshipNames;
+        delete pageHandler.blockContents;
+        setPage(pageHandler);
+      },
+      onError: () => {
+        setError(true);
+      },
+    }
+  );
+
+  CONTENTAPI.getContentsSwr(
+    `/${contents}/entries/${slug}?include=metaData,content`,
+    {
+      render: slug && expires && signature && contents,
+      expires,
+      signature,
+      onSuccess: async (res) => {
+        const pageHandler = dataFormatter.deserialize(res.data);
+        delete pageHandler.relationshipNames;
+        delete pageHandler.blockContents;
+        setPage(pageHandler);
+      },
+      onError: () => {
+        setError(true);
+      },
+    }
+  );
 
   useEffect(() => {
     globalState.setState({
       showLazy: true,
     });
-    const {
-      slug = null,
-      expires = null,
-      signature = null,
-      contents = null,
-    } = params;
+    // const {
+    //   slug = null,
+    //   expires = null,
+    //   signature = null,
+    //   contents = null,
+    // } = params;
 
-    if (slug && expires && signature) {
-      if (contents) {
-        CONTENTAPI.findEntry(contents, slug, "?include=metaData,content")
-          .then((res) => {
-            const pageHandler = dataFormatter.deserialize(res);
-            delete pageHandler.relationshipNames;
-            delete pageHandler.blockContents;
-            setPage(pageHandler);
-          })
-          .catch(() => {
-            setError(true);
-          });
-      } else {
-        PAGEAPI.findPage(
-          slug,
-          `?include=blockContents.block,metaData&expires=${expires}&signature=${signature}`
-        )
-          .then(async (res) => {
-            const pageHandler = dataFormatter.deserialize(res);
-            const blocksHandler =
-              pageHandler?.blockContents?.map((e) => {
-                return {
-                  key: e?.block?.component || null,
-                  order: e?.order || null,
-                  data: e?.data || null,
-                };
-              }) || [];
-            const sortedBlocks = sortBlocks(blocksHandler);
-            setBlocks(await iterateBlock(sortedBlocks, dataFormatter));
-            delete pageHandler.relationshipNames;
-            delete pageHandler.blockContents;
-            setPage(pageHandler);
-          })
-          .catch(() => {
-            setError(true);
-          });
-      }
-    } else {
-      setError(true);
-    }
+    // if (slug && expires && signature) {
+    //   if (contents) {
+    //     CONTENTAPI.findEntry(contents, slug, "?include=metaData,content")
+    //       .then((res) => {
+    //         const pageHandler = dataFormatter.deserialize(res);
+    //         delete pageHandler.relationshipNames;
+    //         delete pageHandler.blockContents;
+    //         setPage(pageHandler);
+    //       })
+    //       .catch(() => {
+    //         setError(true);
+    //       });
+    //   } else {
+    //     PAGEAPI.findPage(
+    //       slug,
+    //       `?include=blockContents.block,metaData&expires=${expires}&signature=${signature}`
+    //     )
+    //       .then(async (res) => {
+    //         const pageHandler = dataFormatter.deserialize(res);
+    //         const blocksHandler =
+    //           pageHandler?.blockContents?.map((e) => {
+    //             return {
+    //               key: e?.block?.component || null,
+    //               order: e?.order || null,
+    //               data: e?.data || null,
+    //             };
+    //           }) || [];
+    //         const sortedBlocks = sortBlocks(blocksHandler);
+    //         setBlocks(await iterateBlock(sortedBlocks, dataFormatter));
+    //         delete pageHandler.relationshipNames;
+    //         delete pageHandler.blockContents;
+    //         setPage(pageHandler);
+    //       })
+    //       .catch(() => {
+    //         setError(true);
+    //       });
+    //   }
+    // } else {
+    //   setError(true);
+    // }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

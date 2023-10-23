@@ -8,14 +8,25 @@ import { useEffect } from "react";
 export default function App({ Component, pageProps }) {
   const { page } = pageProps;
   useEffect(() => {
-    globalState.setState({ ready: true });
     const locale = page?.locale;
     if (locale) persistentStore.setState({ locale });
-    const handleScroll = () => {
-      globalState.setState({ showLazy: true });
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
   }, [page]);
+
+  useEffect(() => {
+    globalState.setState({ ready: true });
+    const handleInteraction = () => {
+      globalState.setState({
+        showLazy: true,
+      });
+    };
+    document.addEventListener("scroll", handleInteraction, { passive: true });
+    document.addEventListener("mousemove", handleInteraction, {
+      passive: true,
+    });
+    document.addEventListener("touchstart", handleInteraction, {
+      passive: true,
+    });
+  }, []);
   return (
     <div className="text-dim-black">
       <DefaultLayout>

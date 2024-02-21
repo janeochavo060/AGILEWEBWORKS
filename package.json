@@ -11,7 +11,8 @@
     "start": "NEXT_SHARP_PATH=\"static\" next start",
     "lint": "next lint",
     "release": "release-it",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": ""
   },
   "dependencies": {
     "@commitlint/cli": "^18.6.1",

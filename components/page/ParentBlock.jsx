@@ -13,25 +13,30 @@ export default function ParentBlock({ page, blocks = [], initialBlocks = 2 }) {
   }, [blocks, initialBlocks]);
   return (
     <>
-      {activeBlocks.map((block) => {
+      {activeBlocks.map((block, index) => {
         const Component = components[block.key];
+
         return (
           <Component
             key={block.key + block?.order?.toString()}
-            block={block.data}
-            index={block?.order}
+            block={block?.data}
+            order={block?.order}
+            id={index}
+            mediaHandler={block?.mediaHandler}
           />
         );
       })}
       {showLazy && (
         <>
-          {lazyBlocks.map((block) => {
+          {lazyBlocks.map((block, index) => {
             const Component = components[block.key];
             return (
               <Component
                 key={block.key + block?.order?.toString()}
-                block={block.data}
-                index={block?.order}
+                block={block?.data}
+                order={block?.order}
+                id={index}
+                mediaHandler={block?.mediaHandler}
               />
             );
           })}

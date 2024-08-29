@@ -17,9 +17,10 @@
   "dependencies": {
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
-    "@release-it/conventional-changelog": "^8.0.1",
+    "@fancyapps/ui": "^5.0.36",
     "@marsidev/react-turnstile": "^0.1.0",
     "@next/bundle-analyzer": "^13.4.19",
+    "@release-it/conventional-changelog": "^8.0.1",
     "axios": "^1.2.2",
     "dotenv": "^16.0.3",
     "eslint": "8.31.0",

@@ -28,10 +28,8 @@ export default function App({ Component, pageProps }) {
     });
   }, []);
   return (
-    <div className="text-dim-black">
-      <DefaultLayout>
-        <Component {...pageProps} />
-      </DefaultLayout>
-    </div>
+    <DefaultLayout>
+      <Component {...pageProps} />
+    </DefaultLayout>
   );
 }

@@ -1,16 +1,31 @@
 import Image from "next/image";
 import FancyPhotos from "../partials/popups/FancyPhotos";
 
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
 export default function Block({ id, test, block, mediaHandler }) {
   const { items } = block?.main;
-
-  console.log("test", test);
-
   return (
-    <div>
+    <Swiper
+      modules={[Navigation, Pagination, A11y]}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log("slide change")}
+    >
       {items.map((item, index) => {
         return (
-          <div key={index}>
+          <SwiperSlide key={index}>
             <FancyPhotos fancyId={`Slider-${id}`}>
               <div
                 data-fancybox={`Slider-${id}`}
@@ -22,15 +37,18 @@ export default function Block({ id, test, block, mediaHandler }) {
                   src={
                     mediaHandler?.[`main.items.${index}.media`]?.[0]?.original
                   }
+                  width={500}
+                  height={500}
+                  className="w-full h-[826px] object-cover"
                   alt={item.title}
                 />
               </div>
             </FancyPhotos>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-          </div>
+          </SwiperSlide>
         );
       })}
-    </div>
+    </Swiper>
   );
 }

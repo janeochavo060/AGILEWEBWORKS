@@ -24,5 +24,5 @@ export default function FancyPhoto({ fancyId, children, ...props }) {
     },
   });
 
-  return <>{children}</>;
+  return <div>{children}</div>;
 }

@@ -8,10 +8,12 @@ export default function DefaultLayout(props) {
     return <Component />;
   };
   return (
-    <>
+    <div className="text-dim-black flex flex-col min-h-screen">
       <Menu />
-      {props.children}
+      <main className="main-content grow" id="main-content">
+        {props.children}
+      </main>
       {showLazy && <Footer />}
-    </>
+    </div>
   );
 }

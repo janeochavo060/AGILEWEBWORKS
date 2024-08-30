@@ -1,10 +1,17 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.example.com";
 module.exports = {
-  siteUrl,
+  changefreq: "daily",
+  sitemapSize: 5000,
   generateRobotsTxt: true,
+  siteUrl,
   robotsTxtOptions: {
-    additionalSitemaps: [
-      `${siteUrl}/sitemap-0.xml`,
-    ]
-  }
-}
+    policies: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/preview"],
+      },
+    ],
+  },
+  exclude: ["/preview"],
+};

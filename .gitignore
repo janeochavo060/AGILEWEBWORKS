@@ -37,5 +37,5 @@ yarn-error.log*
 /public/sitemap.xml
 /public/sitemap-0.xml
 
-/lib/preBuildScripts/static/globalData.json
-/lib/preBuildScripts/static/currencyData.json
+# /lib/preBuildScripts/static/globalData.json
+# /lib/preBuildScripts/static/currencyData.json

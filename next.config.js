@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  output: process.env.NODE_ENV === "production" ? "export" : "standalone",
+  reactStrictMode: false,
   images: {
     loader: "custom",
     loaderFile: "./components/partials/ImageLoader.jsx",

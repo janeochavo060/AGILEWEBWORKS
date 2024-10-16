@@ -14,6 +14,7 @@ import "swiper/css/scrollbar";
 
 export default function Block({ id, test, block, mediaHandler }) {
   const { items } = block?.main;
+  console.log("mediaHandler", mediaHandler);
   return (
     <Swiper
       modules={[Navigation, Pagination, A11y]}

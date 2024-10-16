@@ -66,7 +66,6 @@ export default function DynamicPage() {
       expires,
       signature,
       onSuccess: async (res) => {
-        console.log("res.data", res.data);
         const page = dataFormatter.deserialize(res.data);
 
         setPage(await iteratePage(page));

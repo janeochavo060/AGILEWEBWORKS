@@ -1,4 +1,3 @@
-import "tw-elements/dist/css/tw-elements.min.css";
 import "@/styles/globals.css";
 import "@/styles/customs.css";
 import DefaultLayout from "@/components/_layout/DefaultLayout";

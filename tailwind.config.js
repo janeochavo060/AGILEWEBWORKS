@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,6 +15,7 @@ module.exports = {
       },
       fontFamily: {
         lato: ["lato", ...defaultTheme.fontFamily.sans],
+        jomolhari: ["jomolhari"],
       },
     },
     screens: {
@@ -26,4 +28,19 @@ module.exports = {
       "2xl": "1440px",
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-shadow": {
+          "text-shadow": "2px 2px 4px rgba(0, 0, 0, 0.4)", // Custom shadow
+        },
+        ".text-shadow-lg": {
+          "text-shadow": "4px 4px 6px rgba(0, 0, 0, 0.5)", // Larger shadow
+        },
+        ".text-shadow-none": {
+          "text-shadow": "none", // No shadow
+        },
+      });
+    },
+  ],
 };

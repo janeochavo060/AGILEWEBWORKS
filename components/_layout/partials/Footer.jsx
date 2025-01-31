@@ -1,7 +1,7 @@
 import React from "react";
 import footerData from "@/lib/preBuildScripts/static/footer.json";
 import Image from "next/image";
-// jfgjffjfjvgjf
+
 const Footer = () => {
   // Destructure footer data safely
   const { footer } = footerData?.data || {};

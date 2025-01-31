@@ -16,6 +16,8 @@ module.exports = {
       fontFamily: {
         lato: ["lato", ...defaultTheme.fontFamily.sans],
         jomolhari: ["jomolhari"],
+        josefin: ["josefin"],
+
       },
     },
     screens: {

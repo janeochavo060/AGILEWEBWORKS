@@ -13,15 +13,17 @@ export default function Bannerblock({ block, mediaHandler }) {
   };
 
   return (
-    <div className="relative">
-      <div className="w-full h-[1020px] px-[137px] py-[123px] font-jomolhari">
-        <div className="grid grid-cols-2 ">
+    <div className="relative pt-[30px]">
+      <div className="w-full h-[1028px] px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[137px] lg:py-[123px] font-jomolhari">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-none ">
           {/* first */}
-          <div className=" space-y-[57px] text-[#004E98] mt-[50px] ">
-            <div className=" w-[500px] leading-[50px] text-[50px]">{title}</div>
+          <div className=" space-y-[35px] lg:space-y-[57px] text-[#004E98] flex justify-center flex-col">
+            <div className="leading-[70px] text-[50px] 2xl:text-[70px] md:text-[60px] w-[500px] lg:w-[700px] ">
+              {title}
+            </div>
             <div>
               <h2
-                className="w-[670px] text-[25px] tracking-[10px] leading-[150%]"
+                className=" text-[25px] lg:text-[30px] 2xl:text-[25px] tracking-[10px] leading-[150%]"
                 dangerouslySetInnerHTML={{
                   __html: highlightDescription(description),
                 }}
@@ -30,10 +32,12 @@ export default function Bannerblock({ block, mediaHandler }) {
 
             <div className="">
               <button
-                className=" flex items-center w-[237px] h-[62px] p-[15px] px-[30px] text-2xl bg-[#3A6EA5] rounded-md shadow-2xl
-"
+                className=" flex items-center  w-[200px] h-[50px] px-[30px] lg:w-[237px] lg:h-[62px]  lg:text-2xl   bg-[#3A6EA5] rounded-md shadow-2xl"
+                style={{
+                  boxShadow: "5px 4px 4px rgba(0, 0, 0, 0.25)",
+                }}
               >
-                <Image src="/images/email.jpeg" width={33} height={28} />
+                <Image src="/images/email.jpeg" width={30} height={10} />
                 <h1 className="text-[#EFEFEF] px-[15px] tracking-wide">
                   Email Us
                 </h1>
@@ -41,14 +45,14 @@ export default function Bannerblock({ block, mediaHandler }) {
             </div>
           </div>
           {/* second */}
-          <div className="flex items-center justify-end">
-            <div>
+          <div className="flex items-center justify-center lg:justify-end">
+            <div className=" w-[400px] h-[400px] lg:w-[526px] 2xl:h-[569px]">
               <Image
                 src={mediaHandler["main.image"][0]?.original}
                 width={100}
                 height={100}
                 alt="banner_image"
-                className="w-[526px] h-[569px]"
+                className="w-full h-full object-contain"
               />
             </div>
           </div>

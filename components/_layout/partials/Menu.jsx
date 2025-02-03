@@ -79,6 +79,7 @@ const Menu = () => {
             className="text-white text-2xl py-4 cursor-pointer font-jomolhari hover:text-orange-500 hover:text-3xl transition-all"
             key={index}
             href={item.url}
+            onClick={() => setIsMenuOpen(false)}
           >
             {item.label}
           </Link>

@@ -25,7 +25,7 @@ const Secondbanner = ({ block, mediaHandler }) => {
           {block?.main?.title}
         </div>
 
-        <div className=" mt-[20px] lg:mt-[121px] ">
+        <div className=" pt-[20px] md:pt-[50px] ">
           {mediaHandler["main.image"].map((item, index) => {
             return (
               <>

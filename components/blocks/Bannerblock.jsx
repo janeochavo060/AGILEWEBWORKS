@@ -17,13 +17,13 @@ export default function Bannerblock({ block, mediaHandler }) {
       <div className="w-full h-[1028px] px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[137px] lg:py-[123px] font-jomolhari">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-none ">
           {/* first */}
-          <div className=" space-y-[35px] lg:space-y-[57px] text-[#004E98] flex justify-center flex-col">
-            <div className="leading-[70px] text-[50px] 2xl:text-[70px] md:text-[60px] w-[500px] lg:w-[700px] ">
+          <div className=" pt-[35px] space-y-[20px] lg:space-y-[57px] text-[#004E98] flex justify-center flex-col">
+            <div className="leading-[50px] lg:leading-[70px] text-[35px] 2xl:text-[70px] md:text-[60px] w-[400px] lg:w-[700px] ">
               {title}
             </div>
             <div>
               <h2
-                className=" text-[25px] lg:text-[30px] 2xl:text-[25px] tracking-[10px] leading-[150%]"
+                className=" text-[20px] lg:text-[30px] 2xl:text-[25px] tracking-[10px] leading-[150%]"
                 dangerouslySetInnerHTML={{
                   __html: highlightDescription(description),
                 }}

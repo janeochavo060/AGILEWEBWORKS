@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <div
-      className="w-full px-[25px] 2xl:px-[137px] py-[80px] lg:py-[114px] h-full font-jomolhari text-black "
+      className="w-full px-[25px] 2xl:px-[137px] py-[40px] lg:py-[114px] h-full font-jomolhari text-black "
       style={{
         background: "linear-gradient(to right, #FF924B, #D25707)",
       }}
@@ -45,8 +45,8 @@ const Footer = () => {
               Copyright
               <Image
                 src="/images/copyright.jpg"
-                width={20.25}
-                height={18.75}
+                width={18}
+                height={15}
                 alt="copyright_logo"
                 className="ml-2"
               />

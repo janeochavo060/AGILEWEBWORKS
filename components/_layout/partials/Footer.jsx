@@ -10,14 +10,12 @@ const Footer = () => {
 
   return (
     <div
-      className="w-full px-[25px] 2xl:px-[137px] py-[40px] lg:py-[114px] h-full font-jomolhari text-black "
-      style={{
-        background: "linear-gradient(to right, #FF924B, #D25707)",
-      }}
+      className="w-full px-[25px] 2xl:px-[216px] py-[40px] lg:py-[114px] h-full font-jomolhari text-black bg-gradient-to-b from-white via-[#F3863C]/70 to-[#F18237] "
+      
     >
-      <div className="">
+      <div className="w-full">
         {/* Footer Description with Call Image */}
-        <div className="tracking-[4px] lg:text-[30px] lg:tracking-[6px] flex flex-col md:flex-row items-center justify-center text-center">
+        <div className="tracking-[4px] md:text-[20px]  xl:text-[35px] 2xl:text-[40px] lg:tracking-[6px] flex flex-col md:flex-row items-center justify-center text-center">
           <span>{footer_description}</span>
           <div className="mt-2 md:mt-0 flex items-center">
             <span>Contact Us</span>
@@ -35,18 +33,17 @@ const Footer = () => {
         <div className="border border-black mt-[23px]"></div>
 
         {/* Footer Content */}
-        <div className="flex ">
+        <div className="w-full flex ">
           {/* Logo */}
-          <div className="w-[400px]">
+          <div className="w-[600px]">
             <Image src={logo} width={206} height={76} alt="logo" />
 
-            {/* Copyright Section */}
-            <div className="text-[10px] lg:text-[20px] mt-[10px] flex items-center justify-center  ">
+            <div className=" text-[9px] md:text-[12px] lg:text-[17px] 2xl:text-[22px] mt-[10px] flex items-center justify-center  ">
               Copyright
               <Image
                 src="/images/copyright.jpg"
-                width={18}
-                height={15}
+                width={27}
+                height={23}
                 alt="copyright_logo"
                 className="ml-2"
               />
@@ -54,18 +51,16 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links and Descriptions */}
-          <div className="2xl:ml-[300px] pt-4 flex flex-col lg:flex-row  lg:gap-[50px] ">
+          <div className="w-full 2xl:ml-[169px] pt-[28px] flex flex-col lg:flex-row gap-[20px] 2xl:gap-[40px]  ">
             {/* Titles and Descriptions */}
             {title?.map(({ title }, index) => (
               <div key={index} className="flex flex-col mb-4">
                 {/* Title */}
-                <span className="font-bold  lg:text-[27px]">{title}</span>
+                <span className="font-bold md:text-[25px] lg:text-[30px] 2xl:text-[35px]">{title}</span>
 
-                {/* Corresponding Description */}
                 {descriptions?.[index] && (
                   <span
-                    className="lg:text-[20px] leading-relaxed"
+                    className="md:text-[12px] lg:text-[17px] 2xl:text-[22px] leading-relaxed"
                     dangerouslySetInnerHTML={{
                       __html: descriptions[index].description,
                     }}

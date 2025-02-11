@@ -2,8 +2,10 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 const Secondbanner = ({ block, mediaHandler }) => {
+
+  // console.log("first",block?.main?.image)
   return (
-    <div className=" relative w-full px-[30px] py-[60px] h-full lg:px-[137px] lg:py-[114px] font-jomolhari text-[#004E98]">
+    <div className=" relative w-full px-[30px] py-[60px] h-full lg:px-[137px] 2xl:px-[216px] lg:py-[114px] font-jomolhari text-[#004E98]">
       <div className="lg:grid grid-cols-2 ">
         {/* <div>
                 

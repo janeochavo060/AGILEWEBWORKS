@@ -9,7 +9,7 @@ import { Grid, Pagination } from "swiper/modules";
 const ClientBlock = ({ block }) => {
   return (
     <div className="lg:mb-[154px] overflow-hidden">
-      <div className="w-full h-auto px-[20px] lg:px-[137px] py-[50px] lg:py-[114px] font-jomolhari text-[#004E98] uppercase">
+      <div className="w-full h-auto px-[20px] lg:px-[137px] 2xl:px-[216px] py-[50px] lg:py-[114px] font-jomolhari text-[#004E98] uppercase">
         <div
           className="text-[23px] text-center tracking-[10px] lg:text-[35px] text-stroke-1-black"
           style={{

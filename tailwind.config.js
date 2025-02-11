@@ -17,7 +17,20 @@ module.exports = {
         lato: ["lato", ...defaultTheme.fontFamily.sans],
         jomolhari: ["jomolhari"],
         josefin: ["josefin"],
-
+      },
+      keyframes: {
+        fadeInLeft: {
+          "0%": { opacity: 0, transform: "translateX(-30px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: 0, transform: "translateX(-30px)" },
+          "100%": { opacity: 1, transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        fadeInLeft: "fadeInLeft 0.9s ease-out",
+        fadeInRight: "fadeInLeft 0.9s ease-out",
       },
     },
     screens: {

@@ -40,7 +40,7 @@ export default function Bannerblock({ block, mediaHandler }) {
             </div>
             <div>
               <h2
-                className="  max-w-[650px] text-[15px] lg:text-[25px] 2xl:text-[40px] tracking-[10px] leading-[150%]"
+                className="  max-w-[650px] text-[13px] lg:text-[25px] 2xl:text-[40px] tracking-[10px] leading-[150%]"
                 dangerouslySetInnerHTML={{
                   __html: highlightDescription(description),
                 }}

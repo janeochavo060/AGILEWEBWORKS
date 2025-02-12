@@ -25,7 +25,7 @@ export default function Bannerblock({ block, mediaHandler }) {
               width={1080}
               className=" h-full w-full object-cover "
               alt="Banner"
-              loading="lazy"
+              loading="eager"
             />
           </picture>
         </div>

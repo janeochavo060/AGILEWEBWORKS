@@ -21,8 +21,8 @@ export default function Bannerblock({ block, mediaHandler }) {
             <source media="(max-width: 912px)" srcSet={backgroundImage} />
             <Image
               src={backgroundImage}
-              height={1080}
-              width={1920}
+              height={912}
+              width={1080}
               className=" h-full w-full object-cover "
               alt="Banner"
               loading="lazy"

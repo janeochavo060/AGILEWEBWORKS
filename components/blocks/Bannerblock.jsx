@@ -35,7 +35,7 @@ export default function Bannerblock({ block, mediaHandler }) {
         >
           {/* first */}
           <div className="w-[300px] lg:w-[819px]  pt-[35px] space-y-[20px] lg:space-y-[57px] text-[#004E98] flex justify-center flex-col animate-fadeInLeft ">
-            <div className="leading-[50px] lg:leading-[120%] tracking-[3px] text-[30px] md:text-[40px] lg:text-[60px] 2xl:text-[80px]  ">
+            <div className="leading-[50px] lg:leading-[120%] tracking-[3px] text-[25px] md:text-[40px] lg:text-[60px] 2xl:text-[80px]  ">
               {title}
             </div>
             <div>

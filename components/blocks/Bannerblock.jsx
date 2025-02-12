@@ -25,6 +25,7 @@ export default function Bannerblock({ block, mediaHandler }) {
               width={1920}
               className=" h-full w-full object-cover "
               alt="Banner"
+              loading="lazy"
             />
           </picture>
         </div>
@@ -53,7 +54,13 @@ export default function Bannerblock({ block, mediaHandler }) {
                   boxShadow: "5px 4px 4px rgba(0, 0, 0, 0.25)",
                 }}
               >
-                <Image src="/images/email.jpeg" width={30} height={10} />
+                <Image
+                  src="/images/email.jpeg"
+                  width={30}
+                  height={10}
+                  alt="email"
+                  loading="lazy"
+                />
                 <h1 className="text-[#EFEFEF] px-[15px] tracking-wide">
                   Email Us
                 </h1>

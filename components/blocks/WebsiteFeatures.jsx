@@ -10,8 +10,8 @@ const WebsiteFeatures = ({ block, mediaHandler }) => {
         {/* Space applied only to parent div */}
         <div className="flex flex-col xl:flex-row justify-items-center space-y-[30px] xl:space-y-0 ">
           {block?.website_features?.image_loadingspeed?.map((item, index) => (
-            <div className="space-y-[20px] ">
-              <div key={index} className="flex justify-center items-center">
+            <div className="space-y-[20px] " key={index}>
+              <div  className="flex justify-center items-center">
                 {mediaHandler?.["website_features.image_loadingspeed"]?.[index]
                   ?.original && (
                   <Image

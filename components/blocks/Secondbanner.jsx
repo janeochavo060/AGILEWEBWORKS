@@ -31,11 +31,12 @@ const Secondbanner = ({ block, mediaHandler }) => {
           {mediaHandler["main.image"].map((item, index) => {
             return (
               <>
-                <Image
+                <Image key={index}
                   src={item?.original}
                   width={900}
                   height={512}
                   alt="website_image"
+                 loading="lazy"
                 />
               </>
             );

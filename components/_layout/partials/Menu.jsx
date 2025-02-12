@@ -12,9 +12,9 @@ const Menu = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* Fixed Navbar with Background */}
-      <div className="fixed top-0 left-0 w-full h-[91px] px-[30px] md:px-[50px] lg:px-[60px] 2xl:px-[216px] flex items-center justify-between bg-white shadow-md z-50">
+      <div className="fixed top-0 left-0 w-full h-[91px] px-[30px] md:px-[50px] lg:px-[137px] 2xl:px-[216px] flex items-center justify-between bg-white shadow-md z-50">
         {/* Logo */}
         <div className="lg:w-auto w-full flex justify-between items-center">
           <div className="md:block flex w-[150px] md:w-[150px] lg:w-[150px]">

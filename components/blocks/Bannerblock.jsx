@@ -14,7 +14,7 @@ export default function Bannerblock({ block, mediaHandler }) {
 
   return (
     <div className="relative pt-[30px] ">
-      <div className=" w-full  lg:h-[1080px] h-[600px] px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[216px] lg:py-[123px] font-jomolhari">
+      <div className=" w-full  h-full px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[216px] lg:py-[123px] font-jomolhari">
         <div className="absolute -z-10 top-0 xs:top-50 sm:right-[40px] md:right-[90px]  lg:right-[150px] 2xl:right-[210px]  h-full w-auto">
           <picture className="  h-full w-full animate-fadeInLeft ">
             <source media="(min-width: 451px)" srcSet={backgroundImage} />

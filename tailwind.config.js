@@ -27,10 +27,18 @@ module.exports = {
           "0%": { opacity: 0, transform: "translateX(-30px)" },
           "100%": { opacity: 1, transform: "translateX(0)" },
         },
+        gradientMove: {
+          "0%": { backgroundPosition: "0% 0%" },
+          "100%": { backgroundPosition: "100% 100%" },
+        },
       },
       animation: {
         fadeInLeft: "fadeInLeft 0.9s ease-out",
         fadeInRight: "fadeInLeft 0.9s ease-out",
+        "gradient-move": "gradientMove 2s linear infinite",
+      },
+      backgroundImage: {
+        "animated-gradient": "linear-gradient(130deg, #FF6700 20%, #004CE4 47%, #CB5200 63%)",
       },
     },
     screens: {

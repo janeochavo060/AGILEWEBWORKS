@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Bannerblock({ block, mediaHandler }) {
   const { title, description, button_label, button_link } = block?.main;
   const backgroundImage = mediaHandler["main.image"][0]?.original;
-  // Highlight "leading" in the description
+
   const highlightDescription = (desc) => {
     if (!desc) return "";
     return desc.replace(
@@ -48,23 +49,24 @@ export default function Bannerblock({ block, mediaHandler }) {
             </div>
 
             <div className="">
-              <button
-                className=" flex items-center  w-[200px] h-[50px] px-[30px] lg:w-[237px] lg:h-[62px]  lg:text-2xl   bg-[#3A6EA5] rounded-md shadow-2xl"
-                style={{
-                  boxShadow: "5px 4px 4px rgba(0, 0, 0, 0.25)",
-                }}
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=agile@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Image
-                  src="/images/email.jpeg"
-                  width={30}
-                  height={10}
-                  alt="email"
-                  loading="lazy"
-                />
-                <h1 className="text-[#EFEFEF] px-[15px] tracking-wide">
-                  Email Us
-                </h1>
-              </button>
+                <button className="flex items-center w-[200px] h-[50px] px-[30px] lg:w-[237px] lg:h-[62px] lg:text-2xl rounded-md shadow-2xl bg-[#3A6EA5] border-2 hover:border-[#3A6EA5]  transition-all duration-300">
+                  <Image
+                    src="/images/email.jpeg"
+                    width={30}
+                    height={10}
+                    alt="email"
+                    loading="lazy"
+                  />
+                  <h1 className="text-[#EFEFEF] px-[15px] tracking-wide">
+                    Email Us
+                  </h1>
+                </button>
+              </a>
             </div>
           </div>
         </div>

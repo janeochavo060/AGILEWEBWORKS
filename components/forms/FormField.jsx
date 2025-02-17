@@ -28,7 +28,7 @@ export default function FormField(props) {
           <div className={props?.wrapperclassname}>
             <Textarea
               {...inputProps}
-              className={`${fieldClass} ${
+              className={`${fieldClass}  ${
                 error && errortype === "border" ? "!border-1 !border-[red]" : ""
               }`}
             />
@@ -39,13 +39,19 @@ export default function FormField(props) {
         );
       case "select":
         return (
-          <div className={props?.wrapperclassname}>
+          <div>
             <Select
               instanceId={inputProps.state_name}
               {...inputProps}
-              className={`${fieldClass} ${
+              className={`my-2  ${
                 error && errortype === "border" ? "!border-1 !border-[red]" : ""
               }`}
+              styles={{
+                control: (provided) => ({
+                  ...provided,
+                  borderRadius: "20px", 
+                }),
+              }}
             />
             {error && errortype === "text" && (
               <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
@@ -90,19 +96,41 @@ export default function FormField(props) {
           </div>
         );
       default:
-        return (
-          <div className={props?.wrapperclassname}>
-            <Input
-              {...inputProps}
-              className={`${fieldClass} ${
-                error && errortype === "border" ? "!border-1 !border-[red]" : ""
-              }`}
-            />
-            {error && errortype === "text" && (
-              <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
-            )}
-          </div>
-        );
+        if (inputProps.name === "message") {
+          return (
+            <div className="w-full  col-span-2 my-2">
+              <Textarea
+                {...inputProps}
+                className={`p-3 w-full rounded-[10px]  min-h-[150px] h-auto  ${
+                  error && errortype === "border"
+                    ? "!border-1 !border-[red]"
+                    : ""
+                }`}
+              />
+              {error && errortype === "text" && (
+                <div className="text-[12px] mt-[2px] text-red-600">{error}</div>
+              )}
+            </div>
+          );
+        } else {
+          return (
+            <div className="w-full my-2 ">
+              <Input
+                {...inputProps}
+                className={`p-3 w-full rounded-[10px]  ${
+                  error && errortype === "border"
+                    ? "!border-1 !border-[red]"
+                    : ""
+                }`}
+              />
+              {error && errortype === "text" && (
+                <div className="text-[12px]  mt-[2px] text-red-600">
+                  {error}
+                </div>
+              )}
+            </div>
+          );
+        }
     }
   };
 

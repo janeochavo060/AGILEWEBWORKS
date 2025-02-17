@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 const Secondbanner = ({ block, mediaHandler }) => {
-
   // console.log("first",block?.main?.image)
   return (
     <div className=" relative w-full px-[30px] py-[60px] h-full lg:px-[137px] 2xl:px-[216px] lg:py-[114px] font-jomolhari text-[#004E98]">
@@ -31,12 +30,13 @@ const Secondbanner = ({ block, mediaHandler }) => {
           {mediaHandler["main.image"].map((item, index) => {
             return (
               <>
-                <Image key={index}
+                <Image
+                  key={index}
                   src={item?.original}
                   width={900}
                   height={512}
                   alt="website_image"
-                 loading="lazy"
+                  loading="lazy"
                 />
               </>
             );
@@ -81,10 +81,10 @@ const Secondbanner = ({ block, mediaHandler }) => {
 
           {/* <div>{console.log("e", block?.main?.button_link)}</div> */}
           <div className=" flex justify-center w-full mt-[20px]">
-            <div className="w-[200px] h-[40px] 2xl:w-[317px] 2xl:h-[57px]"> 
+            <div className="w-[200px] h-[40px] 2xl:w-[317px] 2xl:h-[57px]">
               <Link
                 href={block?.main?.button_link}
-                className="flex items-center justify-center w-full h-full bg-[#FF6700] text-[#000000] font-josefin 2xl:text-[28px] rounded-[11px]"
+                className="flex items-center justify-center w-full h-full  text-[#000000] font-josefin 2xl:text-[28px] rounded-[11px] border-2 transition-all duration-300 hover:bg-transparent hover:border-[#FF6700] bg-[#FF6700]"
               >
                 EXPLORE MORE
                 <img

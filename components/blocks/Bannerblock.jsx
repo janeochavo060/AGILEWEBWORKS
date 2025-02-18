@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+
 
 export default function Bannerblock({ block, mediaHandler }) {
   const { title, description, button_label, button_link } = block?.main;

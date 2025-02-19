@@ -24,7 +24,7 @@ const DrupalBlock = ({ block, mediaHandler }) => {
           slidesPerView={1}
           autoplay={{ delay: 1000, disableOnInteraction: true }}
           speed={500}
-          className="w-full rounded-[30px]"
+          className="w-full lg:rounded-[30px]"
         >
           {mediaHandler["banner.image"].map((item, index) => (
             <SwiperSlide key={index}>
@@ -39,9 +39,9 @@ const DrupalBlock = ({ block, mediaHandler }) => {
           ))}
         </Swiper>
         <div className=" text-[#004E98]  mt-6">
-          <div className="flex justify-center text-center pb-[200px]">
+          <div className="flex justify-center text-center pb-[50px] lg:pb-[100px] 2xl:pb-[200px]">
             <h2
-              className=" max-w-[820px] text-[13px] lg:text-[25px] 2xl:text-[80px] tracking-[3px] "
+              className="  text-[20px] lg:text-[50px] 2xl:text-[80px] tracking-[3px] "
               dangerouslySetInnerHTML={{
                 __html: highlightDescription(block?.banner?.title),
               }}
@@ -51,25 +51,25 @@ const DrupalBlock = ({ block, mediaHandler }) => {
             <div className="flex relative">
               <Image
                 src="/images/maintenance.jpg"
-                width={292}
+                width={170}
                 height={148}
                 alt="maintenance_icon"
                 loading="lazy"
-                className="z-10"
+                className="relative z-10 lg:w-[231px] 2xl:w-[292px] "
               />
 
               <Image
                 src="/images/Vector 1.jpg"
-                width={372}
-                height={318}
+                width={150}
+                height={100}
                 alt="vector1_icon"
                 loading="lazy"
-                className="absolute top-[-100px] left-[-30px]  z-0"
+                className="absolute 2xl:top-[-100px] 2xl:left-[-30px] lg:left-[30px] 2xl:w-[372px] 2xl:h-[318px]  z-0"
               />
             </div>
 
             <div className="flex justify-center items-center">
-              <p className="lg:w-[935px] w-[200px] text-center text-[16px] lg:text-[32px] 2xl:text-[48px] 2xl:tracking-[20px] lg:tracking-[10px] text-stroke-1-black ">
+              <p className="lg:w-[935px] w-[200px] text-center text-[16px] lg:text-[30px] 2xl:text-[48px] 2xl:tracking-[20px] lg:tracking-[10px] text-stroke-1-black ">
                 {block?.banner?.subheading}
               </p>
             </div>
@@ -77,19 +77,19 @@ const DrupalBlock = ({ block, mediaHandler }) => {
             <div className="flex relative justify-end">
               <Image
                 src="/images/updating.jpg"
-                width={292}
-                height={148}
+                width={170}
+                height={100}
                 alt="maintenance_icon"
                 loading="lazy"
-                className="z-10"
+                className="z-10 2xl:w-[292px] lg:w-[200px]"
               />
               <Image
                 src="/images/Vector 2.jpg"
-                width={343}
+                width={150}
                 height={271}
                 alt="vector1_icon"
                 loading="lazy"
-                className="absolute top-[-60px] z-0"
+                className="absolute  top-[-10px] lg:top-[-40px] 2xl:top-[-60px] lg:w-[200px] 2xl:w-[343px] z-0"
               />
             </div>
           </div>

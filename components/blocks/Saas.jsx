@@ -16,7 +16,7 @@ const Saas = ({ block }) => {
             >
               {/* Text Content */}
               <div className="  w-full md:w-1/2 text-center md:text-left md:py-[100px] ">
-                <div className="text-[20px] xl:text-[40px]  lg:text-[40px]  font-bold py-[10px]">
+                <div className="text-[20px]  lg:text-[30px] xl:text-[40px]   font-bold py-[10px]">
                   {item?.title}
                 </div>
                 <div

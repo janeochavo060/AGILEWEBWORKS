@@ -28,7 +28,7 @@ const SecondPageDrupal = ({ block }) => {
                   width={150}
                   height={150}
                   alt="drupal_icon_images"
-                  loading="lazy"
+                  loading="eager"
                   className="lg:h-[300px] lg:w-[980px] xl:h-[348px]"
                 />
               </div>

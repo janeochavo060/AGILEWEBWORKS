@@ -20,10 +20,10 @@ const Menu = () => {
           <div className="md:block flex w-[150px] md:w-[150px] lg:w-[150px]">
             <Image
               src={logo?.data?.main?.image}
-              width={0}
+              width={110}
               height={0}
               alt="logo image"
-              className="w-full h-full"
+              className="lg:w-full lg:h-full"
             />
           </div>
 
@@ -76,7 +76,7 @@ const Menu = () => {
       >
         {menuNavbar?.parentNodes?.map((item, index) => (
           <Link
-            className="text-white text-2xl py-4 cursor-pointer font-jomolhari hover:text-orange-500 hover:text-3xl transition-all"
+            className="text-white text-lg py-4 cursor-pointer font-jomolhari hover:text-orange-500 hover:text-2xl transition-all"
             key={index}
             href={item.url}
             onClick={() => setIsMenuOpen(false)}

@@ -67,12 +67,12 @@ const SecondPageDrupal = ({ block }) => {
                   loading="lazy"
                   className="h-[200px] object-contain"
                 />
-                <div className="text-[20px] py-[10px] text-black text-center">
+                <div className="text-[17px] py-[10px] text-black text-center">
                   {item.title}
                 </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: item.description }}
-                  className="text-center text-[16px]"
+                  className="text-center text-[13px]"
                 ></div>
               </div>
             </SwiperSlide>

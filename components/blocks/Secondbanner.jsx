@@ -80,18 +80,21 @@ const Secondbanner = ({ block, mediaHandler }) => {
           </div>
 
           {/* <div>{console.log("e", block?.main?.button_link)}</div> */}
-          <div className=" flex justify-center w-full mt-[20px]">
+          <div className="flex justify-center w-full">
             <div className="w-[200px] h-[40px] 2xl:w-[317px] 2xl:h-[57px]">
               <Link
                 href={block?.main?.button_link}
-                className="flex items-center justify-center w-full h-full  text-[#000000] font-josefin 2xl:text-[28px] rounded-[11px] border-2 transition-all duration-300 hover:bg-transparent hover:border-[#FF6700] bg-[#FF6700]"
+                className="flex items-center justify-center w-full h-full text-[#000000] font-josefin rounded-[11px] border-2 transition-all duration-300 hover:bg-transparent hover:border-[#FF6700] bg-[#FF6700] space-x-2"
               >
-                EXPLORE MORE
+                <span className="text-center flex items-center 2xl:text-[25px] pt-[3px]">
+                  EXPLORE MORE
+                </span>
                 <img
                   src="/images/arrow.jpg"
                   alt="arrow"
-                  width={44.96}
-                  height={27.37}
+                  width={30} // Adjusted for better alignment
+                  height={20}
+                  className="inline-block"
                 />
               </Link>
             </div>

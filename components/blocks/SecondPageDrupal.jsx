@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/grid";
 import { Grid, Pagination } from "swiper/modules";
 
+
 const SecondPageDrupal = ({ block }) => {
   console.log("e", block?.main?.information);
 

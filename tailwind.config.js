@@ -17,6 +17,8 @@ module.exports = {
         lato: ["lato", ...defaultTheme.fontFamily.sans],
         jomolhari: ["jomolhari"],
         josefin: ["josefin"],
+        jost: ["jost"],
+        angkor: ["angkor"],
       },
       keyframes: {
         fadeInLeft: {

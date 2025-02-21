@@ -11,7 +11,7 @@ const WebsiteFeatures = ({ block, mediaHandler }) => {
         <div className="flex flex-col xl:flex-row justify-items-center space-y-[30px] xl:space-y-0 ">
           {block?.website_features?.image_loadingspeed?.map((item, index) => (
             <div className="space-y-[20px] " key={index}>
-              <div  className="flex justify-center items-center">
+              <div className="flex justify-center items-center">
                 {mediaHandler?.["website_features.image_loadingspeed"]?.[index]
                   ?.original && (
                   <Image
@@ -50,10 +50,10 @@ const WebsiteFeatures = ({ block, mediaHandler }) => {
                   key={index}
                   className="  rounded-lg text-center flex  flex-col items-center justify-center"
                 >
-                  <div className="text-4xl font-bold border-4  border-[#00DB00] text-[#00DB00]  w-24 h-24 flex   items-center justify-center rounded-full shadow-[5px_6px_4px_rgba(0,0,0,0.25)] ">
+                  <div className="text-lg lg:text-xl xl:text-2xl 2xl:text-4xl font-bold border-4  border-[#00DB00] text-[#00DB00]  w-16 xl:w-20 2xl:w-24  h-16 xl:h-20 2xl:h-24  flex   items-center justify-center rounded-full shadow-[5px_6px_4px_rgba(0,0,0,0.25)] ">
                     {item?.rating}
                   </div>
-                  <div className="pt-[10px]  text-[12px]  xl:text-[14px] 2xl:text-[16px] ">
+                  <div className="pt-[10px] text-[12px]  xl:text-[14px] 2xl:text-[16px] ">
                     {item?.title}
                   </div>
                 </div>

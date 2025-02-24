@@ -74,9 +74,10 @@ export default function ContactForm({ form }) {
                 ))}
               </div>
 
-              {form?.attributes?.uses_captcha && (
+              <div className="w-full mt-4 transform scale-90 md:scale-100">
                 <RenderCaptcha setToken={setToken} />
-              )}
+              </div>
+
               <div className="flex items-center justify-center mt-[18px]">
                 <div className="mt-[18px]">
                   <button

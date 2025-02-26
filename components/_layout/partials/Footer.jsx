@@ -60,7 +60,7 @@ const Footer = () => {
 
                 {descriptions?.[index] && (
                   <span
-                    className="md:text-[12px] lg:text-[17px] 2xl:text-[22px] leading-relaxed"
+                    className=" text-[10px] md:text-[12px] lg:text-[17px] 2xl:text-[22px] leading-relaxed"
                     dangerouslySetInnerHTML={{
                       __html: descriptions[index].description,
                     }}

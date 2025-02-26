@@ -4,7 +4,7 @@ const FormContact = ({ block }) => {
   return (
     <div className="relative pt-[30px]">
       <div className="w-full  h-full px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[216px] lg:py-[123px] font-jomolhari">
-        <span className="flex items-center justify-center text-[20px] md:text-[30px] lg:text-[40px] 2xl:text-[50px] text-[#002F6C] p-[52px]">
+        <span className="flex items-center justify-center text-center text-[20px] md:text-[30px] lg:text-[40px] 2xl:text-[50px] text-[#002F6C] p-[52px]">
           Get In Touch With Us
         </span>
         <div className="grid md:grid-cols-3  rounded-[27px] px-[20px] py-[30px] md:py-[49px] md:px-[41px] bg-[#C0C0C0]">

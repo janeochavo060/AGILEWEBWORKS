@@ -34,7 +34,7 @@ const WebsiteFeatures = ({ block, mediaHandler }) => {
                 </div>
                 <div className="bg-[#BEBEBE]/10 px-[32px] py-[10px] rounded-[16px]">
                   <div
-                    className=" max-w-[759px]  text-[15px] lg:text-[20px] 2xl:text-[25px]  2xl:leading-[170%] tracking-[1px]"
+                    className=" max-w-[759px] text-[12px] md:text-[15px] lg:text-[20px] 2xl:text-[25px] 2xl:leading-[170%] tracking-[1px]"
                     dangerouslySetInnerHTML={{
                       __html: block?.website_features?.description,
                     }}

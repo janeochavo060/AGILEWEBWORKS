@@ -87,7 +87,7 @@ const Website = ({ block }) => {
           className="hidden lg:block "
         />
         <div
-          className="xl:pr-[100px] text-center pt-[60px] flex-col items-center md:text-[15px] lg:text-[20px] xl:text-[25px]"
+          className="xl:pr-[100px] text-center pt-[60px] flex-col items-center text-[12px] md:text-[15px] lg:text-[20px] 2xl:text-[25px]"
           dangerouslySetInnerHTML={{
             __html: `${block?.description?.description} <span class="text-blue-500">${block?.url?.description_url}</span>`,
           }}

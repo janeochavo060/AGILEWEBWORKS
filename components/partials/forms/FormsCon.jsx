@@ -74,7 +74,7 @@ export default function ContactForm({ form }) {
                 ))}
               </div>
 
-              <div className="w-full mt-4 transform scale-90 md:scale-100">
+              <div className="">
                 <RenderCaptcha setToken={setToken} />
               </div>
 

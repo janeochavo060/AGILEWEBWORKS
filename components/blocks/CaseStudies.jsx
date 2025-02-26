@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { MobileIcon, DesktopIcon } from "@/public/icons/icons";
 
 const CaseStudies = ({ block }) => {
   console.log("e", block?.casestudies);
@@ -50,12 +51,7 @@ const CaseStudies = ({ block }) => {
                       </h1>
                     </div>
                     <div className="flex">
-                      <Image
-                        src="/images/mobile.jpg"
-                        width={20}
-                        height={10}
-                        alt="mobile_icon"
-                      />
+                      <MobileIcon />
                       <h3 className="px-[5px] text-[13px] xl:text-[16px]">
                         Mobile
                       </h3>
@@ -64,12 +60,7 @@ const CaseStudies = ({ block }) => {
                       </span>
                     </div>
                     <div className="flex">
-                      <Image
-                        src="/images/desktopicon.jpg"
-                        width={20}
-                        height={10}
-                        alt="desktop_icon"
-                      />
+                      <DesktopIcon />
                       <h3 className="px-[5px] text-[13px] xl:text-[16px] ">
                         Desktop
                       </h3>
@@ -105,7 +96,7 @@ const CaseStudies = ({ block }) => {
               dangerouslySetInnerHTML={{
                 __html: highlightDescription(block?.casestudies?.description),
               }}
-              className="text-[12px] lg:text-[13px] 2xl:text-[15px]"
+              className="text-[12px]  lg:text-[13px] 2xl:text-[15px]"
             ></div>
           </div>
         </div>

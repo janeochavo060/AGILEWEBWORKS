@@ -4,7 +4,7 @@ import Image from "next/image";
 const Secondbanner = ({ block, mediaHandler }) => {
   // console.log("first",block?.main?.image)
   return (
-    <div className=" relative w-full px-[30px] py-[60px] h-full lg:px-[137px] 2xl:px-[216px] lg:py-[114px] font-jomolhari text-[#004E98]">
+    <div className=" relative w-full px-[30px] py-[60px] h-full lg:px-[137px]  2xl:px-[216px] lg:py-[114px] font-jomolhari text-[#004E98]">
       <div className="lg:grid grid-cols-2 ">
         {/* <div>
                 
@@ -52,7 +52,7 @@ const Secondbanner = ({ block, mediaHandler }) => {
           >
             {block?.main?.title}
           </div>
-          <div className="pt-[10px] lg:pt-[68px] tracking-[1px] text-[15px] 2xl:text-[20px]">
+          <div className="pt-[10px] lg:pt-[68px] tracking-[1px] ">
             {block?.main?.content?.map((item, index) => {
               return (
                 <div
@@ -69,7 +69,7 @@ const Secondbanner = ({ block, mediaHandler }) => {
                   />
                   {/* Text Content */}
                   <div
-                    className="w-full text-justify"
+                    className="w-full text-justify text-[12px] md:text-[15px] lg:text-[20px] 2xl:text-[25px]"
                     dangerouslySetInnerHTML={{
                       __html: item?.description,
                     }}

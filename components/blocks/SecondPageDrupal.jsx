@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 import "swiper/css/grid";
 import { Grid, Pagination } from "swiper/modules";
 
-
 const SecondPageDrupal = ({ block }) => {
   console.log("e", block?.main?.information);
 
@@ -73,7 +72,7 @@ const SecondPageDrupal = ({ block }) => {
                 </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: item.description }}
-                  className="text-center text-[13px]"
+                  className="text-center text-[12px] md:text-[15px] lg:text-[20px] 2xl:text-[25px]"
                 ></div>
               </div>
             </SwiperSlide>

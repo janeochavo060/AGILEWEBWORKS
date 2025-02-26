@@ -21,7 +21,7 @@ const Saas = ({ block }) => {
                 </div>
                 <div
                   dangerouslySetInnerHTML={{ __html: item?.description }}
-                  className="xl:text-[25px] "
+                  className="text-[12px] md:text-[15px] lg:text-[20px] 2xl:text-[25px]"
                 ></div>
               </div>
 

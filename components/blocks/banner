@@ -15,18 +15,19 @@ export default function Bannerblock({ block, mediaHandler }) {
 
   return (
     <div className="relative pt-[50px] h-screen ">
-      <div className=" w-full  h-full px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[216px] lg:py-[123px] font-jomolhari">
-        <div className="hidden sm:block absolute -z-10 top-0 xs:top-50 w-full h-full">
-          <picture className="w-full h-full animate-fadeInLeft">
-            <div className="relative w-full h-full">
-              <Image
-                src={backgroundImage}
-                fill
-                className="object-cover aspect-[16/9]"
-                alt="Banner"
-                loading="eager"
-              />
-            </div>
+      <div className=" w-full  h-screen px-[30px] py-[60px]  md:px-[50px] lg:px-[60px] 2xl:px-[216px] lg:py-[123px] font-jomolhari">
+        <div className="hidden sm:block absolute -z-10 top-0 xs:top-50 right-0 lg:right-[150px] 2xl:right-[210px]  h-full w-auto">
+          <picture className="  h-full w-full animate-fadeInLeft  ">
+            <source media="(min-width: 451px)" srcSet={backgroundImage} />
+            <source media="(max-width: 912px)" srcSet={backgroundImage} />
+            <Image
+              src={backgroundImage}
+              height={912}
+              width={1080}
+              className="w-full h-full aspect-[16/9] object-cover"
+              alt="Banner"
+              loading="eager"
+            />
           </picture>
         </div>
         <div className="absolute top-0 left-0 -z-10 sm:hidden w-full h-screen">

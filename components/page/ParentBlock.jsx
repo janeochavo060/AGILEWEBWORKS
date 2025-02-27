@@ -6,11 +6,11 @@ export default function ParentBlock({ page, blocks = [], initialBlocks = 1 }) {
   const showLazy = globalState((state) => state.showLazy);
   const activeBlocks = blocks.slice(0, initialBlocks);
   const lazyBlocks = blocks.slice(initialBlocks);
-  useEffect(() => {
-    if (blocks.length <= initialBlocks) {
-      globalState.setState({ showLazy: true });
-    }
-  }, [blocks, initialBlocks]);
+  // useEffect(() => {
+  //   if (blocks.length <= initialBlocks) {
+  //     globalState.setState({ showLazy: true });
+  //   }
+  // }, [blocks, initialBlocks]);
   return (
     <>
       {activeBlocks.map((block, index) => {

@@ -70,7 +70,7 @@ const Website = ({ block }) => {
           className="pt-[20px] lg:hidden"
         />
         <Image
-          src="/images/iphonerobot.jpeg"
+          src="/images/iphonerobot.jpg"
           width={150}
           height={60}
           alt="iphonerobot"
@@ -80,7 +80,7 @@ const Website = ({ block }) => {
 
       <div className="flex text-center h-full ">
         <Image
-          src="/images/iphonerobot.jpeg"
+          src="/images/iphonerobot.jpg"
           alt="iphonerobot"
           width={630}
           height={800}
